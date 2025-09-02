@@ -1,0 +1,6395 @@
+/* 記事ページ専用スタイル */
+
+/* モバイルボトムナビゲーション強制削除 */
+@media (max-width: 768px) {
+    /* あらゆるボトムナビゲーション要素を削除 */
+    *[class*="bottom"],
+    *[class*="tab-bar"],
+    *[class*="mobile-nav"],
+    *[style*="position: fixed"][style*="bottom"],
+    nav[style*="bottom"],
+    div[style*="position: fixed"][style*="bottom"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        z-index: -9999 !important;
+    }
+    
+    /* body padding調整（ボトムナビ分のスペースを削除）*/
+    body {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* 基本的なスクロール設定 */
+html {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* ヘッダー調整 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.article-main,
+.main {
+    background-color: #ffffff;
+    padding-top: 0.5rem;
+    margin-top: 80px; /* ヘッダー分のマージン */
+    min-height: calc(100vh - 80px);
+    overflow: visible;
+}
+
+.article-container,
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: visible;
+    height: auto;
+}
+
+/* 一人暮らし向け記事専用スタイル */
+.single-living-flowchart .flow-branches {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.single-living-flowchart .flow-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+    border-radius: 12px;
+    border: 2px solid #e0e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-living-flowchart .flow-branch:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+
+.single-living-flowchart .branch-label {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.single-living-flowchart .answer-box {
+    background: white;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: #155724;
+    line-height: 1.4;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 収納オプション比較スタイル */
+.storage-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.storage-option {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.storage-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.storage-option:hover {
+    border-color: #28a745;
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.15);
+    transform: translateY(-5px);
+}
+
+.storage-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.storage-header h4 {
+    color: #155724;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.popularity {
+    font-size: 0.9rem;
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.storage-pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.storage-requirements, .suitable-models {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.storage-requirements h5, .suitable-models h5 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* 炊飯器ランキング記事専用スタイル */
+.rice-cooker-ranking {
+    background: linear-gradient(135deg, #fafbfc 0%, #f3f5f7 100%);
+    padding: 2rem 0;
+}
+
+/* ランキングヘッダー */
+.ranking-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.ranking-header h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.ranking-header p {
+    margin: 0;
+    opacity: 0.95;
+    font-size: 1.1rem;
+}
+
+/* ランキングカード */
+.ranking-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ranking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* ランキングバッジ */
+.rank-badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+.rank-badge.rank-1 {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.6);
+    animation: pulse-gold 2s infinite;
+}
+
+.rank-badge.rank-2 {
+    background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.5);
+}
+
+.rank-badge.rank-3 {
+    background: linear-gradient(135deg, #cd7f32, #e4a853);
+    box-shadow: 0 5px 15px rgba(205, 127, 50, 0.5);
+}
+
+@keyframes pulse-gold {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* 商品情報グリッド */
+.product-info {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-image {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: #dee2e6;
+}
+
+.product-details h3 {
+    margin: 0 0 1rem 0;
+    color: #212529;
+    font-size: 1.5rem;
+}
+
+.product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.spec-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #e7f5ff;
+    color: #0c63e4;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.price-badge {
+    background: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+
+/* 特徴リスト */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* 評価スコア */
+.rating-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.rating-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.rating-item {
+    text-align: center;
+}
+
+.rating-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.rating-stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+}
+
+.rating-score {
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: #212529;
+}
+
+/* 比較表 */
+.comparison-table {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.comparison-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* プロコン表示 */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.pros, .cons {
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.pros {
+    background: #d1f2eb;
+    border-left: 4px solid #28a745;
+}
+
+.cons {
+    background: #fde2e2;
+    border-left: 4px solid #dc3545;
+}
+
+.pros h4, .cons h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.pros ul, .cons ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* CTAボタン */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* 診断フローチャートのレスポンシブ調整 */
+@media (max-width: 768px) {
+    .product-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+    
+    .ranking-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .rank-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .single-living-flowchart .flow-branches {
+        gap: 0.8rem;
+    }
+    
+    .single-living-flowchart .flow-branch {
+        padding: 0.8rem;
+    }
+    
+    .storage-comparison {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .storage-pros-cons {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* チェックリスト機能のスタイル */
+.checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.checklist-item:hover {
+    background: #e9f7ef;
+    border-color: #28a745;
+}
+
+.checklist-checkbox {
+    margin: 0;
+    transform: scale(1.2);
+    accent-color: #28a745;
+}
+
+.checkmark {
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid #28a745;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.checklist-checkbox:checked + .checkmark {
+    background: #28a745;
+}
+
+.checklist-checkbox:checked + .checkmark::after {
+    content: '✓';
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.checklist-content strong {
+    color: #155724;
+    font-size: 1.05rem;
+}
+
+.checklist-content p {
+    margin: 0.5rem 0 0 0;
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+/* スコア表示 */
+.checklist-score {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.score-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+.score-number {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.score-total {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.score-advice {
+    padding: 1rem;
+    background: #e9f7ef;
+    border-radius: 10px;
+    border-left: 4px solid #28a745;
+}
+
+.score-recommendations {
+    margin-top: 2rem;
+}
+
+.score-level {
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #6c757d;
+}
+
+.score-level h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* 部屋別ガイドスタイル */
+.room-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.room-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.room-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
+    transform: translateY(-8px);
+}
+
+.room-card h3 {
+    color: #0056b3;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.room-specs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.room-size, .room-type {
+    background: #e3f2fd;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+.recommended-types {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.type-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.type-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.type-badge.best {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.type-badge.good {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #99d6ff;
+}
+
+.recommended-models {
+    background: #f1f8ff;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #007bff;
+    margin-top: 1rem;
+}
+
+.recommended-models h5 {
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+}
+
+.recommended-models ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.recommended-models li {
+    margin: 0.3rem 0;
+    color: #495057;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* ペット毛対応記事専用スタイル */
+
+/* 基本的な記事セクションスタイル */
+.article-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+}
+
+.article-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #007bff;
+    position: relative;
+}
+
+.article-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ffc107;
+    border-radius: 2px;
+}
+
+/* ペット記事の基本要素 */
+.essential-features {
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.pet-essential-features {
+    margin: 2rem 0;
+}
+
+.pet-feature-grid,
+.essential-features .feature-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+    margin: 2rem 0 !important;
+}
+
+/* ペット記事のfeature-cardスタイル */
+.essential-features .feature-card,
+.pet-essential-features .feature-card {
+    background: #fff !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.essential-features .feature-card:hover,
+.pet-essential-features .feature-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.essential-features .feature-card h3,
+.pet-essential-features .feature-card h3 {
+    color: #333 !important;
+    margin: 1rem 0 !important;
+    font-size: 1.3rem !important;
+}
+
+.essential-features .feature-card p,
+.pet-essential-features .feature-card p {
+    color: #6c757d !important;
+    margin: 0.5rem 0 !important;
+}
+
+.essential-features .feature-card.priority-high,
+.pet-essential-features .feature-card.priority-high {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%) !important;
+    border-color: #ffc107 !important;
+    overflow: hidden !important;
+}
+
+.essential-features .feature-card.priority-high::before,
+.pet-essential-features .feature-card.priority-high::before {
+    content: '重要' !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background: #dc3545 !important;
+    color: white !important;
+    padding: 0.3rem 0.8rem !important;
+    border-radius: 12px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+}
+
+.essential-features .feature-card.priority-medium,
+.pet-essential-features .feature-card.priority-medium {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%) !important;
+    border-color: #2196f3 !important;
+}
+
+.essential-features .feature-icon,
+.pet-essential-features .feature-icon {
+    font-size: 3rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.essential-features .feature-details ul,
+.pet-essential-features .feature-details ul {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.essential-features .feature-details li,
+.pet-essential-features .feature-details li {
+    margin: 0.5rem 0 !important;
+    padding-left: 1.5rem !important;
+    position: relative !important;
+}
+
+.essential-features .feature-details li::before,
+.pet-essential-features .feature-details li::before {
+    content: '✓' !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: #28a745 !important;
+    font-weight: bold !important;
+}
+
+.tech-example {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.performance-meter {
+    margin-top: 1rem;
+}
+
+.meter-label {
+    font-size: 0.9rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.meter-bar {
+    width: 100%;
+    height: 25px;
+    background: #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: width 0.8s ease;
+}
+
+.meter-fill.pet-level {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+}
+
+.filter-stages {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.stage {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+}
+
+.stage-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stage-name {
+    display: block;
+    font-weight: 600;
+    color: #495057;
+    margin: 0.5rem 0;
+}
+
+.stage-function {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.capacity-guide {
+    margin: 1rem 0;
+}
+
+.capacity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.capacity-size {
+    min-width: 80px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.capacity-rating {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.capacity-rating.poor { color: #dc3545; }
+.capacity-rating.good { color: #ffc107; }
+.capacity-rating.excellent { color: #28a745; }
+
+.capacity-note {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.technology-spotlight {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    color: white;
+}
+
+.technology-spotlight h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.tech-item h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.tech-item p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.tech-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.benefit {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    width: fit-content;
+}
+
+/* ペット毛の課題と解決策 */
+.pet-challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.challenge-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.challenge-item:hover {
+    border-color: #dc3545;
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.15);
+    transform: translateY(-3px);
+}
+
+.challenge-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.challenge-header h3 {
+    color: #dc3545;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.severity-high {
+    background: #dc3545;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.severity-medium {
+    background: #ffc107;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.challenge-description {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #dc3545;
+}
+
+.challenge-description h4 {
+    color: #495057;
+    margin-bottom: 0.8rem;
+}
+
+.challenge-description ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.challenge-description li {
+    margin: 0.5rem 0;
+    color: #6c757d;
+}
+
+.solution {
+    margin: 1.5rem 0;
+}
+
+.solution h4 {
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.solution-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.solution-option {
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    position: relative;
+    background: white;
+}
+
+.solution-option.best {
+    border-color: #28a745;
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+}
+
+.solution-option.good {
+    border-color: #007bff;
+    background: linear-gradient(135deg, #cce7ff 0%, #99d6ff 100%);
+}
+
+.solution-option.okay {
+    border-color: #6c757d;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.solution-badge {
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.solution-option.best .solution-badge {
+    background: #28a745;
+    color: white;
+}
+
+.solution-option.good .solution-badge {
+    background: #007bff;
+    color: white;
+}
+
+.solution-option.okay .solution-badge {
+    background: #6c757d;
+    color: white;
+}
+
+.solution-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-solution {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.feature-solution strong {
+    color: #155724;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.carpet-solution {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.solution-method {
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.solution-method h5 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.effectiveness {
+    float: right;
+    font-size: 0.9rem;
+    color: #ffc107;
+}
+
+.odor-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.odor-solution {
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.odor-solution:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.odor-solution strong {
+    color: #495057;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.odor-solution p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.prevention-tips {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border-radius: 20px;
+    color: white;
+}
+
+.prevention-tips h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.prevention-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.prevention-tip {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.prevention-tip h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.prevention-tip p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.frequency-guide {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: monospace;
+}
+
+.frequency-guide .pet-type {
+    font-weight: bold;
+}
+
+.frequency-guide .frequency {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.tool-combo {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.pet-hair-score {
+    margin: 1rem 0;
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    gap: 1rem;
+}
+
+.score-label {
+    min-width: 120px;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.score-bar {
+    flex: 1;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: width 0.8s ease;
+}
+
+/* ペット種類タブ */
+.pet-type-tabs {
+    margin: 2rem 0;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #e9ecef;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    border-color: #007bff;
+    background: #f8f9ff;
+}
+
+.tab-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 犬種・猫種カテゴリー */
+.dog-breed-grid, .cat-breed-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.breed-category {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.breed-category:hover {
+    border-color: #007bff;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.1);
+}
+
+.breed-characteristics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.char-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.char-label {
+    font-weight: 600;
+    color: #495057;
+    min-width: 60px;
+}
+
+.char-value {
+    color: #6c757d;
+}
+
+.recommended-specs {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #e3f2fd;
+    border-radius: 10px;
+    border-left: 4px solid #2196f3;
+}
+
+.top-picks {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #e8f5e8;
+    border-radius: 10px;
+    border-left: 4px solid #4caf50;
+}
+
+.pick-item {
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #c8e6c9;
+}
+
+/* ランキングアイテム */
+.product-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ranking-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ranking-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffc107, #ff9800);
+}
+
+.rank-1::before {
+    background: linear-gradient(90deg, #ffd700, #ffb300);
+}
+
+.rank-2::before {
+    background: linear-gradient(90deg, #c0c0c0, #999999);
+}
+
+.rank-3::before {
+    background: linear-gradient(90deg, #cd7f32, #8b4513);
+}
+
+.rank-badge {
+    background: #ffc107;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 60px;
+    text-align: center;
+    height: fit-content;
+}
+
+.rank-badge.gold {
+    background: linear-gradient(135deg, #ffd700, #ffb300);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.rank-badge.silver {
+    background: linear-gradient(135deg, #c0c0c0, #999999);
+    color: white;
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+}
+
+.rank-badge.bronze {
+    background: linear-gradient(135deg, #cd7f32, #8b4513);
+    color: white;
+    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);
+}
+
+.product-image-rank {
+    min-width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-image-rank img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-details-rank {
+    flex: 1;
+}
+
+.product-name-rank {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.product-price-rank {
+    font-size: 1.5rem;
+    color: #dc3545;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.product-rating-rank {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.key-features-rank {
+    margin: 1rem 0;
+}
+
+.key-features-rank ul {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+}
+
+.key-features-rank li {
+    margin: 0.3rem 0;
+}
+
+.pet-compatibility {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.compatibility-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+
+.comp-item {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.comp-item.excellent {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.comp-item.good {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #99d6ff;
+}
+
+.expert-comment {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+/* 簡易ランキング項目 */
+.key-features-compact {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.pet-suitability {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.expert-mini-comment {
+    margin: 0.5rem 0;
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+/* 比較表 */
+.comparison-table-detailed {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table-detailed th {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table-detailed td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comparison-table-detailed tr:hover {
+    background: #f8f9ff;
+}
+
+.score.excellent {
+    background: #d4edda;
+    color: #155724;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.score.good {
+    background: #cce7ff;
+    color: #004085;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.score.fair {
+    background: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.top-performer {
+    background: linear-gradient(135deg, #fff9e6, #fff3cd);
+    border-left: 4px solid #ffc107;
+}
+
+.high-performer {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-left: 4px solid #2196f3;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .tab-buttons {
+        justify-content: center;
+    }
+    
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .ranking-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .product-image-rank {
+        min-width: unset;
+        width: 150px;
+        margin: 0 auto;
+    }
+    
+    .compatibility-grid {
+        justify-content: center;
+    }
+    
+    .breed-characteristics {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table-detailed {
+        font-size: 0.8rem;
+    }
+    
+    .comparison-table-detailed th,
+    .comparison-table-detailed td {
+        padding: 0.5rem;
+    }
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* 記事ヘッダー */
+.article-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.article-header h1 {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 目次 */
+.toc {
+    background: var(--background-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.toc h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.toc ol {
+    margin-left: 1.5rem;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* 最終更新日 */
+.last-updated {
+    font-size: 0.75rem;
+    color: #666;
+    text-align: right;
+    margin: -2.5rem 0 2rem 0;
+    padding: 0;
+    background: none;
+}
+
+/* 記事ヘッダー特別スタイル */
+.article-header {
+    background: linear-gradient(135deg, var(--background-light), #ffffff);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.article-meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-category {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.article-date {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.read-time {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.article-lead {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+}
+
+.article-lead p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+/* 目次ボックス - JavaScript自動生成目次を非表示 */
+.table-of-contents {
+    display: none !important;
+    visibility: hidden !important;
+    margin: 3rem 0;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    height: auto;
+}
+
+.toc-box {
+    background: var(--background-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: auto;
+    overflow: visible;
+}
+
+.toc-box h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toc-list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.toc-list li {
+    margin-bottom: 0.75rem;
+}
+
+.toc-list a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.toc-list a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* コンテンツセクション */
+.content-section {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    height: auto;
+    overflow: visible;
+    position: relative;
+}
+
+/* 記事コンテンツ全体 */
+.article-content {
+    overflow: visible;
+    height: auto;
+    position: relative;
+    width: calc(100% + 3rem);
+    max-width: none;
+    padding: 0 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    box-sizing: border-box;
+}
+
+/* 詳細レビューセクション */
+.product-detailed-review {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.review-sections {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.review-section h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.review-section p {
+    margin-bottom: 0;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.pros-cons-detailed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.pros-detail, .cons-detail {
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.pros-detail {
+    background: #f0f9f0;
+    border-left: 3px solid #28a745;
+}
+
+.cons-detail {
+    background: #fef8f8;
+    border-left: 3px solid #dc3545;
+}
+
+.pros-detail h5, .cons-detail h5 {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.recommendation-target {
+    background: #e7f3ff;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #007bff;
+    margin-top: 1rem;
+}
+
+.recommendation-target h5 {
+    color: #007bff;
+    margin-bottom: 0.75rem;
+}
+
+/* ヒントボックス */
+.tip-box {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tip-box h4 {
+    color: #856404;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tip-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.tip-box li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* バッテリーヒントグリッド */
+.battery-tips {
+    margin-top: 1.5rem;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tip-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tip-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.tip-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* チェックリストスタイル */
+.checklist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.checklist-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.checklist-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+.checklist-item input[type="checkbox"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.checkmark {
+    flex-shrink: 0;
+}
+
+.checklist-summary {
+    background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.checklist-summary h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* FAQ詳細情報 */
+.faq-detailed {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.faq-detailed h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.faq-detailed ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.faq-detailed li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* コードレス掃除機記事専用スタイル */
+
+/* 魅力紹介セクション */
+.intro-content {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.benefit-details {
+    margin-top: 1.5rem;
+}
+
+.benefit-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-details li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.benefit-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* トレンド情報 */
+.market-trend {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.market-trend h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.trend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.trend-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.trend-item h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+/* 選び方セクション */
+.criteria-intro {
+    background: #e7f3ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #007bff;
+}
+
+.criteria-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.criteria-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    position: relative;
+}
+
+.criteria-number {
+    position: absolute;
+    top: -20px;
+    left: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.criteria-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.criteria-content {
+    margin-top: 1rem;
+}
+
+/* 重量ガイド */
+.weight-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.weight-category {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ccc;
+}
+
+.weight-category.excellent {
+    background: #f0f9f0;
+    border-left-color: #28a745;
+}
+
+.weight-category.good {
+    background: #f8f9fa;
+    border-left-color: #6c757d;
+}
+
+.weight-category.average {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.weight-category.heavy {
+    background: #f8d7da;
+    border-left-color: #dc3545;
+}
+
+.weight-range {
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 100px;
+}
+
+.weight-rating {
+    color: #ffc107;
+    min-width: 120px;
+}
+
+/* 吸引力ガイド */
+.suction-guide {
+    margin-bottom: 2rem;
+}
+
+.spec-ranges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.spec-range {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.spec-range.excellent {
+    background: #f0f9f0;
+}
+
+.spec-range.good {
+    background: #f8f9fa;
+}
+
+.spec-range.average {
+    background: #fff3cd;
+}
+
+.spec-range.basic {
+    background: #f8d7da;
+}
+
+.spec-value {
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.tech-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-item {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.tech-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* バッテリーガイド */
+.battery-performance {
+    margin-bottom: 2rem;
+}
+
+.runtime-scenarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.scenario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.scenario.excellent {
+    background: #f0f9f0;
+}
+
+.scenario.good {
+    background: #f8f9fa;
+}
+
+.scenario.average {
+    background: #fff3cd;
+}
+
+.scenario.basic {
+    background: #f8d7da;
+}
+
+.runtime {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.suitable-for {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.battery-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.feature-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* プレミアム製品スタイル */
+.premium-product {
+    border: 2px solid #gold;
+    background: linear-gradient(135deg, #fff9e6, #ffffff);
+}
+
+.standard-product {
+    border: 2px solid #silver;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.budget-product {
+    border: 2px solid #bronze;
+    background: linear-gradient(135deg, #f0f9f0, #ffffff);
+}
+
+.premium-badge, .standard-badge, .budget-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.premium-badge {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #333;
+}
+
+.standard-badge {
+    background: linear-gradient(45deg, #c0c0c0, #e8e8e8);
+    color: #333;
+}
+
+.budget-badge {
+    background: linear-gradient(45deg, #cd7f32, #daa520);
+}
+
+/* キースペック表示 */
+.key-specs {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+
+.spec-highlight {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    flex: 1;
+}
+
+.spec-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.spec-value {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.spec-value.excellent {
+    color: #28a745;
+}
+
+.spec-value.good {
+    color: #007bff;
+}
+
+.spec-value.average {
+    color: #ffc107;
+}
+
+.spec-value.poor {
+    color: #dc3545;
+}
+
+/* 詳細比較表 */
+.detailed-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.detailed-comparison-table th,
+.detailed-comparison-table td {
+    padding: 1rem 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.detailed-comparison-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.product-name {
+    text-align: left !important;
+    font-weight: bold;
+    min-width: 200px;
+}
+
+.spec-column {
+    min-width: 80px;
+}
+
+.premium-row {
+    background: #fff9e6;
+}
+
+.standard-row {
+    background: #f8f9fa;
+}
+
+.budget-row {
+    background: #f0f9f0;
+}
+
+.highlight {
+    border-left: 4px solid var(--primary-color);
+}
+
+.spec-excellent {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.spec-good {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.spec-average {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.spec-poor {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.rating-excellent {
+    color: #ffc107;
+}
+
+.rating-good {
+    color: #007bff;
+}
+
+.rating-average {
+    color: #6c757d;
+}
+
+/* 比較表の凡例 */
+.comparison-legend {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.legend-color.excellent {
+    background: #28a745;
+}
+
+.legend-color.good {
+    background: #007bff;
+}
+
+.legend-color.average {
+    background: #ffc107;
+}
+
+.legend-color.poor {
+    background: #dc3545;
+}
+
+/* 購入ガイド */
+.flowchart {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.flow-step {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.flow-step:last-child {
+    border-bottom: none;
+}
+
+.flow-question {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.flow-question h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.flow-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.flow-option {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.flow-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.flow-option.premium {
+    background: #fff9e6;
+    border-color: #ffd700;
+}
+
+.flow-option.standard {
+    background: #f8f9fa;
+    border-color: #c0c0c0;
+}
+
+.flow-option.budget {
+    background: #f0f9f0;
+    border-color: #cd7f32;
+}
+
+.recommended {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.spec-req {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* ベストバイ */
+.bestbuy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bestbuy-card {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+}
+
+.bestbuy-card.premium {
+    background: linear-gradient(135deg, #fff9e6, #ffffff);
+    border: 2px solid #ffd700;
+}
+
+.bestbuy-card.standard {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border: 2px solid #c0c0c0;
+}
+
+.bestbuy-card.budget {
+    background: linear-gradient(135deg, #f0f9f0, #ffffff);
+    border: 2px solid #cd7f32;
+}
+
+.bestbuy-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    background: var(--primary-color);
+}
+
+.bestbuy-card h4 {
+    color: var(--text-dark);
+    margin: 1rem 0;
+}
+
+.bestbuy-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* まとめセクション */
+.takeaway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.takeaway-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.takeaway-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.takeaway-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.takeaway-item li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+    .pros-cons-detailed {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .checklist-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .product-detailed-review {
+        padding: 1rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .criteria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .key-specs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .flow-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .bestbuy-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .takeaway-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detailed-comparison-table {
+        font-size: 0.8rem;
+    }
+    
+    .detailed-comparison-table th,
+    .detailed-comparison-table td {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .comparison-table-container {
+        overflow-x: auto;
+    }
+}
+
+/* サイクロン掃除機記事専用スタイル */
+
+/* サイクロンの仕組み説明 */
+.cyclone-intro {
+    background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2196F3;
+}
+
+.mechanism-explanation {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+.cyclone-diagram {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #e9ecef;
+}
+
+.cyclone-chamber {
+    position: relative;
+    height: 200px;
+    width: 120px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #fff3e0, #ffcc80);
+    border-radius: 60px 60px 20px 20px;
+    border: 3px solid #ff9800;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.air-flow, .clean-air-out {
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.separation-zone {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    margin: 1rem 0;
+}
+
+.heavy-particles {
+    color: #8d6e63;
+    font-weight: bold;
+}
+
+.light-particles {
+    color: #607d8b;
+    font-weight: bold;
+}
+
+.mechanism-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #2196F3;
+}
+
+.step-number {
+    background: #2196F3;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-card h4 {
+    color: #2196F3;
+    margin-bottom: 0.5rem;
+}
+
+.step-card p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* サイクロンタイプ */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.type-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+}
+
+.type-card.premium {
+    border-color: #ffc107;
+    background: linear-gradient(135deg, #fff9e6, #ffffff);
+}
+
+.type-icon {
+    margin-bottom: 1.5rem;
+}
+
+.type-icon i {
+    font-size: 3rem;
+}
+
+.type-card h4 {
+    color: #2196F3;
+    margin-bottom: 1rem;
+}
+
+.type-description p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.type-performance {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.performance-item {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 進化タイムライン */
+.evolution-timeline {
+    margin-top: 3rem;
+}
+
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #2196F3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #2196F3;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #2196F3;
+}
+
+.timeline-item.current::before {
+    background: #4CAF50;
+    box-shadow: 0 0 0 3px #4CAF50;
+}
+
+.timeline-year {
+    font-weight: bold;
+    color: #2196F3;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* メリット・デメリット比較 */
+.advantages-intro {
+    background: #e7f3ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #007bff;
+}
+
+.pros-cons-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.pros-section, .cons-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.pros-section {
+    border-left: 4px solid #28a745;
+}
+
+.cons-section {
+    border-left: 4px solid #dc3545;
+}
+
+.pros-section h3 {
+    color: #28a745;
+    margin-bottom: 1.5rem;
+}
+
+.cons-section h3 {
+    color: #dc3545;
+    margin-bottom: 1.5rem;
+}
+
+.pros-list, .cons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pro-item, .con-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.pro-icon, .con-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.pro-icon {
+    background: #d4edda;
+}
+
+.con-icon {
+    background: #f8d7da;
+}
+
+.pro-content h4, .con-content h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.pro-content h4 {
+    color: #28a745;
+}
+
+.con-content h4 {
+    color: #dc3545;
+}
+
+.pro-content p, .con-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.pro-detail, .con-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.detail-label {
+    color: #666;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+/* おすすめマトリックス */
+.recommendation-matrix {
+    margin-top: 3rem;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.matrix-item {
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid;
+}
+
+.matrix-item.recommended {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.matrix-item.not-recommended {
+    background: #f8d7da;
+    border-color: #dc3545;
+}
+
+.matrix-item h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.recommended h4 {
+    color: #28a745;
+}
+
+.not-recommended h4 {
+    color: #dc3545;
+}
+
+.matrix-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.matrix-item li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.matrix-item li::before {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.recommended li::before {
+    content: '✓';
+    color: #28a745;
+}
+
+.not-recommended li::before {
+    content: '✗';
+    color: #dc3545;
+}
+
+/* メーカー比較セクション */
+.manufacturer-comparison-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.manufacturer-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.manufacturer-card.dyson {
+    border-left: 4px solid #6f42c1;
+}
+
+.manufacturer-card.sharp {
+    border-left: 4px solid #ff6b00;
+}
+
+.manufacturer-card.hitachi {
+    border-left: 4px solid #dc3545;
+}
+
+.manufacturer-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.manufacturer-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e9ecef;
+}
+
+.logo-placeholder {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.manufacturer-info h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.manufacturer-origin {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.manufacturer-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.manufacturer-strengths h4,
+.manufacturer-technology h4,
+.manufacturer-lineup h4 {
+    color: #2196F3;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.manufacturer-strengths ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.manufacturer-strengths li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.manufacturer-strengths li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #2196F3;
+    font-size: 0.8rem;
+}
+
+.tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.tech-feature {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #2196F3;
+}
+
+.tech-feature h5 {
+    color: #2196F3;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.tech-feature p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #666;
+}
+
+.lineup-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lineup-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #ccc;
+}
+
+.lineup-item.premium {
+    border-left-color: #ffc107;
+    background: #fff9e6;
+}
+
+.lineup-item.standard {
+    border-left-color: #007bff;
+    background: #e3f2fd;
+}
+
+.lineup-item.entry {
+    border-left-color: #28a745;
+    background: #e8f5e8;
+}
+
+.model-name {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.model-price {
+    font-weight: bold;
+    color: #2196F3;
+    margin: 0 1rem;
+}
+
+.model-desc {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* レーティング */
+.manufacturer-ratings {
+    margin-top: 1.5rem;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.rating-label {
+    min-width: 80px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.rating-bar {
+    flex: 1;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.rating-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745, #4CAF50);
+    transition: width 0.3s ease;
+}
+
+.rating-score {
+    min-width: 50px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #2196F3;
+}
+
+/* 比較サマリーテーブル */
+.comparison-summary {
+    margin-top: 3rem;
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.summary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.summary-row.header {
+    background: #2196F3;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.summary-category {
+    font-weight: bold;
+}
+
+.summary-dyson, .summary-sharp, .summary-hitachi {
+    text-align: center;
+}
+
+.summary-row .excellent {
+    color: #ffc107;
+}
+
+.summary-row .good {
+    color: #007bff;
+}
+
+.summary-row .average {
+    color: #6c757d;
+}
+
+.summary-row .poor {
+    color: #dc3545;
+}
+
+/* 購入ガイド */
+.decision-flowchart {
+    margin: 2rem 0;
+}
+
+.flowchart-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.flow-step {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.flow-step:last-child {
+    border-bottom: none;
+}
+
+.flow-question {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.flow-question h4 {
+    color: #2196F3;
+    font-size: 1.2rem;
+}
+
+.flow-branches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.flow-branch {
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.flow-branch:hover {
+    border-color: #2196F3;
+    transform: translateY(-3px);
+}
+
+.flow-branch.premium {
+    background: #fff9e6;
+    border-color: #ffc107;
+}
+
+.flow-branch.standard {
+    background: #e3f2fd;
+    border-color: #2196F3;
+}
+
+.flow-branch.budget {
+    background: #e8f5e8;
+    border-color: #28a745;
+}
+
+.flow-branch h5 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.flow-branch p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.flow-recommend {
+    font-size: 0.8rem;
+    color: #2196F3;
+    font-style: italic;
+}
+
+/* エキスパートレコメンデーション */
+.expert-recommendations {
+    margin: 3rem 0;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.recommendation-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    position: relative;
+    border: 2px solid;
+}
+
+.recommendation-card.best-overall {
+    border-color: #ffc107;
+    background: linear-gradient(135deg, #fff9e6, #ffffff);
+}
+
+.recommendation-card.best-value {
+    border-color: #28a745;
+    background: linear-gradient(135deg, #e8f5e8, #ffffff);
+}
+
+.recommendation-card.best-power {
+    border-color: #dc3545;
+    background: linear-gradient(135deg, #f8e6e6, #ffffff);
+}
+
+.recommendation-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    background: #2196F3;
+}
+
+.recommendation-card h4 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.recommendation-price {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2196F3;
+    margin-bottom: 1.5rem;
+}
+
+.recommendation-reason h5 {
+    color: #2196F3;
+    margin-bottom: 1rem;
+}
+
+.recommendation-reason ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.recommendation-reason li {
+    padding: 0.25rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.recommendation-reason li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.recommendation-target {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.target-label {
+    display: block;
+    font-weight: bold;
+    color: #2196F3;
+    margin-bottom: 0.5rem;
+}
+
+.target-desc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 最終チェックリスト */
+.checklist-final {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checklist-item-final {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.checklist-item-final:hover {
+    background-color: rgba(33, 150, 243, 0.05);
+}
+
+.checklist-item-final input[type="checkbox"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #2196F3;
+}
+
+.checkmark-final {
+    flex-shrink: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .mechanism-explanation {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .pros-cons-comparison {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .matrix-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .manufacturer-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .flow-branches {
+        grid-template-columns: 1fr;
+    }
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.content-section h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin: 2rem 0 1rem;
+}
+
+.content-section p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+/* 商品カード */
+.product-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.product-card.ranking-1 {
+    border: 2px solid #FFD700;
+}
+
+.product-card.ranking-2 {
+    border: 2px solid #C0C0C0;
+}
+
+.product-card.ranking-3 {
+    border: 2px solid #CD7F32;
+}
+
+.rank-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-light);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 1.1rem;
+}
+
+.rating-text {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.product-specs {
+    margin-bottom: 1rem;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.spec-value {
+    color: var(--text-light);
+}
+
+.product-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature {
+    background: var(--background-light);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.product-summary {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* コンパクトランキング */
+.compact-ranking {
+    margin-top: 2rem;
+}
+
+.compact-product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.compact-product .rank {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.compact-info {
+    flex: 1;
+}
+
+.compact-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.compact-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.compact-info .rating {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.compact-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .article-meta-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-info {
+        padding: 1rem;
+    }
+    
+    .compact-product {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .compact-info {
+        text-align: left;
+    }
+}
+
+/* 記事本文 */
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* 特徴グリッド */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.pros h4, .cons h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.pros h4 {
+    color: #16a34a;
+}
+
+.cons h4 {
+    color: #dc2626;
+}
+
+.pros ul, .cons ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.pros li, .cons li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 選び方ポイント */
+.selection-points {
+    margin: 2rem 0;
+}
+
+.point-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.point-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.situation {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: 8px;
+}
+
+.situation h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* ランキングリスト */
+.ranking-list {
+    margin: 2rem 0;
+}
+
+/* 比較表 */
+.comparison-table-container {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.comparison-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table tr.highlight {
+    background: var(--background-light);
+}
+
+.comparison-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* メンテナンスガイド */
+.maintenance-guide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.maintenance-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.maintenance-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.maintenance-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.maintenance-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* FAQ */
+.faq-container {
+    margin: 2rem 0;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background: var(--background-light);
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #e5f3e5;
+}
+
+.faq-question i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.faq-answer strong {
+    color: var(--primary-color);
+}
+
+/* まとめ */
+.conclusion {
+    background: linear-gradient(135deg, var(--background-light), #ffffff);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+}
+
+.conclusion-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.key-points {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.key-points ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.key-points li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.key-points strong {
+    color: var(--primary-color);
+}
+
+/* 関連記事 */
+.related-articles {
+    background: var(--background-light);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.related-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-2px);
+}
+
+.related-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-light);
+}
+
+.related-content {
+    padding: 1.5rem;
+}
+
+.related-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.related-content a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.related-content a:hover {
+    color: var(--primary-color);
+}
+
+.related-content p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* レスポンシブ追加 */
+@media (max-width: 768px) {
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .maintenance-guide {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-table-container {
+        font-size: 0.85rem;
+    }
+}
+    line-height: 1.8;
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    color: var(--text-dark);
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-dark);
+}
+
+.article-content h4 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem;
+    color: var(--text-dark);
+}
+
+.article-content h5 {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul,
+.article-content ol {
+    margin: 1rem 0 1.5rem 2rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* インフォボックス */
+.info-box {
+    background: #f0fdf4;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* タイプカード */
+.type-card {
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.type-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.type-header i {
+    font-size: 1.5rem;
+}
+
+.type-content {
+    padding: 1.5rem;
+}
+
+.type-content .pros {
+    color: var(--primary-color);
+}
+
+.type-content .cons {
+    color: #ef4444;
+}
+
+.recommendation {
+    background: var(--background-light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* 比較テーブル */
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.comparison-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--background-light);
+}
+
+/* サイズガイドテーブル */
+.size-guide {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+.size-guide th,
+.size-guide td {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+.size-guide th {
+    background: var(--background-light);
+    font-weight: 600;
+}
+
+/* 選択ポイント */
+.selection-point {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* 製品ランキング */
+.product-ranking {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    position: relative;
+}
+
+.rank-badge {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.rank-badge.gold {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.rank-badge.silver {
+    background: linear-gradient(135deg, #94a3b8, #64748b);
+}
+
+.rank-badge.bronze {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.rank-badge.fourth {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.rank-badge.fifth {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.product-detail {
+    flex: 1;
+}
+
+.product-specs {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.product-specs span {
+    padding: 0.3rem 0.8rem;
+    background: var(--background-light);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.product-features h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.product-review {
+    background: var(--background-light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.affiliate-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-affiliate {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-affiliate.amazon {
+    background: #ff9900;
+    color: white;
+}
+
+.btn-affiliate.amazon:hover {
+    background: #e68a00;
+    transform: translateY(-2px);
+}
+
+.btn-affiliate.rakuten {
+    background: #bf0000;
+    color: white;
+}
+
+.btn-affiliate.rakuten:hover {
+    background: #990000;
+    transform: translateY(-2px);
+}
+
+.btn-affiliate.yahoo {
+    background: #ff0033;
+    color: white;
+}
+
+.btn-affiliate.yahoo:hover {
+    background: #cc0029;
+    transform: translateY(-2px);
+}
+
+/* ランキングリスト */
+.ranking-list {
+    margin-top: 3rem;
+}
+
+.rank-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rank-item:hover {
+    background: var(--background-light);
+}
+
+.rank-item .rank {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+}
+
+.rank-item h5 {
+    flex: 1;
+    margin: 0;
+}
+
+.rank-item .price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* メンテナンスガイド */
+.maintenance-guide {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.maintenance-guide h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.maintenance-guide ol {
+    margin-left: 1.5rem;
+}
+
+.maintenance-guide li {
+    margin-bottom: 1rem;
+}
+
+/* 警告ボックス */
+.warning-box {
+    background: #fef2f2;
+    border: 2px solid #ef4444;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.warning-box h4 {
+    color: #ef4444;
+    margin-bottom: 1rem;
+}
+
+/* FAQ */
+.faq-item {
+    margin: 2rem 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+/* まとめボックス */
+.conclusion-box {
+    background: #ffffff;
+    color: #333333;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 2px solid #16a34a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.conclusion-box h3 {
+    margin-bottom: 1rem;
+}
+
+.conclusion-box ol {
+    margin-left: 1.5rem;
+}
+
+.conclusion-box ol li {
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+/* 表のエビデンス源 */
+.table-source {
+    text-align: right;
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+.table-source a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.table-source a:hover {
+    text-decoration: underline;
+}
+
+/* 商品アフィリエイトセクション */
+.product-affiliate-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.price-info-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* もしもアフィリエイトのスタイリング調整 */
+#msmaflink-Ut1rV,
+#msmaflink-BKw86,
+#msmaflink-wbtbv,
+#msmaflink-OxpAb {
+    text-align: center;
+}
+
+/* もしもアフィリエイトのデフォルトスタイルを調整 */
+.product-affiliate-section .msmaflink-image {
+    max-width: 200px;
+    margin: 0 auto 1rem auto;
+}
+
+.product-affiliate-section .msmaflink-link-button {
+    margin: 0.5rem;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.product-image-wrapper {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.affiliate-buttons-enhanced {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.price-info {
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63384;
+    display: block;
+}
+
+.price-note {
+    font-size: 12px;
+    color: #666;
+}
+
+.affiliate-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-affiliate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn-affiliate.amazon {
+    background: #ff9900;
+    color: white;
+}
+
+.btn-affiliate.amazon:hover {
+    background: #e88b00;
+    transform: translateY(-2px);
+}
+
+.btn-affiliate.rakuten {
+    background: #bf0000;
+    color: white;
+}
+
+.btn-affiliate.rakuten:hover {
+    background: #9a0000;
+    transform: translateY(-2px);
+}
+
+.btn-affiliate.yahoo {
+    background: #0078ff;
+    color: white;
+}
+
+.btn-affiliate.yahoo:hover {
+    background: #0066cc;
+    transform: translateY(-2px);
+}
+
+.btn-affiliate i {
+    font-size: 16px;
+}
+
+.btn-sub {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .product-affiliate-section {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .product-image-wrapper {
+        width: 150px;
+        align-self: center;
+    }
+    
+    .current-price {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* CTA ボックス */
+.cta-box {
+    background: var(--background-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.cta-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* 関連記事 */
+.related-articles {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.related-articles h2 {
+    margin-bottom: 1.5rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.related-item {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.related-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.related-item h4 {
+    margin-bottom: 0.5rem;
+}
+
+.related-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.related-item a:hover {
+    text-decoration: underline;
+}
+
+/* チャート */
+.chart-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* 電気代専用スタイル */
+.cost-good {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.cost-average {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.cost-bad {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.highlight-row {
+    background-color: #f0fdf4;
+    border-left: 4px solid #16a34a;
+}
+
+.monthly-cost {
+    background: #16a34a;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.power {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.cost-breakdown {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.cost-breakdown h5 {
+    color: #16a34a;
+    margin-bottom: 0.5rem;
+}
+
+.cost-breakdown ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.cost-breakdown li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.tip-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.tip-box h4 {
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.formula-box {
+    background: #1f2937;
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.formula-box h3,
+.formula-box h4 {
+    color: #fbbf24;
+    margin-bottom: 1rem;
+}
+
+.usage-pattern {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.usage-pattern h4 {
+    color: #16a34a;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #16a34a;
+}
+
+.simulation-table {
+    margin: 2rem 0;
+}
+
+.simulation-table h3 {
+    background: #16a34a;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+}
+
+.insight-box {
+    background: #fffbeb;
+    border: 2px solid #fbbf24;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.insight-box h4 {
+    color: #d97706;
+    margin-bottom: 1rem;
+}
+
+.type-detail {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.type-detail h4 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.3s ease;
+}
+
+.rank-item:hover {
+    background-color: #f9fafb;
+}
+
+.rank-item .rank {
+    background: #16a34a;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.rank-item .item-info {
+    flex: 1;
+}
+
+.rank-item h5 {
+    margin: 0 0 0.3rem 0;
+    color: #1f2937;
+}
+
+.rank-item .specs {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .article-meta {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .product-ranking {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .affiliate-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+    
+    .usage-pattern {
+        grid-template-columns: 1fr;
+    }
+    
+    .rank-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* 赤ちゃん・子供部屋用記事専用スタイル */
+.doctor-supervised {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid #0ea5e9;
+    position: relative;
+}
+
+.doctor-supervised::before {
+    content: '👨‍⚕️';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 2rem;
+}
+
+.supervision {
+    background: #0ea5e9;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.baby-feature-box {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.impact-item {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid;
+}
+
+.impact-item.danger {
+    background: #fef2f2;
+    border-color: #ef4444;
+}
+
+.impact-item h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.benefit-box {
+    background: #f0fdf4;
+    border: 2px solid #22c55e;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.benefit-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item h4 {
+    color: #16a34a;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.safety-requirements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.safety-item {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid;
+}
+
+.safety-item.essential {
+    background: #fef2f2;
+    border-color: #dc2626;
+}
+
+.safety-item.important {
+    background: #fefbf2;
+    border-color: #f59e0b;
+}
+
+.safety-item h4 {
+    margin-bottom: 1rem;
+}
+
+.safety-item.essential h4 {
+    color: #dc2626;
+}
+
+.safety-item.important h4 {
+    color: #d97706;
+}
+
+.danger-list {
+    list-style: none;
+    padding: 0;
+}
+
+.danger-list li {
+    background: #fef2f2;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #ef4444;
+    border-radius: 4px;
+}
+
+.danger-list li::before {
+    content: '⚠️ ';
+    margin-right: 0.5rem;
+}
+
+.recommendation-table {
+    margin: 2rem 0;
+}
+
+.rating {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.rating.excellent {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.rating.good {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.rating.average {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.rating.poor {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.recommend-high {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.recommend-medium {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.recommend-low {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.age-guide-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.age-section {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+}
+
+.age-section h3 {
+    background: #16a34a;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin: -2rem -2rem 1.5rem -2rem;
+    text-align: center;
+}
+
+.settings-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.settings-box p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.caution-list {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.caution-list li {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.selection-points {
+    margin: 2rem 0;
+}
+
+.point-item {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.point-item.priority-high {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
+
+.point-item.priority-medium {
+    border-color: #f59e0b;
+    background: #fefbf2;
+}
+
+.point-item.priority-low {
+    border-color: #6b7280;
+    background: #f9fafb;
+}
+
+.point-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #16a34a;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.point-item h3 {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.priority-note {
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #166534;
+}
+
+.size-recommendation {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+}
+
+.size-recommendation th,
+.size-recommendation td {
+    padding: 0.8rem;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.size-recommendation th {
+    background: #f3f4f6;
+    font-weight: 600;
+}
+
+.product-ranking.baby-safe {
+    border: 3px solid #22c55e;
+    background: #f0fdf4;
+    position: relative;
+}
+
+.safety-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #16a34a;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+
+.product-specs.baby-focus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.product-specs.baby-focus span {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.capacity {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.noise {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+.safety-features {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.safety-features h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.safety-features ul {
+    margin: 0;
+}
+
+.safety-features li {
+    margin-bottom: 0.5rem;
+    color: #166534;
+    font-weight: 500;
+}
+
+.baby-benefits {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.baby-benefits h4 {
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.user-review {
+    background: #fffbeb;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.user-review h5 {
+    color: #d97706;
+    margin-bottom: 0.8rem;
+}
+
+.ranking-list.baby-edition {
+    background: #f0fdf4;
+    border: 2px solid #22c55e;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.rank-item.baby-item {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.safety-level {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.safety-level.high {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.safety-level.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.safety-level.low {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.baby-point {
+    background: #f0fdf4;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #166534;
+}
+
+.placement-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.placement-do,
+.placement-dont {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid;
+}
+
+.placement-do {
+    background: #f0fdf4;
+    border-color: #22c55e;
+}
+
+.placement-do h4 {
+    color: #16a34a;
+}
+
+.placement-dont {
+    background: #fef2f2;
+    border-color: #ef4444;
+}
+
+.placement-dont h4 {
+    color: #dc2626;
+}
+
+.operation-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tip-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.tip-section h4 {
+    color: #16a34a;
+    margin-bottom: 1rem;
+}
+
+.warning-box.small {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-top: 1rem;
+}
+
+.seasonal-guide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.season-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.season-item h4 {
+    color: #16a34a;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.maintenance-daily,
+.maintenance-weekly,
+.maintenance-monthly {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.maintenance-step {
+    margin: 1.5rem 0;
+}
+
+.step-number {
+    background: #16a34a;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 0.8rem;
+}
+
+.recipe-box {
+    background: #1f2937;
+    color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.recipe-box h5 {
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.cleaning-warnings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.warning-item {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.warning-item h4 {
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.trouble-list {
+    margin: 2rem 0;
+}
+
+.trouble-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+}
+
+.trouble-item h3 {
+    color: #16a34a;
+    margin-bottom: 1.5rem;
+}
+
+.trouble-details h4 {
+    color: #374151;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.safety-note {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.safety-note p {
+    color: #dc2626;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .impact-grid,
+    .benefit-grid,
+    .safety-requirements,
+    .age-guide-container,
+    .operation-tips,
+    .seasonal-guide,
+    .placement-guide,
+    .cleaning-warnings {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-specs.baby-focus {
+        flex-direction: column;
+    }
+    
+    .age-section h3 {
+        font-size: 1.2rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .point-item h3 {
+        margin-left: 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* 経済効果・年間コストサマリー用スタイル */
+.economic-impact {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.economic-impact h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.impact-hero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cost-vs-benefit {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 600px;
+}
+
+.cost-side, .benefit-side {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-width: 180px;
+}
+
+.cost-side {
+    background: #ffebee;
+    border: 2px solid #ffcdd2;
+}
+
+.benefit-side {
+    background: #e8f5e8;
+    border: 2px solid #c8e6c9;
+}
+
+.cost-side h4, .benefit-side h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.amount {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.amount.negative {
+    color: #d32f2f;
+}
+
+.amount.positive {
+    color: #388e3c;
+}
+
+.vs-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.season-timeline {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.season-timeline h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.seasons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.season-block {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.season-block h4 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.season-block .usage-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.season-block .priority {
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.priority.high {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.priority.medium {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.priority.low {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.annual-cost-summary {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.annual-cost-summary h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.cost-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cost-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    transition: transform 0.2s ease;
+}
+
+.cost-card:hover {
+    transform: translateY(-2px);
+}
+
+.cost-card.best {
+    border-color: #4caf50;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.cost-card.good {
+    border-color: #ff9800;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+}
+
+.cost-card.caution {
+    border-color: #2196f3;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.cost-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cost-card h4 {
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.annual-cost {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.cost-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+.usage-tip {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.usage-tip h4 {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.usage-tip ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.usage-tip li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.usage-tip li::before {
+    content: '📅';
+    position: absolute;
+    left: 0;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .cost-vs-benefit {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .vs-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .seasons-container,
+    .cost-summary-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .economic-impact,
+    .season-timeline,
+    .annual-cost-summary {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+}
+
+/* 簡潔な導入セクション用スタイル */
+.quick-intro {
+    background: linear-gradient(135deg, #fff5f5 0%, #fef4e4 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+    border: 2px solid #ffcc80;
+}
+
+.quick-intro h2 {
+    color: #ff6b35;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.intro-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.point-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid;
+}
+
+.point-card.must {
+    border-left-color: #ff4757;
+}
+
+.point-card.warning {
+    border-left-color: #ffa502;
+}
+
+.point-card.success {
+    border-left-color: #26de81;
+}
+
+.point-card h3 {
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.point-card p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.point-card strong {
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .quick-intro {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .quick-intro h2 {
+        font-size: 1.3rem;
+    }
+    
+    .intro-points {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .point-card {
+        padding: 1.2rem;
+    }
+}
+
+/* 赤ちゃん記事用のクイック導入スタイル */
+.quick-intro.baby-focus {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffeaa7 100%);
+    border: 2px solid #fdcb6e;
+}
+
+.quick-intro.baby-focus h2 {
+    color: #e17055;
+}
+
+.point-card.timing {
+    border-left-color: #00b894;
+}
+
+.point-card.safety {
+    border-left-color: #fdcb6e;
+}
+
+.point-card.recommend {
+    border-left-color: #6c5ce7;
+}
+
+.quick-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border-left: 3px solid #00b894;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

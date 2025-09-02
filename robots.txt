@@ -1,0 +1,144 @@
+# robots.txt for 失敗しないお得マン！
+# https://shippai-shinai-otokuman.com
+
+# すべての検索エンジンに対する設定
+User-agent: *
+
+# 許可するページ
+Allow: /
+Allow: /index.html
+Allow: /pages/
+Allow: /articles/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# 除外するページ・ディレクトリ
+Disallow: /admin/
+Disallow: /data/
+Disallow: /js/site-tester.js
+Disallow: /*?test=*
+Disallow: /*test*
+
+# 特定の検索エンジン向け設定
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /admin/
+
+# Bingbot
+User-agent: bingbot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /admin/
+
+# Yahoo Japan
+User-agent: Y!J
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /admin/
+
+# 悪意のあるボットの制限
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MajesticSEO
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# クロール間隔の設定（過負荷防止）
+Crawl-delay: 1
+
+# XMLサイトマップの場所
+Sitemap: https://shippai-shinai-otokuman.com/sitemap.xml
+
+# 重要ページの明示的な許可
+Allow: /articles/humidifier-guide-2025.html
+Allow: /articles/air-purifier-guide-2025.html
+Allow: /pages/humidifier.html
+Allow: /pages/air-purifier.html
+Allow: /pages/about.html
+Allow: /pages/contact.html
+Allow: /pages/sitemap.html
+
+# メディアファイルの許可
+Allow: /images/*.jpg
+Allow: /images/*.jpeg  
+Allow: /images/*.png
+Allow: /images/*.gif
+Allow: /images/*.svg
+Allow: /images/*.webp
+
+# CSS・JSファイルの明示的許可（SEO重要）
+Allow: /css/style.css
+Allow: /css/article.css
+Allow: /css/related-articles.css
+Allow: /js/main.js
+Allow: /js/search.js
+Allow: /js/analytics.js
+Allow: /js/reading-time.js
+Allow: /js/table-of-contents.js
+
+# 検索エンジンのアーカイブ防止
+# （プライベートな管理ページなど）
+User-agent: ia_archiver
+Disallow: /admin/
+
+# モバイル専用Googlebot
+User-agent: Googlebot-Mobile
+Allow: /
+Disallow: /admin/
+
+# 画像検索用Googlebot
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /css/
+Disallow: /admin/
+
+# 動画検索用Googlebot（将来対応）
+User-agent: Googlebot-Video
+Allow: /videos/
+Disallow: /admin/
+
+# ニュースボット（記事サイトとして）
+User-agent: Googlebot-News
+Allow: /articles/
+Allow: /pages/
+Disallow: /admin/
+
+# Facebook外部ヒット
+User-agent: facebookexternalhit
+Allow: /
+Allow: /articles/
+Allow: /pages/
+
+# Twitter外部ヒット
+User-agent: Twitterbot
+Allow: /
+Allow: /articles/
+Allow: /pages/
+
+# LINE外部ヒット
+User-agent: LINE
+Allow: /
+Allow: /articles/
+Allow: /pages/
+
+# 最終更新日: 2025-08-22
+# 連絡先: お問い合わせフォーム https://shippai-shinai-otokuman.com/pages/contact.html

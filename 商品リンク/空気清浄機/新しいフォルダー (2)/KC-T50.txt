@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"【エントリー最大3倍｜9\/1迄】 SHARP｜シャープ プラズマクラスター加湿空気清浄機 ホワイト系 KC-T50-W [適用畳数：23畳 \/最大適用畳数(加湿)：14畳]【newlife_campaign_f】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/biccamera\/cabinet\/product\/10741","p":["\/00000013307499_a01.jpg","\/00000013307499_a02.jpg","\/00000013307499_a03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/biccamera\/4550556135856\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/biccamera\/4550556135856\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E6%9C%80%E5%A4%A73%E5%80%8D%EF%BD%9C9%2F1%E8%BF%84%E3%80%91%20SHARP%EF%BD%9C%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97%20%E3%83%97%E3%83%A9%E3%82%BA%E3%83%9E%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%8A%A0%E6%B9%BF%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E7%B3%BB%20KC-T50-W%20%5B%E9%81%A9%E7%94%A8%E7%95%B3%E6%95%B0%EF%BC%9A23%E7%95%B3%20%2F%E6%9C%80%E5%A4%A7%E9%81%A9%E7%94%A8%E7%95%B3%E6%95%B0(%E5%8A%A0%E6%B9%BF)%EF%BC%9A14%E7%95%B3%5D%E3%80%90newlife_campaign_f%E3%80%91","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"V5G7n","s":"s"});
+</script>
+<div id="msmaflink-V5G7n">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

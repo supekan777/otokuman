@@ -1,0 +1,327 @@
+/**
+ * 画像システム拡張CSS - 家電特化サイト用
+ * 既存のデザインに統合された画像表示システム
+ */
+
+/* =================================
+   商品画像の強化
+   ================================= */
+
+.product-card .product-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image img,
+.product-image .placeholder-image,
+.product-image .lazy-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.product-image .placeholder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card:hover .product-image img,
+.product-card:hover .product-image .lazy-image {
+    transform: scale(1.05);
+}
+
+/* 商品画像の読み込み状態 */
+.product-image .lazy-image:not(.loaded) {
+    background: linear-gradient(90deg, #f8f9fa 25%, #e9ecef 50%, #f8f9fa 75%);
+    background-size: 200% 100%;
+    animation: shimmerProduct 2s infinite;
+}
+
+@keyframes shimmerProduct {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* 商品バッジとの調和 */
+.product-card .product-badge {
+    z-index: 10;
+    position: relative;
+}
+
+/* =================================
+   記事画像の強化
+   ================================= */
+
+.article-card .article-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    transition: all 0.3s ease;
+}
+
+.article-card:hover .article-image {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.article-image img,
+.article-image .placeholder-image,
+.article-image .lazy-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.article-image .placeholder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-card:hover .article-image img,
+.article-card:hover .article-image .lazy-image {
+    transform: scale(1.03);
+}
+
+/* 記事画像の読み込み状態 */
+.article-image .lazy-image:not(.loaded) {
+    background: linear-gradient(45deg, #fff5e6 25%, #ffe0cc 50%, #fff5e6 75%);
+    background-size: 200% 100%;
+    animation: shimmerArticle 1.8s infinite;
+}
+
+@keyframes shimmerArticle {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* 記事カテゴリバッジとの調和 */
+.article-image .article-category {
+    /* スタイルはstyle.cssで統一定義 */
+}
+
+/* =================================
+   ヒーロー画像の強化
+   ================================= */
+
+.hero-image .hero-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: heroShine 3s infinite;
+}
+
+@keyframes heroShine {
+    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* =================================
+   キャラクター画像の強化
+   ================================= */
+
+.pixel-character {
+    position: relative;
+    overflow: hidden;
+}
+
+.pixel-character::before {
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.character-dialogue:hover .pixel-character::before {
+    transform: scale(1.1);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* =================================
+   レスポンシブ画像強化
+   ================================= */
+
+@media (max-width: 768px) {
+    .product-image img,
+    .product-image .lazy-image {
+        height: 160px;
+    }
+    
+    .article-image img,
+    .article-image .lazy-image {
+        height: 140px;
+    }
+    
+    .hero-image .hero-card {
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image img,
+    .product-image .lazy-image {
+        height: 140px;
+    }
+    
+    .article-image img,
+    .article-image .lazy-image {
+        height: 120px;
+    }
+}
+
+/* =================================
+   パフォーマンス最適化
+   ================================= */
+
+/* 画像のプリロードヒント */
+.lazy-image {
+    content-visibility: auto;
+    contain: layout style paint;
+}
+
+/* GPU加速の有効化 */
+.product-image,
+.article-image,
+.hero-image {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* =================================
+   アクセシビリティ強化
+   ================================= */
+
+/* 動きを抑えたい場合のメディアクエリ */
+@media (prefers-reduced-motion: reduce) {
+    .product-image img,
+    .article-image img,
+    .lazy-image,
+    .pixel-character::before {
+        transition: none;
+        animation: none;
+    }
+    
+    .hero-image .hero-card::before {
+        animation: none;
+    }
+}
+
+/* ハイコントラストモード対応 */
+@media (prefers-contrast: high) {
+    .product-image,
+    .article-image {
+        border: 2px solid #000;
+    }
+    
+    .lazy-image:not(.loaded) {
+        background: repeating-linear-gradient(
+            45deg,
+            #000,
+            #000 2px,
+            #fff 2px,
+            #fff 4px
+        );
+    }
+}
+
+/* =================================
+   エラー状態の強化
+   ================================= */
+
+.lazy-image.error-fallback {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 2px dashed #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.lazy-image.error-fallback::after {
+    content: '画像を読み込み中...';
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* =================================
+   プリント用スタイル
+   ================================= */
+
+@media print {
+    .lazy-image:not(.loaded) {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+    }
+    
+    .product-image,
+    .article-image {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+    
+    .lazy-image.error-fallback::after {
+        content: '[画像]';
+    }
+}
+
+/* =================================
+   ダークモード対応
+   ================================= */
+
+@media (prefers-color-scheme: dark) {
+    .product-image,
+    .article-image {
+        background: linear-gradient(135deg, #2d3748, #4a5568);
+    }
+    
+    .lazy-image:not(.loaded) {
+        background: linear-gradient(90deg, #2d3748 25%, #4a5568 50%, #2d3748 75%);
+    }
+    
+    .article-image .article-category {
+        background: #2d5818;
+        color: #e2e8f0;
+    }
+    
+    .lazy-image.error-fallback {
+        background: linear-gradient(135deg, #2d3748, #4a5568);
+        border-color: #4a5568;
+    }
+    
+    .lazy-image.error-fallback::after {
+        color: #a0aec0;
+    }
+}

@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"★SHARP \/ シャープ KI-TX75-H [グレー系]【空気清浄機】【送料無料】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/e-cutestyle\/cabinet\/img049\/p000000886198_1.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/e-cutestyle\/p000000886198\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/e-cutestyle\/p000000886198\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E2%98%85SHARP%20%2F%20%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97%20KI-TX75-H%20%5B%E3%82%B0%E3%83%AC%E3%83%BC%E7%B3%BB%5D%E3%80%90%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%E3%80%91%E3%80%90%E9%80%81%E6%96%99%E7%84%A1%E6%96%99%E3%80%91","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"dYneY","s":"s"});
+</script>
+<div id="msmaflink-dYneY">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

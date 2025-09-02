@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"【2025年09月01日発売】 象印マホービン｜ZOJIRUSHI スチーム式加湿器 ホワイト EE-TB60-WA [スチーム式]","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/biccamera\/cabinet\/product\/13760","p":["\/00000014297603_a01.jpg","\/00000014297603_a02.jpg","\/00000014297603_a03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/biccamera\/4974305231413\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/biccamera\/4974305231413\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%902025%E5%B9%B409%E6%9C%8801%E6%97%A5%E7%99%BA%E5%A3%B2%E3%80%91%20%E8%B1%A1%E5%8D%B0%E3%83%9E%E3%83%9B%E3%83%BC%E3%83%93%E3%83%B3%EF%BD%9CZOJIRUSHI%20%E3%82%B9%E3%83%81%E3%83%BC%E3%83%A0%E5%BC%8F%E5%8A%A0%E6%B9%BF%E5%99%A8%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20EE-TB60-WA%20%5B%E3%82%B9%E3%83%81%E3%83%BC%E3%83%A0%E5%BC%8F%5D","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"BKw86","s":"s"});
+</script>
+<div id="msmaflink-BKw86">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

@@ -1,0 +1,35 @@
+EC2サーバーデプロイ手順
+========================
+
+以下のファイルを更新する必要があります：
+
+1. CSSファイル：
+   - /var/www/html/css/mobile.css
+   
+2. JavaScriptファイル：
+   - /var/www/html/js/mobile-optimizer.js
+   
+3. 空気清浄機記事（14ファイル）：
+   - /var/www/html/articles/air-purifier-guide-2025.html
+   - /var/www/html/articles/air-purifier-electricity-cost-comparison.html
+   - /var/www/html/articles/air-purifier-filter-maintenance-guide.html
+   - /var/www/html/articles/air-purifier-hvac-integration-guide.html
+   - /var/www/html/articles/air-purifier-not-working-solutions.html
+   - /var/www/html/articles/allergy-specialized-air-purifier-guide.html
+   - /var/www/html/articles/baby-child-air-purifier-guide.html
+   - /var/www/html/articles/bedroom-sleep-air-purifier-guide.html
+   - /var/www/html/articles/budget-price-air-purifier-guide.html
+   - /var/www/html/articles/compact-portable-air-purifier-guide.html
+   - /var/www/html/articles/odor-specialized-air-purifier-guide.html
+   - /var/www/html/articles/pet-specialized-air-purifier-guide.html
+   - /var/www/html/articles/premium-high-end-air-purifier-guide.html
+   - /var/www/html/articles/single-living-air-purifier-guide.html
+
+修正内容：
+----------
+1. mobile.css: モバイル表示時にヘッダーナビゲーションを非表示にする設定を追加
+2. mobile-optimizer.js: ヘッダー削除機能を無効化
+3. 空気清浄機記事: article.jsスクリプトを追加
+
+アーカイブファイル：deploy_files.tar.gz
+サーバーIP: 16.176.167.244

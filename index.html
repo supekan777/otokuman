@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家電レビュー専門サイト | 失敗しないお得マン！</title>
+    <meta name="description" content="家電製品の詳細レビュー・比較・ランキングを掲載する専門サイト。実際の使用感と専門的な評価で、あなたの家電選びをサポートします。">
+    <!-- CSS loading with fallback -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/overflow-fix.css">
+    <link rel="stylesheet" href="css/image-enhancements.css">
+    
+    <!-- External resources with optimization -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "失敗しないお得マン！",
+        "alternateName": "家電レビュー専門サイト",
+        "url": "https://www.otokuman.com",
+        "description": "家電製品の詳細レビュー・比較・ランキングを掲載する専門サイト。実際の使用感と専門的な評価で、あなたの家電選びをサポートします。",
+        "publisher": {
+            "@type": "Organization",
+            "name": "失敗しないお得マン！",
+            "url": "https://www.otokuman.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.otokuman.com/images/logo.png",
+                "width": 200,
+                "height": 60
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.otokuman.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://www.otokuman.com"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "失敗しないお得マン！",
+        "url": "https://www.otokuman.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.otokuman.com/images/logo.png",
+            "width": 200,
+            "height": 60
+        },
+        "description": "家電選びの専門サイト。実際に使った本音レビューと詳細な比較データで、あなたにぴったりの家電が見つかります。",
+        "foundingDate": "2025-01-01",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "JP"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "email": "info@www.otokuman.com",
+            "availableLanguage": "Japanese"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "人気家電カテゴリ",
+        "description": "家電レビュー専門サイトの人気カテゴリ一覧",
+        "numberOfItems": 6,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "加湿器",
+                "url": "https://www.otokuman.com/pages/humidifier.html",
+                "description": "乾燥対策の必需品"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "空気清浄機",
+                "url": "https://www.otokuman.com/pages/air-purifier.html",
+                "description": "クリーンな空気環境"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "掃除機",
+                "url": "https://www.otokuman.com/pages/vacuum.html",
+                "description": "お掃除を効率化"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "キッチン家電",
+                "url": "https://www.otokuman.com/pages/kitchen-appliances.html",
+                "description": "料理をもっと楽しく"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "美容家電",
+                "url": "https://www.otokuman.com/pages/beauty.html",
+                "description": "美しさをサポート"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "空調家電",
+                "url": "https://www.otokuman.com/pages/air-conditioning.html",
+                "description": "快適な室内環境"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><i class="fas fa-home"></i> 失敗しないお得マン！</h1>
+                    <span class="tagline">家電選びの専門サイト</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">カテゴリ <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="pages/humidifier.html">加湿器</a>
+                            <a href="pages/air-purifier.html">空気清浄機</a>
+                            <a href="pages/vacuum.html">掃除機</a>
+                            <a href="pages/kitchen-appliances.html">キッチン家電</a>
+                            <a href="pages/beauty-appliances.html">美容家電</a>
+                        </div>
+                    </li>
+                    <li><a href="pages/about.html" class="nav-link">サイトについて</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">お問い合わせ</a></li>
+                    <li><a href="pages/privacy-policy.html" class="nav-link">プライバシーポリシー</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <!-- ヒーローセクション -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        失敗しない家電選び<br>
+                        <span class="accent">失敗しないお得マン！</span>
+                    </h2>
+                    <p class="hero-description">
+                        実際に使った本音レビューと詳細な比較データで、<br>
+                        あなたにぴったりの家電が見つかります
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 人気カテゴリ -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">人気カテゴリ</h2>
+                <div class="category-grid">
+                    <a href="pages/humidifier.html" style="text-decoration: none; color: inherit;">
+                        <div class="category-card" data-category="humidifier">
+                            <div class="category-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>加湿器</h3>
+                                <p>乾燥対策の必需品</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/air-purifier.html" style="text-decoration: none; color: inherit;">
+                        <div class="category-card" data-category="air-purifier">
+                            <div class="category-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>空気清浄機</h3>
+                                <p>クリーンな空気環境</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/vacuum.html" style="text-decoration: none; color: inherit;">
+                        <div class="category-card" data-category="vacuum">
+                            <div class="category-icon">
+                                <i class="fas fa-broom"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>掃除機</h3>
+                                <p>お掃除を効率化</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/kitchen-appliances.html" style="text-decoration: none; color: inherit;">
+                        <div class="category-card" data-category="kitchen">
+                            <div class="category-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>キッチン家電</h3>
+                                <p>料理をもっと楽しく</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="pages/beauty-appliances.html" style="text-decoration: none; color: inherit;">
+                        <div class="category-card" data-category="beauty">
+                            <div class="category-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>美容家電</h3>
+                                <p>美しさをサポート</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div class="category-card" data-category="air-conditioning">
+                        <div class="category-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>空調家電</h3>
+                            <p>快適な室内環境</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お得マンの一押し商品 -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">お得マンの一押し商品！</h2>
+                <div class="product-slider">
+                    <div class="product-card featured">
+                        <div class="product-badge">1位</div>
+                        <div class="product-image">
+                            <div class="placeholder-image">📱</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>シャープ プラズマクラスター加湿器 HV-L55</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">4.2 (67件)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥12,800</span>
+                                <span class="original-price">¥15,800</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">プラズマクラスター</span>
+                                <span class="feature">15畳対応</span>
+                                <span class="feature">省エネ</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="articles/humidifier-guide-2025.html" class="btn btn-primary">詳細レビュー</a>
+                                <a href="#" class="btn btn-outline affiliate-link">Amazon</a>
+                                <a href="#" class="btn btn-outline affiliate-link">楽天</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge">2位</div>
+                        <div class="product-image">
+                            <div class="placeholder-image">💨</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>パナソニック 気化式加湿機 FE-KFP07</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-text">4.0 (43件)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥9,200</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">ナノイー</span>
+                                <span class="feature">11畳対応</span>
+                                <span class="feature">静音</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="pages/humidifier-panasonic-fe-kfp07.html" class="btn btn-primary">詳細レビュー</a>
+                                <a href="#" class="btn btn-outline affiliate-link">Amazon</a>
+                                <a href="#" class="btn btn-outline affiliate-link">楽天</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge">3位</div>
+                        <div class="product-image">
+                            <div class="placeholder-image">💧</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>象印 スチーム式加湿器 EE-DC50</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-text">4.5 (89件)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥15,000</span>
+                            </div>
+                            <div class="product-features">
+                                <span class="feature">スチーム式</span>
+                                <span class="feature">13畳対応</span>
+                                <span class="feature">清潔</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="pages/humidifier-zojirushi-ee-dc50.html" class="btn btn-primary">詳細レビュー</a>
+                                <a href="#" class="btn btn-outline affiliate-link">Amazon</a>
+                                <a href="#" class="btn btn-outline affiliate-link">楽天</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新記事 -->
+        <section class="latest-articles">
+            <div class="container">
+                <h2 class="section-title">最新記事</h2>
+                <div class="article-grid">
+                    <!-- 家電特集セクション -->
+                    <article class="article-card featured">
+                        <div class="article-image">
+                            <div class="placeholder-image">🏆</div>
+                            <div class="article-category">家電特集</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="pages/humidifier.html" style="color: inherit; text-decoration: none;">【2025年版】家電完全ガイド｜加湿器・空気清浄機の選び方から使い方まで</a></h3>
+                            <p>加湿器16記事、空気清浄機15記事の計31記事で家電選びを完全サポート。選び方から使い方、メンテナンス、電気代比較まで詳しくご紹介...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">31記事収録</span>
+                                <span class="read-time">完全ガイド</span>
+                            </div>
+                            <div class="cta-section" style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                                <a href="pages/humidifier.html" class="btn btn-primary" style="flex: 1; padding: 0.75rem; font-size: 0.9rem;">
+                                    <i class="fas fa-tint"></i> 加湿器
+                                </a>
+                                <a href="pages/air-purifier.html" class="btn btn-primary" style="flex: 1; padding: 0.75rem; font-size: 0.9rem;">
+                                    <i class="fas fa-wind"></i> 空気清浄機
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 基本ガイド -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">📝</div>
+                            <div class="article-category">基本ガイド</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="articles/humidifier-guide-2025.html" style="color: inherit; text-decoration: none;">【2025年最新】加湿器おすすめ15選！選び方から使い方まで徹底解説</a></h3>
+                            <p>2025年最新の加湿器おすすめ15選を徹底比較。超音波式・気化式・スチーム式・ハイブリッド式の特徴、選び方のポイント、お手入れ方法まで詳しく解説...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">2025年1月22日</span>
+                                <span class="read-time">15分で読める</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 空気清浄機ガイド -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">🌪️</div>
+                            <div class="article-category">基本ガイド</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="articles/air-purifier-guide-2025.html" style="color: inherit; text-decoration: none;">【2025年最新】空気清浄機おすすめ20選！花粉・PM2.5対策の選び方完全ガイド</a></h3>
+                            <p>2025年最新の空気清浄機おすすめ20選を徹底比較。HEPA フィルター・プラズマクラスター・ナノイーなど技術別の特徴や選び方のポイントを詳しく解説...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">2025年1月22日</span>
+                                <span class="read-time">18分で読める</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 花粉対策 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">🌸</div>
+                            <div class="article-category">花粉対策</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="articles/air-purifier-pollen-allergy-2025.html" style="color: inherit; text-decoration: none;">【2025年版】花粉症対策空気清浄機おすすめ12選｜アレルギー専門医が選ぶ最強モデル</a></h3>
+                            <p>アレルギー専門医監修による花粉症対策に最適な空気清浄機12選。HEPA フィルター性能、適用床面積、運転音を徹底比較し、症状別におすすめモデルをご紹介...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">2025年1月22日</span>
+                                <span class="read-time">16分で読める</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 電気代比較 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">⚡</div>
+                            <div class="article-category">電気代</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="articles/humidifier-electricity-cost-comparison.html" style="color: inherit; text-decoration: none;">【2025年】加湿器の電気代を徹底比較！月500円以下で使える省エネモデル15選</a></h3>
+                            <p>電気代高騰の今、加湿器の電気代はタイプによって10倍以上の差が！気化式・超音波式・スチーム式の電気代を詳しく比較し、月500円以下の省エネモデルをご紹介...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">2025年1月22日</span>
+                                <span class="read-time">12分で読める</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ペット対応 -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <div class="placeholder-image">🐕</div>
+                            <div class="article-category">ペット</div>
+                        </div>
+                        <div class="article-content">
+                            <h3><a href="articles/air-purifier-pet-hair-odor-2025.html" style="color: inherit; text-decoration: none;">【2025年版】ペット対応空気清浄機おすすめ10選｜毛・臭い・アレルゲン対策完全ガイド</a></h3>
+                            <p>ペットの毛・臭い・アレルゲンを効果的に除去する空気清浄機10選。HEPAフィルター、活性炭フィルター、脱臭機能を重視し、犬・猫別のおすすめモデルをご紹介...</p>
+                            <div class="article-meta">
+                                <span class="publish-date">2025年1月22日</span>
+                                <span class="read-time">14分で読める</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="more-articles">
+                    <a href="pages/humidifier.html" class="btn btn-primary featured-btn">
+                        <i class="fas fa-tint"></i> 加湿器記事一覧
+                    </a>
+                    <a href="pages/air-purifier.html" class="btn btn-primary featured-btn">
+                        <i class="fas fa-wind"></i> 空気清浄機記事一覧
+                    </a>
+                    <a href="pages/vacuum.html" class="btn btn-primary featured-btn">
+                        <i class="fas fa-broom"></i> 掃除機記事一覧
+                    </a>
+                    <a href="pages/articles.html" class="btn btn-outline">全記事一覧を見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 選ばれる理由 -->
+        <section class="why-choose-us">
+            <div class="container">
+                <h2 class="section-title">失敗しないお得マン！が選ばれる理由</h2>
+                <div class="reason-grid">
+                    <div class="reason-card">
+                        <div class="reason-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>徹底的な実機レビュー</h3>
+                        <p>実際に商品を購入・使用して、本音でレビューしています。メーカーの宣伝文句ではなく、リアルな使用感をお伝えします。</p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>電気代まで考慮した比較</h3>
+                        <p>価格・性能・省エネ性・電気代など、トータルコストを考慮した商品比較。長期的に見て本当にお得な商品が見つかります。</p>
+                    </div>
+                    
+                    <div class="reason-card">
+                        <div class="reason-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>最新情報を随時更新</h3>
+                        <p>新商品の発売情報や価格変動を常にチェック。いつでも最新の情報をお届けしています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>失敗しないお得マン！</h3>
+                    <p>家電選びの専門サイト</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>カテゴリ</h4>
+                    <ul>
+                        <li><a href="pages/humidifier.html">加湿器</a></li>
+                        <li><a href="pages/air-purifier.html">空気清浄機</a></li>
+                        <li><a href="pages/vacuum.html">掃除機</a></li>
+                        <li><a href="pages/kitchen-appliances.html">キッチン家電</a></li>
+                        <li><a href="pages/beauty.html">美容家電</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>サイト情報</h4>
+                    <ul>
+                        <li><a href="pages/about.html">サイトについて</a></li>
+                        <li><a href="pages/privacy-policy.html">プライバシーポリシー</a></li>
+                        <li><a href="pages/terms.html">利用規約</a></li>
+                        <li><a href="pages/contact.html">お問い合わせ</a></li>
+                        <li><a href="pages/sitemap.html">サイトマップ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>お得情報</h4>
+                    <p>最新のセール情報やお得なキャンペーンをお届けします。</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="メールアドレス" class="newsletter-input">
+                        <button class="newsletter-btn">登録</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
+                <p>※当サイトはアフィリエイト広告を利用しています</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/performance-optimizer.js"></script>
+    <script defer src="js/image-system.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/search.js"></script> --></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/social-meta-tags.js"></script>
+    <script defer src="js/site-tester.js"></script>
+    <script defer src="js/mobile-optimizer.js"></script>
+</body>
+</html>

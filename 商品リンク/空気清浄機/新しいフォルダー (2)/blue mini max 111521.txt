@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"ブルーエア 空気清浄機 小型 12畳 Blue Mini Max 静音 寝室 玄関 省エネ 脱臭 カビ ウイルス 卓上 軽量 コンパクト ペット 花粉対策 節電 360度吸引 ハウスダスト 簡単お手入れ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/mannishboy\/cabinet\/item\/1130","p":["\/20076219129_1.jpg","\/20076219129_2.jpg","\/20076219129_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/mannishboy\/20076219129\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/mannishboy\/20076219129\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A8%E3%82%A2%20%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20%E5%B0%8F%E5%9E%8B%2012%E7%95%B3%20Blue%20Mini%20Max%20%E9%9D%99%E9%9F%B3%20%E5%AF%9D%E5%AE%A4%20%E7%8E%84%E9%96%A2%20%E7%9C%81%E3%82%A8%E3%83%8D%20%E8%84%B1%E8%87%AD%20%E3%82%AB%E3%83%93%20%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%20%E5%8D%93%E4%B8%8A%20%E8%BB%BD%E9%87%8F%20%E3%82%B3%E3%83%B3%E3%83%91%E3%82%AF%E3%83%88%20%E3%83%9A%E3%83%83%E3%83%88%20%E8%8A%B1%E7%B2%89%E5%AF%BE%E7%AD%96%20%E7%AF%80%E9%9B%BB%20360%E5%BA%A6%E5%90%B8%E5%BC%95%20%E3%83%8F%E3%82%A6%E3%82%B9%E3%83%80%E3%82%B9%E3%83%88%20%E7%B0%A1%E5%8D%98%E3%81%8A%E6%89%8B%E5%85%A5%E3%82%8C","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"Jk2sq","s":"s"});
+</script>
+<div id="msmaflink-Jk2sq">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

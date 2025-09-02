@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"【8\/30限定ポイント2倍】ダイキン DAIKIN 加湿ストリーマ空気清浄機 ホワイト MCK555A-W〈MCK555A-W〉","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/denkichiweb\/cabinet\/11400063","p":["\/4573535366607_1.jpg","\/4573535366607_2.jpg","\/4573535366607_3.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/denkichiweb\/4573535366607\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/denkichiweb\/4573535366607\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%908%2F30%E9%99%90%E5%AE%9A%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%882%E5%80%8D%E3%80%91%E3%83%80%E3%82%A4%E3%82%AD%E3%83%B3%20DAIKIN%20%E5%8A%A0%E6%B9%BF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20MCK555A-W%E3%80%88MCK555A-W%E3%80%89","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"9EYD6","s":"s"});
+</script>
+<div id="msmaflink-9EYD6">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->
