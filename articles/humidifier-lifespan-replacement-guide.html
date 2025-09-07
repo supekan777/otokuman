@@ -286,6 +286,7 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- ヘッダー -->
@@ -379,6 +380,134 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- 解説セクション -->
+            <div class="explanation-section">
+                <p>中村さんのケースのように、加湿器の寿命は<strong>タイプによって大きく異なります</strong>。実は、購入時の価格だけでなく、寿命を考慮した「年間コスト」で選ぶことが、長期的にお得な買い物の秘訣なのです。</p>
+                
+                <div class="key-points-box">
+                    <h4>🔍 寿命を左右する3大要因</h4>
+                    <div class="factor-grid">
+                        <div class="factor-item">
+                            <span class="factor-icon">⚙️</span>
+                            <div class="factor-content">
+                                <h5>加湿方式の違い</h5>
+                                <p>超音波式は振動子、スチーム式はヒーター、気化式はフィルターの劣化が寿命を決定</p>
+                            </div>
+                        </div>
+                        <div class="factor-item">
+                            <span class="factor-icon">🧽</span>
+                            <div class="factor-content">
+                                <h5>メンテナンス頻度</h5>
+                                <p>適切な清掃で寿命は2〜3倍延長可能。特に水垢・カビ対策が重要</p>
+                            </div>
+                        </div>
+                        <div class="factor-item">
+                            <span class="factor-icon">⏱️</span>
+                            <div class="factor-content">
+                                <h5>使用時間・環境</h5>
+                                <p>24時間連続運転は寿命を半減。硬水地域では更に短命化</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="emphasis-text">
+                    以下のデータは、<strong>一般的な使用環境（1日8時間、適度なメンテナンス実施）</strong>での平均寿命です。あなたの加湿器はどのタイプでしょうか？まずは現在お使いのタイプを確認し、残り寿命を把握することから始めましょう。
+                </p>
+            </div>
+            
+            <style>
+                .explanation-section {
+                    margin: 2rem 0;
+                    padding: 1.5rem;
+                    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+                    border-radius: 12px;
+                    border-left: 4px solid var(--primary-color);
+                }
+                
+                .explanation-section p {
+                    line-height: 1.8;
+                    color: #1e293b;
+                    margin-bottom: 1rem;
+                }
+                
+                .key-points-box {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    margin: 1.5rem 0;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                }
+                
+                .key-points-box h4 {
+                    color: var(--primary-color);
+                    margin-bottom: 1rem;
+                    font-size: 1.2rem;
+                }
+                
+                .factor-grid {
+                    display: grid;
+                    gap: 1rem;
+                }
+                
+                .factor-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    padding: 0.75rem;
+                    background: #f8fafc;
+                    border-radius: 8px;
+                    border: 1px solid #e2e8f0;
+                }
+                
+                .factor-icon {
+                    font-size: 1.5rem;
+                    flex-shrink: 0;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--primary-color);
+                    color: white;
+                    border-radius: 50%;
+                }
+                
+                .factor-content h5 {
+                    margin: 0 0 0.25rem 0;
+                    color: #1e293b;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                
+                .factor-content p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: #64748b;
+                    line-height: 1.5;
+                }
+                
+                .emphasis-text {
+                    background: white;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid var(--primary-color);
+                    margin-top: 1.5rem;
+                    font-size: 0.95rem;
+                }
+                
+                @media (max-width: 768px) {
+                    .explanation-section {
+                        padding: 1rem;
+                    }
+                    
+                    .factor-item {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                }
+            </style>
 
                     <div class="lifespan-overview">
                         <h3>📅 加湿器タイプ別平均寿命</h3>
@@ -667,6 +796,220 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- 診断チェッカー説明セクション -->
+            <div class="diagnostic-explanation">
+                <p>加湿器の寿命は、実は<strong>「突然壊れる」のではなく「徐々に症状が現れる」</strong>ものです。早期に兆候を見つけることで、シーズン中の突然の故障を避け、計画的な買い替えが可能になります。</p>
+                
+                <div class="warning-signs-overview">
+                    <h4>⚠️ 見逃しがちな3つの危険信号</h4>
+                    <div class="signs-grid">
+                        <div class="sign-card early">
+                            <div class="sign-header">
+                                <span class="sign-stage">初期段階</span>
+                                <span class="sign-level safe">まだ使用可能</span>
+                            </div>
+                            <ul class="sign-list">
+                                <li>加湿量のわずかな低下</li>
+                                <li>運転音の微妙な変化</li>
+                                <li>水の減りが遅くなる</li>
+                            </ul>
+                            <p class="sign-action">→ メンテナンス強化で延命可能</p>
+                        </div>
+                        
+                        <div class="sign-card middle">
+                            <div class="sign-header">
+                                <span class="sign-stage">中期段階</span>
+                                <span class="sign-level warning">要注意</span>
+                            </div>
+                            <ul class="sign-list">
+                                <li>異音・振動の発生</li>
+                                <li>カビ臭・異臭の発生</li>
+                                <li>部品の変色・劣化</li>
+                            </ul>
+                            <p class="sign-action">→ 買い替え準備を開始</p>
+                        </div>
+                        
+                        <div class="sign-card late">
+                            <div class="sign-header">
+                                <span class="sign-stage">末期段階</span>
+                                <span class="sign-level danger">危険</span>
+                            </div>
+                            <ul class="sign-list">
+                                <li>電源の不安定・異常発熱</li>
+                                <li>ほとんど加湿しない</li>
+                                <li>焦げ臭い・煙が出る</li>
+                            </ul>
+                            <p class="sign-action">→ 即座に使用中止・買い替え</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="diagnostic-intro">
+                    <p class="intro-text">
+                        <strong>以下の診断チェッカーは、16項目の症状から総合的に判定</strong>します。<br>
+                        該当する症状にチェックを入れるだけで、あなたの加湿器の「健康状態」と「推奨アクション」が分かります。特に<span class="highlight-text">電気・安全面の症状が1つでもある場合は、火災リスクがあるため即座の対応が必要</span>です。
+                    </p>
+                </div>
+            </div>
+            
+            <style>
+                .diagnostic-explanation {
+                    margin: 2rem 0;
+                    padding: 1.5rem;
+                    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                    border-radius: 12px;
+                    border-left: 4px solid #f59e0b;
+                }
+                
+                .diagnostic-explanation > p {
+                    line-height: 1.8;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                    font-size: 1rem;
+                }
+                
+                .warning-signs-overview {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    margin: 1.5rem 0;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                }
+                
+                .warning-signs-overview h4 {
+                    color: #dc2626;
+                    margin-bottom: 1.5rem;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+                
+                .signs-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1rem;
+                }
+                
+                .sign-card {
+                    border: 1px solid #e5e7eb;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    background: #f9fafb;
+                }
+                
+                .sign-card.early {
+                    border-left: 4px solid #10b981;
+                }
+                
+                .sign-card.middle {
+                    border-left: 4px solid #f59e0b;
+                }
+                
+                .sign-card.late {
+                    border-left: 4px solid #dc2626;
+                }
+                
+                .sign-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 0.75rem;
+                }
+                
+                .sign-stage {
+                    font-weight: 600;
+                    color: #1e293b;
+                }
+                
+                .sign-level {
+                    font-size: 0.75rem;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 12px;
+                    font-weight: 500;
+                }
+                
+                .sign-level.safe {
+                    background: #dcfce7;
+                    color: #16a34a;
+                }
+                
+                .sign-level.warning {
+                    background: #fef3c7;
+                    color: #d97706;
+                }
+                
+                .sign-level.danger {
+                    background: #fee2e2;
+                    color: #dc2626;
+                }
+                
+                .sign-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0 0 0.75rem 0;
+                }
+                
+                .sign-list li {
+                    font-size: 0.9rem;
+                    color: #475569;
+                    padding: 0.25rem 0;
+                    padding-left: 1.25rem;
+                    position: relative;
+                }
+                
+                .sign-list li::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: #94a3b8;
+                }
+                
+                .sign-action {
+                    font-size: 0.85rem;
+                    color: #0ea5e9;
+                    font-weight: 600;
+                    margin: 0;
+                    padding-top: 0.5rem;
+                    border-top: 1px solid #e5e7eb;
+                }
+                
+                .diagnostic-intro {
+                    background: white;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-top: 1.5rem;
+                    border: 1px solid #f59e0b;
+                }
+                
+                .intro-text {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    line-height: 1.7;
+                    color: #334155;
+                }
+                
+                .highlight-text {
+                    background: #fef3c7;
+                    color: #d97706;
+                    padding: 0.125rem 0.375rem;
+                    border-radius: 4px;
+                    font-weight: 600;
+                }
+                
+                @media (max-width: 768px) {
+                    .diagnostic-explanation {
+                        padding: 1rem;
+                    }
+                    
+                    .signs-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .sign-card {
+                        padding: 0.75rem;
+                    }
+                }
+            </style>
 
                     <div class="diagnostic-tool">
                         <div class="diagnostic-header">
@@ -1076,6 +1419,239 @@
                 </div>
             </div>
 
+            <!-- メンテナンス説明セクション -->
+            <div class="maintenance-explanation">
+                <p>診断の結果、まだ使える状態でも<strong>「正しいメンテナンス」を実施するかどうかで、その後の寿命は劇的に変わります</strong>。実際、適切な手入れをした加湿器は標準的な使用の2〜3倍長持ちします。</p>
+                
+                <div class="maintenance-facts">
+                    <h4>📊 メンテナンス効果の実態</h4>
+                    <div class="facts-grid">
+                        <div class="fact-item shocking">
+                            <div class="fact-number">78%</div>
+                            <div class="fact-text">のユーザーが<br>「水を入れるだけ」</div>
+                            <div class="fact-result">→ 寿命半減</div>
+                        </div>
+                        <div class="fact-item good">
+                            <div class="fact-number">2.5倍</div>
+                            <div class="fact-text">適切メンテナンスで<br>寿命延長可能</div>
+                            <div class="fact-result">→ 年間コスト削減</div>
+                        </div>
+                        <div class="fact-item danger">
+                            <div class="fact-number">カビ</div>
+                            <div class="fact-text">放置3日で<br>雑菌10万倍</div>
+                            <div class="fact-result">→ 健康被害リスク</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="maintenance-benefits">
+                    <h4>✨ 正しいメンテナンスの3つのメリット</h4>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💰</span>
+                            <div class="benefit-content">
+                                <h5>経済効果</h5>
+                                <p>寿命2倍で年間コスト50%削減。3年で新品1台分の節約</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🏥</span>
+                            <div class="benefit-content">
+                                <h5>健康維持</h5>
+                                <p>カビ・雑菌の繁殖を防ぎ、アレルギー・呼吸器疾患を予防</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⚡</span>
+                            <div class="benefit-content">
+                                <h5>性能維持</h5>
+                                <p>加湿効率を最後まで維持。電気代も最小限に抑制</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="schedule-intro">
+                    <p class="intro-text">
+                        <strong>以下のスケジュールは、メンテナンス専門家が推奨する「最小限の手間で最大効果」を実現する方法</strong>です。毎日5分、週末10分、月末30分の投資で、あなたの加湿器は確実に長生きします。
+                    </p>
+                </div>
+            </div>
+            
+            <style>
+                .maintenance-explanation {
+                    margin: 2rem 0;
+                    padding: 1.5rem;
+                    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+                    border-radius: 12px;
+                    border-left: 4px solid var(--primary-color);
+                }
+                
+                .maintenance-explanation > p {
+                    line-height: 1.8;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                    font-size: 1rem;
+                }
+                
+                .maintenance-facts {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    margin: 1.5rem 0;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                }
+                
+                .maintenance-facts h4 {
+                    color: var(--primary-color);
+                    margin-bottom: 1.5rem;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+                
+                .facts-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                    gap: 1rem;
+                }
+                
+                .fact-item {
+                    text-align: center;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid #e5e7eb;
+                }
+                
+                .fact-item.shocking {
+                    background: #fef2f2;
+                    border-color: #fecaca;
+                }
+                
+                .fact-item.good {
+                    background: #f0fdf4;
+                    border-color: #bbf7d0;
+                }
+                
+                .fact-item.danger {
+                    background: #fef3c7;
+                    border-color: #fde68a;
+                }
+                
+                .fact-number {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.5rem;
+                }
+                
+                .fact-text {
+                    font-size: 0.9rem;
+                    color: #64748b;
+                    margin-bottom: 0.5rem;
+                    line-height: 1.4;
+                }
+                
+                .fact-result {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    color: #059669;
+                }
+                
+                .fact-item.shocking .fact-result {
+                    color: #dc2626;
+                }
+                
+                .fact-item.danger .fact-result {
+                    color: #d97706;
+                }
+                
+                .maintenance-benefits {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 10px;
+                    margin: 1.5rem 0;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                }
+                
+                .maintenance-benefits h4 {
+                    color: var(--primary-color);
+                    margin-bottom: 1rem;
+                    font-size: 1.2rem;
+                }
+                
+                .benefits-list {
+                    display: grid;
+                    gap: 1rem;
+                }
+                
+                .benefit-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    padding: 0.75rem;
+                    background: #f8fafc;
+                    border-radius: 8px;
+                    border: 1px solid #e2e8f0;
+                }
+                
+                .benefit-icon {
+                    font-size: 1.5rem;
+                    flex-shrink: 0;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--primary-color);
+                    color: white;
+                    border-radius: 50%;
+                }
+                
+                .benefit-content h5 {
+                    margin: 0 0 0.25rem 0;
+                    color: #1e293b;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                
+                .benefit-content p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: #64748b;
+                    line-height: 1.5;
+                }
+                
+                .schedule-intro {
+                    background: white;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    margin-top: 1.5rem;
+                    border: 1px solid var(--primary-color);
+                }
+                
+                .intro-text {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    line-height: 1.7;
+                    color: #334155;
+                }
+                
+                @media (max-width: 768px) {
+                    .maintenance-explanation {
+                        padding: 1rem;
+                    }
+                    
+                    .facts-grid {
+                        grid-template-columns: 1fr;
+                    }
+                    
+                    .benefit-item {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                }
+            </style>
+
             <div class="maintenance-schedule">
                 <div class="schedule-header">
                     <h3>🗓️ 長寿命化メンテナンススケジュール</h3>
@@ -1365,6 +1941,10 @@
 
                 <section id="factors">
                     <h2>タイプ別寿命要因と対策</h2>
+                    
+                    <p>加湿器の寿命は「タイプ別の構造的弱点」と「使用環境・メンテナンス状況」の組み合わせで決まります。同じタイプでも、弱点を知って適切に対策することで寿命を大幅に延ばすことができます。</p>
+                    
+                    <p>以下の表では、各タイプの主な劣化要因から具体的な延命対策まで、実践的な情報をまとめました。あなたの加湿器タイプに該当する箇所を重点的にチェックして、今すぐ実践できる対策を見つけてください。</p>
 
             <table class="comparison-table">
                 <thead>
@@ -1903,10 +2483,48 @@
                 <h4>使用パターン別寿命推移グラフ</h4>
                 <div class="chart-container">
                     <canvas id="lifespanChart"></canvas>
-                <p style="text-align: center; color: #6b7280; font-size: 0.9rem;">
+                </div>
+                <p style="text-align: center; color: #6b7280; font-size: 0.9rem; margin-top: 1rem;">
                     ※適切なメンテナンスを実施した場合の推定値
                 </p>
             </div>
+            
+            <style>
+                .lifespan-chart {
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 12px;
+                    margin: 2rem 0;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    border: 1px solid #e5e7eb;
+                }
+                
+                .lifespan-chart h4 {
+                    text-align: center;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+                
+                .chart-container {
+                    position: relative;
+                    height: 400px;
+                    max-width: 100%;
+                    padding: 1rem;
+                }
+                
+                @media (max-width: 768px) {
+                    .chart-container {
+                        height: 300px;
+                        padding: 0.5rem;
+                    }
+                    
+                    .lifespan-chart {
+                        padding: 1rem;
+                    }
+                }
+            </style>
 
                 </section>
 
@@ -2646,7 +3264,13 @@
 
         // 寿命チャートの作成
         document.addEventListener('DOMContentLoaded', function() {
-            const ctx = document.getElementById('lifespanChart').getContext('2d');
+            const chartElement = document.getElementById('lifespanChart');
+            if (!chartElement) {
+                console.error('Chart element not found');
+                return;
+            }
+            
+            const ctx = chartElement.getContext('2d');
             
             new Chart(ctx, {
                 type: 'line',
