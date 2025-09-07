@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【2025年最新】加湿器おすすめ15選！選び方から使い方まで徹底解説 | 失敗しないお得マン！</title>
+    <meta name="description" content="2025年最新の加湿器おすすめ15選を徹底比較。超音波式・気化式・スチーム式・ハイブリッド式の特徴、選び方のポイント、お手入れ方法までお得マンが詳しく解説します。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/overflow-fix.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/related-articles.css">
+    <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- キャラクター会話用スタイル -->
+    <style>
+        /* キャラクター会話セクション */
+        .character-dialogue {
+            margin: 2rem -1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            width: calc(100% + 3rem);
+            box-sizing: border-box;
+        }
+
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .dialogue-container.right {
+            flex-direction: row-reverse;
+        }
+
+        /* キャラクターアイコン */
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            position: relative;
+        }
+
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .pixel-character.housewife {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            position: relative;
+        }
+
+        .pixel-character.housewife::before {
+            content: "👩‍🍳";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .pixel-character.housewife::after {
+            content: "💰";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #27ae60;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        /* 吹き出し */
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            flex: 1;
+        }
+
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .character-name {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-name.housewife {
+            color: #e67e22;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .dialogue-container {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .speech-bubble.left::before,
+            .speech-bubble.left::after,
+            .speech-bubble.right::before,
+            .speech-bubble.right::after {
+                display: none;
+            }
+        }
+    </style>
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "【2025年最新】加湿器おすすめ15選！選び方から使い方まで徹底解説",
+        "description": "2025年最新の加湿器おすすめ15選を徹底比較。超音波式・気化式・スチーム式・ハイブリッド式の特徴、選び方のポイント、お手入れ方法までお得マンが詳しく解説します。",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.otokuman.com/images/humidifier-guide-2025.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "author": {
+            "@type": "Person",
+            "name": "失敗しないお得マン編集部",
+            "url": "https://www.otokuman.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "失敗しないお得マン！",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.otokuman.com/images/logo.png",
+                "width": 200,
+                "height": 60
+            }
+        },
+        "datePublished": "2025-01-22T00:00:00+09:00",
+        "dateModified": "2025-01-22T00:00:00+09:00",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.otokuman.com/articles/humidifier-guide-2025.html"
+        },
+        "articleSection": "家電レビュー",
+        "keywords": ["加湿器", "おすすめ", "2025年", "選び方", "比較", "超音波式", "気化式", "スチーム式", "ハイブリッド式"],
+        "wordCount": 3500,
+        "timeRequired": "PT15M",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "失敗しないお得マン！",
+            "url": "https://www.otokuman.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "ホーム",
+                    "item": "https://www.otokuman.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "加湿器",
+                    "item": "https://www.otokuman.com/pages/humidifier.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "加湿器おすすめ15選",
+                    "item": "https://www.otokuman.com/articles/humidifier-guide-2025.html"
+                }
+            ]
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "加湿器"
+            },
+            {
+                "@type": "Thing",
+                "name": "家電選び"
+            },
+            {
+                "@type": "Thing",
+                "name": "健康対策"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "加湿器はどのタイプを選べばいいですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "部屋の広さと使用目的で選びましょう。6畳以下なら超音波式、8-12畳なら気化式、それ以上ならスチーム式がおすすめです。赤ちゃんがいる家庭では安全性を重視してスチーム式を選ぶとよいでしょう。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "加湿器の電気代はどのくらいかかりますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "タイプによって大きく異なります。気化式は月50-200円、超音波式は月100-300円、ハイブリッド式は月200-500円、スチーム式は月500-1500円程度です。省エネを重視するなら気化式がおすすめです。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "加湿器のお手入れ頻度はどのくらいですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "水タンクは毎日交換し、週に1回は内部の清拭を行いましょう。フィルターがある機種は月1回の掃除、2-3ヶ月に1回はクエン酸での除菌洗浄を行うことで、カビや雑菌の発生を防げます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "加湿器の最適な湿度設定は？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "50-60%が理想的な湿度です。40%以下だと乾燥し、70%以上だとカビが発生しやすくなります。湿度計を使って適切にモニタリングしましょう。"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <h1><i class="fas fa-home"></i> 失敗しないお得マン！</h1>
+                        <span class="tagline">家電選びの専門サイト</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">ホーム</a></li>
+                    <li><a href="../pages/humidifier.html" class="nav-link">加湿器</a></li>
+                    <li><a href="../pages/ranking.html" class="nav-link">ランキング</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main article-main">
+        <article class="article-container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/humidifier.html">加湿器</a> &gt; 
+                <span>加湿器おすすめ15選</span>
+            </nav>
+
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <h1>【2025年最新】加湿器おすすめ15選！選び方から使い方まで徹底解説</h1>
+                <div class="article-meta">
+                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月24日</span>
+                </div>
+            </header>
+
+            <!-- 目次 -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#intro">はじめに：なぜ加湿器が必要なのか？</a></li>
+                    <li><a href="#types">加湿器の種類と特徴</a></li>
+                    <li><a href="#selection">失敗しない加湿器の選び方</a></li>
+                    <li><a href="#ranking">2025年最新おすすめ加湿器ランキング</a></li>
+                    <li><a href="#maintenance">加湿器のお手入れ方法</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                    <li><a href="#conclusion">まとめ</a></li>

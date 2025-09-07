@@ -3,2392 +3,1061 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【お得マン監修】赤ちゃんに加湿器はいつから？新生児〜乳児期の正しい使い方ガイド</title>
+    <title>【お得マン監修】赤ちゃんに加湿器はいつから？新生児〜乳児期の正しい使い方ガイド | 失敗しないお得マン！</title>
     <meta name="description" content="赤ちゃんに加湿器をいつから使えるかお得マンが解説。新生児期からの安全な使用方法、月齢別の注意点、おすすめ機種まで完全ガイド。乾燥から赤ちゃんを守る正しい知識をお届けします。">
-    <meta name="keywords" content="赤ちゃん,加湿器,いつから,新生児,乳児,安全,使い方,お得マン,月齢別,注意点">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mobile.css">
     <link rel="stylesheet" href="../css/overflow-fix.css">
     <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/related-articles.css">
     <link rel="stylesheet" href="../css/image-enhancements.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../template-styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- キャラクター会話用スタイル + グレードアップしたセクションスタイル -->
-    <style>
-        .character-dialogue {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 15px;
-            border-left: 4px solid #3498db;
-        }
-
-        .dialogue-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .dialogue-container.right {
-            flex-direction: row-reverse;
-        }
-
-        .pixel-character {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 3px solid #fff;
-        }
-
-        .pixel-character.otokuman {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            position: relative;
-        }
-
-        .pixel-character.otokuman::before {
-            content: "🤵";
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-        }
-
-        .pixel-character.otokuman::after {
-            content: "💡";
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            font-size: 16px;
-            background: #f39c12;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #fff;
-        }
-
-        .pixel-character.housewife {
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            position: relative;
-        }
-
-        .pixel-character.housewife::before {
-            content: "👩‍💼";
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-        }
-
-        .pixel-character.housewife::after {
-            content: "👶";
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            font-size: 16px;
-            background: #e91e63;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #fff;
-        }
-
-        .speech-bubble {
-            position: relative;
-            background: #fff;
-            padding: 1rem 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            max-width: 500px;
-            line-height: 1.6;
-        }
-
-        .speech-bubble::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border: 10px solid transparent;
-        }
-
-        .dialogue-container:not(.right) .speech-bubble::before {
-            left: -20px;
-            border-right-color: #fff;
-        }
-
-        .dialogue-container.right .speech-bubble::before {
-            right: -20px;
-            border-left-color: #fff;
-        }
-
-        .character-name {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-
-        .dialogue-container.right .character-name {
-            color: #e67e22;
-        }
-
-        .message-text {
-            margin: 0;
-        }
-
-        .message-text strong {
-            color: #2c3e50;
-        }
-
-        @media (max-width: 768px) {
-            .character-dialogue {
-                padding: 1rem;
-            }
-            
-            .dialogue-container {
-                gap: 0.5rem;
-            }
-            
-            .pixel-character {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-            
-            .pixel-character.otokuman::after,
-            .pixel-character.housewife::after {
-                width: 20px;
-                height: 20px;
-                font-size: 14px;
-            }
-            
-            .speech-bubble {
-                padding: 0.8rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* グレードアップされたセクションスタイル */
-        
-        /* レイアウト図のモダン化 */
-        .room-layout {
-            background: linear-gradient(135deg, #f8f9fa, #fff);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .layout-diagram {
-            background: #fff;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .room-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 60px);
-            gap: 10px;
-            margin: 1rem 0;
-        }
-
-        .furniture {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #fff;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .furniture::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .furniture:hover::before {
-            left: 100%;
-        }
-
-        .furniture.crib {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-            grid-column: 2/3;
-            grid-row: 2/3;
-        }
-
-        .furniture.humidifier.safe {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            grid-column: 4/5;
-            grid-row: 1/2;
-        }
-
-        .furniture.dresser {
-            background: linear-gradient(135deg, #45b7d1, #2980b9);
-            grid-column: 1/2;
-            grid-row: 1/2;
-        }
-
-        .furniture.chair {
-            background: linear-gradient(135deg, #f9ca24, #f0932b);
-            grid-column: 1/2;
-            grid-row: 3/4;
-        }
-
-        .danger-zone {
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(192, 57, 43, 0.2));
-            border: 2px dashed #e74c3c;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #e74c3c;
-            font-weight: 600;
-            grid-column: 2/4;
-            grid-row: 1/2;
-        }
-
-        .safe-zone {
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(39, 174, 96, 0.2));
-            border: 2px dashed #27ae60;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #27ae60;
-            font-weight: 600;
-            grid-column: 3/5;
-            grid-row: 3/4;
-        }
-
-        /* ルールグリッドの改良 */
-        .rules-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .rule-item {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .rule-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-        }
-
-        .rule-item.good {
-            border-left: 4px solid #27ae60;
-        }
-
-        .rule-item.good h5 {
-            color: #27ae60;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .rule-item.bad {
-            border-left: 4px solid #e74c3c;
-        }
-
-        .rule-item.bad h5 {
-            color: #e74c3c;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .rule-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .rule-item li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .rule-item.good li::before {
-            content: '●';
-            color: #27ae60;
-            font-size: 0.8rem;
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-        }
-
-        .rule-item.bad li::before {
-            content: '●';
-            color: #e74c3c;
-            font-size: 0.8rem;
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-        }
-
-        /* 安全対策の改良 */
-        .safety-modifications {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            color: #fff;
-        }
-
-        .safety-modifications h3 {
-            color: #fff;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .safety-mods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .mod-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .mod-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-
-        .mod-item h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .mod-item ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-
-        .mod-item li {
-            padding: 0.3rem 0;
-            padding-left: 1rem;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .mod-item li::before {
-            content: '▸';
-            color: #fff;
-            position: absolute;
-            left: 0;
-        }
-
-        .cost {
-            background: rgba(255,255,255,0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* モニタリング設備の改良 */
-        .monitoring-setup {
-            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .monitoring-setup h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-
-        .monitoring-equipment {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .equipment-item {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .equipment-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .equipment-item h4 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .equipment-details p {
-            margin: 0.5rem 0;
-            line-height: 1.6;
-        }
-
-        .recommended-model {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        /* メンテナンススケジュールテーブルの改良 */
-        .maintenance-schedule {
-            background: linear-gradient(135deg, #a8edea, #fed6e3);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .maintenance-schedule h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-
-        .schedule-table {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-        }
-
-        .schedule-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .schedule-table th {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .schedule-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #f1f1f1;
-            vertical-align: top;
-        }
-
-        .schedule-table tr:hover {
-            background: #f8f9fa;
-        }
-
-        .schedule-table .daily {
-            border-left: 4px solid #e74c3c;
-        }
-
-        .schedule-table .twice-weekly {
-            border-left: 4px solid #f39c12;
-        }
-
-        .schedule-table .weekly {
-            border-left: 4px solid #3498db;
-        }
-
-        .schedule-table .monthly {
-            border-left: 4px solid #9b59b6;
-        }
-
-        .schedule-table .quarterly {
-            border-left: 4px solid #27ae60;
-        }
-
-        /* 清掃手順の改良 */
-        .cleaning-procedures {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .cleaning-procedures h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-
-        .procedure-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .step-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -10px;
-            left: 1.5rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-        }
-
-        .step-card h4 {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-            font-size: 1.1rem;
-        }
-
-        .step-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .step-card li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .step-card li::before {
-            content: '✓';
-            color: #27ae60;
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-        }
-
-        @media (max-width: 768px) {
-            .rules-grid,
-            .safety-mods,
-            .monitoring-equipment,
-            .procedure-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .room-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(6, 50px);
-            }
-            
-            .room-layout,
-            .safety-modifications,
-            .monitoring-setup,
-            .maintenance-schedule,
-            .cleaning-procedures {
-                padding: 1rem;
-            }
-        }
-
-        /* 清掃用品セクションの改良 */
-        .cleaning-products {
-            background: linear-gradient(135deg, #fa709a, #fee140);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .cleaning-products h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .product-item {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .product-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .product-item.safe {
-            border-left: 4px solid #27ae60;
-        }
-
-        .product-item.safe h4 {
-            color: #27ae60;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-item.dangerous {
-            border-left: 4px solid #e74c3c;
-        }
-
-        .product-item.dangerous h4 {
-            color: #e74c3c;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .product-item li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .product-item.safe li::before {
-            content: '✓';
-            color: #27ae60;
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-        }
-
-        .product-item.dangerous li::before {
-            content: '⚠';
-            color: #e74c3c;
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-        }
-
-        /* 水質管理の改良 */
-        .water-quality {
-            background: linear-gradient(135deg, #a8edea, #fed6e3);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .water-quality h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 1.5rem;
-        }
-
-        .water-recommendations {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .water-type {
-            background: #fff;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .water-type:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .water-type.best {
-            border: 3px solid #f39c12;
-            background: linear-gradient(135deg, rgba(243, 156, 18, 0.05), #fff);
-        }
-
-        .water-type.best::before {
-            content: '1st';
-            position: absolute;
-            top: -10px;
-            right: 1rem;
-            background: #f39c12;
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .water-type.good {
-            border: 3px solid #3498db;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), #fff);
-        }
-
-        .water-type.good::before {
-            content: '2nd';
-            position: absolute;
-            top: -10px;
-            right: 1rem;
-            background: #3498db;
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .water-type.caution {
-            border: 3px solid #f39c12;
-            background: linear-gradient(135deg, rgba(243, 156, 18, 0.05), #fff);
-        }
-
-        .water-type.avoid {
-            border: 3px solid #e74c3c;
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), #fff);
-        }
-
-        .water-type h4 {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .water-type.best h4 { color: #f39c12; }
-        .water-type.good h4 { color: #3498db; }
-        .water-type.caution h4 { color: #f39c12; }
-        .water-type.avoid h4 { color: #e74c3c; }
-
-        /* トラブル対処法の改良 */
-        .trouble-categories {
-            display: grid;
-            gap: 2rem;
-        }
-
-        .trouble-category {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
-            padding: 2rem;
-            color: #fff;
-        }
-
-        .trouble-category h3 {
-            color: #fff;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .trouble-items {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .trouble-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .trouble-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-
-        .trouble-item h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .cause-solution {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .cause-solution p {
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .cause-solution ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .cause-solution li {
-            padding: 0.2rem 0;
-            padding-left: 1rem;
-            position: relative;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .cause-solution li::before {
-            content: '▸';
-            color: #fff;
-            position: absolute;
-            left: 0;
-        }
-
-        /* 緊急連絡先の改良 */
-        .emergency-contacts {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            color: #fff;
-        }
-
-        .emergency-contacts h3 {
-            color: #fff;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-
-        .contact-item h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .contact-item li {
-            padding: 0.3rem 0;
-            padding-left: 1rem;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .contact-item li::before {
-            content: '📞';
-            position: absolute;
-            left: 0;
-        }
-
-        /* FAQ セクションの改良 */
-        .faq-container {
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            border-radius: 20px;
-            padding: 2rem;
-        }
-
-        .faq-item {
-            background: #fff;
-            border-radius: 16px;
-            margin: 1rem 0;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-        }
-
-        .faq-item h3 {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            padding: 1rem 1.5rem;
-            margin: 0;
-            border-radius: 16px 16px 0 0;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item h3:hover {
-            background: linear-gradient(135deg, #764ba2, #667eea);
-        }
-
-        .faq-answer {
-            padding: 1.5rem;
-            display: none;
-            border-radius: 0 0 16px 16px;
-        }
-
-        .faq-answer p {
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* 警告セクションの改良 */
-        .danger-warnings {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem 0;
-            color: #fff;
-        }
-
-        .danger-warnings h3 {
-            color: #fff;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-size: 1.5rem;
-        }
-
-        .warning-list {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .warning-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .warning-item.critical {
-            border: 2px solid #fff;
-            background: rgba(255,255,255,0.2);
-        }
-
-        .warning-item h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cause-solution {
-                grid-template-columns: 1fr;
-            }
-            
-            .water-recommendations,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="canonical" href="http://13.238.219.164/articles/baby-humidifier-when-to-start.html">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <h1><a href="../index.html" style="color: inherit; text-decoration: none;"><i class="fas fa-home"></i> 失敗しないお得マン！</a></h1>
-                    <span class="tagline">家電選びの専門サイト</span>
+                    <a href="../index.html">
+                        <h1><i class="fas fa-home"></i> 失敗しないお得マン！</h1>
+                        <span class="tagline">家電選びの専門サイト</span>
+                    </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html" class="nav-link">ホーム</a></li>
                     <li><a href="../pages/humidifier.html" class="nav-link">加湿器</a></li>
                     <li><a href="../pages/ranking.html" class="nav-link">ランキング</a></li>
-                    <li><a href="../pages/comparison.html" class="nav-link">比較</a></li>
-                    <li><a href="../pages/about.html" class="nav-link">サイトについて</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <!-- メインコンテンツ -->
+    <main class="main article-main">
         <article class="article-container">
-            <div class="article-header">
-                <div class="breadcrumb">
-                    <a href="../index.html">ホーム</a> > 
-                    <a href="../pages/humidifier.html">加湿器</a> > 
-                    <span>赤ちゃん いつから</span>
-                </div>
-                
-                <h1 class="article-title">【お得マン監修】赤ちゃんに加湿器はいつから？新生児〜乳児期の正しい使い方ガイド</h1>
-                
-                <div class="article-meta">
-                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月25日</span>
-                </div>
-                </div>
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/humidifier.html">加湿器</a> &gt; 
+                <span>赤ちゃん加湿器いつから</span>
+            </nav>
 
-                <div class="key-points">
-                    <h3><i class="fas fa-lightbulb"></i> この記事のポイント</h3>
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <h1>👶 赤ちゃんに加湿器はいつから？新生児〜乳児期の正しい使い方ガイド</h1>
+                <div class="article-meta">
+                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月24日</span>
+                </div>
+            </header>
+
+            <!-- 目次 -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#when-to-start">赤ちゃんに加湿器はいつから使える？</a></li>
+                    <li><a href="#monthly-guide">月齢別の加湿器使用ガイド</a></li>
+                    <li><a href="#safety-precautions">赤ちゃん向け加湿器の安全対策</a></li>
+                    <li><a href="#recommended-models">赤ちゃん向けおすすめ加湿器ランキング</a></li>
+                    <li><a href="#proper-usage">正しい使用方法と設置場所</a></li>
+                    <li><a href="#common-mistakes">よくある間違いと対処法</a></li>
+                    <li><a href="#seasonal-usage">季節別の使い方のコツ</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                </ol>
+            </div>
+
+            <!-- 記事本文 -->
+            <div class="article-content">
+                <div class="highlight-box">
+                    <h4><i class="fas fa-lightbulb"></i> この記事のポイント</h4>
                     <ul>
-                        <li>赤ちゃんの加湿器使用開始時期をお得マンが解説</li>
-                        <li>新生児期から安全に使える条件と方法</li>
-                        <li>月齢別の注意点と最適な設定</li>
-                        <li>赤ちゃんに適した加湿器の選び方</li>
-                        <li>よくあるトラブルと対処法</li>
+                        <li>赤ちゃんへの加湿器使用開始時期（新生児期から可能）</li>
+                        <li>月齢別の適切な湿度設定と注意点</li>
+                        <li>安全性を重視した機種選びのポイント</li>
+                        <li>正しい設置場所と使用方法</li>
+                        <li>季節ごとの使い分けと効果的な運用法</li>
                     </ul>
                 </div>
 
-                <div class="urgent-answer">
-                    <h3><i class="fas fa-baby"></i> 結論：いつから使える？</h3>
-                    <div class="answer-highlight">
-                        <div class="main-answer">
-                            <h4>生後すぐから使用可能</h4>
-                            <p>適切な条件下であれば、<strong>新生児期から加湿器の使用は推奨</strong>されます</p>
+                <!-- キャラクター会話用スタイル -->
+                <style>
+                    .character-dialogue {
+                        margin: 2rem 0;
+                        padding: 1.5rem;
+                        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                        border-radius: 15px;
+                        border-left: 4px solid var(--primary-color);
+                    }
+
+                    .dialogue-container {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .dialogue-container.right {
+                        flex-direction: row-reverse;
+                    }
+
+                    .pixel-character {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 32px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        border: 3px solid #fff;
+                    }
+
+                    .pixel-character.otokuman {
+                        background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+                        position: relative;
+                    }
+
+                    .pixel-character.otokuman::before {
+                        content: "🤵";
+                        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+                    }
+
+                    .pixel-character.otokuman::after {
+                        content: "💡";
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        font-size: 16px;
+                        background: var(--accent-color);
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid #fff;
+                    }
+
+                    .pixel-character.mom {
+                        background: linear-gradient(135deg, #e67e22, #d35400);
+                        position: relative;
+                    }
+
+                    .pixel-character.mom::before {
+                        content: "👩";
+                        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+                    }
+
+                    .pixel-character.mom::after {
+                        content: "👶";
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        font-size: 16px;
+                        background: #e91e63;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid #fff;
+                    }
+
+                    .speech-bubble {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 1rem 1.2rem;
+                        position: relative;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        border: 2px solid var(--border-color);
+                        flex: 1;
+                    }
+
+                    .speech-bubble.left::before {
+                        content: "";
+                        position: absolute;
+                        left: -8px;
+                        top: 20px;
+                        width: 0;
+                        height: 0;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-right: 8px solid var(--border-color);
+                    }
+
+                    .speech-bubble.left::after {
+                        content: "";
+                        position: absolute;
+                        left: -6px;
+                        top: 20px;
+                        width: 0;
+                        height: 0;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-right: 8px solid white;
+                    }
+
+                    .speech-bubble.right::before {
+                        content: "";
+                        position: absolute;
+                        right: -8px;
+                        top: 20px;
+                        width: 0;
+                        height: 0;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-left: 8px solid var(--border-color);
+                    }
+
+                    .speech-bubble.right::after {
+                        content: "";
+                        position: absolute;
+                        right: -6px;
+                        top: 20px;
+                        width: 0;
+                        height: 0;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        border-left: 8px solid white;
+                    }
+
+                    .speech-bubble p {
+                        margin: 0;
+                        line-height: 1.6;
+                        color: #333;
+                    }
+
+                    .character-name {
+                        font-weight: bold;
+                        color: var(--primary-color);
+                        font-size: 0.9rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .character-name.mom {
+                        color: #e67e22;
+                    }
+
+                    @media (max-width: 768px) {
+                        .dialogue-container {
+                            flex-direction: column !important;
+                            text-align: center;
+                        }
+
+                        .speech-bubble.left::before,
+                        .speech-bubble.left::after,
+                        .speech-bubble.right::before,
+                        .speech-bubble.right::after {
+                            display: none;
+                        }
+                    }
+                </style>
+
+                <h2 id="when-to-start">👶 赤ちゃんに加湿器はいつから使える？</h2>
+                
+                <!-- キャラクター会話：赤ちゃんの加湿器について -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character mom"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name mom">田中ママ（新米ママ）</div>
+                            <p>お得マンさん、生後1ヶ月の赤ちゃんがいるんですが、加湿器はいつから使って良いのでしょうか？新生児には刺激が強すぎませんか？乾燥が気になるけど心配で...</p>
                         </div>
-                        <div class="conditions">
-                            <h5>必須条件</h5>
+                    </div>
+
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>新生児から使用可能です！むしろ赤ちゃんの肌や呼吸器を守るために必要なんです。ただし、湿度40-60%の範囲で、清潔な加湿器を使うことが大前提。スチーム式が最も安全でおすすめですよ。</p>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-container">
+                        <div class="pixel-character mom"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name mom">田中ママ</div>
+                            <p>新生児からでも大丈夫なんですね！どのくらいの湿度が良いですか？あと、設置場所も気をつけることがありますか？</p>
+                        </div>
+                    </div>
+
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>新生児なら50-55%が理想的です。ベビーベッドから1.5m以上離して設置し、直接風が当たらないように。24時間清潔な水で運転し、毎日の水交換が必須です。安全第一で行きましょう！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🗓️ 使用開始時期の目安</h3>
+                
+                <div class="info-box">
+                    <h4>結論：新生児期（生後0ヶ月）から使用可能</h4>
+                    <p>赤ちゃんは大人よりも肌が薄く、呼吸器も未発達です。適切な湿度環境は赤ちゃんの健康を守る重要な要素となります。</p>
+                    <ul>
+                        <li><strong>新生児期（0-1ヶ月）</strong>: 湿度50-55%で慎重に使用開始</li>
+                        <li><strong>乳児期（1-6ヶ月）</strong>: 湿度45-60%で安定使用</li>
+                        <li><strong>離乳期（6-12ヶ月）</strong>: 湿度40-60%で柔軟運用</li>
+                    </ul>
+                </div>
+
+                <h3>🏥 小児科医の見解</h3>
+                <p>日本小児科学会の指針では、新生児室でも適切な湿度管理（50-60%）が推奨されています。家庭での使用も以下の条件を満たせば新生児期から推奨されます：</p>
+
+                <ul>
+                    <li><strong>清潔な加湿器</strong>: 毎日の水交換と定期清掃</li>
+                    <li><strong>適切な湿度</strong>: 40-60%の範囲内</li>
+                    <li><strong>安全な設置</strong>: 直接風が当たらない場所</li>
+                    <li><strong>定期監視</strong>: 湿度計での常時確認</li>
+                </ul>
+
+                <h2 id="monthly-guide">📅 月齢別の加湿器使用ガイド</h2>
+                
+                <h3>👶 新生児期（0-1ヶ月）</h3>
+                <div class="month-guide-card">
+                    <div class="guide-header">
+                        <h4>🎯 推奨湿度：50-55%</h4>
+                        <span class="risk-level low">注意レベル：高</span>
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-section">
+                            <h5>🔑 重要ポイント</h5>
                             <ul>
-                                <li>湿度40-60%に維持</li>
-                                <li>毎日の水交換</li>
-                                <li>赤ちゃんから2m以上離す</li>
-                                <li>チャイルドロック機能</li>
+                                <li>最も敏感な時期のため慎重な管理が必要</li>
+                                <li>免疫力が未発達のため清潔性を最重視</li>
+                                <li>呼吸器が未熟のため適正湿度の維持が重要</li>
+                                <li>肌のバリア機能が弱いため乾燥は厳禁</li>
+                            </ul>
+                        </div>
+                        <div class="guide-section">
+                            <h5>⚠️ 注意事項</h5>
+                            <ul>
+                                <li>湿度計による24時間監視</li>
+                                <li>水は毎日完全交換</li>
+                                <li>ベビーベッドから2m以上離して設置</li>
+                                <li>スチーム式限定使用</li>
+                                <li>異常があれば即座に使用中止</li>
+                            </ul>
+                        </div>
+                        <div class="guide-section">
+                            <h5>✅ 推奨機種</h5>
+                            <ul>
+                                <li>象印 EE-DC35（チャイルドロック付き）</li>
+                                <li>三菱重工 SHE35SD（除菌機能）</li>
+                                <li>山善 KS-GA25（シンプル操作）</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="article-content">
-                <div class="toc">
-                    <h3>目次</h3>
-                    <ol>
-                        <li><a href="#medical-opinion">お得マンの見解：いつから使える？</a></li>
-                        <li><a href="#age-specific-guidelines">月齢別使用ガイドライン</a></li>
-                        <li><a href="#safety-requirements">安全使用の必須条件</a></li>
-                        <li><a href="#baby-suitable-models">赤ちゃん向け推奨機種</a></li>
-                        <li><a href="#setup-positioning">設置・配置の注意点</a></li>
-                        <li><a href="#maintenance-hygiene">衛生管理とメンテナンス</a></li>
-                        <li><a href="#troubleshooting">よくあるトラブル対処法</a></li>
-                        <li><a href="#faq">よくある質問</a></li>
-                    </ol>
-                </div>
-
-                <!-- キャラクター会話：導入 -->
-                <div class="character-dialogue">
-                    <div class="dialogue-container">
-                        <div class="pixel-character housewife"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">新米ママ みゆきさん</div>
-                            <div class="message-text">お得マンさん、来月赤ちゃんが生まれる予定なんです。加湿器はいつから使えるんでしょうか？</div>
-                        </div>
+                <h3>👶 乳児前期（1-3ヶ月）</h3>
+                <div class="month-guide-card">
+                    <div class="guide-header">
+                        <h4>🎯 推奨湿度：45-60%</h4>
+                        <span class="risk-level medium">注意レベル：中</span>
                     </div>
-                    
-                    <div class="dialogue-container right">
-                        <div class="pixel-character otokuman"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">失敗しないお得マン</div>
-                            <div class="message-text">おめでとうございます！実は<strong>生後すぐから使用可能</strong>です。日本小児科学会も推奨していて、新生児の呼吸器保護に効果的なんですよ。</div>
+                    <div class="guide-content">
+                        <div class="guide-section">
+                            <h5>📈 変化のポイント</h5>
+                            <ul>
+                                <li>免疫力が少しずつ向上</li>
+                                <li>呼吸パターンが安定化</li>
+                                <li>首すわり前のため動きは限定的</li>
+                                <li>授乳回数が多く室内時間が長い</li>
+                            </ul>
+                        </div>
+                        <div class="guide-section">
+                            <h5>🎛️ 運用の調整</h5>
+                            <ul>
+                                <li>湿度範囲を5%拡大（45-60%）</li>
+                                <li>気化式加湿器も選択肢に</li>
+                                <li>タイマー機能の活用開始</li>
+                                <li>夜間の自動運転設定</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <section id="medical-opinion" class="content-section">
-                    <h2><i class="fas fa-stethoscope"></i> お得マンの見解：いつから使える？</h2>
-                    
-                    <div class="medical-statement">
-                        <h3>日本小児科学会推奨ガイドライン</h3>
-                        <div class="guideline-box">
-                            <div class="guideline-item">
-                                <h4>使用開始時期</h4>
-                                <p><strong>生後0日から使用可能</strong></p>
-                                <ul>
-                                    <li>新生児の呼吸器保護に有効</li>
-                                    <li>鼻詰まり・乾燥による不快感軽減</li>
-                                    <li>感染症リスク低減効果</li>
-                                </ul>
-                            </div>
-                            <div class="guideline-item">
-                                <h4>推奨湿度</h4>
-                                <p><strong>40-60%（最適は50-55%）</strong></p>
-                                <ul>
-                                    <li>40%未満：乾燥で粘膜損傷リスク</li>
-                                    <li>60%超：カビ・ダニ繁殖リスク</li>
-                                    <li>50-55%：最も安全で快適</li>
-                                </ul>
-                            </div>
-                        </div>
+                <h3>👶 乳児中期（3-6ヶ月）</h3>
+                <div class="month-guide-card">
+                    <div class="guide-header">
+                        <h4>🎯 推奨湿度：45-60%</h4>
+                        <span class="risk-level medium">注意レベル：中</span>
                     </div>
-
-                    <div class="benefits-risks">
-                        <div class="benefits-section">
-                            <h3><i class="fas fa-heart"></i> 赤ちゃんへのメリット</h3>
-                            <div class="benefit-list" style="text-align: left;">
-                                <div class="benefit-item" style="text-align: left;">
-                                    <h4 style="text-align: left;">🫁 呼吸器系への効果</h4>
-                                    <ul style="text-align: left;">
-                                        <li>鼻粘膜の乾燥防止</li>
-                                        <li>痰の排出を促進</li>
-                                        <li>咳の軽減</li>
-                                        <li>鼻詰まり改善</li>
-                                    </ul>
-                                </div>
-
-                                <div class="benefit-item" style="text-align: left;">
-                                    <h4 style="text-align: left;">🛡️ 感染症予防効果</h4>
-                                    <ul style="text-align: left;">
-                                        <li>ウイルス活性化抑制</li>
-                                        <li>鼻腔の自浄作用向上</li>
-                                        <li>細菌の定着阻害</li>
-                                        <li>免疫機能サポート</li>
-                                    </ul>
-                                </div>
-
-                                <div class="benefit-item" style="text-align: left;">
-                                    <h4 style="text-align: left;">😴 睡眠の質向上</h4>
-                                    <ul style="text-align: left;">
-                                        <li>夜泣きの軽減</li>
-                                        <li>深い睡眠の促進</li>
-                                        <li>寝返り時の覚醒減少</li>
-                                        <li>朝の機嫌改善</li>
-                                    </ul>
-                                </div>
-
-                                <div class="benefit-item" style="text-align: left;">
-                                    <h4 style="text-align: left;">💧 肌・粘膜保護</h4>
-                                    <ul style="text-align: left;">
-                                        <li>肌の乾燥防止</li>
-                                        <li>湿疹の悪化防止</li>
-                                        <li>唇の荒れ軽減</li>
-                                        <li>目の乾燥防止</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="guide-content">
+                        <div class="guide-section">
+                            <h5>🌟 発達の特徴</h5>
+                            <ul>
+                                <li>首すわり完了で動きが活発化</li>
+                                <li>寝返りが始まる時期</li>
+                                <li>唾液分泌が増加</li>
+                                <li>物を口に入れる行動開始</li>
+                            </ul>
                         </div>
-
-                        <div class="risks-section">
-                            <h3><i class="fas fa-exclamation-triangle"></i> 注意すべきリスク</h3>
-                            <div class="risk-list">
-                                <div class="risk-item">
-                                    <h4>🦠 雑菌繁殖リスク</h4>
-                                    <ul>
-                                        <li>不適切な清掃で細菌増殖</li>
-                                        <li>カビ胞子の拡散</li>
-                                        <li>レジオネラ菌の危険性</li>
-                                    </ul>
-                                    <div class="prevention">対策：毎日の水交換・週2回清掃</div>
-                                </div>
-
-                                <div class="risk-item">
-                                    <h4>💧 過加湿による害</h4>
-                                    <ul>
-                                        <li>カビ・ダニの繁殖</li>
-                                        <li>結露によるカビ発生</li>
-                                        <li>アレルギー症状悪化</li>
-                                    </ul>
-                                    <div class="prevention">対策：湿度計設置・60%以下維持</div>
-                                </div>
-
-                                <div class="risk-item">
-                                    <h4>🔥 安全事故リスク</h4>
-                                    <ul>
-                                        <li>転倒による火傷</li>
-                                        <li>コード引っかかり</li>
-                                        <li>タンクの落下</li>
-                                    </ul>
-                                    <div class="prevention">対策：手の届かない場所設置</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="doctor-recommendation">
-                        <h3>お得マンからのアドバイス</h3>
-                        <div class="doctor-quote">
-                            <div class="quote-content">
-                                <p>「適切に管理された加湿器は、新生児期から安全に使用でき、むしろ呼吸器の健康維持に重要です。特に冬季の乾燥期には積極的な使用を推奨しています。ただし、清潔性の維持が最も重要で、『きれいな水・きれいな機器』が大前提となります。」</p>
-                            </div>
-                            <div class="quote-author">
-                                <strong>失敗しないお得マン編集部</strong><br>
-                                <small>家電専門・育児サポート認定</small>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- キャラクター会話：安全性について -->
-                <div class="character-dialogue">
-                    <div class="dialogue-container">
-                        <div class="pixel-character housewife"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">新米ママ みゆきさん</div>
-                            <div class="message-text">でも雑菌とか心配です...新生児って抵抗力が弱いですよね？</div>
-                        </div>
-                    </div>
-                    
-                    <div class="dialogue-container right">
-                        <div class="pixel-character otokuman"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">失敗しないお得マン</div>
-                            <div class="message-text">その通り！だから<strong>3つの必須条件</strong>があります。①毎日の水交換 ②湿度50-55%設定 ③赤ちゃんから2m以上離す。これを守れば安全です！</div>
+                        <div class="guide-section">
+                            <h5>🛡️ 安全対策の強化</h5>
+                            <ul>
+                                <li>手の届かない場所への設置必須</li>
+                                <li>コード類の完全隠蔽</li>
+                                <li>転倒防止対策の実施</li>
+                                <li>誤飲防止カバーの設置</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <section id="age-specific-guidelines" class="content-section">
-                    <h2><i class="fas fa-calendar-alt"></i> 月齢別使用ガイドライン</h2>
-                    
-                    <div class="age-timeline">
-                        <div class="age-card newborn">
-                            <h3>👶 新生児期（0-1ヶ月）</h3>
-                            <div class="age-details">
-                                <div class="recommendations">
-                                    <h4>推奨設定</h4>
-                                    <ul>
-                                        <li><strong>湿度：</strong>50-55%</li>
-                                        <li><strong>運転レベル：</strong>弱〜中</li>
-                                        <li><strong>設置距離：</strong>3m以上</li>
-                                        <li><strong>稼働時間：</strong>24時間OK</li>
-                                    </ul>
-                                </div>
-                                <div class="special-care">
-                                    <h4>特別な配慮</h4>
-                                    <ul>
-                                        <li>免疫力が最も低い時期</li>
-                                        <li>清潔性を最優先</li>
-                                        <li>過加湿に特に注意</li>
-                                        <li>蒸気が直接当たらない位置</li>
-                                    </ul>
-                                </div>
-                                <div class="recommended-type">
-                                    <strong>推奨タイプ：</strong>スチーム式（雑菌の心配なし）
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="age-card infant">
-                            <h3>🍼 乳児期前期（1-6ヶ月）</h3>
-                            <div class="age-details">
-                                <div class="recommendations">
-                                    <h4>推奨設定</h4>
-                                    <ul>
-                                        <li><strong>湿度：</strong>45-60%</li>
-                                        <li><strong>運転レベル：</strong>中</li>
-                                        <li><strong>設置距離：</strong>2m以上</li>
-                                        <li><strong>稼働時間：</strong>必要に応じて</li>
-                                    </ul>
-                                </div>
-                                <div class="special-care">
-                                    <h4>特別な配慮</h4>
-                                    <ul>
-                                        <li>寝返りが始まる時期</li>
-                                        <li>手足の動きが活発</li>
-                                        <li>物を口に入れる行動</li>
-                                        <li>好奇心が芽生える</li>
-                                    </ul>
-                                </div>
-                                <div class="recommended-type">
-                                    <strong>推奨タイプ：</strong>気化式・スチーム式
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="age-card mobile">
-                            <h3>🚶 乳児期後期（6-12ヶ月）</h3>
-                            <div class="age-details">
-                                <div class="recommendations">
-                                    <h4>推奨設定</h4>
-                                    <ul>
-                                        <li><strong>湿度：</strong>40-60%</li>
-                                        <li><strong>運転レベル：</strong>中〜強</li>
-                                        <li><strong>設置距離：</strong>手の届かない高さ</li>
-                                        <li><strong>稼働時間：</strong>活動時間中心</li>
-                                    </ul>
-                                </div>
-                                <div class="special-care">
-                                    <h4>特別な配慮</h4>
-                                    <ul>
-                                        <li>ハイハイ・つかまり立ち</li>
-                                        <li>何でも触りたがる</li>
-                                        <li>転倒のリスク増加</li>
-                                        <li>誤飲の危険性</li>
-                                    </ul>
-                                </div>
-                                <div class="recommended-type">
-                                    <strong>推奨タイプ：</strong>チャイルドロック付き全タイプ
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="age-card toddler">
-                            <h3>🚶‍♂️ 幼児期（1-3歳）</h3>
-                            <div class="age-details">
-                                <div class="recommendations">
-                                    <h4>推奨設定</h4>
-                                    <ul>
-                                        <li><strong>湿度：</strong>40-60%</li>
-                                        <li><strong>運転レベル：</strong>自動調整</li>
-                                        <li><strong>設置距離：</strong>手の届かない場所</li>
-                                        <li><strong>稼働時間：</strong>季節・体調に応じて</li>
-                                    </ul>
-                                </div>
-                                <div class="special-care">
-                                    <h4>特別な配慮</h4>
-                                    <ul>
-                                        <li>活発な動き回り</li>
-                                        <li>模倣行動の増加</li>
-                                        <li>言葉の理解</li>
-                                        <li>安全意識の芽生え</li>
-                                    </ul>
-                                </div>
-                                <div class="recommended-type">
-                                    <strong>推奨タイプ：</strong>高機能タイプ（AI自動調整等）
-                                </div>
-                            </div>
-                        </div>
+                <h3>👶 乳児後期（6-12ヶ月）</h3>
+                <div class="month-guide-card">
+                    <div class="guide-header">
+                        <h4>🎯 推奨湿度：40-60%</h4>
+                        <span class="risk-level low">注意レベル：低</span>
                     </div>
-
-                    <div class="seasonal-adjustments">
-                        <h3>季節別・月齢別調整ガイド</h3>
-                        <div class="seasonal-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>月齢</th>
-                                        <th>春</th>
-                                        <th>夏</th>
-                                        <th>秋</th>
-                                        <th>冬</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>0-1ヶ月</strong></td>
-                                        <td>湿度50%・弱運転</td>
-                                        <td>エアコン時のみ</td>
-                                        <td>湿度55%・中運転</td>
-                                        <td>湿度55%・連続運転</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>1-6ヶ月</strong></td>
-                                        <td>湿度45-55%</td>
-                                        <td>必要時のみ</td>
-                                        <td>湿度50-60%</td>
-                                        <td>湿度50-60%・24時間</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>6-12ヶ月</strong></td>
-                                        <td>湿度40-55%</td>
-                                        <td>冷房併用時</td>
-                                        <td>湿度45-60%</td>
-                                        <td>湿度45-60%・常時</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>1-3歳</strong></td>
-                                        <td>自動調整</td>
-                                        <td>選択的使用</td>
-                                        <td>自動調整</td>
-                                        <td>自動調整・強化</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                    </div>
-                </section>
-
-                <section id="safety-requirements" class="content-section">
-                    <h2><i class="fas fa-shield-alt"></i> 安全使用の必須条件</h2>
-                    
-                    <div class="safety-checklist">
-                        <h3>絶対に守るべき安全基準</h3>
-                        <div class="checklist-grid">
-                            <div class="checklist-category">
-                                <h4>🏠 設置・配置</h4>
-                                <div class="checklist-items">
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>赤ちゃんから2m以上離す</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>手の届かない高さ（1m以上）</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>安定した平らな場所</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>転倒防止対策済み</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>コードの安全管理</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="checklist-category">
-                                <h4>🧼 衛生管理</h4>
-                                <div class="checklist-items">
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>毎日の水交換</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>週2回以上の清掃</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>フィルター定期交換</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>精製水または浄水使用</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>タンク内の完全乾燥</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="checklist-category">
-                                <h4>📊 環境管理</h4>
-                                <div class="checklist-items">
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>湿度計で常時監視</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>湿度40-60%維持</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>1日2回の換気実施</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>室温20-24℃管理</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>結露チェック</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="checklist-category">
-                                <h4>⚙️ 機器設定</h4>
-                                <div class="checklist-items">
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>チャイルドロック設定</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>自動停止機能ON</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>静音モード設定</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>タイマー機能活用</span>
-                                    </label>
-                                    <label class="checklist-item">
-                                        <input type="checkbox">
-                                        <span>エラー確認済み</span>
-                                    </label>
-                                </div>
-                            </div>
+                    <div class="guide-content">
+                        <div class="guide-section">
+                            <h5>🚀 成長の特徴</h5>
+                            <ul>
+                                <li>ハイハイ・つかまり立ち開始</li>
+                                <li>離乳食開始で免疫力向上</li>
+                                <li>活動範囲の大幅拡大</li>
+                                <li>好奇心旺盛で何でも触る</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <div class="danger-warnings">
-                        <h3>⚠️ 緊急警告事項</h3>
-                        <div class="warning-list">
-                            <div class="warning-item critical">
-                                <h4>🚨 即座に使用中止すべき状況</h4>
-                                <ul>
-                                    <li>異音・異臭が発生した場合</li>
-                                    <li>水漏れや電気系統の異常</li>
-                                    <li>赤ちゃんに呼吸困難症状</li>
-                                    <li>室内湿度が70%を超えた場合</li>
-                                    <li>カビや雑菌臭を感じた場合</li>
-                                </ul>
-                            </div>
-
-                            <div class="warning-item important">
-                                <h4>⚠️ 絶対に避けるべき使用方法</h4>
-                                <ul>
-                                    <li>アロマオイルの使用（呼吸器刺激）</li>
-                                    <li>洗剤や薬品の添加</li>
-                                    <li>古い水の継続使用</li>
-                                    <li>蒸気の直接照射</li>
-                                    <li>清掃せずの長期使用</li>
-                                </ul>
-                            </div>
-
-                            <div class="warning-item caution">
-                                <h4>🔍 定期チェック項目</h4>
-                                <ul>
-                                    <li>赤ちゃんの鼻詰まり・呼吸状態</li>
-                                    <li>肌の状態（湿疹・かぶれ）</li>
-                                    <li>睡眠の質（夜泣き・覚醒）</li>
-                                    <li>室内の結露状況</li>
-                                    <li>機器の動作音・振動</li>
-                                </ul>
-                            </div>
+                        <div class="guide-section">
+                            <h5>🔧 運用の柔軟化</h5>
+                            <ul>
+                                <li>湿度範囲の最大化（40-60%）</li>
+                                <li>全機種タイプが選択可能</li>
+                                <li>季節に応じた細かい調整</li>
+                                <li>複数台での部屋別管理</li>
+                            </ul>
                         </div>
-                    </div>
-                </section>
-
-                <!-- キャラクター会話：おすすめ機種について -->
-                <div class="character-dialogue">
-                    <div class="dialogue-container">
-                        <div class="pixel-character housewife"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">新米ママ みゆきさん</div>
-                            <div class="message-text">どのタイプの加湿器がおすすめですか？予算は2万円くらいで考えています。</div>
-                        </div>
-                    </div>
-                    
-                    <div class="dialogue-container right">
-                        <div class="pixel-character otokuman"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">失敗しないお得マン</div>
-                            <div class="message-text">新生児なら<strong>スチーム式が一番安心</strong>です！象印のEE-DC35なら13,800円で、沸騰殺菌で雑菌ゼロ、チャイルドロック付きで安全性抜群ですよ。</div>
+                        <div class="guide-section">
+                            <h5>🎯 重点対策</h5>
+                            <ul>
+                                <li>完全な安全対策（転倒・誤飲防止）</li>
+                                <li>高い位置への設置</li>
+                                <li>チャイルドロック機能必須</li>
+                                <li>定期的な動作確認</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <section id="baby-suitable-models" class="content-section">
-                    <h2><i class="fas fa-baby"></i> 赤ちゃん向け推奨機種TOP3</h2>
+                <h2 id="safety-precautions">🛡️ 赤ちゃん向け加湿器の安全対策</h2>
+                
+                <h3>🚨 必須の安全機能</h3>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>安全機能</th>
+                            <th>重要度</th>
+                            <th>効果</th>
+                            <th>対象月齢</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>チャイルドロック</strong></td>
+                            <td><span class="importance-critical">必須</span></td>
+                            <td>誤操作防止</td>
+                            <td>3ヶ月以降</td>
+                        </tr>
+                        <tr>
+                            <td><strong>転倒時自動停止</strong></td>
+                            <td><span class="importance-critical">必須</span></td>
+                            <td>安全停止</td>
+                            <td>全月齢</td>
+                        </tr>
+                        <tr>
+                            <td><strong>空焚き防止</strong></td>
+                            <td><span class="importance-high">重要</span></td>
+                            <td>故障・火災防止</td>
+                            <td>全月齢</td>
+                        </tr>
+                        <tr>
+                            <td><strong>温度制御機能</strong></td>
+                            <td><span class="importance-high">重要</span></td>
+                            <td>やけど防止</td>
+                            <td>全月齢</td>
+                        </tr>
+                        <tr>
+                            <td><strong>静音設計</strong></td>
+                            <td><span class="importance-medium">推奨</span></td>
+                            <td>睡眠妨害防止</td>
+                            <td>全月齢</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📍 設置場所の安全基準</h3>
+                
+                <div class="safety-guidelines">
+                    <div class="safety-rule critical">
+                        <h4>🚫 絶対NGな設置場所</h4>
+                        <ul>
+                            <li>ベビーベッドの中や隣接する場所</li>
+                            <li>赤ちゃんの手が届く範囲（1m以内）</li>
+                            <li>直接風が当たる場所</li>
+                            <li>不安定な台の上</li>
+                            <li>コンセント周辺の水濡れ危険区域</li>
+                            <li>熱源（暖房器具等）の近く</li>
+                        </ul>
+                    </div>
                     
-                    <p>赤ちゃんの健康と安全を最優先に考えた、2025年最新の加湿器ランキングです。</p>
+                    <div class="safety-rule recommended">
+                        <h4>✅ 推奨設置場所</h4>
+                        <ul>
+                            <li>ベビーベッドから1.5-2m離れた場所</li>
+                            <li>床から50cm以上の高さ</li>
+                            <li>平らで安定した台の上</li>
+                            <li>コンセントから適切な距離</li>
+                            <li>定期メンテナンスしやすい場所</li>
+                            <li>湿度が均等に拡散できる部屋の中央寄り</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <!-- 1位 -->
-                    <div class="product-ranking">
-                        <div class="rank-badge gold">1位</div>
-                        <div class="product-detail">
-                            <h3>象印 EE-DE50-WA スチーム式加湿器【赤ちゃん向け最高峰】</h3>
-                            <div class="product-specs">
-                                <span class="type">スチーム式</span>
-                                <span class="price">実売価格：14,800円前後</span>
+                <h3>🧽 清潔管理プロトコル</h3>
+                
+                <div class="maintenance-schedule">
+                    <h4>👶 赤ちゃん用加湿器の清掃スケジュール</h4>
+                    
+                    <div class="schedule-card daily">
+                        <h5>🗓️ 毎日（必須）</h5>
+                        <ul>
+                            <li>水の完全交換（残り水は絶対に使用禁止）</li>
+                            <li>タンク内の軽いすすぎ洗い</li>
+                            <li>外部の乾拭き清掃</li>
+                            <li>湿度レベルの確認・記録</li>
+                        </ul>
+                        <p><strong>所要時間：</strong>5分程度</p>
+                    </div>
+
+                    <div class="schedule-card weekly">
+                        <h5>🗓️ 週2回（推奨）</h5>
+                        <ul>
+                            <li>タンク・部品の中性洗剤洗浄</li>
+                            <li>70%アルコールでの除菌</li>
+                            <li>フィルター（ある場合）の点検・清掃</li>
+                            <li>吹き出し口の清掃</li>
+                        </ul>
+                        <p><strong>所要時間：</strong>15分程度</p>
+                    </div>
+
+                    <div class="schedule-card monthly">
+                        <h5>🗓️ 月1回（重要）</h5>
+                        <ul>
+                            <li>全分解での徹底清掃</li>
+                            <li>クエン酸洗浄（水垢除去）</li>
+                            <li>UV殺菌（可能であれば）</li>
+                            <li>機能・安全装置の動作確認</li>
+                        </ul>
+                        <p><strong>所要時間：</strong>30分程度</p>
+                    </div>
+                </div>
+
+                <h2 id="recommended-models">🏆 赤ちゃん向けおすすめ加湿器ランキング</h2>
+                
+                <div class="product-card ranking-1">
+                    <div class="product-header">
+                        <div class="rank-badge">1</div>
+                        <div class="product-info">
+                            <h3>象印 スチーム式加湿器 EE-DC35</h3>
+                            <div class="safety-score">安全度: 98/100</div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>チャイルドロック</span>
                             </div>
-                            <div class="product-features">
-                                <h4>赤ちゃん向け特徴</h4>
-                                <ul>
-                                    <li>沸騰により雑菌を完全除菌（99.9%除菌）</li>
-                                    <li>お手入れ簡単でいつでも清潔</li>
-                                    <li>チャイルドロック機能で安全性抜群</li>
-                                    <li>湿度設定3段階で赤ちゃんに最適</li>
-                                    <li>転倒湯もれ防止構造で安心設計</li>
-                                </ul>
+                            <div class="feature-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>沸騰殺菌</span>
                             </div>
-                            <div class="product-affiliate-section">
-                                <div class="price-info-header">
-                                    <span class="current-price">¥14,800〜</span>
-                                    <span class="price-note">※価格は変動する場合があります</span>
-                                </div>
-                                <!-- START MoshimoAffiliateEasyLink -->
-                                <script type="text/javascript">
-                                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-                                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-                                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-                                c.getElementById(a)||(d=c.createElement(f),d.src=g,
-                                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-                                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-                                msmaflink({"n":"象印 加湿器 スチーム式 4.0L ホワイト EE-DE50-WA","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/trenditemshop\/cabinet\/skypiea\/skypiea_0029","p":["\/b0d5v7q3hn_1.jpg","\/b0d5v7q3hn_2.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/trenditemshop\/b0d5v7q3hn\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/trenditemshop\/b0d5v7q3hn\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E8%B1%A1%E5%8D%B0%20%E5%8A%A0%E6%B9%BF%E5%99%A8%20%E3%82%B9%E3%83%81%E3%83%BC%E3%83%A0%E5%BC%8F%204.0L%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20EE-DE50-WA","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"wHg1c","s":"s"});
-                                </script>
-                                <div id="msmaflink-wHg1c">リンク</div>
-                                <!-- MoshimoAffiliateEasyLink END -->
+                            <div class="feature-item">
+                                <i class="fas fa-power-off"></i>
+                                <span>自動停止機能</span>
                             </div>
-                            <div class="product-review">
-                                <p>【2025年赤ちゃん向け最高峰モデル】スチーム式で雑菌の心配が一切ない最も安全な加湿器。沸騰により完全除菌し、お手入れも簡単。チャイルドロック・転倒防止機能で赤ちゃんがいる家庭でも安心して使用できます。新生児から推奨の最安全機種です。</p>
+                            <div class="feature-item">
+                                <i class="fas fa-volume-down"></i>
+                                <span>静音設計</span>
                             </div>
                         </div>
                     </div>
+                    <div class="price-section">
+                        <div class="price">￥15,800</div>
+                        <p><strong>推奨理由：</strong>沸騰により完全殺菌、赤ちゃんに最も安全。チャイルドロックで誤操作防止。シンプル構造でメンテナンスも簡単。</p>
+                        <div class="age-suitability">
+                            <span class="age-badge">新生児〜</span>
+                            <span class="age-badge">乳児</span>
+                            <span class="age-badge">幼児</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- 2位 -->
-                    <div class="product-ranking">
-                        <div class="rank-badge silver">2位</div>
-                        <div class="product-detail">
-                            <h3>パナソニック FE-KFY07-W 気化式加湿器【赤ちゃん向け静音】</h3>
-                            <div class="product-specs">
-                                <span class="type">気化式</span>
-                                <span class="price">実売価格：18,800円前後</span>
+                <div class="product-card ranking-2">
+                    <div class="product-header">
+                        <div class="rank-badge">2</div>
+                        <div class="product-info">
+                            <h3>パナソニック 気化式加湿機 FE-KFS07</h3>
+                            <div class="safety-score">安全度: 92/100</div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-wind"></i>
+                                <span>ナノイー搭載</span>
                             </div>
-                            <div class="product-features">
-                                <h4>赤ちゃん向け特徴</h4>
-                                <ul>
-                                    <li>静音設計で赤ちゃんの睡眠を妨げない</li>
-                                    <li>熱くならない安全な気化式加湿</li>
-                                    <li>DCモーター採用で省エネ・低騒音</li>
-                                    <li>大容量4.2Lタンクで長時間運転</li>
-                                    <li>お手入れ簡単で毎日のメンテナンスも楽々</li>
-                                </ul>
+                            <div class="feature-item">
+                                <i class="fas fa-moon"></i>
+                                <span>おやすみモード</span>
                             </div>
-                            <div class="product-affiliate-section">
-                                <div class="price-info-header">
-                                    <span class="current-price">¥18,800〜</span>
-                                    <span class="price-note">※価格は変動する場合があります</span>
-                                </div>
-                                <!-- START MoshimoAffiliateEasyLink -->
-                                <script type="text/javascript">
-                                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-                                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-                                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-                                c.getElementById(a)||(d=c.createElement(f),d.src=g,
-                                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-                                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-                                msmaflink({"n":"パナソニック 加湿機 気化式 ~19畳 ミルキーホワイト FE-KFY07-Wインフルエンザ予防 大容量加湿器 お手入れ簡単加湿器","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/14promo\/cabinet","p":["\/imgrc0104936750.jpg","\/imgrc0097417728.jpg","\/imgrc0104936847.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/14promo\/20241226-23000\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/14promo\/20241226-23000\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E5%8A%A0%E6%B9%BF%E6%A9%9F%20%E6%B0%97%E5%8C%96%E5%BC%8F%20~19%E7%95%B3%20%E3%83%9F%E3%83%AB%E3%82%AD%E3%83%BC%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20FE-KFY07-W%E3%82%A4%E3%83%B3%E3%83%95%E3%83%AB%E3%82%A8%E3%83%B3%E3%82%B6%E4%BA%88%E9%98%B2%20%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%8A%A0%E6%B9%BF%E5%99%A8%20%E3%81%8A%E6%89%8B%E5%85%A5%E3%82%8C%E7%B0%A1%E5%8D%98%E5%8A%A0%E6%B9%BF%E5%99%A8","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"mqJF1","s":"s"});
-                                </script>
-                                <div id="msmaflink-mqJF1">リンク</div>
-                                <!-- MoshimoAffiliateEasyLink END -->
+                            <div class="feature-item">
+                                <i class="fas fa-droplet"></i>
+                                <span>自然気化式</span>
                             </div>
-                            <div class="product-review">
-                                <p>【2025年赤ちゃん向け推奨モデル】気化式で熱くならず安全、静音設計で赤ちゃんの睡眠を妨げません。大容量タンクで長時間運転可能、DCモーター採用で省エネ性も抜群。お手入れも簡単で毎日使いにぴったりの高コスパモデルです。</p>
+                            <div class="feature-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>湿度センサー</span>
                             </div>
                         </div>
                     </div>
+                    <div class="price-section">
+                        <div class="price">￥22,400</div>
+                        <p><strong>推奨理由：</strong>自然気化で安全、ナノイーで除菌効果。おやすみモードで睡眠を妨げない。過加湿になりにくい構造。</p>
+                        <div class="age-suitability">
+                            <span class="age-badge">生後1ヶ月〜</span>
+                            <span class="age-badge">乳児</span>
+                            <span class="age-badge">幼児</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- 3位 -->
-                    <div class="product-ranking">
-                        <div class="rank-badge bronze">3位</div>
-                        <div class="product-detail">
-                            <h3>シャープ HV-S75-W ハイブリッド加湿器【赤ちゃん向けチャイルドロック】</h3>
-                            <div class="product-specs">
-                                <span class="type">ハイブリッド式</span>
-                                <span class="price">実売価格：24,800円前後</span>
+                <div class="product-card ranking-3">
+                    <div class="product-header">
+                        <div class="rank-badge">3</div>
+                        <div class="product-info">
+                            <h3>三菱重工 ハイブリッド加湿器 SHE35SD</h3>
+                            <div class="safety-score">安全度: 89/100</div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-bacteria"></i>
+                                <span>除菌フィルター</span>
                             </div>
-                            <div class="product-features">
-                                <h4>赤ちゃん向け特徴</h4>
-                                <ul>
-                                    <li>Ag⁺イオンカートリッジで抗菌・防臭効果</li>
-                                    <li>2つの給水方式で使いやすさ向上</li>
-                                    <li>DCインバーターモーター採用で省エネ</li>
-                                    <li>チャイルドロック機能で安全性向上</li>
-                                    <li>静音運転で夜間も安心</li>
-                                </ul>
+                            <div class="feature-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>湿度自動調整</span>
                             </div>
-                            <div class="product-affiliate-section">
-                                <div class="price-info-header">
-                                    <span class="current-price">¥24,800〜</span>
-                                    <span class="price-note">※価格は変動する場合があります</span>
-                                </div>
-                                <!-- START MoshimoAffiliateEasyLink -->
-                                <script type="text/javascript">
-                                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
-                                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
-                                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
-                                c.getElementById(a)||(d=c.createElement(f),d.src=g,
-                                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
-                                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
-                                msmaflink({"n":"シャープハイブリッド加湿器HV-S75-W 2種類の給水高パワータイプagイオンタンク容量4リットル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/noborizaka\/cabinet\/11438049\/11449333\/11449345","p":["\/imgrc0130193087.jpg","\/imgrc0130193088.jpg","\/imgrc0130193090.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/noborizaka\/amb0djbshrwy\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/noborizaka\/amb0djbshrwy\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E5%8A%A0%E6%B9%BF%E5%99%A8HV-S75-W%202%E7%A8%AE%E9%A1%9E%E3%81%AE%E7%B5%A6%E6%B0%B4%E9%AB%98%E3%83%91%E3%83%AF%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%97ag%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%BF%E3%83%B3%E3%82%AF%E5%AE%B9%E9%87%8F4%E3%83%AA%E3%83%83%E3%83%88%E3%83%AB","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"oFu4m","s":"s"});
-                                </script>
-                                <div id="msmaflink-oFu4m">リンク</div>
-                                <!-- MoshimoAffiliateEasyLink END -->
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <span>8時間タイマー</span>
                             </div>
-                            <div class="product-review">
-                                <p>【2025年赤ちゃん向け推奨モデル】Ag⁺イオンカートリッジで水の雑菌繁殖を抑制し、清潔な加湿を実現。チャイルドロック機能で小さなお子様がいても安心。ハイブリッド式で効率的な加湿と省エネ性能を両立しています。</p>
+                            <div class="feature-item">
+                                <i class="fas fa-water"></i>
+                                <span>大容量タンク</span>
                             </div>
                         </div>
                     </div>
+                    <div class="price-section">
+                        <div class="price">￥18,900</div>
+                        <p><strong>推奨理由：</strong>ハイブリッド式で効率的、除菌フィルターで安心。自動湿度調整で手間いらず。大容量で夜間も安心。</p>
+                        <div class="age-suitability">
+                            <span class="age-badge">生後3ヶ月〜</span>
+                            <span class="age-badge">乳児</span>
+                            <span class="age-badge">幼児</span>
+                        </div>
+                    </div>
+                </div>
 
-                </section>
+                <h3>💰 予算別おすすめ</h3>
+                
+                <div class="budget-recommendations">
+                    <div class="budget-card">
+                        <h4>🏷️ エコノミー（1万円以下）</h4>
+                        <p><strong>山善 スチーム加湿器 KS-GA25</strong></p>
+                        <ul>
+                            <li>価格：約8,000円</li>
+                            <li>シンプル機能で安全性重視</li>
+                            <li>メンテナンス簡単</li>
+                            <li>新生児から使用可能</li>
+                        </ul>
+                    </div>
 
-                <section id="setup-positioning" class="content-section">
-                    <h2><i class="fas fa-home"></i> 設置・配置の注意点</h2>
+                    <div class="budget-card">
+                        <h4>💳 スタンダード（1-2万円）</h4>
+                        <p><strong>象印 EE-DC35</strong></p>
+                        <ul>
+                            <li>価格：約15,800円</li>
+                            <li>最高レベルの安全性</li>
+                            <li>チャイルドロック完備</li>
+                            <li>全月齢対応</li>
+                        </ul>
+                    </div>
+
+                    <div class="budget-card">
+                        <h4>👑 プレミアム（2万円以上）</h4>
+                        <p><strong>パナソニック FE-KFS07</strong></p>
+                        <ul>
+                            <li>価格：約22,400円</li>
+                            <li>ナノイー機能付き</li>
+                            <li>高度な自動制御</li>
+                            <li>多機能で長期使用</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="proper-usage">🎯 正しい使用方法と設置場所</h2>
+                
+                <h3>📐 理想的な設置レイアウト</h3>
+                
+                <div class="layout-guide">
+                    <h4>👶 新生児・乳児の部屋レイアウト例</h4>
                     
                     <div class="room-layout">
-                        <h3>赤ちゃん部屋の理想的レイアウト</h3>
-                        <div class="layout-diagram">
-                            <div class="room-grid">
-                                <div class="furniture crib">ベビーベッド</div>
-                                <div class="furniture humidifier safe">加湿器（安全位置）</div>
-                                <div class="furniture dresser">タンス</div>
-                                <div class="furniture chair">授乳椅子</div>
-                                <div class="danger-zone">危険エリア</div>
-                                <div class="safe-zone">安全エリア</div>
-                            </div>
+                        <div class="layout-description">
+                            <p><strong>6畳間での推奨配置：</strong></p>
+                            <ul>
+                                <li><strong>ベビーベッド：</strong>部屋の角（窓から離れた場所）</li>
+                                <li><strong>加湿器：</strong>ベビーベッドから対角線上に2m離して設置</li>
+                                <li><strong>湿度計：</strong>ベビーベッド近くの壁に設置</li>
+                                <li><strong>空気清浄機：</strong>加湿器から2m以上離して配置</li>
+                            </ul>
                         </div>
                         
-                        <div class="positioning-rules">
-                            <h4>配置の基本ルール</h4>
-                            <div class="rules-grid">
-                                <div class="rule-item good">
-                                    <h5>✅ 推奨位置</h5>
-                                    <ul>
-                                        <li>ベビーベッドから2-3m離す</li>
-                                        <li>床から1m以上の高さ</li>
-                                        <li>安定した平面（テーブル等）</li>
-                                        <li>コンセント近くで延長コード不要</li>
-                                        <li>風通しの良い場所</li>
-                                    </ul>
-                                </div>
-
-                                <div class="rule-item bad">
-                                    <h5>❌ 避けるべき位置</h5>
-                                    <ul>
-                                        <li>ベビーベッドの真上・真横</li>
-                                        <li>床置き（蹴り倒しリスク）</li>
-                                        <li>不安定な場所</li>
-                                        <li>エアコンの真下</li>
-                                        <li>直射日光の当たる場所</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="safety-modifications">
-                        <h3>赤ちゃん向け安全対策</h3>
-                        <div class="safety-mods">
-                            <div class="mod-item">
-                                <h4>🔒 転倒防止対策</h4>
-                                <ul>
-                                    <li>専用台座・スタンドの使用</li>
-                                    <li>壁面固定金具の取り付け</li>
-                                    <li>滑り止めマットの敷設</li>
-                                    <li>重心を下げる工夫</li>
-                                </ul>
-                                <div class="cost">費用：1,000-3,000円</div>
-                            </div>
-
-                            <div class="mod-item">
-                                <h4>⚡ 電気安全対策</h4>
-                                <ul>
-                                    <li>コードカバーの設置</li>
-                                    <li>コンセントキャップ</li>
-                                    <li>アース線の接続</li>
-                                    <li>漏電ブレーカーの確認</li>
-                                </ul>
-                                <div class="cost">費用：500-2,000円</div>
-                            </div>
-
-                            <div class="mod-item">
-                                <h4>🛡️ 物理的保護</h4>
-                                <ul>
-                                    <li>ベビーガードで囲む</li>
-                                    <li>角にクッション材</li>
-                                    <li>蒸気方向の調整</li>
-                                    <li>操作パネルの保護</li>
-                                </ul>
-                                <div class="cost">費用：2,000-5,000円</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="monitoring-setup">
-                        <h3>環境モニタリング設備</h3>
-                        <div class="monitoring-equipment">
-                            <div class="equipment-item">
-                                <h4>📊 湿度・温度計</h4>
-                                <div class="equipment-details">
-                                    <p><strong>設置場所：</strong>赤ちゃんの頭の高さ</p>
-                                    <p><strong>機能：</strong>最高・最低値記録、アラーム機能</p>
-                                    <p><strong>目安価格：</strong>2,000-5,000円</p>
-                                    <div class="recommended-model">推奨：タニタ TT-571</div>
-                                </div>
-                            </div>
-
-                            <div class="equipment-item">
-                                <h4>📱 スマート監視システム</h4>
-                                <div class="equipment-details">
-                                    <p><strong>機能：</strong>スマホで遠隔監視、異常アラート</p>
-                                    <p><strong>利点：</strong>外出先からもチェック可能</p>
-                                    <p><strong>目安価格：</strong>5,000-15,000円</p>
-                                    <div class="recommended-model">推奨：SwitchBot 温湿度計プラス</div>
-                                </div>
-                            </div>
-
-                            <div class="equipment-item">
-                                <h4>🌡️ 空気質測定器</h4>
-                                <div class="equipment-details">
-                                    <p><strong>測定項目：</strong>PM2.5、CO2、VOC等</p>
-                                    <p><strong>用途：</strong>総合的な空気環境管理</p>
-                                    <p><strong>目安価格：</strong>10,000-30,000円</p>
-                                    <div class="recommended-model">推奨：Dyson Pure Cool Link</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- キャラクター会話：24時間使用について -->
-                <div class="character-dialogue">
-                    <div class="dialogue-container">
-                        <div class="pixel-character housewife"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">新米ママ みゆきさん</div>
-                            <div class="message-text">夜中もつけっぱなしで大丈夫でしょうか？音で赤ちゃんが起きないか心配です。</div>
-                        </div>
-                    </div>
-                    
-                    <div class="dialogue-container right">
-                        <div class="pixel-character otokuman"></div>
-                        <div class="speech-bubble">
-                            <div class="character-name">失敗しないお得マン</div>
-                            <div class="message-text">安全機能付きなら<strong>24時間使用OK</strong>です！むしろ夜間の乾燥から赤ちゃんを守るために、つけっぱなしを推奨します。静音モード設定を忘れずに！</div>
+                        <div class="layout-tips">
+                            <h5>💡 設置のコツ</h5>
+                            <ul>
+                                <li>加湿器の高さ：床から50-100cm</li>
+                                <li>壁からの距離：30cm以上</li>
+                                <li>電源コードは完全に隠蔽</li>
+                                <li>定期メンテナンス可能な場所</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <section id="maintenance-hygiene" class="content-section">
-                    <h2><i class="fas fa-sparkles"></i> 衛生管理とメンテナンス</h2>
-                    
-                    <div class="maintenance-schedule">
-                        <h3>赤ちゃん向け清掃スケジュール</h3>
-                        <div class="schedule-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>頻度</th>
-                                        <th>作業内容</th>
-                                        <th>所要時間</th>
-                                        <th>使用する道具</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="daily">
-                                        <td><strong>毎日</strong></td>
-                                        <td>水の完全交換、タンク軽清掃</td>
-                                        <td>3分</td>
-                                        <td>清潔な水、マイクロファイバークロス</td>
-                                    </tr>
-                                    <tr class="twice-weekly">
-                                        <td><strong>週2回</strong></td>
-                                        <td>タンク・本体の詳細清掃</td>
-                                        <td>15分</td>
-                                        <td>中性洗剤、スポンジ、除菌アルコール</td>
-                                    </tr>
-                                    <tr class="weekly">
-                                        <td><strong>週1回</strong></td>
-                                        <td>フィルター清掃・点検</td>
-                                        <td>10分</td>
-                                        <td>掃除機、水洗い、乾燥</td>
-                                    </tr>
-                                    <tr class="monthly">
-                                        <td><strong>月1回</strong></td>
-                                        <td>クエン酸除菌・深部清掃</td>
-                                        <td>30分</td>
-                                        <td>クエン酸、歯ブラシ、綿棒</td>
-                                    </tr>
-                                    <tr class="quarterly">
-                                        <td><strong>3ヶ月毎</strong></td>
-                                        <td>フィルター交換・総点検</td>
-                                        <td>20分</td>
-                                        <td>新品フィルター、取扱説明書</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <h3>⚙️ 月齢別運転設定</h3>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>月齢</th>
+                            <th>推奨湿度</th>
+                            <th>運転モード</th>
+                            <th>注意点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0-1ヶ月</td>
+                            <td>50-55%</td>
+                            <td>連続・低速</td>
+                            <td>24時間監視必須</td>
+                        </tr>
+                        <tr>
+                            <td>1-3ヶ月</td>
+                            <td>45-60%</td>
+                            <td>自動・中速</td>
+                            <td>夜間タイマー可</td>
+                        </tr>
+                        <tr>
+                            <td>3-6ヶ月</td>
+                            <td>45-60%</td>
+                            <td>自動・全速度</td>
+                            <td>季節調整開始</td>
+                        </tr>
+                        <tr>
+                            <td>6-12ヶ月</td>
+                            <td>40-60%</td>
+                            <td>全モード</td>
+                            <td>活動に合わせ調整</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🌡️ 湿度管理の実践方法</h3>
+                
+                <div class="humidity-management">
+                    <div class="management-step">
+                        <div class="step-number">1</div>
+                        <h4>基準値の設定</h4>
+                        <p>デジタル湿度計を使用し、赤ちゃんの近くで正確に測定。目標湿度を機器に設定する。</p>
                     </div>
 
-                    <div class="cleaning-procedures">
-                        <h3>安全な清掃手順</h3>
-                        <div class="procedure-steps">
-                            <div class="step-card">
-                                <div class="step-number">1</div>
-                                <h4>準備・安全確認</h4>
-                                <ul>
-                                    <li>赤ちゃんを別室に移動</li>
-                                    <li>電源OFF・コンセント抜く</li>
-                                    <li>機器の完全冷却待ち（10分）</li>
-                                    <li>清掃用具の準備・除菌</li>
-                                </ul>
-                            </div>
-
-                            <div class="step-card">
-                                <div class="step-number">2</div>
-                                <h4>分解・水抜き</h4>
-                                <ul>
-                                    <li>タンクの取り外し</li>
-                                    <li>古い水の完全排出</li>
-                                    <li>フィルター類の取り外し</li>
-                                    <li>各部品の分類・整理</li>
-                                </ul>
-                            </div>
-
-                            <div class="step-card">
-                                <div class="step-number">3</div>
-                                <h4>洗浄・除菌</h4>
-                                <ul>
-                                    <li>中性洗剤で各部品洗浄</li>
-                                    <li>十分なすすぎ（3回以上）</li>
-                                    <li>アルコール除菌（70%以上）</li>
-                                    <li>完全乾燥（24時間）</li>
-                                </ul>
-                            </div>
-
-                            <div class="step-card">
-                                <div class="step-number">4</div>
-                                <h4>組み立て・動作確認</h4>
-                                <ul>
-                                    <li>完全乾燥の確認</li>
-                                    <li>正しい順序で組み立て</li>
-                                    <li>新しい水（精製水推奨）</li>
-                                    <li>動作テスト・安全確認</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="management-step">
+                        <div class="step-number">2</div>
+                        <h4>24時間モニタリング</h4>
+                        <p>最低湿度・最高湿度を記録。急激な変化がないかを確認し、必要に応じて設定調整。</p>
                     </div>
 
-                    <div class="cleaning-products">
-                        <h3>赤ちゃん安全な清掃用品</h3>
-                        <div class="products-grid">
-                            <div class="product-item safe">
-                                <h4>✅ 安全な清掃用品</h4>
-                                <ul>
-                                    <li><strong>中性洗剤：</strong>キュキュット等の食器用</li>
-                                    <li><strong>除菌：</strong>70%エタノール</li>
-                                    <li><strong>水垢除去：</strong>食用クエン酸</li>
-                                    <li><strong>拭き取り：</strong>マイクロファイバークロス</li>
-                                    <li><strong>細部清掃：</strong>綿棒、歯ブラシ</li>
-                                </ul>
-                            </div>
-
-                            <div class="product-item dangerous">
-                                <h4>❌ 使用禁止の清掃用品</h4>
-                                <ul>
-                                    <li><strong>漂白剤：</strong>残留物が有害</li>
-                                    <li><strong>酸性洗剤：</strong>強すぎて危険</li>
-                                    <li><strong>芳香剤入り：</strong>呼吸器刺激</li>
-                                    <li><strong>研磨剤：</strong>傷からの雑菌繁殖</li>
-                                    <li><strong>有機溶剤：</strong>有毒ガス発生</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="management-step">
+                        <div class="step-number">3</div>
+                        <h4>季節・天候調整</h4>
+                        <p>外気湿度に応じて目標値を微調整。雨天時は下限、乾燥時は上限近くに設定。</p>
                     </div>
 
-                    <div class="water-quality">
-                        <h3>水質管理のポイント</h3>
-                        <div class="water-recommendations">
-                            <div class="water-type best">
-                                <h4>🥇 最推奨：精製水</h4>
-                                <ul>
-                                    <li>雑菌・ミネラル分ゼロ</li>
-                                    <li>白い粉が出ない</li>
-                                    <li>機器への負担最小</li>
-                                    <li>コスト：月500-1,000円</li>
-                                </ul>
-                            </div>
-
-                            <div class="water-type good">
-                                <h4>🥈 推奨：軟水</h4>
-                                <ul>
-                                    <li>ミネラル分が少ない</li>
-                                    <li>比較的安全</li>
-                                    <li>入手しやすい</li>
-                                    <li>コスト：月200-500円</li>
-                                </ul>
-                            </div>
-
-                            <div class="water-type caution">
-                                <h4>⚠️ 要注意：水道水</h4>
-                                <ul>
-                                    <li>塩素・ミネラル分含有</li>
-                                    <li>毎日の交換必須</li>
-                                    <li>頻繁な清掃必要</li>
-                                    <li>コスト：月数十円</li>
-                                </ul>
-                            </div>
-
-                            <div class="water-type avoid">
-                                <h4>❌ 使用禁止：井戸水・温泉水</h4>
-                                <ul>
-                                    <li>雑菌リスク高</li>
-                                    <li>成分不明</li>
-                                    <li>赤ちゃんには危険</li>
-                                    <li>絶対に使用しない</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="troubleshooting" class="content-section">
-                    <h2><i class="fas fa-tools"></i> よくあるトラブル対処法</h2>
-                    
-                    <div class="trouble-categories">
-                        <div class="trouble-category">
-                            <h3>👶 赤ちゃんの体調変化</h3>
-                            <div class="trouble-items">
-                                <div class="trouble-item">
-                                    <h4>鼻詰まりが悪化した</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>考えられる原因：</strong></p>
-                                        <ul>
-                                            <li>湿度が高すぎる（60%超）</li>
-                                            <li>雑菌による感染</li>
-                                            <li>室温との温度差</li>
-                                        </ul>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>湿度を45-50%に下げる</li>
-                                            <li>機器の徹底清掃</li>
-                                            <li>一時的な使用停止</li>
-                                            <li>お得マンに相談</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="trouble-item">
-                                    <h4>肌荒れ・湿疹が出た</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>考えられる原因：</strong></p>
-                                        <ul>
-                                            <li>過加湿によるカビ・ダニ</li>
-                                            <li>雑菌の空気中拡散</li>
-                                            <li>化学物質の混入</li>
-                                        </ul>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>即座に使用停止</li>
-                                            <li>部屋の換気・除湿</li>
-                                            <li>機器の完全清掃</li>
-                                            <li>皮膚科医に相談</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="trouble-item">
-                                    <h4>夜泣きが増えた</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>考えられる原因：</strong></p>
-                                        <ul>
-                                            <li>運転音による覚醒</li>
-                                            <li>湿度変化への不快感</li>
-                                            <li>蒸気による温度変化</li>
-                                        </ul>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>静音モードに切り替え</li>
-                                            <li>設置位置を遠くする</li>
-                                            <li>運転レベルを下げる</li>
-                                            <li>夜間はタイマー運転</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="trouble-category">
-                            <h3>🏠 環境・設備トラブル</h3>
-                            <div class="trouble-items">
-                                <div class="trouble-item">
-                                    <h4>壁や窓に結露が発生</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>原因：</strong>過加湿状態</p>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>湿度設定を下げる（40-50%）</li>
-                                            <li>換気頻度を増やす</li>
-                                            <li>除湿器の併用検討</li>
-                                            <li>断熱性の向上</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="trouble-item">
-                                    <h4>カビ臭がする</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>原因：</strong>機器内部または室内のカビ繁殖</p>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>即座に使用停止</li>
-                                            <li>機器の分解清掃</li>
-                                            <li>室内の除湿・換気</li>
-                                            <li>必要に応じて交換</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="trouble-item">
-                                    <h4>電気代が想定より高い</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>原因：</strong>設定・使用方法の問題</p>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>湿度設定の見直し</li>
-                                            <li>タイマー機能の活用</li>
-                                            <li>省エネモードに切り替え</li>
-                                            <li>機種の見直し検討</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="trouble-category">
-                            <h3>⚙️ 機器の不具合</h3>
-                            <div class="trouble-items">
-                                <div class="trouble-item">
-                                    <h4>動作音が大きくなった</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>原因：</strong>汚れ・劣化による効率低下</p>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>フィルター清掃・交換</li>
-                                            <li>内部の汚れ除去</li>
-                                            <li>設置面の確認</li>
-                                            <li>メーカーサポート連絡</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="trouble-item">
-                                    <h4>水が減らない・加湿されない</h4>
-                                    <div class="cause-solution">
-                                        <p><strong>原因：</strong>目詰まり・故障</p>
-                                        <p><strong>対処法：</strong></p>
-                                        <ul>
-                                            <li>フィルター交換</li>
-                                            <li>水質の見直し</li>
-                                            <li>設置環境の確認</li>
-                                            <li>修理・交換の検討</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="emergency-contacts">
-                        <h3>🚨 緊急時の連絡先</h3>
-                        <div class="contact-grid">
-                            <div class="contact-item">
-                                <h4>赤ちゃんの体調急変時</h4>
-                                <ul>
-                                    <li><strong>救急：</strong>119番</li>
-                                    <li><strong>小児救急相談：</strong>#8000</li>
-                                    <li><strong>かかりつけ小児科</strong></li>
-                                    <li><strong>夜間救急病院</strong></li>
-                                </ul>
-                            </div>
-
-                            <div class="contact-item">
-                                <h4>機器の重大不具合時</h4>
-                                <ul>
-                                    <li><strong>火災・感電：</strong>119番</li>
-                                    <li><strong>メーカーサポート</strong></li>
-                                    <li><strong>販売店サポート</strong></li>
-                                    <li><strong>電気工事業者</strong></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="faq" class="content-section">
-                    <h2><i class="fas fa-question-circle"></i> よくある質問</h2>
-                    
-                    <div class="faq-container">
-                        <div class="faq-item">
-                            <h3>Q. 新生児から本当に安全に使えますか？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. 適切な条件下であれば生後すぐから安全に使用できます。</strong>日本小児科学会でも推奨されており、清潔性の維持、適切な湿度設定（50-55%）、安全な設置位置を守れば、むしろ呼吸器の健康に有益です。</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3>Q. 夜中もつけっぱなしで大丈夫？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. 安全機能付きの機種なら24時間使用可能です。</strong>ただし静音モード設定、湿度60%以下の維持、毎日の水交換が必須。心配な場合はタイマー機能で間欠運転にしましょう。</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3>Q. どのタイプが赤ちゃんに一番安全？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. スチーム式が最も衛生的で安全です。</strong>沸騰により雑菌がゼロになり、お手入れも簡単。次に気化式、ハイブリッド式。超音波式は清掃頻度が高く、赤ちゃんには推奨しません。</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3>Q. アレルギーがある赤ちゃんでも使える？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. 医師に相談の上、使用可能です。</strong>むしろ適切な湿度はアレルギー症状を軽減することが多いです。ただし過加湿によるダニ・カビは厳禁なので、湿度管理を特に厳格に行ってください。</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3>Q. 水道水でも大丈夫？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. 毎日交換すれば使用可能ですが、精製水を推奨します。</strong>水道水は塩素やミネラル分で雑菌が繁殖しやすく、白い粉も出ます。赤ちゃんの健康を考えると精製水が最も安全です。</p>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <h3>Q. 何か症状が出たらすぐやめるべき？</h3>
-                            <div class="faq-answer">
-                                <p><strong>A. はい、即座に使用停止して医師に相談してください。</strong>鼻詰まり悪化、肌荒れ、咳の増加、機嫌が悪くなるなどの症状は要注意。加湿器が原因かどうか医師と相談して判断しましょう。</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="article-navigation">
-                    <div class="nav-item prev">
-                        <a href="humidifier-always-on-electricity-cost.html">
-                            <i class="fas fa-chevron-left"></i>
-                            <div class="nav-content">
-                                <span class="nav-label">前の記事</span>
-                                <span class="nav-title">つけっぱなし電気代</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="nav-item next">
-                        <a href="baby-safe-humidifier-guide.html">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="nav-content">
-                                <span class="nav-label">次の記事</span>
-                                <span class="nav-title">赤ちゃん向け加湿器完全ガイド</span>
-                            </div>
-                        </a>
+                    <div class="management-step">
+                        <div class="step-number">4</div>
+                        <h4>赤ちゃんの反応確認</h4>
+                        <p>肌の状態、鼻づまりの有無、機嫌の良さなど総合的に判断し、最適な湿度を見つける。</p>
                     </div>
                 </div>
 
-                <div class="related-articles">
-                    <h3>関連記事</h3>
-                    <div class="related-grid">
-                        <a href="baby-safe-humidifier-guide.html" class="related-card">
-                            <div class="related-image">👶</div>
-                            <div class="related-content">
-                                <h4>赤ちゃん・子供部屋の加湿器選び</h4>
-                                <p>お得マン監修の安全基準とおすすめ</p>
-                            </div>
-                        </a>
-                        <a href="humidifier-mold-cleaning-guide.html" class="related-card">
-                            <div class="related-image">🧽</div>
-                            <div class="related-content">
-                                <h4>加湿器のカビ対策完全ガイド</h4>
-                                <p>正しい掃除方法と除菌テクニック</p>
-                            </div>
-                        </a>
-                        <a href="humidifier-always-on-electricity-cost.html" class="related-card">
-                            <div class="related-image">⚡</div>
-                            <div class="related-content">
-                                <h4>つけっぱなし電気代の真実</h4>
-                                <p>24時間稼働の実測データと省エネ術</p>
-                            </div>
-                        </a>
+                <h2 id="common-mistakes">⚠️ よくある間違いと対処法</h2>
+                
+                <div class="mistake-card">
+                    <h3>❌ よくある間違い①：湿度の上げすぎ</h3>
+                    <div class="mistake-content">
+                        <div class="mistake-problem">
+                            <h4>🚨 問題点</h4>
+                            <ul>
+                                <li>カビ・ダニの繁殖リスク</li>
+                                <li>結露による建物への悪影響</li>
+                                <li>赤ちゃんの皮膚トラブル</li>
+                                <li>呼吸器への負担</li>
+                            </ul>
+                        </div>
+                        <div class="mistake-solution">
+                            <h4>✅ 対処法</h4>
+                            <ul>
+                                <li>湿度計で常時モニタリング</li>
+                                <li>60%を超えたら即座に調整</li>
+                                <li>定期的な換気の実施</li>
+                                <li>自動停止機能の活用</li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+
+                <div class="mistake-card">
+                    <h3>❌ よくある間違い②：メンテナンス不足</h3>
+                    <div class="mistake-content">
+                        <div class="mistake-problem">
+                            <h4>🚨 問題点</h4>
+                            <ul>
+                                <li>雑菌・カビの繁殖</li>
+                                <li>赤ちゃんへの健康被害</li>
+                                <li>機器の故障・寿命短縮</li>
+                                <li>不快な臭いの発生</li>
+                            </ul>
+                        </div>
+                        <div class="mistake-solution">
+                            <h4>✅ 対処法</h4>
+                            <ul>
+                                <li>毎日の水交換を厳守</li>
+                                <li>週2回の徹底清掃</li>
+                                <li>フィルター交換の定期実施</li>
+                                <li>使用しない時は完全乾燥</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mistake-card">
+                    <h3>❌ よくある間違い③：不適切な設置場所</h3>
+                    <div class="mistake-content">
+                        <div class="mistake-problem">
+                            <h4>🚨 問題点</h4>
+                            <ul>
+                                <li>直接風による体温調節への影響</li>
+                                <li>転倒・誤飲などの事故リスク</li>
+                                <li>湿度の不均等分布</li>
+                                <li>騒音による睡眠妨害</li>
+                            </ul>
+                        </div>
+                        <div class="mistake-solution">
+                            <h4>✅ 対処法</h4>
+                            <ul>
+                                <li>2m以上の安全距離確保</li>
+                                <li>安定した高い場所に設置</li>
+                                <li>風向きの調整・遮蔽</li>
+                                <li>静音機種の選択</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="seasonal-usage">🌸 季節別の使い方のコツ</h2>
+                
+                <div class="seasonal-guide">
+                    <div class="season-card spring">
+                        <h3>🌸 春（3-5月）</h3>
+                        <div class="season-content">
+                            <h4>特徴と注意点</h4>
+                            <ul>
+                                <li>花粉の季節で窓を開けにくい</li>
+                                <li>気温差が激しく湿度変動大</li>
+                                <li>梅雨前の乾燥注意</li>
+                            </ul>
+                            <h4>推奨設定</h4>
+                            <ul>
+                                <li>目標湿度：45-55%</li>
+                                <li>運転時間：間欠的に使用</li>
+                                <li>特別対策：空気清浄機併用</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="season-card summer">
+                        <h3>🌻 夏（6-8月）</h3>
+                        <div class="season-content">
+                            <h4>特徴と注意点</h4>
+                            <ul>
+                                <li>エアコン使用で室内乾燥</li>
+                                <li>高温多湿でカビリスク</li>
+                                <li>汗による体温調節</li>
+                            </ul>
+                            <h4>推奨設定</h4>
+                            <ul>
+                                <li>目標湿度：50-55%</li>
+                                <li>運転時間：エアコン連動</li>
+                                <li>特別対策：除湿との併用</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="season-card autumn">
+                        <h3>🍂 秋（9-11月）</h3>
+                        <div class="season-content">
+                            <h4>特徴と注意点</h4>
+                            <ul>
+                                <li>湿度が徐々に低下</li>
+                                <li>暖房開始で乾燥加速</li>
+                                <li>風邪・インフル流行開始</li>
+                            </ul>
+                            <h4>推奨設定</h4>
+                            <ul>
+                                <li>目標湿度：50-60%</li>
+                                <li>運転時間：徐々に増加</li>
+                                <li>特別対策：ウイルス対策強化</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="season-card winter">
+                        <h3>❄️ 冬（12-2月）</h3>
+                        <div class="season-content">
+                            <h4>特徴と注意点</h4>
+                            <ul>
+                                <li>最も乾燥が厳しい季節</li>
+                                <li>暖房による湿度急減</li>
+                                <li>感染症リスク最大</li>
+                            </ul>
+                            <h4>推奨設定</h4>
+                            <ul>
+                                <li>目標湿度：55-60%</li>
+                                <li>運転時間：24時間連続</li>
+                                <li>特別対策：複数台体制</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="faq">❓ よくある質問</h2>
+                
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. 新生児室でも加湿器を使っていますか？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. はい、多くの新生児室で湿度管理を行っています。</strong>病院では50-60%の湿度を維持し、感染予防と赤ちゃんの快適性を両立させています。家庭でも同様の管理が推奨されます。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. 赤ちゃんがいる部屋での加湿器の音は大丈夫？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. 25dB以下の静音モデルなら問題ありません。</strong>スチーム式なら20dB程度、気化式なら25-30dB程度が理想的。赤ちゃんの睡眠を妨げないレベルの機種を選びましょう。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. アロマオイルは赤ちゃんがいても使える？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. 1歳未満は使用を避けてください。</strong>赤ちゃんの呼吸器や肌は非常に敏感で、アロマ成分でも刺激となる可能性があります。純水での運転に限定することを強く推奨します。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. 湿度が高すぎるとどんな問題が？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. カビ・ダニ繁殖、結露、皮膚トラブルのリスクがあります。</strong>60%を超える高湿度は、赤ちゃんの健康に悪影響を与える可能性があります。適正範囲（40-60%）を厳守してください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. 加湿器の水は何を使えばいい？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. 精製水または煮沸した水道水を推奨します。</strong>ミネラルウォーターは雑菌繁殖のリスクがあるため避けてください。水道水を使う場合は、必ず毎日交換し、定期的な清掃を行いましょう。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Q. 赤ちゃんに最適な加湿器のタイプは？</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>A. スチーム式が最も安全でおすすめです。</strong>沸騰により雑菌を完全に除去し、メンテナンスも簡単。次に気化式、最後にハイブリッド式の順で推奨します。超音波式は雑菌繁殖リスクが高いため避けましょう。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-box">
+                    <h4>記事のポイントまとめ</h4>
+                    <ul>
+                        <li>赤ちゃんには新生児期（生後0ヶ月）から加湿器使用可能</li>
+                        <li>推奨湿度は月齢により40-60%の範囲で調整</li>
+                        <li>スチーム式が最も安全で清潔、赤ちゃんに最適</li>
+                        <li>設置距離2m以上、チャイルドロック必須</li>
+                        <li>毎日の水交換と定期清掃が健康を守る鍵</li>
+                        <li>季節に応じた湿度調整で年中快適な環境を</li>
+                    </ul>
                 </div>
             </div>
         </article>
     </main>
 
+    <!-- フッター -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>失敗しないお得マン！</h3>
                     <p>家電選びの専門サイト</p>
                 </div>
                 <div class="footer-section">
-                    <h4>関連記事</h4>
+                    <h4>カテゴリー</h4>
                     <ul>
-                        <li><a href="baby-safe-humidifier-guide.html">赤ちゃん向け加湿器</a></li>
-                        <li><a href="humidifier-mold-cleaning-guide.html">カビ対策ガイド</a></li>
-                        <li><a href="humidifier-always-on-electricity-cost.html">つけっぱなし電気代</a></li>
+                        <li><a href="../pages/humidifier.html">加湿器</a></li>
+                        <li><a href="../pages/ranking.html">ランキング</a></li>
                     </ul>
                 </div>
             </div>
@@ -2399,30 +1068,24 @@
     </footer>
 
     <script>
-        // チェックリスト機能
-        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    this.parentElement.style.opacity = '0.6';
-                    this.parentElement.style.textDecoration = 'line-through';
-                } else {
-                    this.parentElement.style.opacity = '1';
-                    this.parentElement.style.textDecoration = 'none';
-                }
+        // FAQ アコーディオン機能
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                faqItem.classList.toggle('active');
+                icon.style.transform = faqItem.classList.contains('active') 
+                    ? 'rotate(180deg)' : 'rotate(0deg)';
             });
         });
 
-        // FAQ アコーディオン
-        document.querySelectorAll('.faq-item h3').forEach(question => {
-            question.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                
-                // 全て閉じる
-                document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
-                
-                // クリックされたものを開く/閉じる
-                answer.style.display = isOpen ? 'none' : 'block';
+        // ページロード時の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQアイコンの初期設定
+            document.querySelectorAll('.faq-question i').forEach(icon => {
+                icon.style.transition = 'transform 0.3s ease';
             });
         });
     </script>

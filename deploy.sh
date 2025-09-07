@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # 家電特化サイト EC2デプロイスクリプト
-# EC2 IP: 16.176.167.244
+# EC2 IP: 13.238.219.164
 
 echo "🚀 家電特化サイト EC2デプロイスクリプト開始"
-echo "IP: 16.176.167.244"
+echo "IP: 13.238.219.164"
 echo "日時: $(date)"
 
 # 設定変数（要編集）
-EC2_IP="16.176.167.244"
+EC2_IP="13.238.219.164"
 KEY_FILE="C:/Users/chun7/Downloads/otokuman.pem"  # PEMファイルのパス
 EC2_USER="ubuntu"             # Ubuntu インスタンス用
 
