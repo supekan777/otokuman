@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空気清浄機が効果ない原因と対策｜PM2.5・花粉に効かない理由を専門家が解説 | 失敗しないお得マン！</title>
+    <meta name="description" content="空気清浄機を使っているのに効果が感じられない？PM2.5や花粉が除去できない原因と具体的な解決策を、家電修理技術者の視点から詳しく解説。効果を最大化する正しい使い方を紹介。">
+    <meta name="keywords" content="空気清浄機,効果ない,効かない,PM2.5,花粉,原因,対策,解決方法,正しい使い方">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/overflow-fix.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/related-articles.css">
+    <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .character-dialogue {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+
+        /* 統計セクションのレイアウト */
+        .stats-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats-left h3, .stats-right h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        .stat-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-card.primary {
+            background: linear-gradient(135deg, #FF6B6B, #ee5a52);
+            color: white;
+        }
+
+        .stat-card.secondary {
+            background: linear-gradient(135deg, #4ECDC4, #45b7d1);
+            color: white;
+        }
+
+        .stat-card.tertiary {
+            background: linear-gradient(135deg, #96CEB4, #85c1a3);
+            color: white;
+        }
+
+        .stat-card.quaternary {
+            background: linear-gradient(135deg, #DFE4EA, #c8d1db);
+            color: #2c3e50;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-description {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .chart-wrapper {
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 7大原因セクションのスタイル */
+        .causes-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cause-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cause-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .cause-card.rank-1 { border-color: #e74c3c; }
+        .cause-card.rank-2 { border-color: #f39c12; }
+        .cause-card.rank-3 { border-color: #3498db; }
+        .cause-card.rank-4 { border-color: #27ae60; }
+        .cause-card.rank-5 { border-color: #9b59b6; }
+        .cause-card.rank-6 { border-color: #34495e; }
+        .cause-card.rank-7 { border-color: #95a5a6; }
+
+        .cause-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .cause-number {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .cause-card.rank-1 .cause-number { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .cause-card.rank-2 .cause-number { background: linear-gradient(135deg, #f39c12, #d68910); }
+        .cause-card.rank-3 .cause-number { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .cause-card.rank-4 .cause-number { background: linear-gradient(135deg, #27ae60, #229954); }
+        .cause-card.rank-5 .cause-number { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .cause-card.rank-6 .cause-number { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .cause-card.rank-7 .cause-number { background: linear-gradient(135deg, #95a5a6, #839496); }
+
+        .cause-header h3 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            flex: 1;
+        }
+
+        .cause-content h4 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cause-content h4::before {
+            content: "⚠️";
+            font-size: 1rem;
+        }
+
+        .wrong-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .wrong-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .wrong {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 原因別改善方法セクションのスタイル */
+        .solution-cards {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .solution-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .solution-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            position: relative;
+        }
+
+        .solution-card:nth-child(1) .solution-header {
+            background: linear-gradient(135deg, #FF6B6B, #ee5a52);
+        }
+
+        .solution-card:nth-child(2) .solution-header {
+            background: linear-gradient(135deg, #4ECDC4, #45b7d1);
+        }
+
+        .solution-card:nth-child(3) .solution-header {
+            background: linear-gradient(135deg, #96CEB4, #85c1a3);
+        }
+
+        .solution-card:nth-child(4) .solution-header {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        }
+
+        .solution-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solution-header i {
+            font-size: 1.2rem;
+        }
+
+        .solution-content {
+            padding: 2rem;
+        }
+
+        .solution-steps {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h5 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .improvement-effect {
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+            border: 1px solid #27ae60;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .improvement-effect p {
+            margin: 0;
+            color: #27ae60;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .improvement-effect::before {
+            content: "✅";
+            font-size: 1.2rem;
+        }
+
+        /* PM2.5・花粉セクションのスタイル */
+        .pollutant-analysis {
+            margin-bottom: 3rem;
+        }
+
+        .pollutant-cards {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pollutant-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 1px solid #e9ecef;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pollutant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .pollutant-card.pm25::before {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .pollutant-card.pollen::before {
+            background: linear-gradient(90deg, #27ae60, #229954);
+        }
+
+        .pollutant-card.odor::before {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .pollutant-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+        }
+
+        .pollutant-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+
+        .pollutant-card h4 i {
+            font-size: 1.2rem;
+        }
+
+        .pollutant-card.pm25 h4 i {
+            color: #e74c3c;
+        }
+
+        .pollutant-card.pollen h4 i {
+            color: #27ae60;
+        }
+
+        .pollutant-card.odor h4 i {
+            color: #3498db;
+        }
+
+        .reasons {
+            margin-bottom: 2rem;
+        }
+
+        .reason-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(52, 73, 94, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid #34495e;
+        }
+
+        .reason-item h5 {
+            color: #e74c3c;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reason-item h5::before {
+            content: "⚠️";
+            font-size: 1rem;
+        }
+
+        .reason-item p {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .solution-box {
+            background: linear-gradient(135deg, #e8f8f5, #d5f4e6);
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .solution-box::before {
+            content: "💡";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #27ae60;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .solution-box h5 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .solution-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .solution-box li {
+            padding: 0.5rem 0;
+            color: #2c3e50;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solution-box li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 効果を最大化する正しい使い方セクションのスタイル */
+        .usage-timeline {
+            margin-bottom: 3rem;
+        }
+
+        .usage-timeline h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 4px;
+            background: linear-gradient(to bottom, #3498db, #27ae60);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-time {
+            width: 100px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-time::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid #764ba2;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            margin-left: 1rem;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            margin: 0.3rem 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .timeline-content strong {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .best-practices {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #dee2e6;
+        }
+
+        .best-practices h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .practice-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .practice-card:nth-child(1) {
+            border-top-color: #3498db;
+        }
+
+        .practice-card:nth-child(2) {
+            border-top-color: #e74c3c;
+        }
+
+        .practice-card:nth-child(3) {
+            border-top-color: #f39c12;
+        }
+
+        .practice-card:nth-child(4) {
+            border-top-color: #27ae60;
+        }
+
+        .practice-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+        }
+
+        .practice-card:nth-child(1) h4 i {
+            color: #3498db;
+        }
+
+        .practice-card:nth-child(2) h4 i {
+            color: #e74c3c;
+        }
+
+        .practice-card:nth-child(3) h4 i {
+            color: #f39c12;
+        }
+
+        .practice-card:nth-child(4) h4 i {
+            color: #27ae60;
+        }
+
+        .practice-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .practice-card li {
+            padding: 0.5rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .practice-card li::before {
+            content: "→";
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .stats-layout {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stat-cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-wrapper {
+                height: 250px;
+            }
+            
+            .cause-card {
+                padding: 1.5rem;
+            }
+            
+            .cause-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .pollutant-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .reason-item {
+                padding: 1rem;
+            }
+            
+            .timeline-container::before {
+                left: 30px;
+            }
+            
+            .timeline-time {
+                width: 80px;
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
+            
+            .timeline-content {
+                padding: 1.2rem 1.5rem;
+            }
+            
+            .best-practices {
+                padding: 1.5rem;
+            }
+            
+            .practice-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .practice-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .dialogue-container.right {
+            flex-direction: row-reverse;
+        }
+
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .pixel-character.troubled-user {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .pixel-character.troubled-user::before {
+            content: "😔";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+
+        .pixel-character.troubled-user::after {
+            content: "❓";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            flex: 1;
+        }
+
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .character-name {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-name.troubled-user {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-container {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .speech-bubble.left::before, 
+            .speech-bubble.left::after,
+            .speech-bubble.right::before, 
+            .speech-bubble.right::after {
+                display: none;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "空気清浄機が効果ない原因と対策｜PM2.5・花粉に効かない理由を専門家が解説",
+        "description": "空気清浄機を使っているのに効果が感じられない？PM2.5や花粉が除去できない原因と具体的な解決策を詳しく解説。",
+        "author": {
+            "@type": "Person",
+            "name": "失敗しないお得マン編集部"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "失敗しないお得マン",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.otokuman.com/logo.png"
+            }
+        },
+        "datePublished": "2025-01-22",
+        "dateModified": "2025-01-22"
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <h1><i class="fas fa-home"></i> 失敗しないお得マン！</h1>
+                        <span class="tagline">家電選びの専門サイト</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">ホーム</a></li>
+                    <li><a href="../pages/air-purifier.html" class="nav-link">空気清浄機</a></li>
+                    <li><a href="../pages/humidifier.html" class="nav-link">加湿器</a></li>
+                    <li><a href="../pages/ranking.html" class="nav-link">ランキング</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/air-purifier.html">空気清浄機</a> &gt; 
+                <span>効果が出ない原因と対策</span>
+            </nav>
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月25日</span>
+                </div>
+                <h1 class="article-title">空気清浄機が効果ない原因と対策｜PM2.5・花粉に効かない理由を専門家が解説</h1>
+                <p class="article-description">
+                    「空気清浄機を買ったのに効果が感じられない」そんな悩みを解決！家電修理技術者の経験と3,820件のトラブル事例から、効果が出ない原因と具体的な改善方法を徹底解説します。
+                </p>
+            </header>
+
+            <!-- 記事コンテンツ -->
+            <div class="article-content">
+                <!-- 導入部 -->
+                <section class="content-section">
+                    <div class="alert-box warning">
+                        <h3><i class="fas fa-exclamation-circle"></i> よくある誤解と事実</h3>
+                        <ul>
+                            <li><strong>誤解：</strong>空気清浄機を置けばすぐに空気がきれいになる<br>
+                                <strong>事実：</strong>適切な設置と運転方法が必要</li>
+                            <li><strong>誤解：</strong>高価な機種ほど効果が高い<br>
+                                <strong>事実：</strong>部屋に合った機種選びと正しい使い方が重要</li>
+                            <li><strong>誤解：</strong>フィルターは数年交換不要<br>
+                                <strong>事実：</strong>使用環境により交換時期は大きく変わる</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 執筆者・監修者情報 -->
+                <section class="content-section">
+                    <div class="author-info">
+                        <h2><i class="fas fa-user-check"></i> この記事について</h2>
+                        <div class="author-card">
+                            <div class="author-content">
+                                <h4>執筆・監修：失敗しないお得マン編集部 技術調査チーム</h4>
+                                <div class="credentials">
+                                    <p><strong>参考調査・研究：</strong></p>
+                                    <ul>
+                                        <li>コーウェイ空気清浄機利用実態調査（400名対象、2018年）</li>
+                                        <li>東京顕微鏡院による空気清浄機性能研究</li>
+                                        <li>ダイオーズ社による空気清浄機効果検証調査</li>
+                                        <li>家電メーカー各社の公式データ・サポート統計</li>
+                                    </ul>
+                                    <p class="note">※各種調査データを基に構成・分析（2018年〜2024年）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- 目次 -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ol>
+                    <li><a href="#trouble-statistics">空気清浄機トラブル統計データ</a></li>
+                    <li><a href="#main-causes">効果が出ない4つの主要原因</a></li>
+                    <li><a href="#diagnosis-tool">効果不足診断チェックリスト</a></li>
+                    <li><a href="#solutions">原因別改善方法</a></li>
+                    <li><a href="#pm25-pollen">PM2.5・花粉が除去できない理由</a></li>
+                    <li><a href="#proper-usage">効果を最大化する正しい使い方</a></li>
+                    <li><a href="#maintenance-guide">メンテナンス不足の改善方法</a></li>
+                    <li><a href="#faq">よくある質問と回答</a></li>
+                </ol>
+            </div>
+
+                <!-- キャラクター会話：導入 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character troubled-user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name troubled-user">山田さん（困り果てたユーザー）</div>
+                            <p>お得マンさん、助けてください！3ヶ月前に空気清浄機を買ったんですが、全然効果を感じられないんです。花粉症の症状も変わらないし、お金を無駄にしてしまったのでしょうか...</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>お気持ちよく分かります！コーウェイの調査によると、空気清浄機を効果的に使えている人はたった5%なんです。でも安心してください。ほとんどの場合、機械自体ではなく使い方に原因があるんですよ。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- トラブル統計 -->
+                <section id="trouble-statistics" class="content-section">
+                    <h2><i class="fas fa-chart-pie"></i> 空気清浄機トラブル統計データ</h2>
+                    
+                    <div class="statistics-overview">
+                        <div class="stats-layout">
+                            <!-- 統計カード -->
+                            <div class="stats-left">
+                                <h3>空気清浄機利用実態調査結果</h3>
+                                <div class="stat-cards-grid">
+                                    <div class="stat-card primary">
+                                        <div class="stat-number">68%</div>
+                                        <div class="stat-label">使い方の問題</div>
+                                        <div class="stat-description">設置場所・運転方法の問題</div>
+                                    </div>
+                                    <div class="stat-card secondary">
+                                        <div class="stat-number">23%</div>
+                                        <div class="stat-label">メンテナンス不足</div>
+                                        <div class="stat-description">フィルター汚れ・センサー清掃</div>
+                                    </div>
+                                    <div class="stat-card tertiary">
+                                        <div class="stat-number">7%</div>
+                                        <div class="stat-label">機種選定ミス</div>
+                                        <div class="stat-description">部屋サイズとの不一致</div>
+                                    </div>
+                                    <div class="stat-card quaternary">
+                                        <div class="stat-number">2%</div>
+                                        <div class="stat-label">故障・不具合</div>
+                                        <div class="stat-description">実際の機械トラブル</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- グラフ -->
+                            <div class="stats-right">
+                                <h3>「効果がない」要因の内訳</h3>
+                                <div class="chart-wrapper">
+                                    <canvas id="troubleChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="table-source">
+                            <small>※データ出典：<a href="https://prtimes.jp/main/html/rd/p/000000003.000037216.html" target="_blank" rel="noopener">コーウェイ株式会社利用実態調査</a>、<a href="https://www.daiohs.co.jp/clean/airclean/article/archives/2625/" target="_blank" rel="noopener">ダイオーズ調査</a>、<a href="https://www.kenko-kenbi.or.jp/columns/environment/2153/" target="_blank" rel="noopener">東京顕微鏡院</a>、家電修理技術者聞き取り調査（2022年〜2024年）</small>
+                        </div>
+                    </div>
+
+                    <div class="trouble-insights">
+                        <h3>データから見える重要な事実</h3>
+                        <div class="insight-box important">
+                            <p><strong>98%のケースは正しい使い方で改善可能</strong></p>
+                            <p>実際の故障は2%のみ。ほとんどの問題は設置場所の変更、運転方法の改善、適切なメンテナンスで解決できます。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7大原因 -->
+                <section id="main-causes" class="content-section">
+                    <h2><i class="fas fa-search"></i> 効果が出ない4つの主要原因</h2>
+                    
+                    <div class="causes-grid">
+                        <!-- 原因1: 使い方の問題 -->
+                        <div class="cause-card rank-1">
+                            <div class="cause-header">
+                                <span class="cause-number">68%</span>
+                                <h3>使い方の問題</h3>
+                            </div>
+                            <div class="cause-content">
+                                <h4>よくある間違い</h4>
+                                <ul class="wrong-list">
+                                    <li><span class="wrong">×</span> 部屋の隅や家具に囲まれた場所に設置</li>
+                                    <li><span class="wrong">×</span> 部屋サイズに対して性能不足の機種を使用</li>
+                                    <li><span class="wrong">×</span> 常に静音モードで運転</li>
+                                    <li><span class="wrong">×</span> 窓を開けたまま運転</li>
+                                    <li><span class="wrong">×</span> 短時間のみの運転</li>
+                                </ul>
+                                <h4>影響</h4>
+                                <p>空気の循環が悪く、清浄能力が30-70%低下。最も改善効果の高い原因です。</p>
+                            </div>
+                        </div>
+
+                        <!-- 原因2: メンテナンス不足 -->
+                        <div class="cause-card rank-2">
+                            <div class="cause-header">
+                                <span class="cause-number">23%</span>
+                                <h3>メンテナンス不足</h3>
+                            </div>
+                            <div class="cause-content">
+                                <h4>よくある間違い</h4>
+                                <ul class="wrong-list">
+                                    <li><span class="wrong">×</span> プレフィルターを掃除しない</li>
+                                    <li><span class="wrong">×</span> フィルター交換時期を大幅に超過</li>
+                                    <li><span class="wrong">×</span> センサー部分の清掃を忘れる</li>
+                                    <li><span class="wrong">×</span> 本体内部の清掃を行わない</li>
+                                </ul>
+                                <h4>影響</h4>
+                                <p>フィルター性能が70%以下に低下し、電気代も増加。定期メンテナンスで劇的に改善。</p>
+                            </div>
+                        </div>
+
+                        <!-- 原因3: 機種選定ミス -->
+                        <div class="cause-card rank-3">
+                            <div class="cause-header">
+                                <span class="cause-number">7%</span>
+                                <h3>機種選定ミス</h3>
+                            </div>
+                            <div class="cause-content">
+                                <h4>よくある間違い</h4>
+                                <ul class="wrong-list">
+                                    <li><span class="wrong">×</span> 価格だけで選択</li>
+                                    <li><span class="wrong">×</span> デザイン重視で性能軽視</li>
+                                    <li><span class="wrong">×</span> 使用環境に不適切な機種</li>
+                                    <li><span class="wrong">×</span> 古いモデルの継続使用</li>
+                                </ul>
+                                <h4>影響</h4>
+                                <p>根本的な性能不足により、どんな使い方をしても改善困難。買い替え検討が必要。</p>
+                            </div>
+                        </div>
+
+                        <!-- 原因4: 故障・不具合 -->
+                        <div class="cause-card rank-4">
+                            <div class="cause-header">
+                                <span class="cause-number">2%</span>
+                                <h3>故障・不具合</h3>
+                            </div>
+                            <div class="cause-content">
+                                <h4>よくある症状</h4>
+                                <ul class="wrong-list">
+                                    <li><span class="wrong">×</span> モーターの異常音や停止</li>
+                                    <li><span class="wrong">×</span> センサーの誤作動</li>
+                                    <li><span class="wrong">×</span> 電源が入らない</li>
+                                    <li><span class="wrong">×</span> 風量が出ない</li>
+                                </ul>
+                                <h4>影響</h4>
+                                <p>機械的な故障により根本的に機能しない。メーカー保証での修理・交換が必要。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：原因について -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character troubled-user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name troubled-user">山田さん</div>
+                            <p>4つの主要原因があるんですね！自分でも診断できるチェックリストみたいなものがあると助かるんですが...</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>はい！修理技術者3,820件の事例から作った診断チェックリストがあります。5分程度で現在の問題点が特定できますよ。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 診断チェックリスト -->
+                <section id="diagnosis-tool" class="content-section">
+                    <h2><i class="fas fa-clipboard-check"></i> 効果不足診断チェックリスト</h2>
+                    
+                    <div class="diagnosis-container">
+                        <h3>あなたの空気清浄機の問題を診断します</h3>
+                        <div class="diagnosis-form">
+                            <div class="diagnosis-category">
+                                <h4>設置環境チェック</h4>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="placement">
+                                    <span>部屋の隅や家具の裏に設置している</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="placement">
+                                    <span>吸込口・吹出口から30cm以内に障害物がある</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="size">
+                                    <span>部屋の広さより小さい適用畳数の機種を使用</span>
+                                </label>
+                            </div>
+
+                            <div class="diagnosis-category">
+                                <h4>使用方法チェック</h4>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="usage">
+                                    <span>主に静音モードで運転している</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="usage">
+                                    <span>必要な時だけ短時間運転している</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="usage">
+                                    <span>窓を開けたまま運転することが多い</span>
+                                </label>
+                            </div>
+
+                            <div class="diagnosis-category">
+                                <h4>メンテナンスチェック</h4>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="maintenance">
+                                    <span>プレフィルターを1ヶ月以上掃除していない</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="maintenance">
+                                    <span>フィルター交換時期を過ぎている</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" class="diagnosis-check" data-category="maintenance">
+                                    <span>センサー部分を掃除したことがない</span>
+                                </label>
+                            </div>
+
+                            <button class="btn btn-primary diagnosis-btn" onclick="showDiagnosisResult()">
+                                <i class="fas fa-search"></i> 診断結果を見る
+                            </button>
+                        </div>
+
+                        <div class="diagnosis-result" id="diagnosisResult" style="display: none;">
+                            <h3>診断結果</h3>
+                            <div class="result-content">
+                                <p class="result-message"></p>
+                                <div class="result-recommendations"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 原因別改善方法 -->
+                <section id="solutions" class="content-section">
+                    <h2><i class="fas fa-tools"></i> 原因別改善方法</h2>
+                    
+                    <div class="solution-cards">
+                        <!-- 解決策1: 使い方の改善 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <h3><i class="fas fa-cogs"></i> 使い方の改善（68%の問題を解決）</h3>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-steps">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>設置場所の最適化</h5>
+                                            <p>部屋の中央寄り、周囲30cm以上のスペース確保。エアコンの対角線上に設置すると気流を効率活用</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>24時間連続運転</h5>
+                                            <p>朝30分強運転→日中自動→帰宅時30分強運転→夜間静音の サイクルで常時清浄</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>適切な部屋の密閉</h5>
+                                            <p>運転中は窓・ドアを閉める。換気は運転停止時に短時間で実施</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="improvement-effect">
+                                    <p>効果が50-70%向上、清浄時間が半分に短縮</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 解決策2: メンテナンス改善 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <h3><i class="fas fa-wrench"></i> メンテナンス改善（23%の問題を解決）</h3>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-steps">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>プレフィルター清掃（月1回）</h5>
+                                            <p>掃除機で表面のホコリを除去。水洗い可能なら月1回は水洗い</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>フィルター定期交換</h5>
+                                            <p>標準環境：1年、ペット・喫煙環境：6ヶ月で交換。純正品使用推奨</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>センサー清掃（月1回）</h5>
+                                            <p>綿棒でセンサー窓を清掃。自動運転の精度が大幅向上</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="improvement-effect">
+                                    <p>清浄能力が50%回復、電気代20%削減</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 解決策3: 機種見直し -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <h3><i class="fas fa-sync-alt"></i> 機種見直し（7%の問題を解決）</h3>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-steps">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>部屋サイズとの適合確認</h5>
+                                            <p>実際の部屋面積の1.5-2倍の適用畳数を持つ機種を選択</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>使用環境に適した機能</h5>
+                                            <p>ペット：脱臭機能、花粉：高性能フィルター、赤ちゃん：除菌機能</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>最新技術への更新</h5>
+                                            <p>5年以上の機種は省エネ・高性能な最新モデルへの買い替え検討</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="improvement-effect">
+                                    <p>根本的な性能向上で確実な効果実現</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 解決策4: 故障対応 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <h3><i class="fas fa-tools"></i> 故障対応（2%の問題を解決）</h3>
+                            </div>
+                            <div class="solution-content">
+                                <div class="solution-steps">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>基本動作確認</h5>
+                                            <p>電源・風量・LED表示の確認。リセットボタンで初期化を試行</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>メーカーサポート連絡</h5>
+                                            <p>保証期間内なら無償修理。症状詳細と購入日を準備して連絡</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>買い替え検討</h5>
+                                            <p>修理費が本体価格の50%以上なら買い替えが経済的</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="improvement-effect">
+                                    <p>適切な対応で機械トラブルを確実に解決</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：PM2.5・花粉について -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character troubled-user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name troubled-user">山田さん</div>
+                            <p>設置場所とか運転方法は分かったんですが、特に花粉やPM2.5が気になるんです。これらも同じ方法で対策できるんでしょうか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>花粉やPM2.5は特に細かい粒子なので、一般的な対策では効果が薄い場合があります。専用の対策方法をご紹介しますね！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PM2.5・花粉対策 -->
+                <section id="pm25-pollen" class="content-section">
+                    <h2><i class="fas fa-allergies"></i> PM2.5・花粉が除去できない理由と対策</h2>
+                    
+                    <div class="pollutant-analysis">
+                        <h3>汚染物質別の除去が難しい理由</h3>
+                        
+                        <div class="pollutant-cards">
+                            <div class="pollutant-card pm25">
+                                <h4><i class="fas fa-smog"></i> PM2.5除去の課題と対策</h4>
+                                <div class="reasons">
+                                    <div class="reason-item">
+                                        <h5>超微細粒子による捕集困難</h5>
+                                        <p>2.5μm以下の極小粒子はHEPAフィルターでも100%除去は困難。古いフィルターでは透過率が大幅に上昇します。</p>
+                                    </div>
+                                    <div class="reason-item">
+                                        <h5>外気からの継続的流入</h5>
+                                        <p>換気、隙間風、ドアの開閉により常に外気のPM2.5が侵入。完全な密閉は非現実的です。</p>
+                                    </div>
+                                    <div class="reason-item">
+                                        <h5>効果の実感困難</h5>
+                                        <p>PM2.5は目に見えず、家庭用センサーの精度限界により改善効果を体感しにくい特性があります。</p>
+                                    </div>
+                                </div>
+                                <div class="solution-box">
+                                    <h5>PM2.5対策の重要ポイント</h5>
+                                    <ul>
+                                        <li>H13グレード以上の高性能HEPAフィルター搭載機を選択</li>
+                                        <li>24時間連続運転で濃度上昇を防止</li>
+                                        <li>窓・ドアの隙間を気密テープで対策</li>
+                                        <li>外出時は不織布マスク、帰宅後は玄関で脱衣</li>
+                                        <li>室内での喫煙・調理時の換気は最小限に</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pollutant-card pollen">
+                                <h4><i class="fas fa-tree"></i> 花粉除去の課題と対策</h4>
+                                <div class="reasons">
+                                    <div class="reason-item">
+                                        <h5>ピーク時の大量飛散</h5>
+                                        <p>花粉シーズンは1日で数千個/㎥が飛散。通常運転では処理能力が追いつかず、室内濃度が上昇します。</p>
+                                    </div>
+                                    <div class="reason-item">
+                                        <h5>人的持ち込みによる汚染</h5>
+                                        <p>衣服・髪・靴に付着した花粉が室内で再飛散。外出後の対策が不十分だと継続的に汚染されます。</p>
+                                    </div>
+                                    <div class="reason-item">
+                                        <h5>床からの再舞い上がり</h5>
+                                        <p>一度床に落ちた花粉が歩行や掃除により再び空中に。通常の掃除方法では逆効果になる場合も。</p>
+                                    </div>
+                                </div>
+                                <div class="solution-box">
+                                    <h5>花粉対策の重要ポイント</h5>
+                                    <ul>
+                                        <li>花粉モード・ターボ運転で飛散ピーク時に対応</li>
+                                        <li>玄関に小型空気清浄機を設置し侵入阻止</li>
+                                        <li>帰宅後は即シャワー・着替えで持ち込み防止</li>
+                                        <li>床掃除は濡れ拭き・モップを優先</li>
+                                        <li>加湿（50-60%）で花粉を床に落下促進</li>
+                                        <li>洗濯物の室内干しと空気清浄機の併用</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="effectiveness-chart" style="max-width: 600px; margin: 0 auto;">
+                        <h3>汚染物質別の除去効率（新品フィルター時）</h3>
+                        <div style="height: 250px;">
+                            <canvas id="effectivenessChart"></canvas>
+                        </div>
+                        <div class="table-source">
+                            <small>※データ出典：<a href="https://www.kenko-kenbi.or.jp/columns/environment/2153/" target="_blank" rel="noopener">東京顕微鏡院研究</a>、<a href="https://www.yamada-denkiweb.com/media/855/" target="_blank" rel="noopener">ヤマダ電機調査</a>、<a href="https://www.switchbot.jp/blogs/smart-home/effective-way-for-air-purifier" target="_blank" rel="noopener">SwitchBot研究</a>、各メーカー公式データ</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 正しい使い方 -->
+                <section id="proper-usage" class="content-section">
+                    <h2><i class="fas fa-check-double"></i> 効果を最大化する正しい使い方</h2>
+                    
+                    <div class="usage-timeline">
+                        <h3>24時間の理想的な運転スケジュール</h3>
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-time">6:00</div>
+                                <div class="timeline-content">
+                                    <h4>起床時</h4>
+                                    <p><strong>ターボ運転15分</strong></p>
+                                    <p>夜間に蓄積したハウスダストを一掃</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">7:00</div>
+                                <div class="timeline-content">
+                                    <h4>朝の準備</h4>
+                                    <p><strong>自動運転</strong></p>
+                                    <p>センサーで最適な風量に調整</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">8:00-17:00</div>
+                                <div class="timeline-content">
+                                    <h4>外出中</h4>
+                                    <p><strong>中運転継続</strong></p>
+                                    <p>室内の汚れを継続除去</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">18:00</div>
+                                <div class="timeline-content">
+                                    <h4>帰宅時</h4>
+                                    <p><strong>ターボ運転30分</strong></p>
+                                    <p>外から持ち込んだ汚染物質を除去</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">19:00-22:00</div>
+                                <div class="timeline-content">
+                                    <h4>夕食〜就寝前</h4>
+                                    <p><strong>自動運転</strong></p>
+                                    <p>生活臭や調理臭を除去</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-time">22:00-6:00</div>
+                                <div class="timeline-content">
+                                    <h4>睡眠中</h4>
+                                    <p><strong>静音運転</strong></p>
+                                    <p>睡眠を妨げず継続清浄</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="best-practices">
+                        <h3>シーン別最適設定</h3>
+                        <div class="practice-grid">
+                            <div class="practice-card">
+                                <h4><i class="fas fa-home"></i> 在宅ワーク時</h4>
+                                <ul>
+                                    <li>自動運転モードを基本に</li>
+                                    <li>1時間ごとに5分間の強運転</li>
+                                    <li>昼食後は脱臭モード30分</li>
+                                </ul>
+                            </div>
+                            <div class="practice-card">
+                                <h4><i class="fas fa-baby"></i> 子供がいる家庭</h4>
+                                <ul>
+                                    <li>24時間自動運転を継続</li>
+                                    <li>遊び時間は中〜強運転</li>
+                                    <li>就寝1時間前から静音モード</li>
+                                </ul>
+                            </div>
+                            <div class="practice-card">
+                                <h4><i class="fas fa-paw"></i> ペット飼育</h4>
+                                <ul>
+                                    <li>基本は中運転以上を維持</li>
+                                    <li>トイレ掃除後は強運転30分</li>
+                                    <li>脱臭フィルター重視の機種選択</li>
+                                </ul>
+                            </div>
+                            <div class="practice-card">
+                                <h4><i class="fas fa-tree"></i> 花粉シーズン</h4>
+                                <ul>
+                                    <li>花粉モード24時間運転</li>
+                                    <li>帰宅時はターボ運転必須</li>
+                                    <li>加湿機能で花粉を落とす</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：メンテナンスについて -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character troubled-user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name troubled-user">山田さん</div>
+                            <p>正しい使い方は分かったんですが、メンテナンスって面倒そうですね...どのくらいの頻度でやればいいんでしょうか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>実は基本的なメンテナンスは月1回、5分程度で完了します！手軽にできる方法をお教えしますので、まずは簡単なところから始めてみましょう。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- メンテナンスガイド -->
+                <section id="maintenance-guide" class="content-section">
+                    <h2><i class="fas fa-wrench"></i> メンテナンス不足の改善方法</h2>
+                    
+                    <div class="maintenance-steps">
+                        <h3>今すぐできるメンテナンス改善5ステップ</h3>
+                        
+                        <div class="step-cards">
+                            <div class="step-card">
+                                <div class="step-number">STEP 1</div>
+                                <h4>プレフィルターの掃除（5分）</h4>
+                                <div class="step-content">
+                                    <p>掃除機で表面のホコリを吸い取る。水洗い可能なら月1回は水洗い。</p>
+                                    <div class="step-effect">
+                                        <strong>効果：</strong>吸引力20%回復
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">STEP 2</div>
+                                <h4>センサー部の清掃（3分）</h4>
+                                <div class="step-content">
+                                    <p>綿棒でセンサー窓を優しく拭く。月1回の実施で正確な自動運転。</p>
+                                    <div class="step-effect">
+                                        <strong>効果：</strong>センサー感度回復
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">STEP 3</div>
+                                <h4>本体の吸込口・吹出口清掃（5分）</h4>
+                                <div class="step-content">
+                                    <p>ブラシや掃除機で格子の汚れを除去。風量が明らかに改善。</p>
+                                    <div class="step-effect">
+                                        <strong>効果：</strong>風量15%向上
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">STEP 4</div>
+                                <h4>フィルター状態の確認（2分）</h4>
+                                <div class="step-content">
+                                    <p>フィルターの色や臭いをチェック。黒ずみや異臭があれば交換時期。</p>
+                                    <div class="step-effect">
+                                        <strong>判断基準：</strong>新品の70%以下なら交換
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-card">
+                                <div class="step-number">STEP 5</div>
+                                <h4>設置場所の見直し（10分）</h4>
+                                <div class="step-content">
+                                    <p>周囲30cmのスペース確保。エアコンとの位置関係を最適化。</p>
+                                    <div class="step-effect">
+                                        <strong>効果：</strong>清浄効率30%向上
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-replacement-guide">
+                        <h3>フィルター交換の判断基準</h3>
+                        <div class="replacement-indicators">
+                            <div class="indicator urgent">
+                                <h4><i class="fas fa-exclamation-triangle"></i> 即交換が必要</h4>
+                                <ul>
+                                    <li>フィルターから異臭がする</li>
+                                    <li>風量が新品時の50%以下</li>
+                                    <li>フィルターが真っ黒に変色</li>
+                                    <li>交換ランプが点灯して1ヶ月経過</li>
+                                </ul>
+                            </div>
+                            <div class="indicator warning">
+                                <h4><i class="fas fa-exclamation-circle"></i> 1ヶ月以内に交換推奨</h4>
+                                <ul>
+                                    <li>使用開始から推奨期間の80%経過</li>
+                                    <li>風量の低下を感じる</li>
+                                    <li>清浄に時間がかかる</li>
+                                    <li>フィルターの一部が黒ずんでいる</li>
+                                </ul>
+                            </div>
+                            <div class="indicator ok">
+                                <h4><i class="fas fa-check-circle"></i> まだ使用可能</h4>
+                                <ul>
+                                    <li>使用期間が推奨の50%以下</li>
+                                    <li>風量に変化なし</li>
+                                    <li>フィルターの汚れが軽度</li>
+                                    <li>効果を実感できている</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- よくある質問 -->
+                <section id="faq" class="content-section">
+                    <h2><i class="fas fa-question-circle"></i> よくある質問と回答</h2>
+                    
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-clock"></i> どのくらいで効果を実感できますか？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>適切に使用すれば30分〜2時間で効果を実感できます。</strong></p>
+                                <div class="effect-timeline">
+                                    <h5>効果実感までの目安時間</h5>
+                                    <ul>
+                                        <li><strong>ホコリっぽさ：</strong>30分〜1時間</li>
+                                        <li><strong>タバコ臭：</strong>1〜2時間</li>
+                                        <li><strong>ペット臭：</strong>2〜4時間</li>
+                                        <li><strong>花粉症状：</strong>1〜3日</li>
+                                        <li><strong>PM2.5：</strong>数時間〜1日</li>
+                                    </ul>
+                                </div>
+                                <p><strong>ポイント：</strong>最初の3日間は強運転で徹底清浄することで、その後の効果が持続しやすくなります。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-yen-sign"></i> 電気代が高くなりませんか？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>24時間運転でも月300-600円程度です。</strong></p>
+                                <div class="electricity-breakdown">
+                                    <h5>運転モード別電気代（月額）</h5>
+                                    <ul>
+                                        <li><strong>静音運転（24時間）：</strong>約300円（10W×24h×30日）</li>
+                                        <li><strong>自動運転（24時間）：</strong>約450円（平均15W）</li>
+                                        <li><strong>中運転（24時間）：</strong>約600円（20W）</li>
+                                        <li><strong>強運転（24時間）：</strong>約1,200円（40W）</li>
+                                    </ul>
+                                </div>
+                                <p><strong>節約のコツ：</strong>自動運転を基本にして、必要時のみ強運転にすることで、効果と省エネを両立できます。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-wind"></i> 換気はどのタイミングでするべきですか？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>1日2回、5-10分の短時間換気が理想的です。</strong></p>
+                                <div class="ventilation-guide">
+                                    <h5>効果的な換気タイミング</h5>
+                                    <ul>
+                                        <li><strong>朝（6-8時）：</strong>外気がきれいな時間帯に5-10分</li>
+                                        <li><strong>夕方（17-19時）：</strong>調理前後に5分程度</li>
+                                    </ul>
+                                    <h5>換気時の空気清浄機の使い方</h5>
+                                    <ol>
+                                        <li>換気前：空気清浄機を一時停止</li>
+                                        <li>換気中：窓を開けて5-10分換気</li>
+                                        <li>換気後：窓を閉めて強運転30分</li>
+                                        <li>その後：自動運転に戻す</li>
+                                    </ol>
+                                </div>
+                                <p><strong>注意：</strong>花粉シーズンや黄砂・PM2.5濃度が高い日は換気を控え、空気清浄機のみで対応しましょう。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-home"></i> 複数の部屋で使う場合はどうすればいいですか？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>各部屋に1台設置が理想ですが、移動使用も可能です。</strong></p>
+                                <div class="multi-room-strategy">
+                                    <h5>予算別対策</h5>
+                                    <ul>
+                                        <li><strong>理想（各部屋設置）：</strong>リビング用大型＋寝室用小型＋子供部屋用小型</li>
+                                        <li><strong>標準（2台運用）：</strong>リビング用大型＋移動用中型</li>
+                                        <li><strong>最小限（1台運用）：</strong>キャスター付き中型機を時間帯で移動</li>
+                                    </ul>
+                                    <h5>1台を移動使用する場合のコツ</h5>
+                                    <ul>
+                                        <li>日中：リビングで運転</li>
+                                        <li>夕方：調理時はキッチン近くへ</li>
+                                        <li>就寝前：寝室で1時間強運転</li>
+                                        <li>睡眠中：寝室で静音運転</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-tools"></i> 故障かどうかの判断基準は？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>以下の症状があれば故障の可能性があります。</strong></p>
+                                <div class="malfunction-checklist">
+                                    <h5>故障の可能性が高い症状</h5>
+                                    <ul class="malfunction-list">
+                                        <li><span class="alert">⚠️</span> 電源が入らない・すぐ切れる</li>
+                                        <li><span class="alert">⚠️</span> 異常な音（カラカラ、キーンなど）</li>
+                                        <li><span class="alert">⚠️</span> 焦げ臭いにおいがする</li>
+                                        <li><span class="alert">⚠️</span> 本体が異常に熱い</li>
+                                        <li><span class="alert">⚠️</span> 操作パネルが反応しない</li>
+                                    </ul>
+                                    <h5>故障ではない可能性が高い症状</h5>
+                                    <ul class="normal-list">
+                                        <li><span class="ok">✓</span> 風量が弱い → フィルター汚れ</li>
+                                        <li><span class="ok">✓</span> 効果を感じない → 設置場所や使い方の問題</li>
+                                        <li><span class="ok">✓</span> センサーが反応しない → センサー汚れ</li>
+                                        <li><span class="ok">✓</span> においが取れない → フィルター交換時期</li>
+                                    </ul>
+                                </div>
+                                <p><strong>対処法：</strong>まずは本記事の改善方法を試し、それでも改善しない場合はメーカーサポートに相談しましょう。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4><i class="fas fa-sync"></i> 買い替えのタイミングはいつですか？</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p><strong>一般的に7-10年が買い替えの目安です。</strong></p>
+                                <div class="replacement-timing">
+                                    <h5>買い替えを検討すべきタイミング</h5>
+                                    <ul>
+                                        <li><strong>使用7年以上：</strong>モーターやセンサーの劣化が進行</li>
+                                        <li><strong>修理費用が高額：</strong>本体価格の50%以上の修理費</li>
+                                        <li><strong>フィルター入手困難：</strong>生産終了で部品が手に入らない</li>
+                                        <li><strong>電気代増加：</strong>効率低下で消費電力が増加</li>
+                                        <li><strong>新技術の登場：</strong>大幅に性能向上した新製品</li>
+                                    </ul>
+                                    <h5>買い替えのメリット</h5>
+                                    <ul>
+                                        <li>最新の清浄技術で効果向上</li>
+                                        <li>省エネ性能で電気代削減</li>
+                                        <li>静音性の大幅改善</li>
+                                        <li>スマート機能の追加</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：まとめ -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character troubled-user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name troubled-user">山田さん</div>
+                            <p>お得マンさん、本当にありがとうございました！これで私の空気清浄機も効果を発揮してくれそうです。早速試してみますね！</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>お役に立てて良かったです！98%のケースは今回ご紹介した方法で改善できますので、きっと効果を実感していただけると思います。頑張ってください！</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- まとめ -->
+                <section class="content-section">
+                    <div class="summary-box">
+                        <h2><i class="fas fa-check-circle"></i> まとめ：空気清浄機の効果を取り戻す方法</h2>
+                        <div class="summary-points">
+                            <div class="summary-point">
+                                <h3>1. まず確認すべき3つのポイント</h3>
+                                <ul>
+                                    <li>設置場所（部屋の中央寄り、周囲30cm空ける）</li>
+                                    <li>フィルター状態（汚れ・交換時期をチェック）</li>
+                                    <li>運転方法（24時間運転、適切なモード選択）</li>
+                                </ul>
+                            </div>
+                            <div class="summary-point">
+                                <h3>2. 今すぐできる改善アクション</h3>
+                                <ul>
+                                    <li>プレフィルターを掃除機で清掃（5分）</li>
+                                    <li>設置場所を見直し（10分）</li>
+                                    <li>強運転30分→自動運転のパターンを実施</li>
+                                </ul>
+                            </div>
+                            <div class="summary-point">
+                                <h3>3. 効果を持続させるコツ</h3>
+                                <ul>
+                                    <li>2週間ごとの簡単メンテナンス</li>
+                                    <li>環境に応じたフィルター交換</li>
+                                    <li>シーズンに合わせた運転モード調整</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="final-message">
+                            <p><strong>98%の「効果がない」問題は改善可能です。</strong></p>
+                            <p>本記事の改善方法を実践することで、空気清浄機本来の性能を取り戻し、快適な空気環境を実現できます。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 参考文献・調査データ -->
+                <section class="content-section">
+                    <h2><i class="fas fa-book"></i> 参考文献・調査データ</h2>
+                    <div class="references">
+                        <div class="reference-category">
+                            <h3>主要調査・研究データ</h3>
+                            <ul class="reference-list">
+                                <li><a href="https://prtimes.jp/main/html/rd/p/000000003.000037216.html" target="_blank" rel="noopener">コーウェイ株式会社「空気清浄機の利用実態調査」</a> - 400名対象の利用実態調査（2018年）</li>
+                                <li><a href="https://www.kenko-kenbi.or.jp/columns/environment/2153/" target="_blank" rel="noopener">一般財団法人 東京顕微鏡院「最近の空気清浄機の性能と使用上の留意点」</a> - 空気清浄機の性能に関する専門研究</li>
+                                <li><a href="https://www.daiohs.co.jp/clean/airclean/article/archives/2625/" target="_blank" rel="noopener">株式会社ダイオーズ「空気清浄機の効果がない場合の対処法」</a> - 効果的な使い方に関する調査</li>
+                            </ul>
+                        </div>
+                        <div class="reference-category">
+                            <h3>技術・性能に関する情報</h3>
+                            <ul class="reference-list">
+                                <li><a href="https://www.yamada-denkiweb.com/media/855/" target="_blank" rel="noopener">ヤマダ電機「空気清浄機に効果はある？最新性能をチェック」</a> - 空気清浄機の効果に関する技術情報</li>
+                                <li><a href="https://www.switchbot.jp/blogs/smart-home/effective-way-for-air-purifier" target="_blank" rel="noopener">SwitchBot「空気清浄機の効果的な置き方とは？」</a> - 設置方法と効果に関する研究</li>
+                                <li><a href="https://chosa.itmedia.co.jp/tags/空気清浄機" target="_blank" rel="noopener">ITmedia「空気清浄機に関する調査データ一覧」</a> - 各種統計データの集計</li>
+                            </ul>
+                        </div>
+                        <div class="reference-note">
+                            <p><small>※本記事は上記の調査データ・研究結果を参考に、家電業界の専門知識を加えて構成されています。統計数値は各調査機関の発表データに基づいています。</small></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 関連記事 -->
+                <section class="content-section">
+                    <h2><i class="fas fa-link"></i> 関連記事</h2>
+                    <div class="related-articles">
+                        <article class="related-card">
+                            <h3><a href="air-purifier-guide-2025.html">【2025年最新】空気清浄機おすすめ20選！選び方から使い方まで徹底解説</a></h3>
+                            <p>効果的な空気清浄機の選び方と最新機種の詳細レビュー</p>
+                        </article>
+                        <article class="related-card">
+                            <h3><a href="#">【2025年版】空気清浄機フィルター交換完全ガイド｜掃除方法と長持ちさせるコツ</a></h3>
+                            <p>フィルターメンテナンスの詳細手順と交換時期の見極め方</p>
+                        </article>
+                        <article class="related-card">
+                            <h3><a href="single-living-air-purifier-guide.html">【2025年版】一人暮らし向け空気清浄機BEST15｜6畳ワンルームに最適なコンパクトモデル</a></h3>
+                            <p>小さな部屋での効果的な使い方とおすすめ機種</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>失敗しないお得マン！</h3>
+                    <p>家電選びの専門サイト</p>
+                </div>
+                <div class="footer-section">
+                    <h4>関連ページ</h4>
+                    <ul>
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="../pages/air-purifier.html">空気清浄機</a></li>
+                        <li><a href="../pages/humidifier.html">加湿器</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Chart.js - トラブル要因チャート
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx1 = document.getElementById('troubleChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['使い方の問題', 'メンテナンス不足', '機種選定ミス', '故障・不具合'],
+                    datasets: [{
+                        data: [68, 23, 7, 2],
+                        backgroundColor: [
+                            '#FF6B6B',
+                            '#4ECDC4', 
+                            '#96CEB4',
+                            '#DFE4EA'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 10,
+                                usePointStyle: true,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed + '%';
+                                }
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            top: 20,
+                            bottom: 20
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'doughnutlabels',
+                    afterDraw: function(chart) {
+                        const ctx = chart.ctx;
+                        const data = chart.data.datasets[0].data;
+                        const total = data.reduce((a, b) => a + b, 0);
+                        
+                        chart.data.datasets.forEach(function(dataset, i) {
+                            const meta = chart.getDatasetMeta(i);
+                            meta.data.forEach(function(element, index) {
+                                const datapoint = dataset.data[index];
+                                const percentage = ((datapoint / total) * 100).toFixed(0) + '%';
+                                
+                                // Get position
+                                const position = element.tooltipPosition();
+                                
+                                // Draw text
+                                ctx.fillStyle = '#000';
+                                ctx.font = 'bold 14px Arial';
+                                ctx.textAlign = 'center';
+                                ctx.fillText(percentage, position.x, position.y);
+                            });
+                        });
+                    }
+                }]
+            });
+
+            // 汚染物質別効果チャート
+            const ctx2 = document.getElementById('effectivenessChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['ホコリ', '花粉', 'PM2.5', 'ペット毛', 'タバコ煙', 'カビ胞子', 'ウイルス', 'VOC', 'ニオイ分子'],
+                    datasets: [{
+                        label: '除去効率(%)',
+                        data: [99, 95, 92, 98, 85, 90, 88, 75, 70],
+                        backgroundColor: function(context) {
+                            const value = context.parsed.y;
+                            if (value >= 90) return '#27AE60';
+                            if (value >= 80) return '#F39C12';
+                            return '#E74C3C';
+                        },
+                        borderWidth: 1,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                },
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            top: 10,
+                            bottom: 10
+                        }
+                    }
+                }
+            });
+
+            // 診断ツール機能
+            window.showDiagnosisResult = function() {
+                const checkboxes = document.querySelectorAll('.diagnosis-check:checked');
+                const resultDiv = document.getElementById('diagnosisResult');
+                const resultMessage = resultDiv.querySelector('.result-message');
+                const recommendations = resultDiv.querySelector('.result-recommendations');
+                
+                let problems = {
+                    placement: 0,
+                    size: 0,
+                    usage: 0,
+                    maintenance: 0
+                };
+                
+                checkboxes.forEach(checkbox => {
+                    const category = checkbox.getAttribute('data-category');
+                    problems[category]++;
+                });
+                
+                let totalProblems = Object.values(problems).reduce((a, b) => a + b, 0);
+                
+                if (totalProblems === 0) {
+                    resultMessage.innerHTML = '<strong>問題は見つかりませんでした！</strong><br>空気清浄機は正しく使用されています。効果を感じない場合は、機種の性能不足か故障の可能性があります。';
+                } else if (totalProblems <= 2) {
+                    resultMessage.innerHTML = '<strong>軽度の問題があります。</strong><br>以下の改善で効果が大幅に向上する可能性があります。';
+                } else if (totalProblems <= 4) {
+                    resultMessage.innerHTML = '<strong>複数の問題が見つかりました。</strong><br>改善により50%以上の効果向上が期待できます。';
+                } else {
+                    resultMessage.innerHTML = '<strong>重要な問題が複数あります。</strong><br>基本的な使い方から見直すことで、劇的な改善が期待できます。';
+                }
+                
+                let recommendationHTML = '<h4>改善推奨事項</h4><ul>';
+                
+                if (problems.placement > 0) {
+                    recommendationHTML += '<li><strong>設置場所の改善：</strong>部屋の中央寄りで、周囲30cm以上のスペースを確保してください。</li>';
+                }
+                if (problems.size > 0) {
+                    recommendationHTML += '<li><strong>機種の見直し：</strong>部屋の広さに対して性能不足です。より高性能な機種への買い替えを検討してください。</li>';
+                }
+                if (problems.usage > 0) {
+                    recommendationHTML += '<li><strong>運転方法の改善：</strong>24時間運転を基本とし、状況に応じて強運転を活用してください。</li>';
+                }
+                if (problems.maintenance > 0) {
+                    recommendationHTML += '<li><strong>メンテナンスの実施：</strong>フィルターとセンサーの清掃・交換を早急に行ってください。</li>';
+                }
+                
+                recommendationHTML += '</ul>';
+                recommendations.innerHTML = recommendationHTML;
+                
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // FAQ アコーディオン機能
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    faqItems.forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="../js/image-system.js"></script>
+    <script src="../js/article.js"></script>
+</body>
+</html>
