@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"三菱重工 スチームファン蒸発式 加湿器SHE120VD-W（クリアホワイト) roomist おもに20畳のお部屋に","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/koike-dayori\/cabinet","p":["\/compass1664321791.jpg","\/08948961\/compass1648541900.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/koike-dayori\/she120vd-w\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/koike-dayori\/she120vd-w\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E4%B8%89%E8%8F%B1%E9%87%8D%E5%B7%A5%20%E3%82%B9%E3%83%81%E3%83%BC%E3%83%A0%E3%83%95%E3%82%A1%E3%83%B3%E8%92%B8%E7%99%BA%E5%BC%8F%20%E5%8A%A0%E6%B9%BF%E5%99%A8SHE120VD-W%EF%BC%88%E3%82%AF%E3%83%AA%E3%82%A2%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88)%20roomist%20%E3%81%8A%E3%82%82%E3%81%AB20%E7%95%B3%E3%81%AE%E3%81%8A%E9%83%A8%E5%B1%8B%E3%81%AB","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"wbtbv","s":"s"});
+</script>
+<div id="msmaflink-wbtbv">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ARTICLE_TITLE}} | 失敗しないお得マン！</title>
+    <meta name="description" content="{{ARTICLE_DESCRIPTION}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link rel="stylesheet" href="../css/overflow-fix.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="stylesheet" href="../css/related-articles.css">
+    <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link rel="stylesheet" href="../template-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="../index.html">
+                        <h1><i class="fas fa-home"></i> 失敗しないお得マン！</h1>
+                        <span class="tagline">家電選びの専門サイト</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">ホーム</a></li>
+                    <li><a href="../pages/humidifier.html" class="nav-link">加湿器</a></li>
+                    <li><a href="../pages/ranking.html" class="nav-link">ランキング</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main article-main">
+        <article class="article-container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="{{CATEGORY_URL}}">{{CATEGORY_NAME}}</a> &gt; 
+                <span>{{BREADCRUMB_TITLE}}</span>
+            </nav>
+
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <h1>{{ARTICLE_TITLE}}</h1>
+                <div class="article-meta">
+                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：{{UPDATE_DATE}}</span>
+                </div>
+            </header>
+
+            <!-- 目次 -->
+            <div class="toc">
+                <h2>目次</h2>
+                <ol>
+                    {{TOC_ITEMS}}
+                    <!-- 例：
+                    <li><a href="#section1">セクション1のタイトル</a></li>
+                    <li><a href="#section2">セクション2のタイトル</a></li>
+                    -->
+                </ol>
+            </div>
+
+            <!-- 記事本文 -->
+            <div class="article-content">
+                {{ARTICLE_CONTENT}}
+                <!-- ここに記事の実際の内容を挿入 -->
+            </div>
+        </article>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>失敗しないお得マン！</h3>
+                    <p>家電選びの専門サイト</p>
+                </div>
+                <div class="footer-section">
+                    <h4>カテゴリー</h4>
+                    <ul>
+                        <li><a href="../pages/humidifier.html">加湿器</a></li>
+                        <li><a href="../pages/ranking.html">ランキング</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

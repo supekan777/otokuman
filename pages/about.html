@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイトについて | 失敗しないお得マン！</title>
+    <meta name="description" content="失敗しないお得マン！は、家電選びで失敗しないための情報を提供する専門サイトです。お得マン編集部が実際に使用・検証した情報をお届けします。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+        }
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .otokuman-intro {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .otokuman-character {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .mission-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .mission-card h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .mission-card i {
+            font-size: 1.5rem;
+        }
+        .features-list {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+        .features-list h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .feature-item i {
+            color: #3498db;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .team-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .team-member {
+            display: inline-block;
+            margin: 1rem;
+            text-align: center;
+        }
+        .team-member-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 3rem;
+        }
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .disclaimer h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+        .contact-cta {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .contact-cta h2 {
+            margin-bottom: 1rem;
+        }
+        .contact-cta .btn {
+            display: inline-block;
+            background: white;
+            color: #3498db;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .contact-cta .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "サイトについて - 失敗しないお得マン！",
+        "description": "失敗しないお得マン！は、家電選びで失敗しないための情報を提供する専門サイトです。お得マン編集部が実際に使用・検証した情報をお届けします。",
+        "url": "https://www.otokuman.com/pages/about.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "失敗しないお得マン！",
+            "url": "https://www.otokuman.com"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "ホーム",
+                    "item": "https://www.otokuman.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "サイトについて",
+                    "item": "https://www.otokuman.com/pages/about.html"
+                }
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "失敗しないお得マン！",
+            "url": "https://www.otokuman.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.otokuman.com/images/logo.png",
+                "width": 200,
+                "height": 60
+            }
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "失敗しないお得マン！",
+            "description": "家電選びの専門情報サイト",
+            "foundingDate": "2025-01-01",
+            "specialty": "家電レビューと比較情報"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="../index.html"><i class="fas fa-home"></i> 失敗しないお得マン！</a></h1>
+                    <span class="tagline">家電選びの専門サイト</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">ホーム</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">カテゴリ <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="humidifier.html">加湿器</a>
+                            <a href="air-purifier.html">空気清浄機</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link active">サイトについて</a></li>
+                    <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <a href="../index.html">ホーム</a> &gt; サイトについて
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <article class="article-container">
+            <div class="about-hero">
+                <h1>失敗しないお得マン！について</h1>
+                <p>家電選びで失敗しないための、実用的で信頼できる情報をお届けします</p>
+            </div>
+
+            <section class="article-content">
+                <!-- お得マン紹介 -->
+                <div class="otokuman-intro">
+                    <div class="otokuman-character">🤵</div>
+                    <h2>お得マンからのご挨拶</h2>
+                    <p>こんにちは！「失敗しないお得マン」です。</p>
+                    <p>私は、皆さまの家電選びをサポートする架空のキャラクターとして、<br>
+                    このサイトで様々な家電製品の情報をお届けしています。</p>
+                    <p>実際の使用感、コストパフォーマンス、メリット・デメリットなど、<br>
+                    購入前に知っておきたい情報を分かりやすくお伝えします！</p>
+                </div>
+
+                <!-- ミッション -->
+                <h2>私たちの使命</h2>
+                <div class="mission-section">
+                    <div class="mission-card">
+                        <h3><i class="fas fa-search"></i> 徹底的な調査</h3>
+                        <p>各メーカーの公表データと編集部の実測値を基に、正確な情報を提供します。スペックだけでなく、実際の使用感も重視しています。</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3><i class="fas fa-balance-scale"></i> 公平な評価</h3>
+                        <p>特定のメーカーに偏らず、各製品の長所と短所を公平に評価。読者の皆さまが最適な選択ができるよう心がけています。</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3><i class="fas fa-piggy-bank"></i> コスパ重視</h3>
+                        <p>価格と性能のバランスを重視し、本当にお得な製品を見極めます。初期費用だけでなく、ランニングコストも含めて評価します。</p>
+                    </div>
+                </div>
+
+                <!-- サイトの特徴 -->
+                <div class="features-list">
+                    <h2>サイトの特徴</h2>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>実測データに基づく評価</h4>
+                            <p>メーカー公表値だけでなく、編集部が実際に測定したデータも掲載。リアルな使用環境での性能を確認できます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-comments"></i>
+                        <div>
+                            <h4>分かりやすい対話形式</h4>
+                            <p>お得マンと訪問者の対話形式で、難しい専門用語も分かりやすく解説。初心者の方でも理解しやすい内容です。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>
+                            <h4>詳細な比較表とグラフ</h4>
+                            <p>複数製品の比較が一目で分かる表やグラフを多数掲載。視覚的に理解しやすい情報提供を心がけています。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tags"></i>
+                        <div>
+                            <h4>用途別のおすすめ</h4>
+                            <p>一人暮らし、赤ちゃんがいる家庭、ペットがいる家庭など、様々なシチュエーションに応じた最適な製品を提案します。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 編集部について -->
+                <div class="team-section">
+                    <h2>お得マン編集部</h2>
+                    <p>当サイトは「お得マン編集部」が運営しています。</p>
+                    <p>家電に詳しいライターやエンジニアが集まり、<br>
+                    実際に製品を使用・検証した上で記事を作成しています。</p>
+                    <div class="team-member">
+                        <div class="team-member-icon">🤵</div>
+                        <h4>お得マン</h4>
+                        <p>サイトマスコット</p>
+                    </div>
+                </div>
+
+                <!-- 免責事項 -->
+                <div class="disclaimer">
+                    <h3><i class="fas fa-exclamation-triangle"></i> 免責事項</h3>
+                    <ul>
+                        <li>当サイトに掲載されている情報は、可能な限り正確な情報を提供するよう努めておりますが、正確性や安全性を保証するものではありません。</li>
+                        <li>商品の価格や仕様は変更される場合があります。購入前に必ず公式サイトやショップで最新情報をご確認ください。</li>
+                        <li>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</li>
+                        <li>当サイトのコンテンツ・情報につきまして、可能な限り正確な情報を掲載するよう努めておりますが、誤情報が入り込んだり、情報が古くなっていることもございます。</li>
+                        <li>当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</li>
+                    </ul>
+                </div>
+
+                <!-- アフィリエイトについて -->
+                <div class="disclaimer">
+                    <h3><i class="fas fa-link"></i> アフィリエイトプログラムについて</h3>
+                    <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
+                    <p>また、楽天アフィリエイトをはじめとした各種アフィリエイトプログラムに参加しています。</p>
+                    <p>当サイトのリンクを経由して商品をご購入いただいた場合、売上の一部が当サイトに還元されることがあります。</p>
+                    <p>なお、紹介料の有無は商品の評価に一切影響いたしません。公平・公正な評価を心がけています。</p>
+                </div>
+
+                <!-- お問い合わせCTA -->
+                <div class="contact-cta">
+                    <h2>ご質問・ご要望はお気軽に</h2>
+                    <p>サイトに関するご質問、記事のリクエスト、誤りのご指摘など、<br>
+                    お気軽にお問い合わせください。</p>
+                    <a href="contact.html" class="btn">
+                        <i class="fas fa-envelope"></i> お問い合わせフォームへ
+                    </a>
+                </div>
+
+                <!-- サイト情報 -->
+                <div class="site-info">
+                    <h2>サイト情報</h2>
+                    <table class="info-table">
+                        <tr>
+                            <th>サイト名</th>
+                            <td>失敗しないお得マン！</td>
+                        </tr>
+                        <tr>
+                            <th>URL</th>
+                            <td>https://shippai-shinai-otokuman.com (予定)</td>
+                        </tr>
+                        <tr>
+                            <th>開設日</th>
+                            <td>2025年8月</td>
+                        </tr>
+                        <tr>
+                            <th>運営</th>
+                            <td>お得マン編集部</td>
+                        </tr>
+                        <tr>
+                            <th>主なコンテンツ</th>
+                            <td>家電製品のレビュー、比較、選び方ガイド</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>失敗しないお得マン！</h3>
+                <p>家電選びの専門サイト</p>
+            </div>
+            <div class="footer-section">
+                <h4>メニュー</h4>
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="about.html">サイトについて</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                    <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+                    <li><a href="terms.html">利用規約</a></li>
+                    <li><a href="sitemap.html">サイトマップ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>カテゴリ</h4>
+                <ul>
+                    <li><a href="humidifier.html">加湿器</a></li>
+                    <li><a href="air-purifier.html">空気清浄機</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+</body>
+</html>

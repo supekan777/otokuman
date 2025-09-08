@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"【中古】無印良品◆加湿器 超音波加湿器 MJ-UH1【家電・ビジュアル・オーディオ】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/jumblestore\/cabinet\/3847","p":["\/2340836063847-01.jpg","\/2340836063847-02.jpg","\/2340836063847-03.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/jumblestore\/2340836063847\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/jumblestore\/2340836063847\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%80%90%E4%B8%AD%E5%8F%A4%E3%80%91%E7%84%A1%E5%8D%B0%E8%89%AF%E5%93%81%E2%97%86%E5%8A%A0%E6%B9%BF%E5%99%A8%20%E8%B6%85%E9%9F%B3%E6%B3%A2%E5%8A%A0%E6%B9%BF%E5%99%A8%20MJ-UH1%E3%80%90%E5%AE%B6%E9%9B%BB%E3%83%BB%E3%83%93%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%80%91","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"dyewX","s":"s"});
+</script>
+<div id="msmaflink-dyewX">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

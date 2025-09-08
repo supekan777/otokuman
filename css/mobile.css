@@ -1,0 +1,764 @@
+/* ========================================
+   モバイル専用スタイルシート
+   スマートフォン向け完全最適化
+   ======================================== */
+
+/* ========================================
+   モバイルボトムナビゲーション削除
+   ======================================== */
+@media (max-width: 768px) {
+    /* 下部固定メニューバーを非表示 */
+    .bottom-nav,
+    .mobile-bottom-nav,
+    .tab-bar,
+    .bottom-menu,
+    .mobile-tab-bar,
+    .bottom-navigation,
+    .mobile-navigation,
+    [class*="bottom-nav"],
+    [class*="mobile-bottom"],
+    [class*="tab-bar"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    /* 固定要素で下部に配置されているものを削除 */
+    .fixed-bottom,
+    [style*="position: fixed"][style*="bottom: 0"],
+    [style*="position:fixed"][style*="bottom:0"],
+    [style*="position: fixed"][style*="bottom:0px"],
+    [style*="position:fixed"][style*="bottom: 0px"] {
+        display: none !important;
+    }
+    
+    /* 一般的なボトムナビのz-indexを無効化 */
+    nav[style*="bottom"],
+    div[style*="bottom"][style*="fixed"] {
+        z-index: -1 !important;
+        display: none !important;
+    }
+}
+
+/* ========================================
+   Android専用強化対策
+   ======================================== */
+@media (max-width: 768px) {
+    /* Android WebView特有の要素を削除 */
+    *[class*="android"],
+    *[class*="webview"],
+    *[id*="android"],
+    *[id*="mobile"] {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+        z-index: -9999 !important;
+    }
+    
+    /* Android Chromeのbootstrap系メニュー対策 */
+    .navbar-fixed-bottom,
+    .nav-tabs,
+    .tab-content,
+    .mobile-menu,
+    .app-bar,
+    .toolbar,
+    [data-role="navbar"],
+    [data-role="footer"],
+    [role="navigation"][style*="bottom"],
+    .ui-footer,
+    .ui-navbar {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
+        z-index: -9999 !important;
+    }
+    
+    /* より広範囲な固定要素対策 */
+    *[style*="position:fixed"][style*="bottom"],
+    *[style*="position: fixed"][style*="bottom"],
+    *[style*="z-index"][style*="999"][style*="bottom"],
+    *[style*="z-index"][style*="1000"][style*="bottom"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+        z-index: -9999 !important;
+        -webkit-transform: translateY(1000px) !important;
+        transform: translateY(1000px) !important;
+    }
+}
+
+/* ========================================
+   モバイル基本設定 (768px以下)
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* === モバイル表示時はヘッダーナビゲーションを非表示 === */
+    .header,
+    .navbar,
+    .nav-menu,
+    .nav-container {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    /* ヘッダー分のマージンを削除 */
+    .article-main,
+    .main,
+    body > .container:first-child {
+        margin-top: 0 !important;
+        padding-top: 1rem !important;
+    }
+    
+    /* === 基本レイアウト === */
+    body {
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+    
+    /* === ヘッダー最適化 === */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        position: relative;
+    }
+    
+    /* ロゴエリア中央配置 */
+    .nav-logo {
+        text-align: center;
+        flex-shrink: 0;
+    }
+    
+    .nav-logo h1 {
+        font-size: 18px;
+        margin: 0;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 40px; /* ハンバーガーメニューと同じ高さに設定 */
+    }
+    
+    .nav-logo h1 i {
+        font-size: 16px;
+    }
+    
+    .nav-logo .tagline {
+        font-size: 11px;
+        color: #666;
+        margin-top: 2px;
+        text-align: center;
+    }
+    
+    /* ハンバーガーメニュー改善 - 絶対位置で右側に固定し、垂直中央配置 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 40px;
+        justify-content: center;
+    }
+    
+    .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: #333;
+        transition: all 0.3s;
+        border-radius: 2px;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* モバイルメニュー全画面化 */
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    /* 検索バー最上部配置 - 非表示 */
+    .mobile-search {
+        display: none !important;
+    }
+    
+    .search-box {
+        display: flex;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .search-input {
+        flex: 1;
+        border: none;
+        padding: 12px 16px;
+        font-size: 16px;
+        outline: none;
+    }
+    
+    .search-btn {
+        background: var(--primary-color);
+        border: none;
+        padding: 12px 20px;
+        color: white;
+        font-size: 16px;
+    }
+    
+    /* メニューアイテム大型化 */
+    .nav-menu li {
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 16px 20px;
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background 0.2s;
+    }
+    
+    .nav-link:active {
+        background: #f0f0f0;
+    }
+    
+    /* ドロップダウン簡潔化 */
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: #f8f8f8;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu a {
+        padding: 12px 32px;
+        font-size: 15px;
+        border-left: 3px solid var(--primary-color);
+    }
+    
+    /* === メインコンテンツ調整 === */
+    .main {
+        margin-top: 0;
+    }
+    
+    /* パンくずナビゲーション調整 */
+    .breadcrumb {
+        margin-top: 0 !important;
+        padding: 12px 0 !important;
+    }
+    
+    /* JavaScript生成目次を完全に非表示 */
+    .table-of-contents {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* 静的目次（緑）のモバイル対応 */
+    .toc {
+        margin: 20px 0 !important;
+        padding: 16px !important;
+    }
+    
+    .toc h2, .toc-box h2 {
+        font-size: 16px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .toc ol, .toc-list {
+        margin-left: 16px !important;
+        padding-left: 0 !important;
+    }
+    
+    .toc li, .toc-list li {
+        margin-bottom: 8px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .toc a, .toc-list a {
+        font-size: 14px !important;
+        display: block !important;
+        padding: 4px 0 !important;
+    }
+    
+    /* 最終更新日のモバイル対応 */
+    .last-updated {
+        font-size: 11px !important;
+        text-align: right !important;
+        margin: -16px 0 16px 0 !important;
+        color: #777 !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    
+    /* キャラクター会話のモバイル対応 */
+    .character-dialogue {
+        margin: 16px -16px !important;
+        padding: 16px !important;
+        width: calc(100% + 32px) !important;
+        box-sizing: border-box !important;
+    }
+    
+    .dialogue-container {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .dialogue-container.right {
+        flex-direction: column !important;
+    }
+    
+    .pixel-character {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 24px !important;
+        align-self: flex-start !important;
+    }
+    
+    .speech-bubble {
+        max-width: 100% !important;
+        font-size: 14px !important;
+        padding: 12px !important;
+        margin: 0 !important;
+    }
+    
+    /* 記事内容の調整 */
+    .article-content {
+        padding: 0 16px !important;
+        margin-left: -16px !important;
+        margin-right: -16px !important;
+        width: calc(100% + 32px) !important;
+        box-sizing: border-box !important;
+    }
+    
+    .article-header {
+        padding: 16px !important;
+    }
+    
+    .article-content h2 {
+        font-size: 20px !important;
+        margin: 24px 0 16px 0 !important;
+    }
+    
+    .article-content h3 {
+        font-size: 18px !important;
+        margin: 20px 0 12px 0 !important;
+    }
+    
+    .article-content p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 16px !important;
+    }
+    
+    /* 記事メタ情報 */
+    .article-meta-info {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+    
+    .article-stats {
+        justify-content: space-around !important;
+        flex-wrap: wrap !important;
+    }
+    
+    /* ヒーローセクション簡潔化 */
+    .hero {
+        padding: 0;
+        background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
+    }
+    
+    .hero-container {
+        display: block;
+        text-align: center;
+        padding: 20px 16px;
+        margin: 0;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+        line-height: 1.3;
+        margin: 0 0 12px 0;
+        color: white;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: rgba(255,255,255,0.9);
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 16px;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 15px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* カード・グリッドレイアウト */
+    .category-grid,
+    .product-grid,
+    .article-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+    }
+    
+    /* カテゴリカードを横型レイアウトに変更 */
+    .category-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        min-height: 80px;
+    }
+    
+    .category-icon {
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 16px 0 0 !important;
+        flex-shrink: 0;
+        background: var(--gradient-primary);
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .category-card .card-content {
+        flex: 1;
+    }
+    
+    .category-card h3 {
+        font-size: 16px !important;
+        font-weight: 600;
+        margin: 0 0 4px 0 !important;
+        color: var(--text-dark);
+    }
+    
+    .category-card p {
+        font-size: 13px;
+        color: var(--text-light);
+        margin: 0;
+    }
+    
+    .product-card,
+    .article-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin: 0;
+    }
+    
+    .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .card-content {
+        padding: 16px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+    
+    .card-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+    }
+    
+    /* セクションタイトル */
+    .section-title {
+        font-size: 22px;
+        margin: 24px 0 16px;
+        padding: 0 16px;
+        line-height: 1.3;
+    }
+    
+    /* フッター簡潔化 */
+    .footer {
+        padding: 32px 0 80px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-section h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .footer-links a {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    /* ボタン・インタラクション改善 */
+    .btn-primary,
+    .btn-secondary {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    /* タブレット向け調整 */
+    @media (min-width: 481px) and (max-width: 768px) {
+        .category-grid,
+        .product-grid,
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+    }
+}
+
+/* ========================================
+   小画面スマートフォン (480px以下)
+   ======================================== */
+@media (max-width: 480px) {
+    
+    /* さらなる簡潔化 */
+    .container {
+        padding: 0 12px;
+    }
+    
+    .nav-logo h1 {
+        font-size: 16px;
+        height: 36px; /* 小さい画面では少し小さく */
+    }
+    
+    .nav-logo .tagline {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 20px;
+    }
+    
+    .hero-description {
+        font-size: 13px;
+        padding: 0 16px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-description {
+        font-size: 13px;
+    }
+    
+    /* パフォーマンス最適化 */
+    .hero-image,
+    .hero-stats,
+    .decoration {
+        display: none;
+    }
+    
+    /* スクロール改善 */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ========================================
+   タッチデバイス最適化
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+    
+    /* タップターゲット最小48px確保 */
+    a, button, input, select, textarea {
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    /* ホバー効果を無効化 */
+    .nav-link:hover,
+    .btn:hover,
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    /* タップフィードバック */
+    .btn:active,
+    .nav-link:active,
+    .card:active {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}
+
+/* ========================================
+   アクセシビリティ向上
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* フォーカス状態を明確に */
+    a:focus,
+    button:focus,
+    input:focus {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 2px;
+    }
+    
+    /* スクリーンリーダー対応 */
+    .sr-only-mobile {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+/* ========================================
+   パフォーマンス最適化
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* 不要な要素を非表示 */
+    .desktop-only {
+        display: none !important;
+    }
+    
+    /* アニメーション簡略化 */
+    * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    /* 画像最適化 */
+    img {
+        max-width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+    }
+}

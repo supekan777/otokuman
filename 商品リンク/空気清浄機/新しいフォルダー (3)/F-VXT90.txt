@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"加湿空気清浄機 パナソニック プレミアムモデル 適応床面積:空気清浄 40畳(66m2) IoT機能搭載 3Dフロー花粉撃退気流 パワフル吸引 高濃度ナノイーX ホワイト F-VXT90","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/e-denden\/cabinet\/06530828\/06563311\/imgrc0101703233.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/e-denden\/f-vxt90-w\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/e-denden\/f-vxt90-w\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E5%8A%A0%E6%B9%BF%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20%E3%83%91%E3%83%8A%E3%82%BD%E3%83%8B%E3%83%83%E3%82%AF%20%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E3%83%A0%E3%83%A2%E3%83%87%E3%83%AB%20%E9%81%A9%E5%BF%9C%E5%BA%8A%E9%9D%A2%E7%A9%8D%3A%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%2040%E7%95%B3(66m2)%20IoT%E6%A9%9F%E8%83%BD%E6%90%AD%E8%BC%89%203D%E3%83%95%E3%83%AD%E3%83%BC%E8%8A%B1%E7%B2%89%E6%92%83%E9%80%80%E6%B0%97%E6%B5%81%20%E3%83%91%E3%83%AF%E3%83%95%E3%83%AB%E5%90%B8%E5%BC%95%20%E9%AB%98%E6%BF%83%E5%BA%A6%E3%83%8A%E3%83%8E%E3%82%A4%E3%83%BCX%20%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20F-VXT90","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"M0Q0b","s":"s"});
+</script>
+<div id="msmaflink-M0Q0b">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

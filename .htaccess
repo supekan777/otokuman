@@ -1,0 +1,261 @@
+# .htaccess for 失敗しないお得マン！
+# 最適化・セキュリティ・SEO設定
+
+# =============================================
+# HTTPS リダイレクト（SSL必須）
+# =============================================
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =============================================  
+# WWW統一（www有りまたは無しに統一）
+# =============================================
+# www無し版への統一（推奨）
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# =============================================
+# インデックスファイルのリダイレクト
+# =============================================
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# =============================================
+# キャッシュ制御（パフォーマンス向上）
+# =============================================
+<IfModule mod_expires.c>
+    ExpiresActive on
+
+    # HTML（短時間キャッシュ）
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # CSS・JavaScript（中期間キャッシュ）
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # 画像（長期間キャッシュ）
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    
+    # フォント
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    
+    # その他ファイル
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/xml "access plus 1 hour"
+    ExpiresByType application/xml "access plus 1 hour"
+</IfModule>
+
+# =============================================
+# Cache-Control ヘッダー
+# =============================================
+<IfModule mod_headers.c>
+    # HTML
+    <FilesMatch "\.(html)$">
+        Header set Cache-Control "max-age=3600, public, must-revalidate"
+    </FilesMatch>
+    
+    # CSS・JS
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    
+    # 画像
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>
+
+# =============================================
+# GZIP圧縮（転送量削減）
+# =============================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xml+rss
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# =============================================
+# セキュリティヘッダー
+# =============================================
+<IfModule mod_headers.c>
+    # XSS保護
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # コンテンツタイプの推測を無効化
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Clickjacking対策
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # HSTS（HTTP Strict Transport Security）
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy（基本設定）
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;"
+</IfModule>
+
+# =============================================
+# ディレクトリブラウジング無効化
+# =============================================
+Options -Indexes
+
+# =============================================
+# ファイルアクセス制限
+# =============================================
+# 重要な設定ファイルへのアクセス拒否
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "robots.txt">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "sitemap.xml">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# バックアップファイルの隠蔽
+<FilesMatch "\.(bak|backup|old|tmp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ログファイルの隠蔽
+<FilesMatch "\.(log|txt)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# データディレクトリの保護
+<Directory "/data">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+# 管理ディレクトリの保護
+<Directory "/admin">
+    Order allow,deny
+    Deny from all
+    # 必要に応じてIP制限やBasic認証を追加
+</Directory>
+
+# =============================================
+# カスタムエラーページ
+# =============================================
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# =============================================
+# URL書き換えルール（SEO向け）
+# =============================================
+# 末尾スラッシュの統一
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !^/[^/]*\.html$
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+# 古いURL形式のリダイレクト（必要に応じて）
+# RewriteRule ^old-page\.html$ /new-page.html [R=301,L]
+
+# =============================================
+# MIME Type設定
+# =============================================
+<IfModule mod_mime.c>
+    # Web フォント
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    
+    # SVG画像
+    AddType image/svg+xml .svg .svgz
+    
+    # WebP画像
+    AddType image/webp .webp
+    
+    # JSON
+    AddType application/json .json
+    
+    # RSS
+    AddType application/rss+xml .rss
+    
+    # Sitemap
+    AddType application/xml .xml
+</IfModule>
+
+# =============================================
+# パフォーマンス最適化
+# =============================================
+# ETag無効化（Cache-Controlを優先）
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Keep-Alive接続の有効化
+<IfModule mod_headers.c>
+    Header set Connection "Keep-Alive"
+</IfModule>
+
+# =============================================
+# 文字エンコーディング
+# =============================================
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+    AddCharset UTF-8 .html .css .js .xml .json .rss
+</IfModule>
+
+# =============================================
+# 検索エンジン最適化
+# =============================================
+# robots.txtの場所を明示
+<Files "robots.txt">
+    Header set Content-Type "text/plain; charset=UTF-8"
+</Files>
+
+# XML Sitemapの設定
+<Files "sitemap.xml">
+    Header set Content-Type "application/xml; charset=UTF-8"
+</Files>
+
+# =============================================
+# モバイル最適化
+# =============================================
+# UA別での処理（必要に応じて）
+# RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod" [NC]
+# RewriteRule ^(.*)$ /mobile/$1 [L,R=302]
+
+# =============================================
+# 開発・テスト環境の制限
+# =============================================
+# テスト用パラメータへのアクセス制限
+RewriteCond %{QUERY_STRING} test=auto [NC]
+RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+RewriteRule .* - [F]
+
+# =============================================
+# 最終更新: 2025-08-22
+# サイト: 失敗しないお得マン！
+# =============================================

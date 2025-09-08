@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"シャープハイブリッド加湿器HV-S75-W 2種類の給水高パワータイプagイオンタンク容量4リットル","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/noborizaka\/cabinet\/11438049\/11449333\/11449345","p":["\/imgrc0130193087.jpg","\/imgrc0130193088.jpg","\/imgrc0130193090.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/noborizaka\/amb0djbshrwy\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/noborizaka\/amb0djbshrwy\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%97%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E5%8A%A0%E6%B9%BF%E5%99%A8HV-S75-W%202%E7%A8%AE%E9%A1%9E%E3%81%AE%E7%B5%A6%E6%B0%B4%E9%AB%98%E3%83%91%E3%83%AF%E3%83%BC%E3%82%BF%E3%82%A4%E3%83%97ag%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%BF%E3%83%B3%E3%82%AF%E5%AE%B9%E9%87%8F4%E3%83%AA%E3%83%83%E3%83%88%E3%83%AB","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"oFu4m","s":"s"});
+</script>
+<div id="msmaflink-oFu4m">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

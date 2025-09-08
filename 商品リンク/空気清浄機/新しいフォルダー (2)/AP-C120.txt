@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"正規店 【特典付】cado カドー 空気清浄機 AP-C120 花粉 黄砂 卓上 コンパクト 15畳 おしゃれ 小型 コンパクト ほこり ホコリ たばこ 脱臭 除菌 ウィルス HEPAタイプフィルター PM2.5除去 黄砂対策 花粉対策 ハウスダスト対策 リーフ120 白 黒［ cado 空気清浄機 LEAF120 ］","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/roomy\/cabinet\/500cart_all","p":["\/500cart_11g\/sale-4\/ecl2007-kz006-1_gt04.jpg","\/500cart_pr\/240801_ki_ndpre.jpg","\/500cart_ca2_3\/ecl2007-kz006-1_sz01.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/roomy\/ecl17dec14b01\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/roomy\/ecl17dec14b01\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E6%AD%A3%E8%A6%8F%E5%BA%97%20%E3%80%90%E7%89%B9%E5%85%B8%E4%BB%98%E3%80%91cado%20%E3%82%AB%E3%83%89%E3%83%BC%20%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20AP-C120%20%E8%8A%B1%E7%B2%89%20%E9%BB%84%E7%A0%82%20%E5%8D%93%E4%B8%8A%20%E3%82%B3%E3%83%B3%E3%83%91%E3%82%AF%E3%83%88%2015%E7%95%B3%20%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C%20%E5%B0%8F%E5%9E%8B%20%E3%82%B3%E3%83%B3%E3%83%91%E3%82%AF%E3%83%88%20%E3%81%BB%E3%81%93%E3%82%8A%20%E3%83%9B%E3%82%B3%E3%83%AA%20%E3%81%9F%E3%81%B0%E3%81%93%20%E8%84%B1%E8%87%AD%20%E9%99%A4%E8%8F%8C%20%E3%82%A6%E3%82%A3%E3%83%AB%E3%82%B9%20HEPA%E3%82%BF%E3%82%A4%E3%83%97%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%BC%20PM2.5%E9%99%A4%E5%8E%BB%20%E9%BB%84%E7%A0%82%E5%AF%BE%E7%AD%96%20%E8%8A%B1%E7%B2%89%E5%AF%BE%E7%AD%96%20%E3%83%8F%E3%82%A6%E3%82%B9%E3%83%80%E3%82%B9%E3%83%88%E5%AF%BE%E7%AD%96%20%E3%83%AA%E3%83%BC%E3%83%95120%20%E7%99%BD%20%E9%BB%92%EF%BC%BB%20cado%20%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%20LEAF120%20%EF%BC%BD","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"ORlB3","s":"s"});
+</script>
+<div id="msmaflink-ORlB3">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

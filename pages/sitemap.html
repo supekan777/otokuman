@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイトマップ | 失敗しないお得マン！</title>
+    <meta name="description" content="失敗しないお得マン！のサイトマップ。全ページへのリンクを掲載しています。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .sitemap-section {
+            margin-bottom: 3rem;
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .sitemap-section h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sitemap-section h2 i {
+            font-size: 1.5rem;
+        }
+        .sitemap-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .sitemap-links li {
+            list-style: none;
+            margin: 0;
+        }
+        .sitemap-links a {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: #f8f9fa;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        .sitemap-links a:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            border-left-color: #e74c3c;
+        }
+        .sitemap-links a i {
+            margin-right: 0.5rem;
+            color: #3498db;
+        }
+        .page-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .page-stats h2 {
+            margin-bottom: 1rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .search-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .search-box {
+            max-width: 500px;
+            margin: 1rem auto;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: #3498db;
+        }
+        .search-box i {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1><a href="../index.html"><i class="fas fa-home"></i> 失敗しないお得マン！</a></h1>
+                    <span class="tagline">家電選びの専門サイト</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">カテゴリ <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="humidifier.html">加湿器</a>
+                            <a href="air-purifier.html">空気清浄機</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">サイトについて</a></li>
+                    <li><a href="contact.html" class="nav-link">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumb">
+        <a href="../index.html">ホーム</a> &gt; サイトマップ
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="sitemap-container">
+            <header class="article-header">
+                <h1>サイトマップ</h1>
+                <p>失敗しないお得マン！の全ページをカテゴリ別にご案内します。</p>
+            </header>
+
+            <!-- サイト統計 -->
+            <div class="page-stats">
+                <h2><i class="fas fa-chart-bar"></i> サイト統計</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">31</span>
+                        <span class="stat-label">記事数</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">カテゴリ</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-label">総ページ数</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 検索セクション -->
+            <div class="search-section">
+                <h2><i class="fas fa-search"></i> ページ検索</h2>
+                <p>お探しのページがある場合は、下記で検索してください。</p>
+                <div class="search-box">
+                    <input type="text" id="sitemapSearch" placeholder="ページタイトルで検索...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <!-- メインページ -->
+            <section class="sitemap-section">
+                <h2><i class="fas fa-home"></i> メインページ</h2>
+                <ul class="sitemap-links">
+                    <li><a href="../index.html"><i class="fas fa-home"></i> トップページ</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> サイトについて</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
+                    <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> プライバシーポリシー</a></li>
+                    <li><a href="terms.html"><i class="fas fa-file-contract"></i> 利用規約</a></li>
+                </ul>
+            </section>
+
+            <!-- カテゴリページ -->
+            <section class="sitemap-section">
+                <h2><i class="fas fa-th-large"></i> カテゴリページ</h2>
+                <ul class="sitemap-links">
+                    <li><a href="humidifier.html"><i class="fas fa-tint"></i> 加湿器カテゴリ</a></li>
+                    <li><a href="air-purifier.html"><i class="fas fa-wind"></i> 空気清浄機カテゴリ</a></li>
+                </ul>
+            </section>
+
+            <!-- 加湿器記事 -->
+            <section class="sitemap-section">
+                <h2><i class="fas fa-tint"></i> 加湿器記事（16記事）</h2>
+                <ul class="sitemap-links">
+                    <li><a href="../articles/humidifier-guide-2025.html"><i class="fas fa-book"></i> 加湿器おすすめガイド2025</a></li>
+                    <li><a href="../articles/humidifier-electricity-cost-comparison.html"><i class="fas fa-bolt"></i> 加湿器の電気代比較</a></li>
+                    <li><a href="../articles/baby-safe-humidifier-guide.html"><i class="fas fa-baby"></i> 赤ちゃん向け加湿器ガイド</a></li>
+                    <li><a href="../articles/humidifier-mold-cleaning-guide.html"><i class="fas fa-broom"></i> 加湿器のカビ対策・掃除方法</a></li>
+                    <li><a href="../articles/single-person-humidifier-best10.html"><i class="fas fa-user"></i> 一人暮らし向け加湿器ベスト10</a></li>
+                    <li><a href="../articles/humidifier-air-purifier-combo-guide.html"><i class="fas fa-plus-circle"></i> 加湿器と空気清浄機の併用ガイド</a></li>
+                    <li><a href="../articles/humidifier-always-on-electricity-cost.html"><i class="fas fa-plug"></i> 加湿器つけっぱなしの電気代</a></li>
+                    <li><a href="../articles/baby-humidifier-when-to-start.html"><i class="fas fa-clock"></i> 赤ちゃんの加湿器はいつから？</a></li>
+                    <li><a href="../articles/humidifier-mold-health-risks.html"><i class="fas fa-exclamation-triangle"></i> 加湿器のカビによる健康被害</a></li>
+                    <li><a href="../articles/humidifier-noise-solutions.html"><i class="fas fa-volume-mute"></i> 加湿器の騒音対策</a></li>
+                    <li><a href="../articles/humidifier-ineffective-causes.html"><i class="fas fa-question-circle"></i> 加湿器が効かない原因と対策</a></li>
+                    <li><a href="../articles/office-humidifier-guide.html"><i class="fas fa-building"></i> オフィス用加湿器ガイド</a></li>
+                    <li><a href="../articles/seasonal-humidifier-usage-guide.html"><i class="fas fa-calendar-alt"></i> 季節別加湿器使い分けガイド</a></li>
+                    <li><a href="../articles/humidifier-aromatherapy-guide.html"><i class="fas fa-leaf"></i> 加湿器でアロマを楽しむ方法</a></li>
+                    <li><a href="../articles/large-capacity-commercial-humidifier-comparison.html"><i class="fas fa-industry"></i> 大容量業務用加湿器比較</a></li>
+                    <li><a href="../articles/humidifier-lifespan-replacement-guide.html"><i class="fas fa-sync-alt"></i> 加湿器の寿命と買い替えタイミング</a></li>
+                </ul>
+            </section>
+
+            <!-- 空気清浄機記事 -->
+            <section class="sitemap-section">
+                <h2><i class="fas fa-wind"></i> 空気清浄機記事（15記事）</h2>
+                <ul class="sitemap-links">
+                    <li><a href="../articles/air-purifier-guide-2025.html"><i class="fas fa-book"></i> 空気清浄機おすすめガイド2025</a></li>
+                    <li><a href="../articles/air-purifier-electricity-cost-comparison.html"><i class="fas fa-bolt"></i> 空気清浄機の電気代比較</a></li>
+                    <li><a href="../articles/baby-child-air-purifier-guide.html"><i class="fas fa-baby"></i> 赤ちゃん・子供向け空気清浄機</a></li>
+                    <li><a href="../articles/single-living-air-purifier-guide.html"><i class="fas fa-user"></i> 一人暮らし向け空気清浄機</a></li>
+                    <li><a href="../articles/air-purifier-not-working-solutions.html"><i class="fas fa-wrench"></i> 空気清浄機の効果を上げる方法</a></li>
+                    <li><a href="../articles/air-purifier-filter-maintenance-guide.html"><i class="fas fa-filter"></i> 空気清浄機フィルターのメンテナンス</a></li>
+                    <li><a href="../articles/odor-specialized-air-purifier-guide.html"><i class="fas fa-nose"></i> 臭い対策特化空気清浄機</a></li>
+                    <li><a href="../articles/bedroom-sleep-air-purifier-guide.html"><i class="fas fa-bed"></i> 寝室・睡眠向け空気清浄機</a></li>
+                    <li><a href="../articles/premium-high-end-air-purifier-guide.html"><i class="fas fa-crown"></i> 高級空気清浄機ガイド</a></li>
+                    <li><a href="../articles/seasonal-usage-settings-guide.html"><i class="fas fa-cog"></i> 季節別空気清浄機設定ガイド</a></li>
+                    <li><a href="../articles/air-purifier-hvac-integration-guide.html"><i class="fas fa-home"></i> 空気清浄機と家電連携ガイド</a></li>
+                    <li><a href="../articles/compact-portable-air-purifier-guide.html"><i class="fas fa-car"></i> 小型・車載用空気清浄機ガイド</a></li>
+                    <li><a href="../articles/pet-specialized-air-purifier-guide.html"><i class="fas fa-paw"></i> ペット向け空気清浄機</a></li>
+                    <li><a href="../articles/budget-price-air-purifier-guide.html"><i class="fas fa-dollar-sign"></i> 予算別空気清浄機ガイド</a></li>
+                    <li><a href="../articles/allergy-specialized-air-purifier-guide.html"><i class="fas fa-allergies"></i> アレルギー対策空気清浄機</a></li>
+                </ul>
+            </section>
+
+            <!-- 商品個別ページ -->
+            <section class="sitemap-section">
+                <h2><i class="fas fa-tag"></i> 商品個別ページ</h2>
+                <ul class="sitemap-links">
+                    <li><a href="humidifier-sharp-hv-l55.html"><i class="fas fa-star"></i> シャープ加湿器 HV-L55レビュー</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>失敗しないお得マン！</h3>
+                <p>家電選びの専門サイト</p>
+            </div>
+            <div class="footer-section">
+                <h4>メニュー</h4>
+                <ul>
+                    <li><a href="../index.html">ホーム</a></li>
+                    <li><a href="about.html">サイトについて</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                    <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+                    <li><a href="terms.html">利用規約</a></li>
+                    <li><a href="sitemap.html">サイトマップ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>カテゴリ</h4>
+                <ul>
+                    <li><a href="humidifier.html">加湿器</a></li>
+                    <li><a href="air-purifier.html">空気清浄機</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // サイトマップページ内検索機能
+        document.getElementById('sitemapSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allLinks = document.querySelectorAll('.sitemap-links a');
+            
+            allLinks.forEach(link => {
+                const text = link.textContent.toLowerCase();
+                const listItem = link.parentElement;
+                
+                if (text.includes(searchTerm)) {
+                    listItem.style.display = 'block';
+                    link.innerHTML = link.innerHTML.replace(/<mark>/g, '').replace(/<\/mark>/g, '');
+                    if (searchTerm) {
+                        const regex = new RegExp(`(${searchTerm})`, 'gi');
+                        link.innerHTML = link.innerHTML.replace(regex, '<mark>$1</mark>');
+                    }
+                } else {
+                    listItem.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+    <style>
+        mark {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"ダイキン｜DAIKIN 空気清浄機【加湿機能付】（空清22畳まで\/加湿：木造8畳、プレハブ13畳まで　ホワイト） MCK505A-W DAIKIN 加湿ストリーマ [MCK505AW]","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/jism\/cabinet","p":["\/0407\/4573535366584.jpg","\/s_1334\/4573535366584a.jpg","\/s_1334\/4573535366584b.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/jism\/4573535366584-22-9798-n\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/jism\/4573535366584-22-9798-n\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%83%80%E3%82%A4%E3%82%AD%E3%83%B3%EF%BD%9CDAIKIN%20%E7%A9%BA%E6%B0%97%E6%B8%85%E6%B5%84%E6%A9%9F%E3%80%90%E5%8A%A0%E6%B9%BF%E6%A9%9F%E8%83%BD%E4%BB%98%E3%80%91%EF%BC%88%E7%A9%BA%E6%B8%8522%E7%95%B3%E3%81%BE%E3%81%A7%2F%E5%8A%A0%E6%B9%BF%EF%BC%9A%E6%9C%A8%E9%80%A08%E7%95%B3%E3%80%81%E3%83%97%E3%83%AC%E3%83%8F%E3%83%9613%E7%95%B3%E3%81%BE%E3%81%A7%E3%80%80%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%EF%BC%89%20MCK505A-W%20DAIKIN%20%E5%8A%A0%E6%B9%BF%E3%82%B9%E3%83%88%E3%83%AA%E3%83%BC%E3%83%9E%20%5BMCK505AW%5D","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"wmNTo","s":"s"});
+</script>
+<div id="msmaflink-wmNTo">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

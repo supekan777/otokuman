@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理画面 | 失敗しないお得マン！</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <!-- サイドバー -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2><i class="fas fa-cog"></i> 管理画面</h2>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-item active" data-section="dashboard">
+                        <i class="fas fa-chart-pie"></i> ダッシュボード
+                    </a></li>
+                    <li><a href="#products" class="nav-item" data-section="products">
+                        <i class="fas fa-box"></i> 商品管理
+                    </a></li>
+                    <li><a href="#articles" class="nav-item" data-section="articles">
+                        <i class="fas fa-newspaper"></i> 記事管理
+                    </a></li>
+                    <li><a href="#analytics" class="nav-item" data-section="analytics">
+                        <i class="fas fa-chart-line"></i> 分析・レポート
+                    </a></li>
+                    <li><a href="#affiliate" class="nav-item" data-section="affiliate">
+                        <i class="fas fa-link"></i> アフィリエイト管理
+                    </a></li>
+                    <li><a href="#seo" class="nav-item" data-section="seo">
+                        <i class="fas fa-search"></i> SEO管理
+                    </a></li>
+                    <li><a href="#settings" class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i> 設定
+                    </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="admin-main">
+            <!-- ヘッダー -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">ダッシュボード</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-stats">
+                        <span class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span id="today-views">1,234</span> PV
+                        </span>
+                        <span class="stat-item">
+                            <i class="fas fa-yen-sign"></i>
+                            <span id="today-revenue">¥12,340</span>
+                        </span>
+                    </div>
+                    <div class="user-menu">
+                        <button class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- コンテンツエリア -->
+            <div class="admin-content">
+                <!-- ダッシュボード -->
+                <section id="dashboard-section" class="content-section active">
+                    <div class="dashboard-grid">
+                        <!-- KPI Cards -->
+                        <div class="kpi-cards">
+                            <div class="kpi-card">
+                                <div class="kpi-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="kpi-data">
+                                    <h3>総PV数</h3>
+                                    <div class="kpi-value">45,892</div>
+                                    <div class="kpi-change positive">+12.5%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">
+                                    <i class="fas fa-yen-sign"></i>
+                                </div>
+                                <div class="kpi-data">
+                                    <h3>今月収益</h3>
+                                    <div class="kpi-value">¥234,567</div>
+                                    <div class="kpi-change positive">+23.8%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">
+                                    <i class="fas fa-mouse-pointer"></i>
+                                </div>
+                                <div class="kpi-data">
+                                    <h3>CTR</h3>
+                                    <div class="kpi-value">3.4%</div>
+                                    <div class="kpi-change negative">-0.2%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="kpi-card">
+                                <div class="kpi-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="kpi-data">
+                                    <h3>コンバージョン</h3>
+                                    <div class="kpi-value">189</div>
+                                    <div class="kpi-change positive">+15.3%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- チャート -->
+                        <div class="chart-container">
+                            <h3>PV・収益推移（過去30日）</h3>
+                            <canvas id="dashboardChart"></canvas>
+                        </div>
+
+                        <!-- 人気記事 -->
+                        <div class="popular-articles">
+                            <h3>人気記事 TOP5</h3>
+                            <div class="article-list">
+                                <div class="article-item">
+                                    <div class="article-rank">1</div>
+                                    <div class="article-info">
+                                        <h4>シャープ HV-L55 レビュー</h4>
+                                        <div class="article-stats">
+                                            <span><i class="fas fa-eye"></i> 2,345 PV</span>
+                                            <span><i class="fas fa-yen-sign"></i> ¥12,340</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="article-item">
+                                    <div class="article-rank">2</div>
+                                    <div class="article-info">
+                                        <h4>加湿器おすすめ15選</h4>
+                                        <div class="article-stats">
+                                            <span><i class="fas fa-eye"></i> 1,987 PV</span>
+                                            <span><i class="fas fa-yen-sign"></i> ¥8,760</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="article-item">
+                                    <div class="article-rank">3</div>
+                                    <div class="article-info">
+                                        <h4>パナソニック FE-KFP07 レビュー</h4>
+                                        <div class="article-stats">
+                                            <span><i class="fas fa-eye"></i> 1,432 PV</span>
+                                            <span><i class="fas fa-yen-sign"></i> ¥6,210</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 最近のアクティビティ -->
+                        <div class="recent-activity">
+                            <h3>最近のアクティビティ</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-text">新商品「ダイソン V15」を追加</div>
+                                        <div class="activity-time">2時間前</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-text">記事「加湿器の選び方」を更新</div>
+                                        <div class="activity-time">5時間前</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-text">月次レポートを生成</div>
+                                        <div class="activity-time">1日前</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 商品管理 -->
+                <section id="products-section" class="content-section">
+                    <div class="section-header">
+                        <h2>商品管理</h2>
+                        <button class="btn btn-primary" onclick="openProductModal()">
+                            <i class="fas fa-plus"></i> 新しい商品を追加
+                        </button>
+                    </div>
+                    
+                    <div class="products-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>商品名</th>
+                                    <th>カテゴリ</th>
+                                    <th>価格</th>
+                                    <th>評価</th>
+                                    <th>ステータス</th>
+                                    <th>最終更新</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-table-body">
+                                <tr>
+                                    <td>
+                                        <div class="product-cell">
+                                            <div class="product-image">📱</div>
+                                            <div>
+                                                <div class="product-name">シャープ HV-L55</div>
+                                                <div class="product-model">プラズマクラスター加湿器</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>加湿器</td>
+                                    <td>¥12,800</td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <span class="stars">★★★★☆</span>
+                                            <span>4.2</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">公開中</span></td>
+                                    <td>2025-01-20</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon edit" title="編集">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon delete" title="削除">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 記事管理 -->
+                <section id="articles-section" class="content-section">
+                    <div class="section-header">
+                        <h2>記事管理</h2>
+                        <button class="btn btn-primary" onclick="openArticleModal()">
+                            <i class="fas fa-plus"></i> 新しい記事を作成
+                        </button>
+                    </div>
+                    
+                    <div class="articles-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>タイトル</th>
+                                    <th>カテゴリ</th>
+                                    <th>PV数</th>
+                                    <th>ステータス</th>
+                                    <th>公開日</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="articles-table-body">
+                                <tr>
+                                    <td>
+                                        <div class="article-title">シャープ プラズマクラスター加湿器 HV-L55 レビュー</div>
+                                        <div class="article-url">/pages/humidifier-sharp-hv-l55.html</div>
+                                    </td>
+                                    <td>レビュー</td>
+                                    <td>2,345</td>
+                                    <td><span class="status-badge active">公開中</span></td>
+                                    <td>2025-01-15</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-icon edit" title="編集">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon view" title="プレビュー">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-icon delete" title="削除">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- アナリティクス -->
+                <section id="analytics-section" class="content-section">
+                    <div class="section-header">
+                        <h2>分析・レポート</h2>
+                        <div class="date-range-picker">
+                            <select id="analytics-period">
+                                <option value="7">過去7日</option>
+                                <option value="30" selected>過去30日</option>
+                                <option value="90">過去90日</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>トラフィック分析</h3>
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>収益分析</h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>人気カテゴリ</h3>
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>デバイス別アクセス</h3>
+                            <canvas id="deviceChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- アフィリエイト管理 -->
+                <section id="affiliate-section" class="content-section">
+                    <div class="section-header">
+                        <h2>アフィリエイト管理</h2>
+                        <button class="btn btn-primary" onclick="generateAffiliateReport()">
+                            <i class="fas fa-download"></i> レポート出力
+                        </button>
+                    </div>
+
+                    <div class="affiliate-stats">
+                        <div class="affiliate-card">
+                            <h3>Amazon</h3>
+                            <div class="affiliate-data">
+                                <div class="metric">
+                                    <span class="value">1,234</span>
+                                    <span class="label">クリック数</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="value">¥45,678</span>
+                                    <span class="label">収益</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="value">3.7%</span>
+                                    <span class="label">CVR</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="affiliate-card">
+                            <h3>楽天市場</h3>
+                            <div class="affiliate-data">
+                                <div class="metric">
+                                    <span class="value">987</span>
+                                    <span class="label">クリック数</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="value">¥23,456</span>
+                                    <span class="label">収益</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="value">2.4%</span>
+                                    <span class="label">CVR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SEO管理 -->
+                <section id="seo-section" class="content-section">
+                    <div class="section-header">
+                        <h2>SEO管理</h2>
+                        <button class="btn btn-primary" onclick="analyzeSEO()">
+                            <i class="fas fa-search"></i> SEO分析実行
+                        </button>
+                    </div>
+
+                    <div class="seo-overview">
+                        <div class="seo-card">
+                            <h3>検索順位</h3>
+                            <div class="seo-metrics">
+                                <div class="metric">
+                                    <span class="label">平均順位</span>
+                                    <span class="value">12.3位</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">1位キーワード</span>
+                                    <span class="value">23個</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">10位以内</span>
+                                    <span class="value">156個</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="seo-card">
+                            <h3>改善提案</h3>
+                            <div class="improvement-list">
+                                <div class="improvement-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>メタディスクリプションが未設定の記事: 3件</span>
+                                </div>
+                                <div class="improvement-item">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>画像のalt属性が未設定: 12件</span>
+                                </div>
+                                <div class="improvement-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>ページ速度が遅い: 2ページ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 設定 -->
+                <section id="settings-section" class="content-section">
+                    <div class="section-header">
+                        <h2>設定</h2>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>基本設定</h3>
+                            <div class="setting-item">
+                                <label>サイト名</label>
+                                <input type="text" value="家電レビュー専門サイト">
+                            </div>
+                            <div class="setting-item">
+                                <label>サイト説明</label>
+                                <textarea>家電製品の詳細レビュー・比較・ランキングを掲載する専門サイト</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-card">
+                            <h3>アフィリエイト設定</h3>
+                            <div class="setting-item">
+                                <label>Amazon アソシエイトID</label>
+                                <input type="text" placeholder="your-associate-id">
+                            </div>
+                            <div class="setting-item">
+                                <label>楽天アフィリエイトID</label>
+                                <input type="text" placeholder="your-affiliate-id">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- モーダル -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>商品追加・編集</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <div class="form-group">
+                        <label>商品名</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>カテゴリ</label>
+                        <select name="category" required>
+                            <option value="">選択してください</option>
+                            <option value="humidifier">加湿器</option>
+                            <option value="air-purifier">空気清浄機</option>
+                            <option value="vacuum">掃除機</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>価格</label>
+                        <input type="number" name="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>評価</label>
+                        <input type="number" name="rating" min="1" max="5" step="0.1" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('productModal')">キャンセル</button>
+                <button class="btn btn-primary" onclick="saveProduct()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

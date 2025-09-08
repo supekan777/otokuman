@@ -1,0 +1,40 @@
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 一時ファイル
+*.tmp
+*.temp
+~*
+
+# バックアップファイル
+*_backup_*
+*.bak
+
+# ログファイル
+*.log
+
+# 大容量ファイル（必要に応じて）
+*.zip
+*.rar
+*.exe
+
+# 開発用一時フォルダ
+/temp/
+/tmp/
+/backup/
+
+# SSH秘密鍵
+*.pem
+*.key
+*.ppk
+
+# 問題のあるファイル
+nul
+articles${file}.html
+
+# 重複バックアップフォルダ
+/pages_recovery/
+/recovery_20250902/
+deploy_files.tar.gz
