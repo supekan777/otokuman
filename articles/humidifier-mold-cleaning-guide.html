@@ -3198,127 +3198,425 @@
                         </div>
                     </div>
                     
-                    <p>加湿器の清掃に適した安全で効果的な洗剤・用品をご紹介します。正しい選択で効率的かつ安全な清掃が可能になります。</p>
+                    <p style="text-align: center; color: #666; margin: 2rem 0; font-size: 1.1rem;">加湿器の清掃に適した安全で効果的な洗剤・用品をご紹介します。正しい選択で効率的かつ安全な清掃が可能になります。</p>
 
-                    <h3>🧴 基本の洗剤・薬品</h3>
-                    <div class="cleaning-products-grid">
-                        <div class="product-card recommended">
-                            <div class="product-header">
-                                <h4>クエン酸</h4>
-                                <span class="safety-level safe">安全</span>
-                                <span class="effectiveness high">高効果</span>
+                    <h3 style="background: linear-gradient(135deg, #00acc1 0%, #0097a7 100%); color: white; padding: 1.2rem; border-radius: 12px; text-align: center; margin: 2rem 0; box-shadow: 0 6px 20px rgba(0,151,167,0.3); font-size: 1.6rem; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); animation: slide 3s infinite;"></div>
+                        <span style="position: relative;">🧴 基本の洗剤・薬品</span>
+                    </h3>
+                    
+                    <style>
+                        @keyframes slide {
+                            0% { transform: translateX(-100%); }
+                            100% { transform: translateX(100%); }
+                        }
+                        
+                        .cleaning-product-card {
+                            background: white;
+                            border-radius: 16px;
+                            padding: 2rem;
+                            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            position: relative;
+                            overflow: hidden;
+                            border: 2px solid transparent;
+                        }
+                        
+                        .cleaning-product-card:hover {
+                            transform: translateY(-8px) scale(1.02);
+                            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+                        }
+                        
+                        .cleaning-product-card.recommended {
+                            border-color: #4caf50;
+                            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+                        }
+                        
+                        .cleaning-product-card.recommended::before {
+                            content: '✨ おすすめ';
+                            position: absolute;
+                            top: 10px;
+                            right: -35px;
+                            background: linear-gradient(135deg, #4caf50, #388e3c);
+                            color: white;
+                            padding: 5px 40px;
+                            transform: rotate(45deg);
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            box-shadow: 0 2px 10px rgba(76,175,80,0.3);
+                        }
+                        
+                        .cleaning-product-card.caution {
+                            border-color: #ff9800;
+                            background: linear-gradient(135deg, #ffffff 0%, #fff3e0 100%);
+                        }
+                        
+                        .cleaning-product-card.caution::before {
+                            content: '⚠️ 要注意';
+                            position: absolute;
+                            top: 10px;
+                            right: -35px;
+                            background: linear-gradient(135deg, #ff9800, #f57c00);
+                            color: white;
+                            padding: 5px 40px;
+                            transform: rotate(45deg);
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            box-shadow: 0 2px 10px rgba(255,152,0,0.3);
+                        }
+                        
+                        .product-header-enhanced {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 1.5rem;
+                            padding-bottom: 1rem;
+                            border-bottom: 3px solid;
+                            border-image: linear-gradient(90deg, #00acc1, #26c6da, #00acc1) 1;
+                            position: relative;
+                        }
+                        
+                        .product-title {
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                            color: #00695c;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        }
+                        
+                        .product-badges {
+                            display: flex;
+                            gap: 0.5rem;
+                        }
+                        
+                        .badge {
+                            padding: 0.3rem 0.8rem;
+                            border-radius: 20px;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                        }
+                        
+                        .badge:hover {
+                            transform: scale(1.1);
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                        }
+                        
+                        .badge.safety-safe {
+                            background: linear-gradient(135deg, #4caf50, #66bb6a);
+                            color: white;
+                        }
+                        
+                        .badge.safety-caution {
+                            background: linear-gradient(135deg, #ff9800, #ffa726);
+                            color: white;
+                            animation: pulse-warning 2s infinite;
+                        }
+                        
+                        @keyframes pulse-warning {
+                            0%, 100% { transform: scale(1); }
+                            50% { transform: scale(1.05); }
+                        }
+                        
+                        .badge.effect-high {
+                            background: linear-gradient(135deg, #2196f3, #42a5f5);
+                            color: white;
+                        }
+                        
+                        .badge.effect-very-high {
+                            background: linear-gradient(135deg, #673ab7, #7e57c2);
+                            color: white;
+                        }
+                        
+                        .badge.effect-medium {
+                            background: linear-gradient(135deg, #00bcd4, #26c6da);
+                            color: white;
+                        }
+                        
+                        .product-content-section {
+                            margin-bottom: 1.5rem;
+                        }
+                        
+                        .section-title {
+                            color: #00695c;
+                            font-weight: bold;
+                            margin-bottom: 0.8rem;
+                            font-size: 1.1rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        }
+                        
+                        .section-title::before {
+                            content: '';
+                            width: 4px;
+                            height: 20px;
+                            background: linear-gradient(180deg, #00acc1, #0097a7);
+                            border-radius: 2px;
+                        }
+                        
+                        .feature-list {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .feature-list li {
+                            padding: 0.5rem 0.8rem;
+                            margin-bottom: 0.5rem;
+                            background: linear-gradient(135deg, #f5f5f5, #eeeeee);
+                            border-radius: 8px;
+                            position: relative;
+                            padding-left: 2rem;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .feature-list li:hover {
+                            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+                            transform: translateX(5px);
+                        }
+                        
+                        .feature-list li::before {
+                            content: '✓';
+                            position: absolute;
+                            left: 0.8rem;
+                            color: #00acc1;
+                            font-weight: bold;
+                        }
+                        
+                        .usage-instruction {
+                            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+                            padding: 1rem;
+                            border-radius: 10px;
+                            border-left: 4px solid #4caf50;
+                            font-weight: 500;
+                            color: #2e7d32;
+                        }
+                        
+                        .product-recommendations {
+                            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+                            padding: 1rem;
+                            border-radius: 10px;
+                            margin-top: 1rem;
+                        }
+                        
+                        .product-recommendations ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .product-recommendations li {
+                            padding: 0.4rem 0;
+                            color: #f57c00;
+                            font-weight: 500;
+                            position: relative;
+                            padding-left: 1.5rem;
+                        }
+                        
+                        .product-recommendations li::before {
+                            content: '🏆';
+                            position: absolute;
+                            left: 0;
+                        }
+                        
+                        .price-badge {
+                            background: linear-gradient(135deg, #ff5722, #ff6e40);
+                            color: white;
+                            padding: 0.8rem 1.2rem;
+                            border-radius: 12px;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            margin-top: 1rem;
+                            box-shadow: 0 4px 15px rgba(255,87,34,0.3);
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .price-badge:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 6px 20px rgba(255,87,34,0.4);
+                        }
+                        
+                        .warning-list {
+                            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+                            padding: 1rem;
+                            border-radius: 10px;
+                            border: 2px solid #f44336;
+                            margin-top: 1rem;
+                        }
+                        
+                        .warning-list li {
+                            color: #c62828;
+                            font-weight: bold;
+                            padding: 0.3rem 0;
+                        }
+                        
+                        .warning-list li::before {
+                            content: '⚠️ ';
+                        }
+                    </style>
+                    
+                    <div class="cleaning-products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                        <div class="cleaning-product-card recommended">
+                            <div class="product-header-enhanced">
+                                <h4 class="product-title">🍋 クエン酸</h4>
+                                <div class="product-badges">
+                                    <span class="badge safety-safe">安全</span>
+                                    <span class="badge effect-high">高効果</span>
+                                </div>
                             </div>
                             <div class="product-details">
-                                <h5>効果</h5>
-                                <ul>
-                                    <li>水垢・カルキの除去</li>
-                                    <li>pH調整による除菌効果</li>
-                                    <li>臭いの中和</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">効果</h5>
+                                    <ul class="feature-list">
+                                        <li>水垢・カルキの除去</li>
+                                        <li>pH調整による除菌効果</li>
+                                        <li>臭いの中和</li>
+                                    </ul>
+                                </div>
                                 
-                                <h5>使用法</h5>
-                                <p>水1Lに大さじ1（15g）を溶かして使用</p>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">使用法</h5>
+                                    <p class="usage-instruction">水1Lに大さじ1（15g）を溶かして使用</p>
+                                </div>
                                 
-                                <h5>おすすめ商品</h5>
-                                <ul>
-                                    <li>シャボン玉石けん クエン酸 300g</li>
-                                    <li>地の塩社 クエン酸 500g</li>
-                                    <li>暮らしの重曹 クエン酸 1kg</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">おすすめ商品</h5>
+                                    <div class="product-recommendations">
+                                        <ul>
+                                            <li>シャボン玉石けん クエン酸 300g</li>
+                                            <li>地の塩社 クエン酸 500g</li>
+                                            <li>暮らしの重曹 クエン酸 1kg</li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 
-                                <div class="price-info">
-                                    <p><strong>価格帯：</strong>300〜800円</p>
+                                <div class="price-badge">
+                                    💰 価格帯：300〜800円
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card recommended">
-                            <div class="product-header">
-                                <h4>重曹</h4>
-                                <span class="safety-level safe">安全</span>
-                                <span class="effectiveness medium">中効果</span>
+                        <div class="cleaning-product-card recommended">
+                            <div class="product-header-enhanced">
+                                <h4 class="product-title">🧂 重曹</h4>
+                                <div class="product-badges">
+                                    <span class="badge safety-safe">安全</span>
+                                    <span class="badge effect-medium">中効果</span>
+                                </div>
                             </div>
                             <div class="product-details">
-                                <h5>効果</h5>
-                                <ul>
-                                    <li>軽度の汚れ除去</li>
-                                    <li>臭い吸着・中和</li>
-                                    <li>研磨作用</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">効果</h5>
+                                    <ul class="feature-list">
+                                        <li>軽度の汚れ除去</li>
+                                        <li>臭い吸着・中和</li>
+                                        <li>研磨作用</li>
+                                    </ul>
+                                </div>
                                 
-                                <h5>使用法</h5>
-                                <p>重曹3：水1でペースト状にして使用</p>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">使用法</h5>
+                                    <p class="usage-instruction">重曹3：水1でペースト状にして使用</p>
+                                </div>
                                 
-                                <h5>おすすめ商品</h5>
-                                <ul>
-                                    <li>アーム&ハンマー 重曹 454g</li>
-                                    <li>暮らしの重曹 1kg</li>
-                                    <li>シャボン玉石けん 重曹 500g</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">おすすめ商品</h5>
+                                    <div class="product-recommendations">
+                                        <ul>
+                                            <li>アーム&ハンマー 重曹 454g</li>
+                                            <li>暮らしの重曹 1kg</li>
+                                            <li>シャボン玉石けん 重曹 500g</li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 
-                                <div class="price-info">
-                                    <p><strong>価格帯：</strong>200〜600円</p>
+                                <div class="price-badge">
+                                    💰 価格帯：200〜600円
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card caution">
-                            <div class="product-header">
-                                <h4>次亜塩素酸ナトリウム</h4>
-                                <span class="safety-level caution">要注意</span>
-                                <span class="effectiveness very-high">最高効果</span>
+                        <div class="cleaning-product-card caution">
+                            <div class="product-header-enhanced">
+                                <h4 class="product-title">🧪 次亜塩素酸ナトリウム</h4>
+                                <div class="product-badges">
+                                    <span class="badge safety-caution">要注意</span>
+                                    <span class="badge effect-very-high">最高効果</span>
+                                </div>
                             </div>
                             <div class="product-details">
-                                <h5>効果</h5>
-                                <ul>
-                                    <li>強力な除菌・漂白</li>
-                                    <li>カビ・雑菌の完全除去</li>
-                                    <li>ウイルス不活化</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">効果</h5>
+                                    <ul class="feature-list">
+                                        <li>強力な除菌・漂白</li>
+                                        <li>カビ・雑菌の完全除去</li>
+                                        <li>ウイルス不活化</li>
+                                    </ul>
+                                </div>
                                 
-                                <h5>使用法</h5>
-                                <p>水1Lに小さじ1（5ml）を希釈して使用</p>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">使用法</h5>
+                                    <p class="usage-instruction">水1Lに小さじ1（5ml）を希釈して使用</p>
+                                </div>
                                 
-                                <h5>注意事項</h5>
-                                <ul class="warnings">
-                                    <li>換気必須</li>
-                                    <li>ゴム手袋着用</li>
-                                    <li>酸性洗剤と混合禁止</li>
-                                    <li>十分なすすぎが必要</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">注意事項</h5>
+                                    <ul class="warning-list">
+                                        <li>換気必須</li>
+                                        <li>ゴム手袋着用</li>
+                                        <li>酸性洗剤と混合禁止</li>
+                                        <li>十分なすすぎが必要</li>
+                                    </ul>
+                                </div>
                                 
-                                <div class="price-info">
-                                    <p><strong>価格帯：</strong>100〜300円</p>
+                                <div class="price-badge">
+                                    💰 価格帯：100〜300円
                                 </div>
                             </div>
                         </div>
 
-                        <div class="product-card good">
-                            <div class="product-header">
-                                <h4>中性洗剤</h4>
-                                <span class="safety-level safe">安全</span>
-                                <span class="effectiveness medium">中効果</span>
+                        <div class="cleaning-product-card">
+                            <div class="product-header-enhanced">
+                                <h4 class="product-title">🧼 中性洗剤</h4>
+                                <div class="product-badges">
+                                    <span class="badge safety-safe">安全</span>
+                                    <span class="badge effect-medium">中効果</span>
+                                </div>
                             </div>
                             <div class="product-details">
-                                <h5>効果</h5>
-                                <ul>
-                                    <li>油汚れ・手垢除去</li>
-                                    <li>日常的な清掃に最適</li>
-                                    <li>材質への影響が少ない</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">効果</h5>
+                                    <ul class="feature-list">
+                                        <li>油汚れ・手垢除去</li>
+                                        <li>日常的な清掃に最適</li>
+                                        <li>材質への影響が少ない</li>
+                                    </ul>
+                                </div>
                                 
-                                <h5>使用法</h5>
-                                <p>通常の食器洗い濃度で使用</p>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">使用法</h5>
+                                    <p class="usage-instruction">通常の食器洗い濃度で使用</p>
+                                </div>
                                 
-                                <h5>おすすめ商品</h5>
-                                <ul>
-                                    <li>花王 キュキュット</li>
-                                    <li>P&G ジョイ</li>
-                                    <li>ライオン ママレモン</li>
-                                </ul>
+                                <div class="product-content-section">
+                                    <h5 class="section-title">おすすめ商品</h5>
+                                    <div class="product-recommendations">
+                                        <ul>
+                                            <li>花王 キュキュット</li>
+                                            <li>P&G ジョイ</li>
+                                            <li>ライオン ママレモン</li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 
-                                <div class="price-info">
-                                    <p><strong>価格帯：</strong>150〜400円</p>
+                                <div class="price-badge">
+                                    💰 価格帯：150〜400円
                                 </div>
                             </div>
                         </div>
