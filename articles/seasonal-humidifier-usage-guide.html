@@ -257,10 +257,49 @@
                     
                     <p>快適な室内湿度は40-60%が理想とされていますが、季節によって外気の湿度や室内環境が大きく変化するため、加湿器の運用方法も調整が必要です。</p>
 
+                    <h3>なぜ季節によって加湿器の使い方を変える必要があるのか</h3>
+                    <p>日本の四季は温度と湿度の変化が激しく、それぞれの季節で室内環境に与える影響が異なります。例えば、<strong>冬は暖房使用により室内の相対湿度が20%以下まで下がることもあり</strong>、これは砂漠地帯と同等の乾燥状態です。一方、<strong>夏はエアコンの除湿機能により過度に乾燥する場合があり</strong>、冷房病の原因にもなります。</p>
+
+                    <div class="info-box">
+                        <h4>📊 季節別の室内湿度変化の要因</h4>
+                        <ul>
+                            <li><strong>気温の変化：</strong>温度が上がると空気が含める水分量（飽和水蒸気量）が増加し、相対湿度が下がる</li>
+                            <li><strong>暖房・冷房の使用：</strong>エアコンや暖房器具が空気中の水分を減少させる</li>
+                            <li><strong>換気頻度の違い：</strong>季節により窓の開閉頻度が変わり、外気の影響度が異なる</li>
+                            <li><strong>生活パターンの変化：</strong>洗濯物の室内干し、入浴回数など、生活習慣が湿度に影響</li>
+                        </ul>
+                    </div>
+
+                    <h3>季節別運用で得られる5つのメリット</h3>
+                    <p>適切な季節別運用を行うことで、以下のような具体的なメリットが得られます：</p>
+                    
+                    <div class="warning-box">
+                        <h4>✨ 季節別運用のメリット</h4>
+                        <ol>
+                            <li><strong>健康維持の向上：</strong>季節特有の健康リスク（花粉症、夏バテ、インフルエンザなど）を軽減</li>
+                            <li><strong>電気代の節約：</strong>必要な時期に必要な分だけ運転することで、年間で約30%の電気代削減が可能</li>
+                            <li><strong>機器の長寿命化：</strong>適切な運用とメンテナンスにより、加湿器の寿命を2-3年延ばせる</li>
+                            <li><strong>快適性の向上：</strong>体感温度の調整により、エアコンの設定温度を1-2度変更でき、さらなる省エネに</li>
+                            <li><strong>住環境の保護：</strong>木製家具や楽器、観葉植物などを季節の湿度変化から守る</li>
+                        </ol>
+                    </div>
+
+                    <h3>理想的な湿度管理の科学的根拠</h3>
+                    <p><strong>相対湿度40-60%が理想とされる理由</strong>は、多くの科学的研究により裏付けられています。この範囲内では：</p>
+                    <ul>
+                        <li>ウイルスの生存率が最も低くなる（特に40%以上でインフルエンザウイルスの活動が大幅に低下）</li>
+                        <li>ダニやカビの繁殖が抑制される（60%以下でカビの発生リスクが激減）</li>
+                        <li>人体の粘膜（鼻・喉）が適切に機能し、免疫力が維持される</li>
+                        <li>静電気の発生が抑えられ、電子機器へのダメージも防げる</li>
+                    </ul>
+
                     <div class="humidity-chart">
                         <h3>年間湿度変化と推奨設定</h3>
                         <canvas id="humidityChart" width="400" height="200"></canvas>
                     </div>
+
+                    <h3>季節ごとの湿度管理戦略</h3>
+                    <p>各季節の特性を理解し、それに応じた運用戦略を立てることが重要です。以下、季節ごとの詳細な運用指針をご紹介します。</p>
 
                     <div class="season-grid">
                         <div class="season-card spring">
@@ -268,6 +307,28 @@
                             <h3 class="season-title">春（3-5月）</h3>
                             <p><strong>目標湿度：45-55%</strong></p>
                             <p>花粉対策と乾燥防止のバランスが重要。適度な湿度で花粉の飛散を抑制しつつ、快適な環境を維持。</p>
+                            
+                            <div style="background: #fef3f8; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                                <h4 style="font-size: 1rem; color: #ec4899; margin-bottom: 0.5rem;">🌸 春特有の課題と対策</h4>
+                                <ul style="font-size: 0.9rem; color: #666; margin: 0.5rem 0;">
+                                    <li><strong>花粉の飛散抑制：</strong>湿度50%以上で花粉が水分を含み重くなり飛散しにくくなる</li>
+                                    <li><strong>黄砂・PM2.5対策：</strong>適度な湿度で空気中の微粒子を落とす効果</li>
+                                    <li><strong>寒暖差による体調不良：</strong>安定した湿度環境で自律神経の乱れを防ぐ</li>
+                                    <li><strong>新生活のストレス軽減：</strong>快適な湿度環境でリラックス効果を高める</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #fce7f3;">
+                                <p style="font-size: 0.9rem; color: #666;"><strong>運転時間の目安：</strong>朝6-9時、夜19-23時の計7時間</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>推奨加湿方式：</strong>超音波式または気化式（省エネ重視）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>注意点：</strong>花粉が多い日は窓を閉めて連続運転</p>
+                                <p style="font-size: 0.9rem; color: #ec4899; margin: 0;"><strong>💡 省エネのコツ：</strong>洗濯物の室内干しと併用で加湿効果UP</p>
+                            </div>
+                            
+                            <div style="background: #fff0f9; padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;"><strong>🌡️ 最適な室温：</strong>18-22℃</p>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0.5rem 0 0;"><strong>💰 月間電気代目安：</strong>約300-500円</p>
+                            </div>
                         </div>
                         
                         <div class="season-card summer">
@@ -275,6 +336,28 @@
                             <h3 class="season-title">夏（6-8月）</h3>
                             <p><strong>目標湿度：50-60%</strong></p>
                             <p>エアコン使用時の過乾燥対策。冷房による急激な湿度低下を防ぎ、体感温度を調整。</p>
+                            
+                            <div style="background: #f0feff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                                <h4 style="font-size: 1rem; color: #06b6d4; margin-bottom: 0.5rem;">☀️ 夏特有の課題と対策</h4>
+                                <ul style="font-size: 0.9rem; color: #666; margin: 0.5rem 0;">
+                                    <li><strong>冷房病の予防：</strong>エアコンの除湿による過度な乾燥を防ぎ、喉や鼻の粘膜を保護</li>
+                                    <li><strong>熱中症対策：</strong>適度な湿度で体感温度を下げ、エアコンの使い過ぎを防ぐ</li>
+                                    <li><strong>夏風邪予防：</strong>室内外の温度差による体調不良を湿度管理で軽減</li>
+                                    <li><strong>肌トラブル防止：</strong>エアコンによる肌の乾燥を防ぎ、夏の肌荒れを予防</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #cffafe;">
+                                <p style="font-size: 0.9rem; color: #666;"><strong>運転時間の目安：</strong>エアコン使用時のみ（断続運転・1日4-6時間）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>推奨加湿方式：</strong>超音波式（冷風機能付きがベスト）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>注意点：</strong>過加湿によるカビ発生に要注意</p>
+                                <p style="font-size: 0.9rem; color: #06b6d4; margin: 0;"><strong>💡 省エネのコツ：</strong>エアコンの設定温度を1度上げて併用</p>
+                            </div>
+                            
+                            <div style="background: #f0fdff; padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;"><strong>🌡️ 最適な室温：</strong>26-28℃</p>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0.5rem 0 0;"><strong>💰 月間電気代目安：</strong>約200-400円</p>
+                            </div>
                         </div>
                         
                         <div class="season-card autumn">
@@ -282,6 +365,28 @@
                             <h3 class="season-title">秋（9-11月）</h3>
                             <p><strong>目標湿度：40-50%</strong></p>
                             <p>徐々に乾燥し始める時期。風邪予防と肌の保湿のため、早めの加湿開始が効果的。</p>
+                            
+                            <div style="background: #fffbf0; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                                <h4 style="font-size: 1rem; color: #f59e0b; margin-bottom: 0.5rem;">🍂 秋特有の課題と対策</h4>
+                                <ul style="font-size: 0.9rem; color: #666; margin: 0.5rem 0;">
+                                    <li><strong>秋の乾燥対策：</strong>急激な湿度低下による肌荒れや喉の乾燥を防ぐ</li>
+                                    <li><strong>季節の変わり目の体調管理：</strong>朝晩の寒暖差による風邪を湿度管理で予防</li>
+                                    <li><strong>アレルギー対策：</strong>秋のダニやハウスダストの飛散を適度な湿度で抑制</li>
+                                    <li><strong>インフルエンザ予防の準備：</strong>早めの加湿開始で冬の感染症シーズンに備える</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #fed7aa;">
+                                <p style="font-size: 0.9rem; color: #666;"><strong>運転時間の目安：</strong>夜間を中心に6-8時間</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>推奨加湿方式：</strong>ハイブリッド式（暖房併用の準備期間）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>注意点：</strong>朝晩の気温差で結露しやすい</p>
+                                <p style="font-size: 0.9rem; color: #f59e0b; margin: 0;"><strong>💡 省エネのコツ：</strong>タイマー機能で必要な時間だけ運転</p>
+                            </div>
+                            
+                            <div style="background: #fffdf5; padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;"><strong>🌡️ 最適な室温：</strong>20-24℃</p>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0.5rem 0 0;"><strong>💰 月間電気代目安：</strong>約400-600円</p>
+                            </div>
                         </div>
                         
                         <div class="season-card winter">
@@ -289,7 +394,40 @@
                             <h3 class="season-title">冬（12-2月）</h3>
                             <p><strong>目標湿度：40-60%</strong></p>
                             <p>最も重要な季節。暖房による極度の乾燥を防ぎ、ウイルス感染リスクを低減。</p>
+                            
+                            <div style="background: #f5f3ff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                                <h4 style="font-size: 1rem; color: #6366f1; margin-bottom: 0.5rem;">❄️ 冬特有の課題と対策</h4>
+                                <ul style="font-size: 0.9rem; color: #666; margin: 0.5rem 0;">
+                                    <li><strong>インフルエンザ・感染症予防：</strong>湿度40%以上でウイルスの生存率を大幅に低下</li>
+                                    <li><strong>極度の乾燥対策：</strong>暖房使用による湿度20%以下の砂漠状態を改善</li>
+                                    <li><strong>静電気防止：</strong>湿度50%以上で不快な静電気の発生を抑制</li>
+                                    <li><strong>肌・喉の保護：</strong>乾燥による肌荒れ、喉の痛み、鼻血などを予防</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ddd6fe;">
+                                <p style="font-size: 0.9rem; color: #666;"><strong>運転時間の目安：</strong>暖房使用時は常時運転（10-12時間）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>推奨加湿方式：</strong>スチーム式またはハイブリッド式（高加湿量重視）</p>
+                                <p style="font-size: 0.9rem; color: #666;"><strong>注意点：</strong>加湿量の大きい機種選びが重要</p>
+                                <p style="font-size: 0.9rem; color: #6366f1; margin: 0;"><strong>💡 省エネのコツ：</strong>暖房温度を20度に抑えて湿度で体感温度UP</p>
+                            </div>
+                            
+                            <div style="background: #f4f3ff; padding: 0.75rem; border-radius: 6px; margin-top: 1rem;">
+                                <p style="font-size: 0.85rem; color: #666; margin: 0;"><strong>🌡️ 最適な室温：</strong>18-22℃</p>
+                                <p style="font-size: 0.85rem; color: #666; margin: 0.5rem 0 0;"><strong>💰 月間電気代目安：</strong>約800-1,500円</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="info-box" style="margin-top: 2rem;">
+                        <h4>🎯 季節移行期の運用ポイント</h4>
+                        <p>季節の変わり目（2月末～3月、5月末～6月、8月末～9月、11月末～12月）は、湿度管理が特に重要です。</p>
+                        <ul>
+                            <li><strong>段階的な調整：</strong>急激な設定変更を避け、1週間かけて徐々に目標湿度を変更</li>
+                            <li><strong>体調観察：</strong>家族の体調変化に注意し、必要に応じて微調整</li>
+                            <li><strong>天気予報の活用：</strong>週間天気予報を確認し、気温・湿度の変化に先回り対応</li>
+                            <li><strong>メンテナンス時期：</strong>季節の変わり目は加湿器の清掃・点検の最適なタイミング</li>
+                        </ul>
                     </div>
                 </section>
 

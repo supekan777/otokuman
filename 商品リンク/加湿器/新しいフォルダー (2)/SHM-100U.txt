@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"アイリスオーヤマ加湿器スチーム式(加熱式)加湿量100mlタンク容量800ml~3畳8時間連続加湿小型卓上デスク用SHM-100Uグリーン","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/u-jinshop78\/cabinet\/g\/2\/e99bfikp1l.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/u-jinshop78\/gr-e99bfikp1l\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/u-jinshop78\/gr-e99bfikp1l\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A2%E3%82%A4%E3%83%AA%E3%82%B9%E3%82%AA%E3%83%BC%E3%83%A4%E3%83%9E%E5%8A%A0%E6%B9%BF%E5%99%A8%E3%82%B9%E3%83%81%E3%83%BC%E3%83%A0%E5%BC%8F(%E5%8A%A0%E7%86%B1%E5%BC%8F)%E5%8A%A0%E6%B9%BF%E9%87%8F100ml%E3%82%BF%E3%83%B3%E3%82%AF%E5%AE%B9%E9%87%8F800ml~3%E7%95%B38%E6%99%82%E9%96%93%E9%80%A3%E7%B6%9A%E5%8A%A0%E6%B9%BF%E5%B0%8F%E5%9E%8B%E5%8D%93%E4%B8%8A%E3%83%87%E3%82%B9%E3%82%AF%E7%94%A8SHM-100U%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"sr7dE","s":"s"});
+</script>
+<div id="msmaflink-sr7dE">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->

@@ -6259,596 +6259,495 @@
 
                 <section id="seasonal-care">
                     <style>
-                        .seasonal-modern-container {
-                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                            padding: 4rem 0;
-                            margin: 4rem 0;
+                        .seasonal-ultimate-section {
+                            background: linear-gradient(145deg, #f0f8ff, #e8f5e8, #fff9e6, #fef7f7);
+                            border-radius: 50px;
+                            padding: 5rem 4rem;
+                            margin: 5rem 0;
                             position: relative;
                             overflow: hidden;
+                            border: 8px solid transparent;
+                            background-clip: padding-box;
+                            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
                         }
-
-                        .seasonal-modern-container::before {
+                        
+                        .seasonal-ultimate-section::before {
                             content: '';
                             position: absolute;
                             top: 0;
                             left: 0;
                             right: 0;
                             bottom: 0;
-                            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></g></svg>');
-                            opacity: 0.3;
+                            background: conic-gradient(
+                                from 0deg,
+                                #e91e63 0deg,
+                                #ff9800 90deg,
+                                #4caf50 180deg,
+                                #2196f3 270deg,
+                                #e91e63 360deg
+                            );
+                            z-index: -2;
+                            margin: -8px;
+                            border-radius: 58px;
+                            animation: magical-rotate 8s linear infinite;
+                        }
+                        
+                        @keyframes seasonal-cycle {
+                            0% { background: linear-gradient(135deg, #4caf50, #ff9800, #f44336, #2196f3); }
+                            25% { background: linear-gradient(135deg, #ff9800, #f44336, #2196f3, #4caf50); }
+                            50% { background: linear-gradient(135deg, #f44336, #2196f3, #4caf50, #ff9800); }
+                            75% { background: linear-gradient(135deg, #2196f3, #4caf50, #ff9800, #f44336); }
+                            100% { background: linear-gradient(135deg, #4caf50, #ff9800, #f44336, #2196f3); }
+                        }
+                        
+                        .seasonal-mega-section::after {
+                            content: '🗓️';
+                            position: absolute;
+                            top: -60px;
+                            right: -60px;
+                            font-size: 240px;
+                            opacity: 0.03;
+                            transform: rotate(15deg);
+                            z-index: 0;
+                        }
+                        
+                        .seasonal-header {
+                            text-align: center;
+                            margin-bottom: 4rem;
+                            position: relative;
                             z-index: 1;
                         }
-
-                        .seasonal-content-wrapper {
-                            max-width: 1200px;
-                            margin: 0 auto;
-                            padding: 0 2rem;
-                            position: relative;
-                            z-index: 2;
-                        }
-
-                        .seasonal-hero-section {
-                            text-align: center;
-                            margin-bottom: 5rem;
-                            position: relative;
-                        }
-
+                        
                         .seasonal-main-title {
-                            font-size: 3.5rem;
-                            font-weight: 800;
-                            color: #ffffff;
-                            margin-bottom: 2rem;
-                            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+                            background: linear-gradient(135deg, #2e7d32, #ef6c00);
+                            color: white;
+                            padding: 3rem 4rem;
+                            border-radius: 40px;
+                            font-size: 2.8rem;
+                            font-weight: bold;
+                            box-shadow: 0 20px 50px rgba(46,125,50,0.4);
                             position: relative;
-                            display: inline-block;
-                            animation: titleGlow 3s ease-in-out infinite alternate;
+                            overflow: hidden;
+                            margin: 0;
+                            transform: perspective(1500px) rotateX(8deg);
                         }
-
-                        @keyframes titleGlow {
-                            0% { text-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.1); }
-                            100% { text-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 50px rgba(255,255,255,0.3); }
+                        
+                        .seasonal-main-title::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+                            animation: seasonal-shine 7s infinite;
                         }
-
-                        .seasonal-subtitle {
-                            background: rgba(255,255,255,0.15);
-                            backdrop-filter: blur(15px);
-                            border: 1px solid rgba(255,255,255,0.2);
+                        
+                        @keyframes seasonal-shine {
+                            0% { left: -100%; }
+                            100% { left: 100%; }
+                        }
+                        
+                        .seasonal-description {
+                            background: rgba(255,255,255,0.9);
                             padding: 2rem 3rem;
-                            border-radius: 25px;
-                            color: #ffffff;
-                            font-size: 1.3rem;
-                            line-height: 1.7;
-                            max-width: 800px;
-                            margin: 0 auto;
-                            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                            border-radius: 20px;
+                            color: #555;
+                            line-height: 1.6;
+                            font-size: 1.2rem;
+                            margin-top: 2rem;
+                            border-left: 6px solid #4caf50;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
                         }
-
+                        
                         .seasons-grid {
                             display: grid;
-                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                            gap: 2.5rem;
+                            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                            gap: 3rem;
+                            position: relative;
+                            z-index: 1;
                             margin-bottom: 5rem;
                         }
-
-                        .season-card {
-                            background: rgba(255,255,255,0.95);
-                            backdrop-filter: blur(20px);
-                            border-radius: 25px;
-                            overflow: hidden;
-                            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        
+                        .season-mega-card {
+                            background: white;
+                            border-radius: 30px;
+                            padding: 3.5rem 3rem;
+                            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+                            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                             position: relative;
-                            border: 2px solid transparent;
+                            overflow: hidden;
+                            border: 5px solid transparent;
                         }
-
-                        .season-card::before {
+                        
+                        .season-mega-card.spring {
+                            border-color: #4caf50;
+                        }
+                        
+                        .season-mega-card.summer {
+                            border-color: #ff9800;
+                        }
+                        
+                        .season-mega-card.autumn {
+                            border-color: #f44336;
+                        }
+                        
+                        .season-mega-card.winter {
+                            border-color: #2196f3;
+                        }
+                        
+                        .season-mega-card::before {
                             content: '';
                             position: absolute;
                             top: 0;
                             left: 0;
                             right: 0;
-                            height: 6px;
-                            transition: all 0.4s ease;
-                        }
-
-                        .season-card.spring::before {
-                            background: linear-gradient(90deg, #56ab2f, #a8e6cf);
-                        }
-
-                        .season-card.summer::before {
-                            background: linear-gradient(90deg, #f7971e, #ffd200);
-                        }
-
-                        .season-card.autumn::before {
-                            background: linear-gradient(90deg, #c31432, #ff6b35);
-                        }
-
-                        .season-card.winter::before {
-                            background: linear-gradient(90deg, #1e3c72, #2a5298);
-                        }
-
-                        .season-card:hover {
-                            transform: translateY(-15px) scale(1.02);
-                            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
-                        }
-
-                        .season-card:hover::before {
                             height: 10px;
+                            transform: scaleX(0);
+                            transition: transform 0.6s ease;
+                            transform-origin: left;
                         }
-
-                        .season-card.spring:hover {
-                            border-color: #56ab2f;
+                        
+                        .season-mega-card.spring::before {
+                            background: linear-gradient(90deg, #4caf50, #81c784);
                         }
-
-                        .season-card.summer:hover {
-                            border-color: #f7971e;
+                        
+                        .season-mega-card.summer::before {
+                            background: linear-gradient(90deg, #ff9800, #ffb74d);
                         }
-
-                        .season-card.autumn:hover {
-                            border-color: #c31432;
+                        
+                        .season-mega-card.autumn::before {
+                            background: linear-gradient(90deg, #f44336, #e57373);
                         }
-
-                        .season-card.winter:hover {
-                            border-color: #1e3c72;
+                        
+                        .season-mega-card.winter::before {
+                            background: linear-gradient(90deg, #2196f3, #64b5f6);
                         }
-
-                        .season-header {
-                            padding: 2.5rem 2rem 1.5rem;
-                            position: relative;
+                        
+                        .season-mega-card:hover::before {
+                            transform: scaleX(1);
                         }
-
-                        .season-icon {
-                            font-size: 4rem;
-                            margin-bottom: 1rem;
-                            display: block;
-                            text-align: center;
-                            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-                            animation: iconFloat 6s ease-in-out infinite;
+                        
+                        .season-mega-card:hover {
+                            transform: translateY(-25px) scale(1.03) rotateY(5deg);
                         }
-
-                        @keyframes iconFloat {
-                            0%, 100% { transform: translateY(0px); }
-                            50% { transform: translateY(-10px); }
+                        
+                        .season-mega-card.spring:hover {
+                            box-shadow: 0 40px 80px rgba(76,175,80,0.25);
                         }
-
+                        
+                        .season-mega-card.summer:hover {
+                            box-shadow: 0 40px 80px rgba(255,152,0,0.25);
+                        }
+                        
+                        .season-mega-card.autumn:hover {
+                            box-shadow: 0 40px 80px rgba(244,67,54,0.25);
+                        }
+                        
+                        .season-mega-card.winter:hover {
+                            box-shadow: 0 40px 80px rgba(33,150,243,0.25);
+                        }
+                        
+                        .season-card-header {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 3rem;
+                            padding-bottom: 2rem;
+                            border-bottom: 4px solid #f0f0f0;
+                        }
+                        
                         .season-title {
-                            font-size: 1.8rem;
-                            font-weight: 700;
-                            text-align: center;
-                            margin: 0 0 1rem 0;
-                            color: #2c3e50;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            color: #4caf50;
+                            margin: 0;
                         }
-
-                        .usage-badge {
-                            display: inline-block;
-                            padding: 0.7rem 1.5rem;
-                            border-radius: 25px;
-                            font-weight: 600;
-                            font-size: 0.9rem;
+                        
+                        .season-mega-card.summer .season-title {
+                            color: #ef6c00;
+                        }
+                        
+                        .season-mega-card.autumn .season-title {
+                            color: #c62828;
+                        }
+                        
+                        .season-mega-card.winter .season-title {
+                            color: #1565c0;
+                        }
+                        
+                        .usage-frequency-badge {
+                            background: linear-gradient(135deg, #4caf50, #66bb6a);
                             color: white;
-                            position: absolute;
-                            top: 1rem;
-                            right: 1rem;
-                            animation: badgePulse 4s ease-in-out infinite;
+                            padding: 1rem 2rem;
+                            border-radius: 30px;
+                            font-weight: bold;
+                            font-size: 1rem;
+                            box-shadow: 0 4px 15px rgba(76,175,80,0.3);
+                            animation: frequency-pulse 4s ease-in-out infinite;
                         }
-
-                        .season-card.spring .usage-badge {
-                            background: linear-gradient(135deg, #56ab2f, #a8e6cf);
+                        
+                        .season-mega-card.summer .usage-frequency-badge {
+                            background: linear-gradient(135deg, #ff9800, #ffb74d);
+                            box-shadow: 0 4px 15px rgba(255,152,0,0.3);
                         }
-
-                        .season-card.summer .usage-badge {
-                            background: linear-gradient(135deg, #f7971e, #ffd200);
+                        
+                        .season-mega-card.autumn .usage-frequency-badge {
+                            background: linear-gradient(135deg, #f44336, #e57373);
+                            box-shadow: 0 4px 15px rgba(244,67,54,0.3);
                         }
-
-                        .season-card.autumn .usage-badge {
-                            background: linear-gradient(135deg, #c31432, #ff6b35);
+                        
+                        .season-mega-card.winter .usage-frequency-badge {
+                            background: linear-gradient(135deg, #2196f3, #64b5f6);
+                            box-shadow: 0 4px 15px rgba(33,150,243,0.3);
                         }
-
-                        .season-card.winter .usage-badge {
-                            background: linear-gradient(135deg, #1e3c72, #2a5298);
-                        }
-
-                        @keyframes badgePulse {
+                        
+                        @keyframes frequency-pulse {
                             0%, 100% { transform: scale(1); }
                             50% { transform: scale(1.05); }
                         }
-
-                        .season-content {
-                            padding: 0 2rem 2.5rem;
-                        }
-
-                        .season-features {
-                            background: #f8f9fa;
-                            border-radius: 15px;
-                            padding: 1.5rem;
-                            margin-bottom: 2rem;
-                        }
-
-                        .feature-title {
-                            font-weight: 600;
-                            color: #495057;
-                            margin-bottom: 1rem;
-                            font-size: 1rem;
-                        }
-
-                        .feature-list {
-                            list-style: none;
-                            padding: 0;
-                            margin: 0;
-                        }
-
-                        .feature-list li {
-                            padding: 0.5rem 0;
-                            padding-left: 1.5rem;
-                            position: relative;
-                            color: #6c757d;
-                            font-size: 0.9rem;
-                            transition: all 0.3s ease;
-                        }
-
-                        .feature-list li::before {
-                            content: '✓';
-                            position: absolute;
-                            left: 0;
-                            top: 0.5rem;
-                            width: 1rem;
-                            height: 1rem;
-                            background: linear-gradient(135deg, #28a745, #20c997);
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: white;
-                            font-size: 0.7rem;
-                            font-weight: bold;
-                        }
-
-                        .feature-list li:hover {
-                            color: #495057;
-                            transform: translateX(5px);
-                        }
-
-                        .maintenance-section {
-                            margin-top: 2rem;
-                        }
-
-                        .maintenance-item {
-                            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-                            border-radius: 12px;
-                            padding: 1.5rem;
-                            margin-bottom: 1rem;
-                            border-left: 4px solid;
-                            transition: all 0.3s ease;
-                        }
-
-                        .season-card.spring .maintenance-item {
-                            border-left-color: #56ab2f;
-                        }
-
-                        .season-card.summer .maintenance-item {
-                            border-left-color: #f7971e;
-                        }
-
-                        .season-card.autumn .maintenance-item {
-                            border-left-color: #c31432;
-                        }
-
-                        .season-card.winter .maintenance-item {
-                            border-left-color: #1e3c72;
-                        }
-
-                        .maintenance-item:hover {
-                            transform: translateX(5px);
-                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                        }
-
-                        .maintenance-title {
-                            font-weight: 600;
-                            color: #495057;
-                            margin-bottom: 0.5rem;
-                            font-size: 1rem;
-                        }
-
-                        .maintenance-desc {
-                            color: #6c757d;
-                            font-size: 0.9rem;
-                            line-height: 1.5;
-                        }
-
-                        .calendar-section {
-                            background: rgba(255,255,255,0.95);
-                            backdrop-filter: blur(20px);
-                            border-radius: 25px;
-                            padding: 3rem;
-                            border: 2px solid rgba(255,255,255,0.3);
-                            box-shadow: 0 25px 60px rgba(0,0,0,0.1);
-                        }
-
-                        .calendar-title {
-                            font-size: 2.5rem;
-                            font-weight: 700;
-                            color: #2c3e50;
-                            text-align: center;
-                            margin-bottom: 3rem;
-                            position: relative;
-                        }
-
-                        .calendar-title::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -1rem;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 80px;
-                            height: 4px;
-                            background: linear-gradient(90deg, #667eea, #764ba2);
-                            border-radius: 2px;
-                        }
-
-                        .maintenance-table {
-                            width: 100%;
-                            border-collapse: separate;
-                            border-spacing: 0;
-                            border-radius: 15px;
-                            overflow: hidden;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-                        }
-
-                        .maintenance-table thead {
-                            background: linear-gradient(135deg, #667eea, #764ba2);
-                        }
-
-                        .maintenance-table th {
-                            padding: 1.5rem 1rem;
-                            color: white;
-                            font-weight: 600;
-                            text-align: left;
-                            font-size: 1rem;
-                        }
-
-                        .maintenance-table tbody tr {
-                            background: white;
-                            transition: all 0.3s ease;
-                        }
-
-                        .maintenance-table tbody tr:nth-child(even) {
-                            background: #f8f9fa;
-                        }
-
-                        .maintenance-table tbody tr:hover {
-                            background: #e3f2fd;
-                            transform: scale(1.01);
-                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                        }
-
-                        .maintenance-table td {
-                            padding: 1.5rem 1rem;
-                            border-bottom: 1px solid #dee2e6;
-                            color: #495057;
-                            font-size: 0.95rem;
-                            line-height: 1.6;
-                        }
-
-                        .maintenance-table td:first-child {
-                            font-weight: 600;
-                            color: #2c3e50;
-                        }
-
-                        @media (max-width: 768px) {
-                            .seasonal-main-title {
-                                font-size: 2.5rem;
-                            }
-                            
-                            .seasons-grid {
-                                grid-template-columns: 1fr;
-                                gap: 2rem;
-                            }
-                            
-                            .seasonal-content-wrapper {
-                                padding: 0 1rem;
-                            }
-                            
-                            .calendar-section {
-                                padding: 2rem 1rem;
-                            }
-                            
-                            .maintenance-table {
-                                font-size: 0.8rem;
-                            }
-                            
-                            .maintenance-table th,
-                            .maintenance-table td {
-                                padding: 1rem 0.5rem;
-                            }
-                        }
                     </style>
-
-                    <div class="seasonal-modern-container">
-                        <div class="seasonal-content-wrapper">
-                            <div class="seasonal-hero-section">
-                                <h2 class="seasonal-main-title">🗓️ 季節別メンテナンスガイド</h2>
-                                <div class="seasonal-subtitle">
-                                    季節ごとの環境変化に合わせた最適なメンテナンス方法をご紹介。一年を通じて清潔で効率的な加湿器をキープし、快適な室内環境を維持しましょう。
-                                </div>
+                    
+                    <div class="seasonal-mega-section">
+                        <div class="seasonal-header">
+                            <h2 class="seasonal-main-title">🗓️ 季節別メンテナンス</h2>
+                            <div class="seasonal-description">
+                                季節によって使用頻度や環境が変わるため、それぞれに適したメンテナンス方法があります。一年を通じた適切な管理で、常に清潔で効果的な加湿を保ちましょう。
                             </div>
+                        </div>
+                        
+                        <div class="seasons-grid">
 
-                            <div class="seasons-grid">
-                                <div class="season-card spring">
-                                    <div class="usage-badge">使用頻度: 中</div>
-                                    <div class="season-header">
-                                        <div class="season-icon">🌸</div>
-                                        <h3 class="season-title">春（3〜5月）</h3>
-                                    </div>
-                                    <div class="season-content">
-                                        <div class="season-features">
-                                            <h4 class="feature-title">春の特徴</h4>
-                                            <ul class="feature-list">
-                                                <li>花粉の飛散量が増加</li>
-                                                <li>温度・湿度の変動が大きい</li>
-                                                <li>結露が発生しやすい環境</li>
-                                                <li>カビの活動が活発化</li>
-                                            </ul>
-                                        </div>
-                                        <div class="maintenance-section">
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🧽 春の深掃除</div>
-                                                <div class="maintenance-desc">冬期間の蓄積汚れを完全除去し、フィルター交換と内部配管の洗浄を実施</div>
-                                            </div>
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🌸 花粉対策強化</div>
-                                                <div class="maintenance-desc">設置場所の見直しとエアフィルターの清掃強化で花粉の侵入を防止</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="season-card summer">
-                                    <div class="usage-badge">使用頻度: 低</div>
-                                    <div class="season-header">
-                                        <div class="season-icon">☀️</div>
-                                        <h3 class="season-title">夏（6〜8月）</h3>
-                                    </div>
-                                    <div class="season-content">
-                                        <div class="season-features">
-                                            <h4 class="feature-title">夏の特徴</h4>
-                                            <ul class="feature-list">
-                                                <li>高温多湿でカビリスク最大</li>
-                                                <li>エアコン使用で乾燥する場合も</li>
-                                                <li>長期間使用しない可能性</li>
-                                                <li>害虫が活発化する季節</li>
-                                            </ul>
-                                        </div>
-                                        <div class="maintenance-section">
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🏠 保管前清掃</div>
-                                                <div class="maintenance-desc">完全分解清掃と徹底的な乾燥処理で、長期保管に備えた防カビ・防虫対策</div>
-                                            </div>
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">❄️ エアコン併用対策</div>
-                                                <div class="maintenance-desc">過乾燥の監視と結露対策で、間欠運転による効率的な湿度管理</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="season-card autumn">
-                                    <div class="usage-badge">使用頻度: 中</div>
-                                    <div class="season-header">
-                                        <div class="season-icon">🍂</div>
-                                        <h3 class="season-title">秋（9〜11月）</h3>
-                                    </div>
-                                    <div class="season-content">
-                                        <div class="season-features">
-                                            <h4 class="feature-title">秋の特徴</h4>
-                                            <ul class="feature-list">
-                                                <li>乾燥が始まる重要な時期</li>
-                                                <li>暖房使用開始の準備</li>
-                                                <li>風邪・インフルエンザ対策</li>
-                                                <li>加湿器使用再開の時期</li>
-                                            </ul>
-                                        </div>
-                                        <div class="maintenance-section">
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🔄 使用再開準備</div>
-                                                <div class="maintenance-desc">保管状態の点検と動作確認テスト、フィルター・パーツ交換で万全の体制</div>
-                                            </div>
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🦠 感染症対策強化</div>
-                                                <div class="maintenance-desc">除菌機能の確認と適正湿度の維持で、感染症予防に効果的な環境作り</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="season-card winter">
-                                    <div class="usage-badge">使用頻度: 最高</div>
-                                    <div class="season-header">
-                                        <div class="season-icon">❄️</div>
-                                        <h3 class="season-title">冬（12〜2月）</h3>
-                                    </div>
-                                    <div class="season-content">
-                                        <div class="season-features">
-                                            <h4 class="feature-title">冬の特徴</h4>
-                                            <ul class="feature-list">
-                                                <li>最も使用頻度が高い季節</li>
-                                                <li>24時間連続運転が必要</li>
-                                                <li>暖房による超乾燥状態</li>
-                                                <li>感染症予防が最重要</li>
-                                            </ul>
-                                        </div>
-                                        <div class="maintenance-section">
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">⚡ 高頻度清掃体制</div>
-                                                <div class="maintenance-desc">毎日の基本清掃と週2回の詳細清掃で、連続運転時の清潔性を確保</div>
-                                            </div>
-                                            <div class="maintenance-item">
-                                                <div class="maintenance-title">🏔️ 極度乾燥対策</div>
-                                                <div class="maintenance-desc">24時間稼働対応と暖房との効率的併用で、結露・過加湿の監視も徹底</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="seasonal-guide">
+                        <div class="season-card spring">
+                            <div class="season-header">
+                                <h3>🌸 春（3〜5月）</h3>
+                                <span class="usage-level">使用頻度：中</span>
                             </div>
+                            <div class="season-content">
+                                <h4>この時期の特徴</h4>
+                                <ul>
+                                    <li>花粉の飛散が増加</li>
+                                    <li>温度・湿度の変動が大きい</li>
+                                    <li>結露が発生しやすい</li>
+                                    <li>カビの活動が活発化</li>
+                                </ul>
 
-                            <div class="calendar-section">
-                                <h3 class="calendar-title">📅 年間メンテナンスカレンダー</h3>
-                                <table class="maintenance-table">
-                                    <thead>
-                                        <tr>
-                                            <th>時期</th>
-                                            <th>主要メンテナンス</th>
-                                            <th>重点ポイント</th>
-                                            <th>チェック項目</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1-2月</td>
-                                            <td>高頻度清掃実施</td>
-                                            <td>連続運転時の負荷管理</td>
-                                            <td>毎日清掃・週2回詳細清掃・消耗品早期交換</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3月</td>
-                                            <td>春の大掃除</td>
-                                            <td>冬期蓄積汚れの完全除去</td>
-                                            <td>完全分解清掃・除菌処理・全部品交換</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4-5月</td>
-                                            <td>花粉対策メンテナンス</td>
-                                            <td>設置場所と清掃頻度の見直し</td>
-                                            <td>フィルター強化・エアフィルター清掃・花粉除去</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6-8月</td>
-                                            <td>長期保管準備</td>
-                                            <td>カビ・害虫対策の徹底</td>
-                                            <td>完全清掃・完全乾燥・防虫剤設置・保管環境確認</td>
-                                        </tr>
-                                        <tr>
-                                            <td>9月</td>
-                                            <td>使用再開準備</td>
-                                            <td>保管状態確認と動作テスト</td>
-                                            <td>保管状態点検・試運転・除菌消臭・部品確認</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10-11月</td>
-                                            <td>感染症対策強化</td>
-                                            <td>除菌機能と適正湿度の確保</td>
-                                            <td>除菌機能確認・湿度設定調整・清掃頻度アップ</td>
-                                        </tr>
-                                        <tr>
-                                            <td>12月</td>
-                                            <td>冬期本格稼働準備</td>
-                                            <td>連続運転体制の確立</td>
-                                            <td>連続運転テスト・消耗品大量確保・故障予防点検</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <h4>重点メンテナンス</h4>
+                                <div class="maintenance-points">
+                                    <h5>🧽 深掃除の実施</h5>
+                                    <ul>
+                                        <li>冬期間の汚れを完全除去</li>
+                                        <li>フィルター交換</li>
+                                        <li>内部配管の洗浄</li>
+                                        <li>外部ホコリの除去</li>
+                                    </ul>
+
+                                    <h5>🌸 花粉対策</h5>
+                                    <ul>
+                                        <li>設置場所の見直し</li>
+                                        <li>窓の開閉との調整</li>
+                                        <li>エアフィルターの清掃強化</li>
+                                        <li>室内の花粉除去</li>
+                                    </ul>
+                                </div>
+
+                                <h4>📋 春のチェックポイント</h4>
+                                <ul class="seasonal-checklist">
+                                    <li>冬期使用後の総点検</li>
+                                    <li>消耗品の在庫確認</li>
+                                    <li>次シーズンに向けた準備</li>
+                                    <li>湿度設定の調整</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="season-card summer">
+                            <div class="season-header">
+                                <h3>☀️ 夏（6〜8月）</h3>
+                                <span class="usage-level">使用頻度：低</span>
+                            </div>
+                            <div class="season-content">
+                                <h4>この時期の特徴</h4>
+                                <ul>
+                                    <li>高温多湿でカビリスク最大</li>
+                                    <li>エアコン使用で乾燥する場合も</li>
+                                    <li>長期間使用しない可能性</li>
+                                    <li>害虫が活発化</li>
+                                </ul>
+
+                                <h4>重点メンテナンス</h4>
+                                <div class="maintenance-points">
+                                    <h5>🏠 保管前清掃</h5>
+                                    <ul>
+                                        <li>完全分解清掃</li>
+                                        <li>徹底的な乾燥</li>
+                                        <li>防カビ・防虫対策</li>
+                                        <li>清潔な場所での保管</li>
+                                    </ul>
+
+                                    <h5>❄️ エアコン併用時の注意</h5>
+                                    <ul>
+                                        <li>過乾燥の監視</li>
+                                        <li>結露対策</li>
+                                        <li>間欠運転の活用</li>
+                                        <li>室内循環の改善</li>
+                                    </ul>
+                                </div>
+
+                                <h4>📋 夏のチェックポイント</h4>
+                                <ul class="seasonal-checklist">
+                                    <li>保管場所の環境確認</li>
+                                    <li>防虫剤の設置</li>
+                                    <li>湿度計での室内監視</li>
+                                    <li>次回使用時の準備確認</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="season-card autumn">
+                            <div class="season-header">
+                                <h3>🍂 秋（9〜11月）</h3>
+                                <span class="usage-level">使用頻度：中</span>
+                            </div>
+                            <div class="season-content">
+                                <h4>この時期の特徴</h4>
+                                <ul>
+                                    <li>乾燥が始まる時期</li>
+                                    <li>暖房使用開始</li>
+                                    <li>風邪・インフルエンザ対策</li>
+                                    <li>使用再開の準備</li>
+                                </ul>
+
+                                <h4>重点メンテナンス</h4>
+                                <div class="maintenance-points">
+                                    <h5>🔄 使用再開準備</h5>
+                                    <ul>
+                                        <li>保管状態の点検</li>
+                                        <li>動作確認テスト</li>
+                                        <li>フィルター・パーツ交換</li>
+                                        <li>除菌・消臭処理</li>
+                                    </ul>
+
+                                    <h5>🦠 感染症対策強化</h5>
+                                    <ul>
+                                        <li>除菌機能の確認</li>
+                                        <li>適正湿度の維持</li>
+                                        <li>清掃頻度の増加</li>
+                                        <li>家族の健康管理</li>
+                                    </ul>
+                                </div>
+
+                                <h4>📋 秋のチェックポイント</h4>
+                                <ul class="seasonal-checklist">
+                                    <li>夏期保管後の総点検</li>
+                                    <li>消耗品の補充</li>
+                                    <li>設置場所の再検討</li>
+                                    <li>冬期使用計画の策定</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="season-card winter">
+                            <div class="season-header">
+                                <h3>❄️ 冬（12〜2月）</h3>
+                                <span class="usage-level">使用頻度：最高</span>
+                            </div>
+                            <div class="season-content">
+                                <h4>この時期の特徴</h4>
+                                <ul>
+                                    <li>最も使用頻度が高い</li>
+                                    <li>24時間連続運転</li>
+                                    <li>暖房による超乾燥</li>
+                                    <li>感染症予防が重要</li>
+                                </ul>
+
+                                <h4>重点メンテナンス</h4>
+                                <div class="maintenance-points">
+                                    <h5>⚡ 高頻度清掃</h5>
+                                    <ul>
+                                        <li>毎日の基本清掃徹底</li>
+                                        <li>週2回の詳細清掃</li>
+                                        <li>フィルター清掃強化</li>
+                                        <li>除菌剤の定期使用</li>
+                                    </ul>
+
+                                    <h5>🏔️ 乾燥対策最重視</h5>
+                                    <ul>
+                                        <li>24時間稼働対応</li>
+                                        <li>複数台設置検討</li>
+                                        <li>暖房との効率的併用</li>
+                                        <li>結露・過加湿の監視</li>
+                                    </ul>
+                                </div>
+
+                                <h4>📋 冬のチェックポイント</h4>
+                                <ul class="seasonal-checklist">
+                                    <li>連続運転による負荷確認</li>
+                                    <li>消耗品の早期交換</li>
+                                    <li>故障・異常の早期発見</li>
+                                    <li>健康効果の実感確認</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+
+                    <h3>📅 年間メンテナンスカレンダー</h3>
+                    <div class="yearly-calendar">
+                        <table class="maintenance-calendar">
+                            <thead>
+                                <tr>
+                                    <th>月</th>
+                                    <th>主要作業</th>
+                                    <th>重点ポイント</th>
+                                    <th>チェック項目</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1-2月</td>
+                                    <td>高頻度清掃</td>
+                                    <td>連続運転メンテナンス</td>
+                                    <td>毎日清掃・週2回詳細清掃</td>
+                                </tr>
+                                <tr>
+                                    <td>3月</td>
+                                    <td>深掃除実施</td>
+                                    <td>冬期蓄積汚れ除去</td>
+                                    <td>完全分解・除菌・部品交換</td>
+                                </tr>
+                                <tr>
+                                    <td>4-5月</td>
+                                    <td>花粉対策</td>
+                                    <td>設置場所見直し</td>
+                                    <td>フィルター強化・清掃頻度調整</td>
+                                </tr>
+                                <tr>
+                                    <td>6-8月</td>
+                                    <td>保管準備</td>
+                                    <td>長期保管対応</td>
+                                    <td>完全清掃・乾燥・防虫対策</td>
+                                </tr>
+                                <tr>
+                                    <td>9月</td>
+                                    <td>使用再開準備</td>
+                                    <td>動作確認・点検</td>
+                                    <td>保管状態確認・試運転</td>
+                                </tr>
+                                <tr>
+                                    <td>10-11月</td>
+                                    <td>感染症対策</td>
+                                    <td>除菌強化・適正運転</td>
+                                    <td>清掃頻度調整・健康管理</td>
+                                </tr>
+                                <tr>
+                                    <td>12月</td>
+                                    <td>本格稼働準備</td>
+                                    <td>冬期体制確立</td>
+                                    <td>連続運転準備・消耗品確認</td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </section>
 
                 <section id="faq">

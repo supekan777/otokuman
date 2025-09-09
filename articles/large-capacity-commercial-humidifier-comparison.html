@@ -573,8 +573,6 @@
                 <ol>
                     <li><a href="#capacity">容量別分類と適用範囲</a></li>
                     <li><a href="#calculator">業務用加湿器選定計算機</a></li>
-                    <li><a href="#ranking">プロが選ぶ最強機種ランキング</a></li>
-                    <li><a href="#comparison">業務用加湿器性能比較</a></li>
                     <li><a href="#checklist">導入時の重要チェックポイント</a></li>
                     <li><a href="#faq">よくある質問（FAQ）</a></li>
                     <li><a href="#conclusion">まとめ</a></li>
@@ -599,6 +597,155 @@
 
                 <section id="capacity">
                     <h2>容量別分類と適用範囲</h2>
+                    
+                    <!-- キャラクター会話：容量選びについて -->
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character facilities"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name facilities">西川さん（施設管理責任者）</div>
+                                <p>お得マンさん、500㎡の店舗なんですが、どのくらいの加湿能力が必要でしょうか？</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>500㎡なら最低2000ml/h、換気が多い店舗なら3000ml/h必要ですね。家庭用の10倍以上の能力です！容量不足は致命的なので、計算式で正確に把握しましょう。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p>業務用加湿器選びの第一歩は、<strong>「必要な加湿能力（ml/h）」を正確に把握すること</strong>です。容量不足は湿度管理ができず、過剰な容量は電気代の無駄遣いとなります。</p>
+                    
+                    <div class="capacity-explanation">
+                        <h4>📐 適正容量の計算式</h4>
+                        <div class="formula-box">
+                            <p class="formula">
+                                <strong>必要加湿量（ml/h）= 床面積（㎡）× 天井高（m）× 0.3 × 換気回数</strong>
+                            </p>
+                            <ul class="formula-notes">
+                                <li>一般オフィス：換気回数 2-3回/h</li>
+                                <li>店舗・飲食店：換気回数 4-6回/h</li>
+                                <li>工場・倉庫：換気回数 3-5回/h</li>
+                                <li>クリーンルーム：換気回数 10-20回/h</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="capacity-factors">
+                            <h5>容量選定で考慮すべき4つの要因</h5>
+                            <ol>
+                                <li><strong>空間の広さと高さ</strong>：天井が高い倉庫は床面積以上の能力が必要</li>
+                                <li><strong>換気頻度</strong>：外気導入が多い施設は30-50%増の容量が必要</li>
+                                <li><strong>発熱機器の有無</strong>：サーバー室やOA機器が多い場所は追加容量が必要</li>
+                                <li><strong>人の密度</strong>：人が多い店舗は人体からの発熱で乾燥しやすい</li>
+                            </ol>
+                        </div>
+                        
+                        <p class="capacity-warning">
+                            ⚠️ <strong>重要</strong>：以下の分類は標準的な環境（天井高3m、通常換気）での目安です。実際の選定時は必ず専門家に相談するか、下記の計算機で詳細な計算を行ってください。
+                        </p>
+                    </div>
+                    
+                    <style>
+                        .capacity-explanation {
+                            background: #f8fafc;
+                            padding: 1.5rem;
+                            border-radius: 10px;
+                            margin: 1.5rem 0;
+                            border: 1px solid #e2e8f0;
+                        }
+                        
+                        .capacity-explanation h4 {
+                            color: var(--primary-color);
+                            margin-bottom: 1rem;
+                            font-size: 1.1rem;
+                        }
+                        
+                        .formula-box {
+                            background: white;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            border-left: 4px solid var(--primary-color);
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .formula {
+                            text-align: center;
+                            padding: 1rem;
+                            background: var(--background-light);
+                            border-radius: 6px;
+                            margin-bottom: 1rem;
+                            font-size: 1.05rem;
+                        }
+                        
+                        .formula-notes {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            font-size: 0.9rem;
+                            color: #64748b;
+                        }
+                        
+                        .formula-notes li {
+                            padding: 0.25rem 0;
+                            padding-left: 1.5rem;
+                            position: relative;
+                        }
+                        
+                        .formula-notes li::before {
+                            content: "•";
+                            position: absolute;
+                            left: 0.5rem;
+                            color: var(--primary-color);
+                        }
+                        
+                        .capacity-factors {
+                            background: white;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            margin: 1rem 0;
+                        }
+                        
+                        .capacity-factors h5 {
+                            color: #1e293b;
+                            margin-bottom: 0.75rem;
+                            font-size: 1rem;
+                        }
+                        
+                        .capacity-factors ol {
+                            margin: 0;
+                            padding-left: 1.5rem;
+                        }
+                        
+                        .capacity-factors li {
+                            color: #475569;
+                            font-size: 0.9rem;
+                            line-height: 1.6;
+                            margin-bottom: 0.5rem;
+                        }
+                        
+                        .capacity-warning {
+                            background: #fef3c7;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            border: 1px solid #fbbf24;
+                            margin: 1.5rem 0;
+                            font-size: 0.9rem;
+                            color: #92400e;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .capacity-explanation {
+                                padding: 1rem;
+                            }
+                            
+                            .formula {
+                                font-size: 0.9rem;
+                                padding: 0.75rem;
+                            }
+                        }
+                    </style>
 
                     <div class="capacity-grid">
                         <div class="capacity-card">
@@ -634,54 +781,18 @@
                 <section id="calculator">
                     <h2>業務用加湿器選定計算機</h2>
 
-                    <!-- キャラクター会話：業務用加湿器について -->
-                    <div class="character-dialogue">
-                        <div class="dialogue-container">
-                            <div class="pixel-character facilities"></div>
-                            <div class="speech-bubble left">
-                                <div class="character-name facilities">西川さん（施設管理責任者）</div>
-                                <p>お得マンさん、1000㎡の工場に業務用加湿器を導入したいのですが、家庭用とは全く違うんでしょうね。どのくらいの能力が必要で、どのメーカーがおすすめですか？</p>
-                            </div>
-                        </div>
-
-                        <div class="dialogue-container right">
-                            <div class="pixel-character otokuman"></div>
-                            <div class="speech-bubble right">
-                                <div class="character-name">失敗しないお得マン</div>
-                                <p>1000㎡なら加湿能力10L/h以上が必要ですね。家庭用の20-50倍の能力です！工場用なら耐久性重視でダイキン・三菱重工・ナカトミなどの産業用機種がおすすめ。24時間連続運転と粉塵対応が重要ですね。</p>
-                            </div>
-                        </div>
-
-                        <div class="dialogue-container">
-                            <div class="pixel-character facilities"></div>
-                            <div class="speech-bubble left">
-                                <div class="character-name facilities">西川さん</div>
-                                <p>そんなに能力が違うんですか！費用はどのくらいかかるんでしょう？メンテナンス面も心配で...</p>
-                            </div>
-                        </div>
-
-                        <div class="dialogue-container right">
-                            <div class="pixel-character otokuman"></div>
-                            <div class="speech-bubble right">
-                                <div class="character-name">失敗しないお得マン</div>
-                                <p>初期費用は100-300万円程度、月間の電気代・水道代・メンテナンス費で5-15万円が目安です。高く感じるかもしれませんが、従業員の健康管理・製品品質向上・静電気対策効果を考えるとROIは十分期待できますよ。</p>
-                            </div>
-                        </div>
-
-                        <div class="dialogue-container">
-                            <div class="pixel-character facilities"></div>
-                            <div class="speech-bubble left">
-                                <div class="character-name facilities">西川さん</div>
-                                <p>ROIの視点は大切ですね。選び方のポイントを教えていただけますか？失敗しない選定方法が知りたいです。</p>
-                            </div>
-                        </div>
-
-                        <div class="dialogue-container right">
-                            <div class="pixel-character otokuman"></div>
-                            <div class="speech-bubble right">
-                                <div class="character-name">失敗しないお得マン</div>
-                                <p>①空間容積×必要加湿量の計算、②24時間連続運転対応、③メンテナンス性、④アフターサービス体制の4点が重要です。計算機で最適機種を選定して、詳しい比較表もお見せしますね。</p>
-                            </div>
+                    <div class="explanation-section">
+                        <p>業務用加湿器の選定で最も重要なのは、<strong>施設の規模と用途に適した加湿能力を正確に計算すること</strong>です。家庭用とは異なり、業務用では面積だけでなく天井高、空調システム、人の出入り頻度なども考慮する必要があります。</p>
+                        <p>この計算機を使えば、あなたの施設に必要な加湿能力を簡単に算出できます。適正な加湿器を選ぶことで、効率的な湿度管理と運用コストの削減が実現できます。</p>
+                        
+                        <div class="calculation-benefits">
+                            <h4>🎯 計算のメリット</h4>
+                            <ul>
+                                <li><strong>適正能力</strong>：過不足のない最適な加湿能力が分かる</li>
+                                <li><strong>コスト削減</strong>：過剰な電力消費や無駄な初期投資を回避</li>
+                                <li><strong>効率運用</strong>：施設全体の均一な湿度管理が可能</li>
+                                <li><strong>機種選択</strong>：計算結果に基づく具体的な推奨機種を提示</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -735,332 +846,26 @@
                     </div>
                 </section>
 
-                <section id="ranking">
-                    <h2>プロが選ぶ最強機種ランキング</h2>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <div class="product-rank">1</div>
-                            <div class="product-info">
-                                <div class="product-title">ダイニチ HD-243</div>
-                                <div class="product-category">大容量プロ仕様</div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <div class="spec-label">加湿能力</div>
-                                <div class="spec-value">2400ml/h</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">対応面積</div>
-                                <div class="spec-value">木造39畳/プレハブ65畳</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">タンク容量</div>
-                                <div class="spec-value">9.0L</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">消費電力</div>
-                                <div class="spec-value">680W</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">運転音</div>
-                                <div class="spec-value">33dB</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">連続運転時間</div>
-                                <div class="spec-value">3.8時間</div>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h5>✅ メリット</h5>
-                                <ul>
-                                    <li>業界最高レベルの加湿能力</li>
-                                    <li>33dBの超静音運転</li>
-                                    <li>24時間連続運転対応</li>
-                                    <li>自動湿度制御機能</li>
-                                    <li>メンテナンス性が良好</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h5>❌ デメリット</h5>
-                                <ul>
-                                    <li>初期費用が高額</li>
-                                    <li>本体サイズが大きい</li>
-                                    <li>専用フィルターが必要</li>
-                                    <li>定期メンテナンスが必須</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="price-analysis">
-                            <h5><i class="fas fa-yen-sign"></i> コスト分析（年間・200㎡想定）</h5>
-                            <div class="cost-breakdown">
-                                <div class="cost-item">
-                                    <div class="cost-value">￥168,000</div>
-                                    <div class="cost-label">初期投資</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥45,000</div>
-                                    <div class="cost-label">年間電気代</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥25,000</div>
-                                    <div class="cost-label">年間メンテ費</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">24ヶ月</div>
-                                    <div class="cost-label">投資回収期間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <div class="product-rank">2</div>
-                            <div class="product-info">
-                                <div class="product-title">三菱重工 SHK90RR</div>
-                                <div class="product-category">産業用スチーム式</div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <div class="spec-label">加湿能力</div>
-                                <div class="spec-value">9000ml/h</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">対応面積</div>
-                                <div class="spec-value">〜300㎡</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">給水方式</div>
-                                <div class="spec-value">給水管直結式</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">消費電力</div>
-                                <div class="spec-value">6.8kW</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">制御方式</div>
-                                <div class="spec-value">マイコン制御</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">安全機能</div>
-                                <div class="spec-value">多重安全装置</div>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h5>✅ メリット</h5>
-                                <ul>
-                                    <li>超大容量で広範囲カバー</li>
-                                    <li>給水管直結で連続運転</li>
-                                    <li>精密な湿度制御</li>
-                                    <li>産業レベルの耐久性</li>
-                                    <li>遠隔監視システム対応</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h5>❌ デメリット</h5>
-                                <ul>
-                                    <li>電気工事が必要</li>
-                                    <li>給水工事が必要</li>
-                                    <li>高額な設置費用</li>
-                                    <li>専門技術者によるメンテ必須</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="price-analysis">
-                            <h5><i class="fas fa-yen-sign"></i> コスト分析（年間・500㎡想定）</h5>
-                            <div class="cost-breakdown">
-                                <div class="cost-item">
-                                    <div class="cost-value">￥450,000</div>
-                                    <div class="cost-label">初期投資</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥180,000</div>
-                                    <div class="cost-label">年間電気代</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥80,000</div>
-                                    <div class="cost-label">年間メンテ費</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">36ヶ月</div>
-                                    <div class="cost-label">投資回収期間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-header">
-                            <div class="product-rank">3</div>
-                            <div class="product-info">
-                                <div class="product-title">コロナ UF-H7220R</div>
-                                <div class="product-category">遠赤外線ハイブリッド</div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-specs">
-                            <div class="spec-item">
-                                <div class="spec-label">加湿能力</div>
-                                <div class="spec-value">7200ml/h</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">対応面積</div>
-                                <div class="spec-value">木造120畳/プレハブ200畳</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">タンク容量</div>
-                                <div class="spec-value">16L</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">消費電力</div>
-                                <div class="spec-value">1450W</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">加湿方式</div>
-                                <div class="spec-value">遠赤外線+気化式</div>
-                            </div>
-                            <div class="spec-item">
-                                <div class="spec-label">特殊機能</div>
-                                <div class="spec-value">遠赤外線ヒーター</div>
-                            </div>
-                        </div>
-
-                        <div class="pros-cons">
-                            <div class="pros">
-                                <h5>✅ メリット</h5>
-                                <ul>
-                                    <li>遠赤外線による体感向上</li>
-                                    <li>ハイブリッド方式で効率的</li>
-                                    <li>大容量タンクで長時間運転</li>
-                                    <li>温風機能で冬場快適</li>
-                                    <li>移動可能な床置き型</li>
-                                </ul>
-                            </div>
-                            <div class="cons">
-                                <h5>❌ デメリット</h5>
-                                <ul>
-                                    <li>消費電力がやや大きい</li>
-                                    <li>フィルター交換コスト</li>
-                                    <li>定期的な水交換が必要</li>
-                                    <li>本体重量が重い</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="price-analysis">
-                            <h5><i class="fas fa-yen-sign"></i> コスト分析（年間・300㎡想定）</h5>
-                            <div class="cost-breakdown">
-                                <div class="cost-item">
-                                    <div class="cost-value">￥298,000</div>
-                                    <div class="cost-label">初期投資</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥95,000</div>
-                                    <div class="cost-label">年間電気代</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">￥35,000</div>
-                                    <div class="cost-label">年間メンテ費</div>
-                                </div>
-                                <div class="cost-item">
-                                    <div class="cost-value">30ヶ月</div>
-                                    <div class="cost-label">投資回収期間</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="comparison">
-                    <h2>業務用加湿器性能比較</h2>
-
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>機種名</th>
-                                <th>加湿能力</th>
-                                <th>対応面積</th>
-                                <th>消費電力</th>
-                                <th>運転音</th>
-                                <th>価格帯</th>
-                                <th>総合評価</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ダイニチ HD-243</td>
-                                <td>2400ml/h</td>
-                                <td>〜200㎡</td>
-                                <td>680W</td>
-                                <td>33dB</td>
-                                <td>15-20万円</td>
-                                <td>★★★★★</td>
-                            </tr>
-                            <tr>
-                                <td>三菱重工 SHK90RR</td>
-                                <td>9000ml/h</td>
-                                <td>〜500㎡</td>
-                                <td>6.8kW</td>
-                                <td>45dB</td>
-                                <td>40-50万円</td>
-                                <td>★★★★★</td>
-                            </tr>
-                            <tr>
-                                <td>コロナ UF-H7220R</td>
-                                <td>7200ml/h</td>
-                                <td>〜400㎡</td>
-                                <td>1450W</td>
-                                <td>38dB</td>
-                                <td>25-35万円</td>
-                                <td>★★★★☆</td>
-                            </tr>
-                            <tr>
-                                <td>パナソニック FE-KXU23</td>
-                                <td>2300ml/h</td>
-                                <td>〜180㎡</td>
-                                <td>800W</td>
-                                <td>36dB</td>
-                                <td>12-18万円</td>
-                                <td>★★★★☆</td>
-                            </tr>
-                            <tr>
-                                <td>シャープ KI-RX100</td>
-                                <td>1000ml/h</td>
-                                <td>〜100㎡</td>
-                                <td>95W</td>
-                                <td>25dB</td>
-                                <td>8-12万円</td>
-                                <td>★★★☆☆</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    <h3>性能とコストパフォーマンス分析</h3>
-
-                    <div class="performance-chart">
-                        <h4>業務用加湿器 性能・コスト総合評価</h4>
-                        <div class="chart-container">
-                            <canvas id="performanceChart"></canvas>
-                            <p style="text-align: center; color: #6b7280; font-size: 0.9rem;">
-                                ※横軸：コストパフォーマンス、縦軸：総合性能指数
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
                 <section id="checklist">
                     <h2>導入時の重要チェックポイント</h2>
+                    
+                    <!-- キャラクター会話：導入時の注意点について -->
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character facilities"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name facilities">西川さん</div>
+                                <p>導入前に確認すべき最重要ポイントは何ですか？</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>電源容量と給排水設備の確認が最重要！200V電源が必要な機種も多いです。また、設置場所の耐荷重も要チェック。満水時100kg超えもありますよ。</p>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="info-box">
                         <h4>導入前必須確認事項</h4>
