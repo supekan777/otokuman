@@ -1387,6 +1387,107 @@
                         </div>
                     </div>
                     
+                    <style>
+                        .comparison-explanation {
+                            background: linear-gradient(135deg, #ffffff, #f8fafc);
+                            border-radius: 20px;
+                            padding: 2.5rem;
+                            margin: 3rem 0;
+                            border-left: 6px solid #16a34a;
+                            box-shadow: 0 8px 25px rgba(22,163,74,0.08);
+                            position: relative;
+                        }
+                        
+                        .comparison-explanation::before {
+                            content: '📊';
+                            position: absolute;
+                            top: -15px;
+                            left: 20px;
+                            background: #16a34a;
+                            color: white;
+                            padding: 10px;
+                            border-radius: 50%;
+                            font-size: 1.2rem;
+                            box-shadow: 0 4px 12px rgba(22,163,74,0.3);
+                        }
+                        
+                        .comparison-title {
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                            color: #047857;
+                            margin-bottom: 1.5rem;
+                            margin-left: 2rem;
+                        }
+                        
+                        .comparison-text {
+                            color: #374151;
+                            line-height: 1.8;
+                            font-size: 1.05rem;
+                            margin-bottom: 1.5rem;
+                        }
+                        
+                        .highlight-points {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 1rem;
+                            margin: 2rem 0;
+                        }
+                        
+                        .highlight-point {
+                            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                            padding: 1rem;
+                            border-radius: 12px;
+                            border-left: 3px solid #22c55e;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .highlight-point:hover {
+                            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                            transform: translateX(5px);
+                        }
+                        
+                        .highlight-point strong {
+                            color: #16a34a;
+                            font-size: 1.1rem;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .comparison-explanation {
+                                padding: 2rem 1.5rem;
+                            }
+                            
+                            .highlight-points {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="comparison-explanation">
+                        <h4 class="comparison-title">詳細比較表で数値を確認</h4>
+                        <p class="comparison-text">
+                            各加湿方式の具体的なコストと性能を数値で比較できます。一人暮らしの6畳ワンルームでの使用を想定し、<strong>2025年最新の電力料金（31円/kWh）</strong>で算出しています。
+                        </p>
+                        
+                        <div class="highlight-points">
+                            <div class="highlight-point">
+                                <strong>電気代：</strong>月額の目安（1日8時間使用）
+                            </div>
+                            <div class="highlight-point">
+                                <strong>初期費用：</strong>本体価格の実売相場
+                            </div>
+                            <div class="highlight-point">
+                                <strong>メンテナンス：</strong>お手入れの頻度と難易度
+                            </div>
+                            <div class="highlight-point">
+                                <strong>一人暮らし適性：</strong>ライフスタイル別の推奨度
+                            </div>
+                        </div>
+                        
+                        <p class="comparison-text" style="margin-top: 2rem; font-style: italic; color: #6b7280;">
+                            💡 <strong>選び方のコツ：</strong>電気代と初期費用のバランスを見て、年間総コストで判断することが重要です。忙しい方は「メンテナンス」の◎評価を重視しましょう。
+                        </p>
+                    </div>
+                    
                     <div class="comparison-table">
                         <table>
                             <thead>
