@@ -260,7 +260,314 @@
                 </style>
 
                 <section id="single-selection-criteria" class="content-section">
-                    <h2><i class="fas fa-search"></i> 一人暮らし加湿器の選び方</h2>
+                    <style>
+                        .single-selection-enhanced {
+                            background: linear-gradient(145deg, #f0fdf4, #ecfdf5);
+                            border-radius: 30px;
+                            padding: 4rem 3rem;
+                            margin: 4rem 0;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 20px 60px rgba(22,163,74,0.1);
+                            border: 3px solid rgba(22,163,74,0.2);
+                        }
+                        
+                        .single-selection-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            right: -50%;
+                            width: 200px;
+                            height: 200px;
+                            background: radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 70%);
+                            animation: float-orb 8s ease-in-out infinite;
+                        }
+                        
+                        @keyframes float-orb {
+                            0%, 100% { transform: translate(0, 0) scale(1); }
+                            33% { transform: translate(-30px, -20px) scale(1.1); }
+                            66% { transform: translate(20px, -30px) scale(0.9); }
+                        }
+                        
+                        .selection-title-enhanced {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        
+                        .selection-title-enhanced h2 {
+                            font-size: 2.8rem;
+                            font-weight: bold;
+                            background: linear-gradient(135deg, #16a34a, #22c55e);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            margin-bottom: 1rem;
+                            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        }
+                        
+                        .selection-subtitle {
+                            font-size: 1.3rem;
+                            color: #047857;
+                            font-weight: 500;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .selection-grid-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                            gap: 2.5rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        
+                        .selection-card-enhanced {
+                            background: white;
+                            border-radius: 25px;
+                            padding: 2.5rem;
+                            position: relative;
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            box-shadow: 0 10px 30px rgba(22,163,74,0.08);
+                            border: 2px solid transparent;
+                            overflow: hidden;
+                        }
+                        
+                        .selection-card-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 8px;
+                            background: var(--card-gradient);
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.6s ease;
+                        }
+                        
+                        .selection-card-enhanced:hover::before {
+                            transform: scaleX(1);
+                        }
+                        
+                        .selection-card-enhanced:hover {
+                            transform: translateY(-12px) scale(1.02);
+                            box-shadow: 0 25px 60px rgba(22,163,74,0.2);
+                            border-color: var(--card-border-color);
+                        }
+                        
+                        .priority-ultra {
+                            --card-gradient: linear-gradient(90deg, #16a34a, #22c55e);
+                            --card-border-color: #16a34a;
+                        }
+                        
+                        .priority-high {
+                            --card-gradient: linear-gradient(90deg, #22c55e, #059669);
+                            --card-border-color: #22c55e;
+                        }
+                        
+                        .priority-medium {
+                            --card-gradient: linear-gradient(90deg, #059669, #047857);
+                            --card-border-color: #059669;
+                        }
+                        
+                        .selection-card-header {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin-bottom: 2rem;
+                            padding-bottom: 1.5rem;
+                            border-bottom: 2px solid #f0fdf4;
+                        }
+                        
+                        .selection-icon-wrapper {
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            background: var(--card-gradient);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 2.5rem;
+                            color: white;
+                            box-shadow: 0 8px 25px rgba(22,163,74,0.3);
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .selection-icon-wrapper::after {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            left: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+                            transform: rotate(-45deg) translateX(-100%);
+                            transition: transform 0.6s ease;
+                        }
+                        
+                        .selection-card-enhanced:hover .selection-icon-wrapper::after {
+                            transform: rotate(-45deg) translateX(100%);
+                        }
+                        
+                        .selection-card-enhanced:hover .selection-icon-wrapper {
+                            transform: scale(1.1) rotate(5deg);
+                        }
+                        
+                        .selection-card-title {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            color: #047857;
+                            margin: 0;
+                        }
+                        
+                        .selection-features {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .selection-features li {
+                            padding: 1rem 0;
+                            margin-bottom: 1rem;
+                            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                            border-radius: 15px;
+                            padding-left: 3rem;
+                            position: relative;
+                            transition: all 0.3s ease;
+                            border-left: 4px solid var(--card-border-color);
+                        }
+                        
+                        .selection-features li::before {
+                            content: '✓';
+                            position: absolute;
+                            left: 1rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: var(--card-border-color);
+                            font-weight: bold;
+                            font-size: 1.3rem;
+                            animation: check-pulse 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes check-pulse {
+                            0%, 100% { transform: translateY(-50%) scale(1); }
+                            50% { transform: translateY(-50%) scale(1.2); }
+                        }
+                        
+                        .selection-features li:hover {
+                            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                            transform: translateX(8px);
+                            box-shadow: 0 4px 15px rgba(22,163,74,0.1);
+                        }
+                        
+                        .selection-features li strong {
+                            color: #047857;
+                            font-weight: 700;
+                        }
+                        
+                        .warning-box-enhanced {
+                            background: linear-gradient(145deg, #fef2f2, #fee2e2);
+                            border: 3px solid #dc2626;
+                            border-radius: 20px;
+                            padding: 2.5rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .warning-box-enhanced::before {
+                            content: '⚠️';
+                            position: absolute;
+                            top: -20px;
+                            right: -20px;
+                            font-size: 120px;
+                            opacity: 0.05;
+                            animation: warning-pulse 4s ease-in-out infinite;
+                        }
+                        
+                        @keyframes warning-pulse {
+                            0%, 100% { transform: scale(1) rotate(0deg); }
+                            50% { transform: scale(1.1) rotate(5deg); }
+                        }
+                        
+                        .warning-title {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            color: #dc2626;
+                            margin-bottom: 1.5rem;
+                        }
+                        
+                        .warning-list {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .warning-list li {
+                            padding: 1rem 1.5rem;
+                            margin-bottom: 1rem;
+                            background: white;
+                            border-radius: 12px;
+                            border-left: 4px solid #dc2626;
+                            box-shadow: 0 4px 15px rgba(220,38,38,0.1);
+                            position: relative;
+                            padding-left: 3rem;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .warning-list li::before {
+                            content: '❌';
+                            position: absolute;
+                            left: 1rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1.2rem;
+                        }
+                        
+                        .warning-list li:hover {
+                            transform: translateX(8px);
+                            box-shadow: 0 6px 20px rgba(220,38,38,0.15);
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .single-selection-enhanced {
+                                padding: 2.5rem 1.5rem;
+                                margin: 2rem 0;
+                            }
+                            
+                            .selection-title-enhanced h2 {
+                                font-size: 2.2rem;
+                            }
+                            
+                            .selection-grid-enhanced {
+                                grid-template-columns: 1fr;
+                                gap: 2rem;
+                            }
+                            
+                            .selection-card-enhanced {
+                                padding: 2rem;
+                            }
+                            
+                            .selection-icon-wrapper {
+                                width: 60px;
+                                height: 60px;
+                                font-size: 2rem;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="single-selection-enhanced">
+                        <div class="selection-title-enhanced">
+                            <h2><i class="fas fa-search"></i> 一人暮らし加湿器の選び方</h2>
+                            <p class="selection-subtitle">6畳ワンルームで失敗しない4つのポイント</p>
+                        </div>
                     
                     <!-- キャラクター会話：一人暮らしの加湿器選びについて -->
                     <div class="character-dialogue">
@@ -281,56 +588,77 @@
                         </div>
                     </div>
                     
-                    <div class="selection-grid">
-                        <div class="selection-card priority-high">
-                            <h3><i class="fas fa-home"></i> サイズ・設置性</h3>
-                            <ul>
-                                <li><strong>適用畳数：</strong>4〜8畳対応</li>
-                                <li><strong>本体サイズ：</strong>幅25cm以下推奨</li>
-                                <li><strong>設置方法：</strong>床置き・卓上両対応</li>
-                                <li><strong>収納性：</strong>オフシーズン保管しやすい</li>
-                            </ul>
+                        <div class="selection-grid-enhanced">
+                            <div class="selection-card-enhanced priority-ultra">
+                                <div class="selection-card-header">
+                                    <div class="selection-icon-wrapper">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <h3 class="selection-card-title">サイズ・設置性</h3>
+                                </div>
+                                <ul class="selection-features">
+                                    <li><strong>適用畳数：</strong>4〜8畳対応</li>
+                                    <li><strong>本体サイズ：</strong>幅25cm以下推奨</li>
+                                    <li><strong>設置方法：</strong>床置き・卓上両対応</li>
+                                    <li><strong>収納性：</strong>オフシーズン保管しやすい</li>
+                                </ul>
+                            </div>
+
+                            <div class="selection-card-enhanced priority-ultra">
+                                <div class="selection-card-header">
+                                    <div class="selection-icon-wrapper">
+                                        <i class="fas fa-yen-sign"></i>
+                                    </div>
+                                    <h3 class="selection-card-title">コストパフォーマンス</h3>
+                                </div>
+                                <ul class="selection-features">
+                                    <li><strong>初期費用：</strong>5,000〜15,000円</li>
+                                    <li><strong>月間電気代：</strong>300円以下</li>
+                                    <li><strong>メンテナンス：</strong>フィルター代月200円以下</li>
+                                    <li><strong>総コスト：</strong>年間5,000円以下</li>
+                                </ul>
+                            </div>
+
+                            <div class="selection-card-enhanced priority-high">
+                                <div class="selection-card-header">
+                                    <div class="selection-icon-wrapper">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h3 class="selection-card-title">使いやすさ</h3>
+                                </div>
+                                <ul class="selection-features">
+                                    <li><strong>操作性：</strong>ボタン数3個以下</li>
+                                    <li><strong>給水：</strong>上部給水または着脱式</li>
+                                    <li><strong>お手入れ：</strong>週1回15分以内</li>
+                                    <li><strong>静音性：</strong>25dB以下</li>
+                                </ul>
+                            </div>
+
+                            <div class="selection-card-enhanced priority-high">
+                                <div class="selection-card-header">
+                                    <div class="selection-icon-wrapper">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <h3 class="selection-card-title">機能・性能</h3>
+                                </div>
+                                <ul class="selection-features">
+                                    <li><strong>加湿方式：</strong>用途に応じて選択</li>
+                                    <li><strong>タイマー：</strong>1〜8時間設定</li>
+                                    <li><strong>湿度設定：</strong>40〜60%調整可能</li>
+                                    <li><strong>安全機能：</strong>空焚き防止必須</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="selection-card priority-high">
-                            <h3><i class="fas fa-yen-sign"></i> コストパフォーマンス</h3>
-                            <ul>
-                                <li><strong>初期費用：</strong>5,000〜15,000円</li>
-                                <li><strong>月間電気代：</strong>300円以下</li>
-                                <li><strong>メンテナンス：</strong>フィルター代月200円以下</li>
-                                <li><strong>総コスト：</strong>年間5,000円以下</li>
+                        <div class="warning-box-enhanced">
+                            <h4 class="warning-title"><i class="fas fa-exclamation-triangle"></i> 一人暮らしでよくある失敗</h4>
+                            <ul class="warning-list">
+                                <li><strong>オーバースペック選択：</strong>20畳対応を6畳で使用→電気代高騰</li>
+                                <li><strong>メンテナンス軽視：</strong>お手入れ複雑→放置→故障</li>
+                                <li><strong>設置場所未考慮：</strong>大型購入→置き場所に困る</li>
+                                <li><strong>運転音軽視：</strong>寝室使用で睡眠妨害</li>
                             </ul>
                         </div>
-
-                        <div class="selection-card priority-medium">
-                            <h3><i class="fas fa-tools"></i> 使いやすさ</h3>
-                            <ul>
-                                <li><strong>操作性：</strong>ボタン数3個以下</li>
-                                <li><strong>給水：</strong>上部給水または着脱式</li>
-                                <li><strong>お手入れ：</strong>週1回15分以内</li>
-                                <li><strong>静音性：</strong>25dB以下</li>
-                            </ul>
-                        </div>
-
-                        <div class="selection-card priority-medium">
-                            <h3><i class="fas fa-leaf"></i> 機能・性能</h3>
-                            <ul>
-                                <li><strong>加湿方式：</strong>用途に応じて選択</li>
-                                <li><strong>タイマー：</strong>1〜8時間設定</li>
-                                <li><strong>湿度設定：</strong>40〜60%調整可能</li>
-                                <li><strong>安全機能：</strong>空焚き防止必須</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="warning-box">
-                        <h4><i class="fas fa-exclamation-triangle"></i> 一人暮らしでよくある失敗</h4>
-                        <ul>
-                            <li><strong>オーバースペック選択：</strong>20畳対応を6畳で使用→電気代高騰</li>
-                            <li><strong>メンテナンス軽視：</strong>お手入れ複雑→放置→故障</li>
-                            <li><strong>設置場所未考慮：</strong>大型購入→置き場所に困る</li>
-                            <li><strong>運転音軽視：</strong>寝室使用で睡眠妨害</li>
-                        </ul>
                     </div>
                 </section>
 
