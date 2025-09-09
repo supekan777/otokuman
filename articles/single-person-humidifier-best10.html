@@ -946,33 +946,438 @@
                         </div>
                     </div>
                     
-                    <div class="type-explanation">
-                        <h3><i class="fas fa-info-circle"></i> 加湿方式の基本知識</h3>
-                        <div class="explanation-content">
-                            <p>加湿器には大きく分けて4つの方式があり、それぞれメリット・デメリットが異なります。一人暮らしの環境では、<strong>電気代・メンテナンス頻度・静音性</strong>の3つのバランスが重要です。</p>
+                    <style>
+                        .type-knowledge-enhanced {
+                            background: linear-gradient(145deg, #f0fdf4, #ecfdf5);
+                            border-radius: 35px;
+                            padding: 4rem 3rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 25px 70px rgba(22,163,74,0.12);
+                            border: 3px solid rgba(22,163,74,0.15);
+                        }
+                        
+                        .type-knowledge-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: -100px;
+                            left: -100px;
+                            width: 300px;
+                            height: 300px;
+                            background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
+                            animation: rotate-slow 20s linear infinite;
+                        }
+                        
+                        @keyframes rotate-slow {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+                        
+                        .type-knowledge-title {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        
+                        .type-knowledge-title h3 {
+                            font-size: 2.5rem;
+                            font-weight: bold;
+                            background: linear-gradient(135deg, #16a34a, #22c55e, #059669);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            margin-bottom: 1rem;
+                            display: inline-block;
+                            position: relative;
+                        }
+                        
+                        .type-knowledge-title h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 100px;
+                            height: 4px;
+                            background: linear-gradient(90deg, #16a34a, #22c55e);
+                            border-radius: 2px;
+                            animation: pulse-width 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-width {
+                            0%, 100% { width: 100px; }
+                            50% { width: 150px; }
+                        }
+                        
+                        .type-intro-text {
+                            text-align: center;
+                            font-size: 1.2rem;
+                            color: #047857;
+                            margin-bottom: 3rem;
+                            font-weight: 500;
+                            line-height: 1.8;
+                        }
+                        
+                        .type-cards-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                            gap: 2rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        
+                        .type-card-enhanced {
+                            background: white;
+                            border-radius: 25px;
+                            padding: 2.5rem;
+                            position: relative;
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            box-shadow: 0 12px 35px rgba(22,163,74,0.08);
+                            border: 2px solid transparent;
+                            overflow: hidden;
+                        }
+                        
+                        .type-card-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: var(--type-gradient);
+                            opacity: 0;
+                            transition: opacity 0.4s ease;
+                            z-index: -1;
+                        }
+                        
+                        .type-card-enhanced:hover::before {
+                            opacity: 0.05;
+                        }
+                        
+                        .type-card-enhanced::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 8px;
+                            height: 100%;
+                            background: var(--type-gradient);
+                            transform: scaleY(0);
+                            transform-origin: top;
+                            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+                        }
+                        
+                        .type-card-enhanced:hover::after {
+                            transform: scaleY(1);
+                        }
+                        
+                        .type-card-enhanced:hover {
+                            transform: translateY(-10px) scale(1.02);
+                            box-shadow: 0 25px 60px rgba(22,163,74,0.2);
+                            border-color: var(--type-border);
+                        }
+                        
+                        .type-ultrasonic {
+                            --type-gradient: linear-gradient(135deg, #06b6d4, #0891b2);
+                            --type-border: #06b6d4;
+                        }
+                        
+                        .type-evaporative {
+                            --type-gradient: linear-gradient(135deg, #22c55e, #16a34a);
+                            --type-border: #22c55e;
+                        }
+                        
+                        .type-steam {
+                            --type-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+                            --type-border: #f59e0b;
+                        }
+                        
+                        .type-hybrid {
+                            --type-gradient: linear-gradient(135deg, #8b5cf6, #7c3aed);
+                            --type-border: #8b5cf6;
+                        }
+                        
+                        .type-icon-circle {
+                            width: 90px;
+                            height: 90px;
+                            border-radius: 50%;
+                            background: var(--type-gradient);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 3rem;
+                            margin: 0 auto 1.5rem;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                            transition: all 0.4s ease;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .type-icon-circle::after {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            left: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+                            transform: rotate(-45deg) translateX(-100%);
+                            transition: transform 0.8s ease;
+                        }
+                        
+                        .type-card-enhanced:hover .type-icon-circle::after {
+                            transform: rotate(-45deg) translateX(100%);
+                        }
+                        
+                        .type-card-enhanced:hover .type-icon-circle {
+                            transform: scale(1.1) rotate(10deg);
+                            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+                        }
+                        
+                        .type-name {
+                            font-size: 1.6rem;
+                            font-weight: bold;
+                            color: #047857;
+                            text-align: center;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .type-description {
+                            color: #4b5563;
+                            line-height: 1.7;
+                            font-size: 1.05rem;
+                            text-align: center;
+                            margin-bottom: 1.5rem;
+                        }
+                        
+                        .type-features {
+                            list-style: none;
+                            padding: 0;
+                            margin: 2rem 0 0 0;
+                        }
+                        
+                        .type-features li {
+                            padding: 0.8rem;
+                            margin-bottom: 0.8rem;
+                            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                            border-radius: 12px;
+                            position: relative;
+                            padding-left: 2.5rem;
+                            transition: all 0.3s ease;
+                            border-left: 3px solid var(--type-border);
+                            font-size: 0.95rem;
+                            color: #374151;
+                        }
+                        
+                        .type-features li::before {
+                            content: var(--list-icon);
+                            position: absolute;
+                            left: 0.8rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1rem;
+                        }
+                        
+                        .type-features li:hover {
+                            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                            transform: translateX(5px);
+                            box-shadow: 0 4px 12px rgba(22,163,74,0.1);
+                        }
+                        
+                        .type-features li.pro {
+                            --list-icon: '✅';
+                        }
+                        
+                        .type-features li.con {
+                            --list-icon: '⚠️';
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .type-knowledge-enhanced {
+                                padding: 2.5rem 1.5rem;
+                            }
                             
-                            <div class="type-details">
-                                <div class="type-item">
-                                    <h4>🌊 超音波式</h4>
-                                    <p>水を超音波振動で細かい霧にして放出。電気代は最も安いが、雑菌繁殖のリスクがあるため毎日の水交換が必須。</p>
+                            .type-knowledge-title h3 {
+                                font-size: 2rem;
+                            }
+                            
+                            .type-cards-grid {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+                            
+                            .type-icon-circle {
+                                width: 70px;
+                                height: 70px;
+                                font-size: 2.5rem;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="type-explanation">
+                        <div class="type-knowledge-enhanced">
+                            <div class="type-knowledge-title">
+                                <h3><i class="fas fa-info-circle"></i> 加湿方式の基本知識</h3>
+                            </div>
+                            <p class="type-intro-text">
+                                加湿器には大きく分けて4つの方式があり、それぞれメリット・デメリットが異なります。<br>
+                                一人暮らしの環境では、<strong>電気代・メンテナンス頻度・静音性</strong>の3つのバランスが重要です。
+                            </p>
+                            
+                            <div class="type-cards-grid">
+                                <div class="type-card-enhanced type-ultrasonic">
+                                    <div class="type-icon-circle">🌊</div>
+                                    <h4 class="type-name">超音波式</h4>
+                                    <p class="type-description">
+                                        水を超音波振動で細かい霧にして放出する方式
+                                    </p>
+                                    <ul class="type-features">
+                                        <li class="pro">電気代が最も安い（月150円程度）</li>
+                                        <li class="pro">すぐに加湿開始</li>
+                                        <li class="pro">コンパクト設計</li>
+                                        <li class="con">雑菌繁殖リスクあり</li>
+                                        <li class="con">毎日の水交換必須</li>
+                                    </ul>
                                 </div>
-                                <div class="type-item">
-                                    <h4>💨 気化式</h4>
-                                    <p>水を含んだフィルターに風を当てて自然蒸発。電気代が安く過加湿になりにくいが、加湿スピードはゆっくり。</p>
+                                
+                                <div class="type-card-enhanced type-evaporative">
+                                    <div class="type-icon-circle">💨</div>
+                                    <h4 class="type-name">気化式</h4>
+                                    <p class="type-description">
+                                        水を含んだフィルターに風を当てて自然蒸発させる方式
+                                    </p>
+                                    <ul class="type-features">
+                                        <li class="pro">電気代が安い（月100円以下）</li>
+                                        <li class="pro">過加湿になりにくい</li>
+                                        <li class="pro">安全性が高い</li>
+                                        <li class="con">加湿スピードが遅い</li>
+                                        <li class="con">フィルター交換必要</li>
+                                    </ul>
                                 </div>
-                                <div class="type-item">
-                                    <h4>♨️ スチーム式</h4>
-                                    <p>水を沸騰させて蒸気を放出。最も衛生的で加湿力が高いが、電気代は高め。やけどリスクにも注意。</p>
+                                
+                                <div class="type-card-enhanced type-steam">
+                                    <div class="type-icon-circle">♨️</div>
+                                    <h4 class="type-name">スチーム式</h4>
+                                    <p class="type-description">
+                                        水を沸騰させて蒸気を放出する最も衛生的な方式
+                                    </p>
+                                    <ul class="type-features">
+                                        <li class="pro">最も衛生的</li>
+                                        <li class="pro">加湿力が高い</li>
+                                        <li class="pro">メンテナンス簡単</li>
+                                        <li class="con">電気代が高め（月300円〜）</li>
+                                        <li class="con">やけどリスクあり</li>
+                                    </ul>
                                 </div>
-                                <div class="type-item">
-                                    <h4>🔄 ハイブリッド式</h4>
-                                    <p>複数の方式を組み合わせた最新型。状況に応じて運転モードを切り替え、効率的に加湿。初期費用は高いが長期的にお得。</p>
+                                
+                                <div class="type-card-enhanced type-hybrid">
+                                    <div class="type-icon-circle">🔄</div>
+                                    <h4 class="type-name">ハイブリッド式</h4>
+                                    <p class="type-description">
+                                        複数の方式を組み合わせた2025年の最新型
+                                    </p>
+                                    <ul class="type-features">
+                                        <li class="pro">効率的な加湿</li>
+                                        <li class="pro">状況に応じた運転切替</li>
+                                        <li class="pro">長期的にコスパ良好</li>
+                                        <li class="con">初期費用が高い</li>
+                                        <li class="con">本体サイズが大きめ</li>
+                                    </ul>
                                 </div>
                             </div>
                             
-                            <div class="recommendation-box">
-                                <h4>💡 一人暮らしにおすすめの選び方</h4>
-                                <ul>
+                            <style>
+                                .recommendation-box-enhanced {
+                                    background: linear-gradient(145deg, #ffffff, #f9fafb);
+                                    border-radius: 25px;
+                                    padding: 2.5rem;
+                                    margin: 3rem 0;
+                                    box-shadow: 0 15px 40px rgba(22,163,74,0.1);
+                                    border: 3px solid #16a34a;
+                                    position: relative;
+                                    overflow: hidden;
+                                }
+                                
+                                .recommendation-box-enhanced::before {
+                                    content: '💡';
+                                    position: absolute;
+                                    top: -30px;
+                                    right: -30px;
+                                    font-size: 100px;
+                                    opacity: 0.05;
+                                    animation: float-emoji 6s ease-in-out infinite;
+                                }
+                                
+                                @keyframes float-emoji {
+                                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                                    50% { transform: translateY(-20px) rotate(10deg); }
+                                }
+                                
+                                .recommendation-title {
+                                    font-size: 1.8rem;
+                                    font-weight: bold;
+                                    color: #16a34a;
+                                    margin-bottom: 1.5rem;
+                                    text-align: center;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 1rem;
+                                }
+                                
+                                .recommendation-list {
+                                    list-style: none;
+                                    padding: 0;
+                                    margin: 0;
+                                    display: grid;
+                                    gap: 1rem;
+                                }
+                                
+                                .recommendation-list li {
+                                    padding: 1.2rem;
+                                    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                                    border-radius: 15px;
+                                    border-left: 5px solid #16a34a;
+                                    transition: all 0.3s ease;
+                                    position: relative;
+                                    padding-left: 3rem;
+                                }
+                                
+                                .recommendation-list li::before {
+                                    content: '→';
+                                    position: absolute;
+                                    left: 1rem;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    color: #16a34a;
+                                    font-weight: bold;
+                                    font-size: 1.5rem;
+                                    animation: arrow-pulse 2s ease-in-out infinite;
+                                }
+                                
+                                @keyframes arrow-pulse {
+                                    0%, 100% { transform: translateY(-50%) translateX(0); }
+                                    50% { transform: translateY(-50%) translateX(5px); }
+                                }
+                                
+                                .recommendation-list li:hover {
+                                    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                                    transform: translateX(10px);
+                                    box-shadow: 0 8px 20px rgba(22,163,74,0.15);
+                                }
+                                
+                                .recommendation-list li strong {
+                                    color: #047857;
+                                    font-size: 1.1rem;
+                                }
+                            </style>
+                            
+                            <div class="recommendation-box-enhanced">
+                                <h4 class="recommendation-title">💡 一人暮らしにおすすめの選び方</h4>
+                                <ul class="recommendation-list">
                                     <li><strong>忙しい方・衛生重視</strong> → スチーム式またはハイブリッド式</li>
                                     <li><strong>電気代重視・エコ志向</strong> → 気化式</li>
                                     <li><strong>初期費用を抑えたい</strong> → 超音波式（ただし毎日のお手入れ必須）</li>
