@@ -3622,93 +3622,407 @@
                         </div>
                     </div>
 
-                    <h3>🛠️ 清掃用具・ツール</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <h4>🧽 マイクロファイバークロス</h4>
-                            <ul>
+                    <h3 style="background: linear-gradient(135deg, #ff5722 0%, #d84315 100%); color: white; padding: 1.2rem; border-radius: 12px; text-align: center; margin: 3rem 0 2rem 0; box-shadow: 0 6px 20px rgba(255,87,34,0.3); font-size: 1.6rem; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; height: 100%; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); animation: diagonal-slide 3s infinite;"></div>
+                        <span style="position: relative;">🛠️ 清掃用具・ツール</span>
+                    </h3>
+                    
+                    <style>
+                        @keyframes diagonal-slide {
+                            0% { transform: translateX(-200%) translateY(-200%); }
+                            100% { transform: translateX(200%) translateY(200%); }
+                        }
+                        
+                        .tools-enhanced-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                            gap: 1.5rem;
+                            margin: 2rem 0;
+                        }
+                        
+                        .tool-card {
+                            background: white;
+                            border-radius: 16px;
+                            padding: 2rem;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            position: relative;
+                            overflow: hidden;
+                            border: 1px solid transparent;
+                        }
+                        
+                        .tool-card:hover {
+                            transform: translateY(-10px) rotateY(5deg);
+                            box-shadow: 0 20px 40px rgba(255,87,34,0.15);
+                            border-color: #ff5722;
+                        }
+                        
+                        .tool-card::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,87,34,0.1), transparent);
+                            transition: left 0.6s;
+                        }
+                        
+                        .tool-card:hover::before {
+                            left: 100%;
+                        }
+                        
+                        .tool-header {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 1.5rem;
+                            padding-bottom: 1rem;
+                            border-bottom: 2px solid;
+                            border-image: linear-gradient(90deg, #ff5722, #ff7043, #ff5722) 1;
+                        }
+                        
+                        .tool-icon-title {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.8rem;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            color: #d84315;
+                            position: relative;
+                        }
+                        
+                        .tool-icon {
+                            font-size: 2rem;
+                            background: linear-gradient(135deg, #ff5722, #ff7043);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            animation: float-icon 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes float-icon {
+                            0%, 100% { transform: translateY(0) rotate(0deg); }
+                            50% { transform: translateY(-5px) rotate(5deg); }
+                        }
+                        
+                        .tool-features {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0 0 1.5rem 0;
+                        }
+                        
+                        .tool-features li {
+                            padding: 0.6rem 0.8rem;
+                            margin-bottom: 0.8rem;
+                            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+                            border-radius: 10px;
+                            position: relative;
+                            padding-left: 2.5rem;
+                            transition: all 0.3s ease;
+                            border-left: 4px solid #ff9800;
+                        }
+                        
+                        .tool-features li:hover {
+                            background: linear-gradient(135deg, #ffecb3, #ffd54f);
+                            transform: translateX(8px);
+                            box-shadow: 0 4px 12px rgba(255,193,7,0.3);
+                        }
+                        
+                        .tool-features li::before {
+                            content: '🔧';
+                            position: absolute;
+                            left: 0.8rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1rem;
+                        }
+                        
+                        .tool-price-badge {
+                            background: linear-gradient(135deg, #4caf50, #66bb6a);
+                            color: white;
+                            padding: 0.8rem 1.2rem;
+                            border-radius: 25px;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 1rem;
+                            box-shadow: 0 4px 15px rgba(76,175,80,0.3);
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .tool-price-badge::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 0;
+                            height: 0;
+                            background: rgba(255,255,255,0.3);
+                            border-radius: 50%;
+                            transition: width 0.6s, height 0.6s;
+                            transform: translate(-50%, -50%);
+                        }
+                        
+                        .tool-card:hover .tool-price-badge::before {
+                            width: 300px;
+                            height: 300px;
+                        }
+                        
+                        .tool-price-badge:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 6px 20px rgba(76,175,80,0.4);
+                        }
+                        
+                        .tool-price-free {
+                            background: linear-gradient(135deg, #2196f3, #42a5f5);
+                        }
+                        
+                        .tool-price-premium {
+                            background: linear-gradient(135deg, #9c27b0, #ba68c8);
+                        }
+                        
+                        .recommended-sets-section {
+                            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                            border-radius: 20px;
+                            padding: 2rem;
+                            margin: 3rem 0;
+                            border: 2px solid #ff5722;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .recommended-sets-section::before {
+                            content: '⭐';
+                            position: absolute;
+                            top: -10px;
+                            right: -10px;
+                            font-size: 120px;
+                            opacity: 0.1;
+                            transform: rotate(15deg);
+                        }
+                        
+                        .set-card {
+                            background: white;
+                            border-radius: 16px;
+                            padding: 2rem;
+                            margin: 1.5rem 0;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                            transition: all 0.3s ease;
+                            border-left: 6px solid #ff5722;
+                        }
+                        
+                        .set-card:hover {
+                            transform: translateX(10px);
+                            box-shadow: 0 12px 35px rgba(255,87,34,0.2);
+                        }
+                        
+                        .set-title {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            color: #d84315;
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                        }
+                        
+                        .set-items {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .set-items li {
+                            padding: 0.5rem 0;
+                            color: #666;
+                            position: relative;
+                            padding-left: 2rem;
+                            transition: color 0.3s ease;
+                        }
+                        
+                        .set-items li::before {
+                            content: '✓';
+                            position: absolute;
+                            left: 0.5rem;
+                            color: #4caf50;
+                            font-weight: bold;
+                        }
+                        
+                        .set-items li:hover {
+                            color: #333;
+                        }
+                        
+                        .purchasing-tips-section {
+                            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+                            border-radius: 16px;
+                            padding: 2rem;
+                            margin: 2rem 0;
+                            border: 2px solid #4caf50;
+                        }
+                        
+                        .tips-list {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .tips-list li {
+                            padding: 0.8rem;
+                            margin-bottom: 0.8rem;
+                            background: white;
+                            border-radius: 10px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                            position: relative;
+                            padding-left: 3rem;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .tips-list li:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 15px rgba(76,175,80,0.2);
+                        }
+                        
+                        .tips-list li::before {
+                            content: '💡';
+                            position: absolute;
+                            left: 1rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1.2rem;
+                        }
+                    </style>
+                    
+                    <div class="tools-enhanced-grid">
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">🧽</span>
+                                    <span>マイクロファイバークロス</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>傷つけずに汚れ除去</li>
                                 <li>水だけでも効果的</li>
                                 <li>繰り返し使用可能</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>500〜1,500円（5枚セット）</p>
+                            <div class="tool-price-badge">💰 500〜1,500円（5枚セット）</div>
                         </div>
 
-                        <div class="tool-item">
-                            <h4>🦷 歯ブラシ（使い古し）</h4>
-                            <ul>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">🦷</span>
+                                    <span>歯ブラシ（使い古し）</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>細かい隙間の掃除に最適</li>
                                 <li>振動子などの精密部品用</li>
                                 <li>毛の硬さを選べる</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>無料（再利用）</p>
+                            <div class="tool-price-badge tool-price-free">🎁 無料（再利用）</div>
                         </div>
 
-                        <div class="tool-item">
-                            <h4>🧽 メラミンスポンジ</h4>
-                            <ul>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">🧽</span>
+                                    <span>メラミンスポンジ</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>頑固な水垢除去</li>
                                 <li>洗剤不要</li>
                                 <li>使い捨てタイプ</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>200〜500円（10個入り）</p>
+                            <div class="tool-price-badge">💰 200〜500円（10個入り）</div>
                         </div>
 
-                        <div class="tool-item">
-                            <h4>💨 エアダスター</h4>
-                            <ul>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">💨</span>
+                                    <span>エアダスター</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>送風ファンの清掃</li>
                                 <li>電子部品のホコリ除去</li>
                                 <li>水を使えない部分に</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>300〜800円</p>
+                            <div class="tool-price-badge">💰 300〜800円</div>
                         </div>
 
-                        <div class="tool-item">
-                            <h4>🌊 超音波洗浄器</h4>
-                            <ul>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">🌊</span>
+                                    <span>超音波洗浄器</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>手が届かない部分も清掃</li>
                                 <li>微細な汚れまで除去</li>
                                 <li>短時間で効果的</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>3,000〜15,000円</p>
+                            <div class="tool-price-badge tool-price-premium">💰 3,000〜15,000円</div>
                         </div>
 
-                        <div class="tool-item">
-                            <h4>🧤 ゴム手袋</h4>
-                            <ul>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon-title">
+                                    <span class="tool-icon">🧤</span>
+                                    <span>ゴム手袋</span>
+                                </div>
+                            </div>
+                            <ul class="tool-features">
                                 <li>皮膚保護</li>
                                 <li>滑り止め効果</li>
                                 <li>衛生的な作業</li>
                             </ul>
-                            <p class="price"><strong>価格：</strong>200〜600円</p>
+                            <div class="tool-price-badge">💰 200〜600円</div>
                         </div>
                     </div>
 
-                    <h3>🏆 編集部おすすめセット</h3>
-                    <div class="recommended-set">
-                        <h4>💰 基本セット（総額約2,000円）</h4>
-                        <ul>
-                            <li>クエン酸 500g</li>
-                            <li>重曹 500g</li>
-                            <li>中性洗剤 1本</li>
-                            <li>マイクロファイバークロス 5枚</li>
-                            <li>ゴム手袋 1セット</li>
-                        </ul>
+                    <div class="recommended-sets-section">
+                        <h3 style="color: #d84315; text-align: center; font-size: 1.6rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            🏆 編集部おすすめセット
+                        </h3>
+                        
+                        <div class="set-card">
+                            <div class="set-title">
+                                💰 基本セット（総額約2,000円）
+                            </div>
+                            <ul class="set-items">
+                                <li>クエン酸 500g</li>
+                                <li>重曹 500g</li>
+                                <li>中性洗剤 1本</li>
+                                <li>マイクロファイバークロス 5枚</li>
+                                <li>ゴム手袋 1セット</li>
+                            </ul>
+                        </div>
 
-                        <h4>🌟 完璧セット（総額約8,000円）</h4>
-                        <ul>
-                            <li>基本セットの全アイテム</li>
-                            <li>超音波洗浄器</li>
-                            <li>エアダスター</li>
-                            <li>メラミンスポンジ</li>
-                            <li>次亜塩素酸ナトリウム</li>
-                        </ul>
+                        <div class="set-card">
+                            <div class="set-title">
+                                🌟 完璧セット（総額約8,000円）
+                            </div>
+                            <ul class="set-items">
+                                <li>基本セットの全アイテム</li>
+                                <li>超音波洗浄器</li>
+                                <li>エアダスター</li>
+                                <li>メラミンスポンジ</li>
+                                <li>次亜塩素酸ナトリウム</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="purchasing-tips">
-                        <h3>🛒 購入時のポイント</h3>
-                        <ul>
+                    <div class="purchasing-tips-section">
+                        <h3 style="color: #2e7d32; text-align: center; font-size: 1.4rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            🛒 購入時のポイント
+                        </h3>
+                        <ul class="tips-list">
                             <li><strong>食品グレード選択：</strong>クエン酸・重曹は食品グレードが安心</li>
                             <li><strong>濃度確認：</strong>次亜塩素酸ナトリウムは5〜6%濃度を選択</li>
                             <li><strong>まとめ買い：</strong>クエン酸・重曹は大容量がお得</li>
