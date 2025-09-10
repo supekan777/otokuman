@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"アイリスオーヤマ 加湿器 超小型 卓上 車内 デスク用 280ml 超音波式 連続7時間 タンブラー型 USB給電 UHM-U01-C カフェオレ","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/cloudstore\/cabinet\/item8","p":["\/020221005195722.jpg","\/120221005195722.jpg","\/220221005195722.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/cloudstore\/202210051959084967576566834\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/cloudstore\/202210051959084967576566834\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=%E3%82%A2%E3%82%A4%E3%83%AA%E3%82%B9%E3%82%AA%E3%83%BC%E3%83%A4%E3%83%9E%20%E5%8A%A0%E6%B9%BF%E5%99%A8%20%E8%B6%85%E5%B0%8F%E5%9E%8B%20%E5%8D%93%E4%B8%8A%20%E8%BB%8A%E5%86%85%20%E3%83%87%E3%82%B9%E3%82%AF%E7%94%A8%20280ml%20%E8%B6%85%E9%9F%B3%E6%B3%A2%E5%BC%8F%20%E9%80%A3%E7%B6%9A7%E6%99%82%E9%96%93%20%E3%82%BF%E3%83%B3%E3%83%96%E3%83%A9%E3%83%BC%E5%9E%8B%20USB%E7%B5%A6%E9%9B%BB%20UHM-U01-C%20%E3%82%AB%E3%83%95%E3%82%A7%E3%82%AA%E3%83%AC","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"I0pRP","s":"s"});
+</script>
+<div id="msmaflink-I0pRP">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->
