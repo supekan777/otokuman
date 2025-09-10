@@ -2800,6 +2800,234 @@
                             font-size: 1.2rem;
                         }
                     }
+                    
+                    /* サマリーセクション Enhanced スタイル */
+                    .summary-section-enhanced {
+                        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        border: 3px solid transparent;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                        position: relative;
+                        overflow: hidden;
+                        background-clip: padding-box;
+                    }
+                    
+                    .summary-section-enhanced::before {
+                        content: '';
+                        position: absolute;
+                        top: -3px;
+                        left: -3px;
+                        right: -3px;
+                        bottom: -3px;
+                        background: linear-gradient(45deg, 
+                            #f59e0b, #10b981, #3b82f6, #8b5cf6, 
+                            #ef4444, #f59e0b, #10b981, #3b82f6);
+                        background-size: 400% 400%;
+                        border-radius: 23px;
+                        z-index: -1;
+                        animation: rainbowBorder 8s linear infinite;
+                    }
+                    
+                    @keyframes rainbowBorder {
+                        0% { background-position: 0% 50%; }
+                        100% { background-position: 400% 50%; }
+                    }
+                    
+                    .summary-section-enhanced::after {
+                        content: '';
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        width: 40px;
+                        height: 40px;
+                        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dominant-baseline='middle'%3E✨%3C/text%3E%3C/svg%3E");
+                        opacity: 0.3;
+                        animation: sparkle 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes sparkle {
+                        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+                        50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+                    }
+                    
+                    .summary-section-enhanced h4 {
+                        color: #1e293b;
+                        font-size: 1.8rem;
+                        margin-bottom: 2rem;
+                        text-align: center;
+                        font-weight: bold;
+                        background: linear-gradient(135deg, #1e293b, #475569);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        position: relative;
+                    }
+                    
+                    .summary-section-enhanced h4::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100px;
+                        height: 3px;
+                        background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6);
+                        border-radius: 2px;
+                        animation: underlineGlow 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes underlineGlow {
+                        0%, 100% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.5); }
+                        50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+                    }
+                    
+                    .summary-section-enhanced ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: grid;
+                        gap: 1rem;
+                    }
+                    
+                    .summary-section-enhanced li {
+                        background: rgba(255, 255, 255, 0.9);
+                        padding: 1.2rem 1.5rem;
+                        border-radius: 12px;
+                        border-left: 4px solid transparent;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                        cursor: pointer;
+                        color: #374151;
+                        font-size: 1rem;
+                        line-height: 1.6;
+                        font-weight: 500;
+                    }
+                    
+                    .summary-section-enhanced li::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 4px;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(1)::before {
+                        background: linear-gradient(180deg, #10b981, #059669);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(2)::before {
+                        background: linear-gradient(180deg, #3b82f6, #2563eb);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(3)::before {
+                        background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(4)::before {
+                        background: linear-gradient(180deg, #f59e0b, #d97706);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(5)::before {
+                        background: linear-gradient(180deg, #ef4444, #dc2626);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(6)::before {
+                        background: linear-gradient(180deg, #06b6d4, #0891b2);
+                    }
+                    
+                    .summary-section-enhanced li::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 20px;
+                        transform: translateY(-50%);
+                        width: 20px;
+                        height: 20px;
+                        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='50' text-anchor='middle' dominant-baseline='middle'%3E✓%3C/text%3E%3C/svg%3E");
+                        opacity: 0;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .summary-section-enhanced li:hover {
+                        transform: translateX(10px);
+                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                        background: rgba(255, 255, 255, 1);
+                    }
+                    
+                    .summary-section-enhanced li:hover::before {
+                        width: 6px;
+                    }
+                    
+                    .summary-section-enhanced li:hover::after {
+                        opacity: 1;
+                        transform: translateY(-50%) scale(1.2);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(1):hover {
+                        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(2):hover {
+                        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(3):hover {
+                        background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(4):hover {
+                        background: linear-gradient(135deg, #fffbeb, #fef3c7);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(5):hover {
+                        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                    }
+                    
+                    .summary-section-enhanced li:nth-child(6):hover {
+                        background: linear-gradient(135deg, #ecfeff, #cffafe);
+                    }
+                    
+                    /* レスポンシブ対応 */
+                    @media (max-width: 768px) {
+                        .summary-section-enhanced {
+                            padding: 2rem;
+                            margin: 1.5rem 0;
+                        }
+                        
+                        .summary-section-enhanced h4 {
+                            font-size: 1.5rem;
+                        }
+                        
+                        .summary-section-enhanced li {
+                            padding: 1rem;
+                            font-size: 0.95rem;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .summary-section-enhanced {
+                            padding: 1.5rem;
+                            margin: 1rem 0;
+                        }
+                        
+                        .summary-section-enhanced h4 {
+                            font-size: 1.3rem;
+                        }
+                        
+                        .summary-section-enhanced li {
+                            padding: 0.8rem;
+                            font-size: 0.9rem;
+                        }
+                        
+                        .summary-section-enhanced li:hover {
+                            transform: translateX(5px);
+                        }
+                    }
                 </style>
                 
                 <div class="placement-section-enhanced">
@@ -3439,8 +3667,53 @@
                     </div>
                 </div>
 
-                <div class="summary-box">
-                    <h4>記事のポイントまとめ</h4>
+                <!-- キャラクター会話 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character housewife"></div>
+                        <div class="speech-bubble left">
+                            <p>お得マンさん、結局どちらを選べばいいのか迷ってしまいます...。うちは10畳のリビングなんですが、予算も考えないといけないし...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <p>鈴木さん、10畳なら一体型がベストですね！省スペースで電気代も安く、管理も簡単です。最新のシャープやパナソニックなら性能も十分ですよ。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-container">
+                        <div class="pixel-character housewife"></div>
+                        <div class="speech-bubble left">
+                            <p>なるほど！でも本当に効果があるか心配で...。空気清浄と加湿が同時にできるなんて、何か妥協してるんじゃないですか？</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <p>その心配、よく分かります！でも最新の一体型は専用機の90-95%の性能なんです。むしろ相乗効果で、適切な湿度を保つことで空気清浄効果も高まるんですよ。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-container">
+                        <div class="pixel-character housewife"></div>
+                        <div class="speech-bubble left">
+                            <p>そうなんですね！5年間で10万円以上も節約できるなら、浮いたお金で他の家電も買えちゃいますね♪</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <p>その通りです！賢い選択ですね。それでは最後に、今回の記事の重要なポイントをまとめておきましょう。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-section-enhanced">
+                    <h4>📝 記事のポイントまとめ</h4>
                     <ul>
                         <li>12畳以下なら一体型、それ以上なら別々購入が基本</li>
                         <li>一体型は省スペース・省エネ・簡単管理が最大のメリット</li>
