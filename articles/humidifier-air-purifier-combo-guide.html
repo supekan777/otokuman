@@ -1764,6 +1764,324 @@
                             padding: 1rem;
                         }
                     }
+                    
+                    /* 運転方法セクション Enhanced スタイル */
+                    .operation-section-enhanced {
+                        background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        border: 2px solid rgba(14, 165, 233, 0.2);
+                        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.1);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .operation-section-enhanced::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='clock-pattern' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='50' cy='50' r='30' stroke='%230ea5e9' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3Cline x1='50' y1='50' x2='50' y2='25' stroke='%230ea5e9' stroke-width='1' opacity='0.2'/%3E%3Cline x1='50' y1='50' x2='65' y2='50' stroke='%230ea5e9' stroke-width='0.5' opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23clock-pattern)'/%3E%3C/svg%3E");
+                        opacity: 0.3;
+                        animation: patternMove 30s linear infinite;
+                    }
+                    
+                    @keyframes patternMove {
+                        0% { transform: translate(0, 0); }
+                        100% { transform: translate(100px, 100px); }
+                    }
+                    
+                    .operation-section-enhanced h2 {
+                        color: #075985;
+                        margin-bottom: 1.5rem;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .operation-intro {
+                        background: rgba(255, 255, 255, 0.9);
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        margin-bottom: 2rem;
+                        border-left: 4px solid #0ea5e9;
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .operation-section-enhanced h3 {
+                        color: #075985;
+                        margin: 2rem 0 1.5rem 0;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    /* スケジュールカードのスタイル */
+                    .operation-schedule {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 1.5rem;
+                        margin: 2rem 0;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .schedule-card {
+                        background: rgba(255, 255, 255, 0.95);
+                        border-radius: 16px;
+                        padding: 1.5rem;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                        border: 2px solid transparent;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .schedule-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .schedule-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+                    }
+                    
+                    /* 時間帯別のカラーテーマ */
+                    .schedule-card.morning {
+                        border-color: #fbbf24;
+                        background: linear-gradient(135deg, #fffbeb, #fef3c7);
+                    }
+                    
+                    .schedule-card.morning::before {
+                        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+                    }
+                    
+                    .schedule-card.morning h4 {
+                        color: #92400e;
+                    }
+                    
+                    .schedule-card.daytime {
+                        border-color: #38bdf8;
+                        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                    }
+                    
+                    .schedule-card.daytime::before {
+                        background: linear-gradient(90deg, #0284c7, #38bdf8);
+                    }
+                    
+                    .schedule-card.daytime h4 {
+                        color: #075985;
+                    }
+                    
+                    .schedule-card.evening {
+                        border-color: #f97316;
+                        background: linear-gradient(135deg, #fff7ed, #fed7aa);
+                    }
+                    
+                    .schedule-card.evening::before {
+                        background: linear-gradient(90deg, #ea580c, #f97316);
+                    }
+                    
+                    .schedule-card.evening h4 {
+                        color: #7c2d12;
+                    }
+                    
+                    .schedule-card.night {
+                        border-color: #8b5cf6;
+                        background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+                    }
+                    
+                    .schedule-card.night::before {
+                        background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+                    }
+                    
+                    .schedule-card.night h4 {
+                        color: #581c87;
+                    }
+                    
+                    .schedule-card h4 {
+                        font-size: 1.3rem;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: bold;
+                    }
+                    
+                    .operation-content {
+                        margin-top: 1rem;
+                    }
+                    
+                    .operation-content h5 {
+                        color: #334155;
+                        font-size: 1.1rem;
+                        margin: 1rem 0 0.5rem 0;
+                        font-weight: bold;
+                        padding-bottom: 0.5rem;
+                        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    .operation-content ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0.5rem 0;
+                    }
+                    
+                    .operation-content li {
+                        padding: 0.5rem 0;
+                        padding-left: 1.5rem;
+                        position: relative;
+                        color: #475569;
+                        line-height: 1.6;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .operation-content li::before {
+                        content: '▶';
+                        position: absolute;
+                        left: 0;
+                        color: #0ea5e9;
+                        font-size: 0.8rem;
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    .operation-content li:hover {
+                        padding-left: 2rem;
+                        color: #1e293b;
+                    }
+                    
+                    .operation-content li:hover::before {
+                        transform: translateX(5px);
+                    }
+                    
+                    .operation-content strong {
+                        color: #1e293b;
+                        font-weight: 600;
+                    }
+                    
+                    /* タイムラインビュー */
+                    @media (min-width: 1200px) {
+                        .operation-schedule {
+                            position: relative;
+                        }
+                        
+                        .operation-schedule::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            right: 0;
+                            height: 2px;
+                            background: linear-gradient(90deg, 
+                                #fbbf24 0%, 
+                                #fbbf24 25%, 
+                                #38bdf8 25%, 
+                                #38bdf8 50%, 
+                                #f97316 50%, 
+                                #f97316 75%, 
+                                #8b5cf6 75%, 
+                                #8b5cf6 100%);
+                            z-index: 0;
+                            opacity: 0.3;
+                        }
+                    }
+                    
+                    /* アニメーション効果 */
+                    @keyframes timeFlow {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                    
+                    .schedule-card::after {
+                        content: '⏰';
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-size: 1.5rem;
+                        opacity: 0.1;
+                        animation: timeFlow 60s linear infinite;
+                    }
+                    
+                    /* レスポンシブ対応 */
+                    @media (max-width: 768px) {
+                        .operation-section-enhanced {
+                            padding: 2rem;
+                            margin: 1.5rem 0;
+                        }
+                        
+                        .operation-section-enhanced h2 {
+                            font-size: 1.7rem;
+                        }
+                        
+                        .operation-section-enhanced h3 {
+                            font-size: 1.3rem;
+                        }
+                        
+                        .operation-schedule {
+                            grid-template-columns: 1fr;
+                            gap: 1rem;
+                        }
+                        
+                        .schedule-card h4 {
+                            font-size: 1.1rem;
+                        }
+                        
+                        .operation-content h5 {
+                            font-size: 1rem;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .operation-section-enhanced {
+                            padding: 1.5rem;
+                            margin: 1rem 0;
+                        }
+                        
+                        .operation-section-enhanced h2 {
+                            font-size: 1.5rem;
+                        }
+                        
+                        .operation-section-enhanced h3 {
+                            font-size: 1.1rem;
+                        }
+                        
+                        .schedule-card {
+                            padding: 1rem;
+                        }
+                        
+                        .schedule-card h4 {
+                            font-size: 1rem;
+                        }
+                        
+                        .operation-content {
+                            font-size: 0.9rem;
+                        }
+                        
+                        .operation-content li {
+                            font-size: 0.85rem;
+                            padding: 0.4rem 0;
+                        }
+                    }
                 </style>
                 
                 <div class="placement-section-enhanced">
@@ -2114,9 +2432,14 @@
                 </div>
                 </div>
 
-                <h2 id="operation-methods">⚙️ 効果的な運転方法とタイミング</h2>
-                
-                <h3>🕐 時間帯別運転戦略</h3>
+                <div class="operation-section-enhanced">
+                    <h2 id="operation-methods">⚙️ 効果的な運転方法とタイミング</h2>
+                    
+                    <div class="operation-intro">
+                        <p>24時間を通じて最適な運転パターンを実現し、快適性と省エネを両立させる方法をご紹介します。</p>
+                    </div>
+                    
+                    <h3>🕐 時間帯別運転戦略</h3>
                 
                 <div class="operation-schedule">
                     <div class="schedule-card morning">
@@ -2179,6 +2502,7 @@
                             </ul>
                         </div>
                     </div>
+                </div>
                 </div>
 
                 <h2 id="troubleshooting">🔧 よくあるトラブルと解決法</h2>
