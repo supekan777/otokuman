@@ -1,0 +1,12 @@
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"Panasonic ヒーターレス気化式加湿機（中小容量タイプ）FE-KXY07-T","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/tina5750\/cabinet\/05808440\/imgrc0124819783.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/tina5750\/fe-kxy07-t\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/tina5750\/fe-kxy07-t\/","a_id":5147828,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1},{"id":2,"u_tx":"Yahoo!ショッピングで見る","u_bc":"#66a7ff","u_url":"https:\/\/shopping.yahoo.co.jp\/search?first=1\u0026p=Panasonic%20%E3%83%92%E3%83%BC%E3%82%BF%E3%83%BC%E3%83%AC%E3%82%B9%E6%B0%97%E5%8C%96%E5%BC%8F%E5%8A%A0%E6%B9%BF%E6%A9%9F%EF%BC%88%E4%B8%AD%E5%B0%8F%E5%AE%B9%E9%87%8F%E3%82%BF%E3%82%A4%E3%83%97%EF%BC%89FE-KXY07-T","a_id":5147829,"p_id":1225,"pl_id":27061,"pc_id":1925,"s_n":"yahoo","u_so":2}],"eid":"kyeCZ","s":"s"});
+</script>
+<div id="msmaflink-kyeCZ">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->
