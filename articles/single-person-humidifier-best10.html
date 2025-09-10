@@ -2861,7 +2861,309 @@
                 </section>
 
                 <section id="maintenance-simple" class="content-section">
-                    <h2><i class="fas fa-tools"></i> 一人暮らし向け簡単メンテナンス</h2>
+                    <style>
+                        .maintenance-enhanced {
+                            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                            border-radius: 20px;
+                            padding: 2.5rem;
+                            margin: 2rem 0;
+                            border: 2px solid rgba(34, 197, 94, 0.2);
+                            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.1);
+                        }
+                        
+                        .maintenance-title-enhanced {
+                            text-align: center;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .maintenance-title-enhanced h2 {
+                            font-size: 2rem;
+                            color: #15803d;
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+                        }
+                        
+                        .maintenance-title-enhanced h2 i {
+                            animation: tool-rotate 2s ease-in-out infinite alternate;
+                            color: #22c55e;
+                        }
+                        
+                        @keyframes tool-rotate {
+                            0% { transform: rotate(-10deg); }
+                            100% { transform: rotate(10deg); }
+                        }
+                        
+                        .maintenance-intro-enhanced {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 2rem;
+                            margin: 2rem 0;
+                            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+                            border-left: 5px solid #22c55e;
+                        }
+                        
+                        .maintenance-intro-text {
+                            font-size: 1.1rem;
+                            color: #166534;
+                            line-height: 1.8;
+                            text-align: center;
+                        }
+                        
+                        .maintenance-intro-text strong {
+                            color: #15803d;
+                            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                            padding: 0.3rem 0.8rem;
+                            border-radius: 20px;
+                            font-weight: 600;
+                        }
+                        
+                        .schedule-table-enhanced {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 1.5rem;
+                            margin: 2rem 0;
+                            overflow: hidden;
+                            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.1);
+                        }
+                        
+                        .schedule-table-enhanced h3 {
+                            color: #15803d;
+                            font-size: 1.3rem;
+                            margin-bottom: 1.5rem;
+                            text-align: center;
+                            position: relative;
+                        }
+                        
+                        .schedule-table-enhanced h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 60px;
+                            height: 3px;
+                            background: linear-gradient(90deg, #22c55e, #16a34a);
+                            border-radius: 2px;
+                        }
+                        
+                        .enhanced-maintenance-table {
+                            width: 100%;
+                            border-collapse: separate;
+                            border-spacing: 0;
+                            font-size: 0.9rem;
+                        }
+                        
+                        .enhanced-maintenance-table thead th {
+                            background: linear-gradient(135deg, #22c55e, #16a34a);
+                            color: white;
+                            padding: 1rem 0.8rem;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                        
+                        .enhanced-maintenance-table thead th:first-child {
+                            border-top-left-radius: 10px;
+                        }
+                        
+                        .enhanced-maintenance-table thead th:last-child {
+                            border-top-right-radius: 10px;
+                        }
+                        
+                        .enhanced-maintenance-table tbody td {
+                            padding: 0.8rem;
+                            text-align: center;
+                            border-bottom: 1px solid #d1fae5;
+                            background: white;
+                            transition: background-color 0.3s ease;
+                        }
+                        
+                        .enhanced-maintenance-table tbody tr:hover td {
+                            background: #f0fdf4;
+                        }
+                        
+                        .enhanced-maintenance-table tbody tr:last-child td:first-child {
+                            border-bottom-left-radius: 10px;
+                        }
+                        
+                        .enhanced-maintenance-table tbody tr:last-child td:last-child {
+                            border-bottom-right-radius: 10px;
+                        }
+                        
+                        .steps-container-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                            gap: 2rem;
+                            margin: 2rem 0;
+                        }
+                        
+                        .step-item-enhanced {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 2rem;
+                            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.1);
+                            border: 2px solid transparent;
+                            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .step-item-enhanced:hover {
+                            transform: translateY(-5px);
+                            border-color: #22c55e;
+                            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.2);
+                        }
+                        
+                        .step-item-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background: linear-gradient(90deg, #22c55e, #16a34a);
+                        }
+                        
+                        .step-number-enhanced {
+                            width: 50px;
+                            height: 50px;
+                            background: linear-gradient(135deg, #22c55e, #16a34a);
+                            color: white;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: bold;
+                            font-size: 1.2rem;
+                            margin-bottom: 1rem;
+                            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+                            animation: pulse-step 2s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-step {
+                            0%, 100% { transform: scale(1); }
+                            50% { transform: scale(1.05); }
+                        }
+                        
+                        .step-item-enhanced h4 {
+                            color: #15803d;
+                            font-size: 1.1rem;
+                            margin-bottom: 0.8rem;
+                        }
+                        
+                        .step-item-enhanced p {
+                            color: #166534;
+                            line-height: 1.6;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .time-badge-enhanced {
+                            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+                            color: #92400e;
+                            padding: 0.4rem 1rem;
+                            border-radius: 20px;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            display: inline-block;
+                            border: 2px solid rgba(251, 146, 60, 0.2);
+                        }
+                        
+                        .trouble-section-enhanced {
+                            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                            border-radius: 20px;
+                            padding: 2.5rem;
+                            margin: 2rem 0;
+                            border: 2px solid rgba(239, 68, 68, 0.2);
+                        }
+                        
+                        .trouble-section-enhanced h3 {
+                            color: #dc2626;
+                            font-size: 1.5rem;
+                            text-align: center;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .trouble-list-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 2rem;
+                        }
+                        
+                        .trouble-item-enhanced {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 2rem;
+                            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.1);
+                            border-left: 5px solid #ef4444;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                        
+                        .trouble-item-enhanced:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.15);
+                        }
+                        
+                        .trouble-item-enhanced h4 {
+                            color: #dc2626;
+                            font-size: 1.1rem;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .solution-enhanced {
+                            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                            padding: 1.5rem;
+                            border-radius: 10px;
+                            border: 2px solid rgba(34, 197, 94, 0.2);
+                        }
+                        
+                        .solution-enhanced p {
+                            margin: 0.5rem 0;
+                            color: #166534;
+                        }
+                        
+                        .solution-enhanced strong {
+                            color: #15803d;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .maintenance-enhanced {
+                                padding: 2rem 1.5rem;
+                            }
+                            
+                            .steps-container-enhanced {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+                            
+                            .trouble-list-enhanced {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+                            
+                            .enhanced-maintenance-table {
+                                font-size: 0.8rem;
+                            }
+                            
+                            .enhanced-maintenance-table thead th,
+                            .enhanced-maintenance-table tbody td {
+                                padding: 0.6rem 0.4rem;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="maintenance-enhanced">
+                        <div class="maintenance-title-enhanced">
+                            <h2><i class="fas fa-tools"></i> 一人暮らし向け簡単メンテナンス</h2>
+                        </div>
+                        
+                        <div class="maintenance-intro-enhanced">
+                            <p class="maintenance-intro-text">
+                                忙しい一人暮らしでも<strong>月1回15分</strong>の簡単お手入れで、年中快適な加湿環境をキープ！
+                                面倒なメンテナンスは一切なし、<strong>誰でもできる超簡単ステップ</strong>をご紹介します。
+                            </p>
+                        </div>
                     
                     <!-- キャラクター会話：メンテナンスについて -->
                     <div class="character-dialogue">
@@ -2882,10 +3184,9 @@
                         </div>
                     </div>
                     
-                    <div class="maintenance-schedule">
-                        <h3>忙しい一人暮らしの最低限メンテナンス</h3>
-                        <div class="schedule-table">
-                            <table>
+                        <div class="schedule-table-enhanced">
+                            <h3>忙しい一人暮らしの最低限メンテナンス</h3>
+                            <table class="enhanced-maintenance-table">
                                 <thead>
                                     <tr>
                                         <th>頻度</th>
@@ -2931,73 +3232,74 @@
                                     </tr>
                                 </tbody>
                             </table>
-                    </div>
+                        </div>
 
-                    <div class="quick-maintenance">
-                        <h3>5分でできる基本メンテナンス</h3>
-                        <div class="steps-container">
-                            <div class="step-item">
-                                <div class="step-number">1</div>
-                                <h4>水抜き＆すすぎ</h4>
-                                <p>古い水を捨て、タンクを水道水でゆすぐ</p>
-                                <div class="time-badge">1分</div>
-                            </div>
+                        <div class="schedule-table-enhanced">
+                            <h3>5分でできる基本メンテナンス</h3>
+                            <div class="steps-container-enhanced">
+                                <div class="step-item-enhanced">
+                                    <div class="step-number-enhanced">1</div>
+                                    <h4>水抜き＆すすぎ</h4>
+                                    <p>古い水を捨て、タンクを水道水でゆすぐ</p>
+                                    <div class="time-badge-enhanced">1分</div>
+                                </div>
 
-                            <div class="step-item">
-                                <div class="step-number">2</div>
-                                <h4>振動子・フィルター確認</h4>
-                                <p>白い汚れや異物がないかチェック</p>
-                                <div class="time-badge">1分</div>
-                            </div>
+                                <div class="step-item-enhanced">
+                                    <div class="step-number-enhanced">2</div>
+                                    <h4>振動子・フィルター確認</h4>
+                                    <p>白い汚れや異物がないかチェック</p>
+                                    <div class="time-badge-enhanced">1分</div>
+                                </div>
 
-                            <div class="step-item">
-                                <div class="step-number">3</div>
-                                <h4>簡単清拭</h4>
-                                <p>アルコールシートで本体を拭く</p>
-                                <div class="time-badge">2分</div>
-                            </div>
+                                <div class="step-item-enhanced">
+                                    <div class="step-number-enhanced">3</div>
+                                    <h4>簡単清拭</h4>
+                                    <p>アルコールシートで本体を拭く</p>
+                                    <div class="time-badge-enhanced">2分</div>
+                                </div>
 
-                            <div class="step-item">
-                                <div class="step-number">4</div>
-                                <h4>新しい水を補充</h4>
-                                <p>清潔な水を規定量まで入れる</p>
-                                <div class="time-badge">1分</div>
-                            </div>
+                                <div class="step-item-enhanced">
+                                    <div class="step-number-enhanced">4</div>
+                                    <h4>新しい水を補充</h4>
+                                    <p>清潔な水を規定量まで入れる</p>
+                                    <div class="time-badge-enhanced">1分</div>
+                                </div>
                         </div>
                     </div>
 
-                    <div class="trouble-quick-fix">
-                        <h3>よくあるトラブル即解決法</h3>
-                        <div class="trouble-list">
-                            <div class="trouble-item">
-                                <h4>🤧 白い粉が出る（超音波式）</h4>
-                                <div class="solution">
-                                    <p><strong>原因：</strong>水道水のミネラル分</p>
-                                    <p><strong>解決：</strong>精製水に変更、または2日に1回掃除</p>
+                        <div class="trouble-section-enhanced">
+                            <h3>よくあるトラブル即解決法</h3>
+                            <div class="trouble-list-enhanced">
+                                <div class="trouble-item-enhanced">
+                                    <h4>🤧 白い粉が出る（超音波式）</h4>
+                                    <div class="solution-enhanced">
+                                        <p><strong>原因：</strong>水道水のミネラル分</p>
+                                        <p><strong>解決：</strong>精製水に変更、または2日に1回掃除</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="trouble-item">
-                                <h4>💧 加湿されない</h4>
-                                <div class="solution">
-                                    <p><strong>原因：</strong>フィルター目詰まり、水量不足</p>
-                                    <p><strong>解決：</strong>フィルター掃除、水量確認</p>
+                                <div class="trouble-item-enhanced">
+                                    <h4>💧 加湿されない</h4>
+                                    <div class="solution-enhanced">
+                                        <p><strong>原因：</strong>フィルター目詰まり、水量不足</p>
+                                        <p><strong>解決：</strong>フィルター掃除、水量確認</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="trouble-item">
-                                <h4>🔊 音が大きい</h4>
-                                <div class="solution">
-                                    <p><strong>原因：</strong>設置面の振動、内部の汚れ</p>
-                                    <p><strong>解決：</strong>防振マット設置、内部清掃</p>
+                                <div class="trouble-item-enhanced">
+                                    <h4>🔊 音が大きい</h4>
+                                    <div class="solution-enhanced">
+                                        <p><strong>原因：</strong>設置面の振動、内部の汚れ</p>
+                                        <p><strong>解決：</strong>防振マット設置、内部清掃</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="trouble-item">
-                                <h4>🦠 臭いがする</h4>
-                                <div class="solution">
-                                    <p><strong>原因：</strong>雑菌繁殖、水の放置</p>
-                                    <p><strong>解決：</strong>クエン酸洗浄、毎日水交換</p>
+                                <div class="trouble-item-enhanced">
+                                    <h4>🦠 臭いがする</h4>
+                                    <div class="solution-enhanced">
+                                        <p><strong>原因：</strong>雑菌繁殖、水の放置</p>
+                                        <p><strong>解決：</strong>クエン酸洗浄、毎日水交換</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
