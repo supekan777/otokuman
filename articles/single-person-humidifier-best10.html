@@ -1948,37 +1948,293 @@
                         </div>
                     </div>
 
-                    <div class="savings-tips">
-                        <h3><i class="fas fa-piggy-bank"></i> 一人暮らしの節約テクニック</h3>
-                        <div class="tips-grid">
-                            <div class="tip-card">
-                                <h4>📅 使用時間を最適化</h4>
-                                <ul>
+                    <style>
+                        .savings-tips-enhanced {
+                            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+                            border-radius: 25px;
+                            padding: 2.5rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 15px 45px rgba(34,197,94,0.12);
+                            border: 3px solid rgba(34,197,94,0.2);
+                        }
+                        
+                        .savings-tips-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: -80px;
+                            left: -80px;
+                            width: 160px;
+                            height: 160px;
+                            background: radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%);
+                            animation: float-savings-orb 12s ease-in-out infinite;
+                        }
+                        
+                        @keyframes float-savings-orb {
+                            0%, 100% { transform: translate(0, 0) scale(1); }
+                            50% { transform: translate(40px, 30px) scale(1.2); }
+                        }
+                        
+                        .savings-title-enhanced {
+                            text-align: center;
+                            margin-bottom: 2.5rem;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        
+                        .savings-title-enhanced h3 {
+                            font-size: 2rem;
+                            font-weight: bold;
+                            background: linear-gradient(135deg, #16a34a, #22c55e, #059669);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            margin-bottom: 0.8rem;
+                            position: relative;
+                        }
+                        
+                        .savings-title-enhanced h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -8px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 100px;
+                            height: 4px;
+                            background: linear-gradient(90deg, #16a34a, #22c55e);
+                            border-radius: 2px;
+                            animation: pulse-savings-line 2.5s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-savings-line {
+                            0%, 100% { width: 100px; }
+                            50% { width: 140px; }
+                        }
+                        
+                        .tips-grid-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                            gap: 2rem;
+                            position: relative;
+                            z-index: 1;
+                        }
+                        
+                        .tip-card-enhanced {
+                            background: white;
+                            border-radius: 20px;
+                            padding: 2rem;
+                            position: relative;
+                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            box-shadow: 0 8px 25px rgba(34,197,94,0.08);
+                            border: 2px solid transparent;
+                            overflow: hidden;
+                        }
+                        
+                        .tip-card-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 6px;
+                            background: var(--tip-gradient);
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.5s ease;
+                        }
+                        
+                        .tip-card-enhanced:hover::before {
+                            transform: scaleX(1);
+                        }
+                        
+                        .tip-card-enhanced:hover {
+                            transform: translateY(-8px) scale(1.02);
+                            box-shadow: 0 20px 50px rgba(34,197,94,0.15);
+                            border-color: var(--tip-border);
+                        }
+                        
+                        .tip-time {
+                            --tip-gradient: linear-gradient(90deg, #3b82f6, #1d4ed8);
+                            --tip-border: #3b82f6;
+                        }
+                        
+                        .tip-smart {
+                            --tip-gradient: linear-gradient(90deg, #8b5cf6, #7c3aed);
+                            --tip-border: #8b5cf6;
+                        }
+                        
+                        .tip-maintenance {
+                            --tip-gradient: linear-gradient(90deg, #f59e0b, #d97706);
+                            --tip-border: #f59e0b;
+                        }
+                        
+                        .tip-card-header {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin-bottom: 1.5rem;
+                            padding-bottom: 1rem;
+                            border-bottom: 2px solid #f0fdf4;
+                        }
+                        
+                        .tip-emoji {
+                            font-size: 2.5rem;
+                            padding: 0.8rem;
+                            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 4px 12px rgba(34,197,94,0.1);
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .tip-card-enhanced:hover .tip-emoji {
+                            transform: scale(1.1) rotate(5deg);
+                            box-shadow: 0 6px 20px rgba(34,197,94,0.2);
+                        }
+                        
+                        .tip-card-title {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            color: #047857;
+                            margin: 0;
+                        }
+                        
+                        .tip-list {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0 0 1.5rem 0;
+                        }
+                        
+                        .tip-list li {
+                            padding: 0.8rem 0;
+                            margin-bottom: 0.8rem;
+                            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                            border-radius: 10px;
+                            padding-left: 2.5rem;
+                            position: relative;
+                            transition: all 0.3s ease;
+                            border-left: 3px solid #22c55e;
+                        }
+                        
+                        .tip-list li::before {
+                            content: '💡';
+                            position: absolute;
+                            left: 0.8rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1.1rem;
+                            animation: pulse-light 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-light {
+                            0%, 100% { transform: translateY(-50%) scale(1); }
+                            50% { transform: translateY(-50%) scale(1.2); }
+                        }
+                        
+                        .tip-list li:hover {
+                            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                            transform: translateX(8px);
+                            box-shadow: 0 4px 12px rgba(34,197,94,0.1);
+                        }
+                        
+                        .saving-amount-enhanced {
+                            background: linear-gradient(135deg, #16a34a, #22c55e);
+                            color: white;
+                            padding: 0.8rem 1.5rem;
+                            border-radius: 25px;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            box-shadow: 0 6px 20px rgba(34,197,94,0.3);
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .saving-amount-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                            transition: left 0.8s ease;
+                        }
+                        
+                        .tip-card-enhanced:hover .saving-amount-enhanced::before {
+                            left: 100%;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .savings-tips-enhanced {
+                                padding: 2rem 1.5rem;
+                                margin: 2rem 0;
+                            }
+                            
+                            .savings-title-enhanced h3 {
+                                font-size: 1.6rem;
+                            }
+                            
+                            .tips-grid-enhanced {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+                            
+                            .tip-card-enhanced {
+                                padding: 1.5rem;
+                            }
+                            
+                            .tip-emoji {
+                                font-size: 2rem;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="savings-tips savings-tips-enhanced">
+                        <div class="savings-title-enhanced">
+                            <h3><i class="fas fa-piggy-bank"></i> 一人暮らしの節約テクニック</h3>
+                        </div>
+                        <div class="tips-grid tips-grid-enhanced">
+                            <div class="tip-card tip-card-enhanced tip-time">
+                                <div class="tip-card-header">
+                                    <div class="tip-emoji">📅</div>
+                                    <h4 class="tip-card-title">使用時間を最適化</h4>
+                                </div>
+                                <ul class="tip-list">
                                     <li>就寝中のみ使用（6時間）</li>
                                     <li>在宅時のみ使用</li>
                                     <li>湿度40%で十分</li>
                                 </ul>
-                                <div class="saving-amount">月150円節約</div>
+                                <div class="saving-amount saving-amount-enhanced">月150円節約</div>
                             </div>
 
-                            <div class="tip-card">
-                                <h4>🤖 スマート機能活用</h4>
-                                <ul>
+                            <div class="tip-card tip-card-enhanced tip-smart">
+                                <div class="tip-card-header">
+                                    <div class="tip-emoji">🤖</div>
+                                    <h4 class="tip-card-title">スマート機能活用</h4>
+                                </div>
+                                <ul class="tip-list">
                                     <li>湿度自動コントロール</li>
                                     <li>ecoモードで省エネ運転</li>
                                     <li>タイマー機能で無駄を減らす</li>
                                 </ul>
-                                <div class="saving-amount">月150円節約</div>
+                                <div class="saving-amount saving-amount-enhanced">月150円節約</div>
                             </div>
 
-                            <div class="tip-card">
-                                <h4>🧠 適切なメンテナンス</h4>
-                                <ul>
+                            <div class="tip-card tip-card-enhanced tip-maintenance">
+                                <div class="tip-card-header">
+                                    <div class="tip-emoji">🧠</div>
+                                    <h4 class="tip-card-title">適切なメンテナンス</h4>
+                                </div>
+                                <ul class="tip-list">
                                     <li>フィルター適切交換</li>
                                     <li>定期的な清掃で効率維持</li>
                                     <li>水使い分けで長寿命化</li>
                                 </ul>
-                                <div class="saving-amount">年2,000円節約</div>
+                                <div class="saving-amount saving-amount-enhanced">年2,000円節約</div>
                             </div>
                         </div>
                     </div>
