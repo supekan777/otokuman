@@ -295,74 +295,342 @@
                     </div>
                 </div>
 
-                <h3>💡 判断基準マトリックス</h3>
+                <style>
+                    .decision-matrix-enhanced {
+                        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        border: 2px solid rgba(59, 130, 246, 0.2);
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+                    }
+                    
+                    .matrix-title-enhanced {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .matrix-title-enhanced h3 {
+                        font-size: 1.8rem;
+                        color: #1e40af;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+                    
+                    .matrix-title-enhanced .subtitle {
+                        color: #475569;
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+                    
+                    .matrix-cards-enhanced {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                        gap: 2rem;
+                        margin-top: 2rem;
+                    }
+                    
+                    .matrix-card-enhanced {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                        border: 2px solid transparent;
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .matrix-card-enhanced:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+                    }
+                    
+                    .matrix-card-enhanced.integrated {
+                        border-color: rgba(16, 185, 129, 0.3);
+                    }
+                    
+                    .matrix-card-enhanced.integrated::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #10b981, #059669);
+                    }
+                    
+                    .matrix-card-enhanced.separate {
+                        border-color: rgba(245, 158, 11, 0.3);
+                    }
+                    
+                    .matrix-card-enhanced.separate::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #f59e0b, #d97706);
+                    }
+                    
+                    .matrix-card-title {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        margin-bottom: 1.5rem;
+                        text-align: center;
+                        color: #1f2937;
+                    }
+                    
+                    .matrix-card-enhanced.integrated .matrix-card-title {
+                        color: #059669;
+                    }
+                    
+                    .matrix-card-enhanced.separate .matrix-card-title {
+                        color: #d97706;
+                    }
+                    
+                    .matrix-section {
+                        margin: 1.5rem 0;
+                        padding: 1.2rem;
+                        border-radius: 10px;
+                        transition: transform 0.2s ease;
+                    }
+                    
+                    .matrix-section:hover {
+                        transform: scale(1.02);
+                    }
+                    
+                    .matrix-section.conditions {
+                        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                        border-left: 4px solid #22c55e;
+                    }
+                    
+                    .matrix-section.advantages {
+                        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                        border-left: 4px solid #3b82f6;
+                    }
+                    
+                    .matrix-section.disadvantages {
+                        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                        border-left: 4px solid #ef4444;
+                    }
+                    
+                    .matrix-section h5 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        margin-bottom: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .matrix-section.conditions h5 {
+                        color: #166534;
+                    }
+                    
+                    .matrix-section.advantages h5 {
+                        color: #1e40af;
+                    }
+                    
+                    .matrix-section.disadvantages h5 {
+                        color: #dc2626;
+                    }
+                    
+                    .matrix-section ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    .matrix-section li {
+                        padding: 0.4rem 0;
+                        position: relative;
+                        padding-left: 1.5rem;
+                        color: #374151;
+                        line-height: 1.5;
+                        transition: color 0.2s ease;
+                    }
+                    
+                    .matrix-section li:hover {
+                        color: #1f2937;
+                    }
+                    
+                    .matrix-section.conditions li::before {
+                        content: '✨';
+                        position: absolute;
+                        left: 0;
+                        color: #22c55e;
+                    }
+                    
+                    .matrix-section.advantages li::before {
+                        content: '💎';
+                        position: absolute;
+                        left: 0;
+                        color: #3b82f6;
+                    }
+                    
+                    .matrix-section.disadvantages li::before {
+                        content: '⚠️';
+                        position: absolute;
+                        left: 0;
+                        color: #ef4444;
+                    }
+                    
+                    .matrix-comparison-banner {
+                        background: linear-gradient(135deg, #fefce8, #fef3c7);
+                        border: 2px solid rgba(245, 158, 11, 0.3);
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        margin: 2rem 0;
+                        text-align: center;
+                    }
+                    
+                    .matrix-comparison-banner h4 {
+                        color: #92400e;
+                        margin-bottom: 0.8rem;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .matrix-comparison-banner p {
+                        color: #78350f;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .decision-matrix-enhanced {
+                            padding: 2rem 1.5rem;
+                        }
+                        
+                        .matrix-cards-enhanced {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
+                        
+                        .matrix-card-enhanced {
+                            padding: 1.5rem;
+                        }
+                        
+                        .matrix-title-enhanced h3 {
+                            font-size: 1.5rem;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                        }
+                        
+                        .matrix-section {
+                            margin: 1rem 0;
+                            padding: 1rem;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .decision-matrix-enhanced {
+                            padding: 1.5rem 1rem;
+                            margin: 1rem 0;
+                        }
+                        
+                        .matrix-card-enhanced {
+                            padding: 1.2rem;
+                        }
+                        
+                        .matrix-section {
+                            padding: 0.8rem;
+                        }
+                        
+                        .matrix-section li {
+                            font-size: 0.9rem;
+                        }
+                    }
+                </style>
                 
-                <div class="decision-matrix">
-                    <div class="matrix-card integrated">
-                        <h4>一体型がおすすめ</h4>
-                        <div class="conditions">
-                            <h5>✅ こんな方に最適</h5>
-                            <ul>
-                                <li>部屋の広さ：6-12畳</li>
-                                <li>設置場所：限られたスペース</li>
-                                <li>予算：10-25万円</li>
-                                <li>メンテナンス：簡単重視</li>
-                                <li>電気代：節約重視</li>
-                            </ul>
+                <div class="decision-matrix-enhanced">
+                    <div class="matrix-title-enhanced">
+                        <h3>💡 判断基準マトリックス</h3>
+                        <p class="subtitle">あなたにぴったりの選択肢を見つけよう</p>
+                    </div>
+                    
+                    <div class="matrix-cards-enhanced">
+                        <div class="matrix-card-enhanced integrated">
+                            <h4 class="matrix-card-title">一体型がおすすめ</h4>
+                            
+                            <div class="matrix-section conditions">
+                                <h5>✅ こんな方に最適</h5>
+                                <ul>
+                                    <li>部屋の広さ：6-12畳</li>
+                                    <li>設置場所：限られたスペース</li>
+                                    <li>予算：10-25万円</li>
+                                    <li>メンテナンス：簡単重視</li>
+                                    <li>電気代：節約重視</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="matrix-section advantages">
+                                <h5>🎯 メリット</h5>
+                                <ul>
+                                    <li>省スペース（1台で完結）</li>
+                                    <li>設置・配線が簡単</li>
+                                    <li>電気代が安い</li>
+                                    <li>デザインが統一される</li>
+                                    <li>機能連携で効率的</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="matrix-section disadvantages">
+                                <h5>⚠️ デメリット</h5>
+                                <ul>
+                                    <li>故障時は全機能停止</li>
+                                    <li>広い部屋では力不足</li>
+                                    <li>交換部品が高い</li>
+                                    <li>機種選択肢が少ない</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="advantages">
-                            <h5>🎯 メリット</h5>
-                            <ul>
-                                <li>省スペース（1台で完結）</li>
-                                <li>設置・配線が簡単</li>
-                                <li>電気代が安い</li>
-                                <li>デザインが統一される</li>
-                                <li>機能連携で効率的</li>
-                            </ul>
-                        </div>
-                        <div class="disadvantages">
-                            <h5>⚠️ デメリット</h5>
-                            <ul>
-                                <li>故障時は全機能停止</li>
-                                <li>広い部屋では力不足</li>
-                                <li>交換部品が高い</li>
-                                <li>機種選択肢が少ない</li>
-                            </ul>
+
+                        <div class="matrix-card-enhanced separate">
+                            <h4 class="matrix-card-title">別々購入がおすすめ</h4>
+                            
+                            <div class="matrix-section conditions">
+                                <h5>✅ こんな方に最適</h5>
+                                <ul>
+                                    <li>部屋の広さ：12畳以上</li>
+                                    <li>設置場所：余裕あり</li>
+                                    <li>予算：15-40万円</li>
+                                    <li>性能：最高性能重視</li>
+                                    <li>用途：専門的な対策</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="matrix-section advantages">
+                                <h5>🎯 メリット</h5>
+                                <ul>
+                                    <li>それぞれ最高性能</li>
+                                    <li>故障時のリスク分散</li>
+                                    <li>機種選択肢が豊富</li>
+                                    <li>配置場所を最適化</li>
+                                    <li>段階的な購入可能</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="matrix-section disadvantages">
+                                <h5>⚠️ デメリット</h5>
+                                <ul>
+                                    <li>設置場所を多く占有</li>
+                                    <li>電気代が2倍</li>
+                                    <li>メンテナンスが複雑</li>
+                                    <li>初期費用が高い</li>
+                                    <li>配線・設置が面倒</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="matrix-card separate">
-                        <h4>別々購入がおすすめ</h4>
-                        <div class="conditions">
-                            <h5>✅ こんな方に最適</h5>
-                            <ul>
-                                <li>部屋の広さ：12畳以上</li>
-                                <li>設置場所：余裕あり</li>
-                                <li>予算：15-40万円</li>
-                                <li>性能：最高性能重視</li>
-                                <li>用途：専門的な対策</li>
-                            </ul>
-                        </div>
-                        <div class="advantages">
-                            <h5>🎯 メリット</h5>
-                            <ul>
-                                <li>それぞれ最高性能</li>
-                                <li>故障時のリスク分散</li>
-                                <li>機種選択肢が豊富</li>
-                                <li>配置場所を最適化</li>
-                                <li>段階的な購入可能</li>
-                            </ul>
-                        </div>
-                        <div class="disadvantages">
-                            <h5>⚠️ デメリット</h5>
-                            <ul>
-                                <li>設置場所を多く占有</li>
-                                <li>電気代が2倍</li>
-                                <li>メンテナンスが複雑</li>
-                                <li>初期費用が高い</li>
-                                <li>配線・設置が面倒</li>
-                            </ul>
-                        </div>
+                    
+                    <div class="matrix-comparison-banner">
+                        <h4>🤔 まだ迷っている方へ</h4>
+                        <p>部屋の広さが8-10畳の場合は、まず一体型から始めて、満足できなければ別々購入に切り替えるのがおすすめです。</p>
                     </div>
                 </div>
 
