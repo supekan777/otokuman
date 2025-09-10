@@ -1608,6 +1608,150 @@
                         </div>
                     </div>
                     
+                    <style>
+                        .cost-analysis-explanation {
+                            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+                            border-radius: 20px;
+                            padding: 2.5rem;
+                            margin: 3rem 0;
+                            border-left: 6px solid #f59e0b;
+                            box-shadow: 0 8px 25px rgba(245,158,11,0.15);
+                            position: relative;
+                        }
+                        
+                        .cost-analysis-explanation::before {
+                            content: '💰';
+                            position: absolute;
+                            top: -15px;
+                            left: 20px;
+                            background: #f59e0b;
+                            color: white;
+                            padding: 10px;
+                            border-radius: 50%;
+                            font-size: 1.2rem;
+                            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+                        }
+                        
+                        .cost-title {
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                            color: #92400e;
+                            margin-bottom: 1.5rem;
+                            margin-left: 2rem;
+                        }
+                        
+                        .cost-text {
+                            color: #451a03;
+                            line-height: 1.8;
+                            font-size: 1.05rem;
+                            margin-bottom: 1.5rem;
+                        }
+                        
+                        .cost-factors {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                            gap: 1rem;
+                            margin: 2rem 0;
+                        }
+                        
+                        .cost-factor {
+                            background: white;
+                            padding: 1.2rem;
+                            border-radius: 12px;
+                            border-left: 3px solid #f59e0b;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 2px 8px rgba(245,158,11,0.1);
+                        }
+                        
+                        .cost-factor:hover {
+                            background: #fef3c7;
+                            transform: translateX(5px);
+                            box-shadow: 0 4px 15px rgba(245,158,11,0.2);
+                        }
+                        
+                        .cost-factor strong {
+                            color: #f59e0b;
+                            font-size: 1.1rem;
+                        }
+                        
+                        .cost-insight {
+                            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+                            border: 2px solid #16a34a;
+                            border-radius: 15px;
+                            padding: 1.5rem;
+                            margin: 2rem 0;
+                            position: relative;
+                        }
+                        
+                        .cost-insight::before {
+                            content: '💡';
+                            position: absolute;
+                            top: -12px;
+                            left: 15px;
+                            background: #16a34a;
+                            color: white;
+                            padding: 8px;
+                            border-radius: 50%;
+                            font-size: 1rem;
+                        }
+                        
+                        .insight-title {
+                            font-weight: bold;
+                            color: #047857;
+                            margin-bottom: 0.5rem;
+                            margin-left: 2rem;
+                        }
+                        
+                        .insight-text {
+                            color: #065f46;
+                            line-height: 1.7;
+                            margin-left: 2rem;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .cost-analysis-explanation {
+                                padding: 2rem 1.5rem;
+                            }
+                            
+                            .cost-factors {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="cost-analysis-explanation">
+                        <h4 class="cost-title">一人暮らしの年間総コストを徹底分析</h4>
+                        <p class="cost-text">
+                            加湿器のコストは初期費用だけでなく、<strong>電気代・メンテナンス費用・買い替えサイクル</strong>を含めた年間総コストで判断することが重要です。一人暮らしの6畳ワンルームでの実使用を想定し、各機種の真のコストパフォーマンスを比較しています。
+                        </p>
+                        
+                        <div class="cost-factors">
+                            <div class="cost-factor">
+                                <strong>初期費用：</strong>本体価格（実売価格ベース）
+                            </div>
+                            <div class="cost-factor">
+                                <strong>年間電気代：</strong>1日8時間×365日使用で算出
+                            </div>
+                            <div class="cost-factor">
+                                <strong>メンテナンス費：</strong>フィルター・除菌剤等の年間費用
+                            </div>
+                            <div class="cost-factor">
+                                <strong>年間総コスト：</strong>1年間の実質負担額
+                            </div>
+                        </div>
+                        
+                        <div class="cost-insight">
+                            <div class="insight-title">コスパ重視の選び方</div>
+                            <p class="insight-text">
+                                初期費用が安くても電気代が高いと、年間では割高になることがあります。表の「年間総コスト」で比較すると、長期的にお得な機種が見えてきます。特に一人暮らしでは<strong>2-3年使用する前提</strong>で選ぶのがおすすめです。
+                            </p>
+                        </div>
+                        
+                        <p class="cost-text" style="margin-top: 2rem; font-style: italic; color: #7c2d12;">
+                            🔍 <strong>分析ポイント：</strong>下記の年間コスト比較表では、各機種の真の経済性が一目でわかります。「パナソニック FE-KXY07-W」が総合1位となっている理由も数値で確認できます。
+                        </p>
+                    </div>
+                    
                     <div class="cost-chart-container">
                         <canvas id="costComparisonChart" width="400" height="200"></canvas>
                         <div class="chart-source">
