@@ -1758,21 +1758,324 @@
                             <small>※データ出典：<a href="https://www.irisohyama.co.jp/products/electrical-appliances/seasonal-appliances/humidifier/large-humidifier-vaporization-hybrid/vaporization-hybrid-humidifier-no-ions/" target="_blank" rel="noopener">アイリスオーヤマ公式</a>、<a href="https://panasonic.jp/kashitsu/c-db/products/FE-KXY07/spec.html" target="_blank" rel="noopener">パナソニック公式</a>、<a href="https://www.dainichi-net.co.jp/products/humidifier/lineup/rx2024/" target="_blank" rel="noopener">ダイニチ公式</a>、全国家庭電気製品公正取引協議会電力料金目安単価（31円/kWh）、2025年調査</small>
                         </div>
 
-                    <div class="cost-breakdown">
-                        <h3>年間コスト比較（6畳・1日8時間使用）【‥2025年最新】</h3>
-                        <div class="cost-table">
-                            <table>
+                    <style>
+                        .cost-breakdown-enhanced {
+                            background: linear-gradient(145deg, #fff7ed, #fed7aa);
+                            border-radius: 30px;
+                            padding: 3rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 20px 60px rgba(245,158,11,0.15);
+                            border: 3px solid rgba(245,158,11,0.3);
+                        }
+                        
+                        .cost-breakdown-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            right: -50%;
+                            width: 200px;
+                            height: 200px;
+                            background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+                            animation: rotate-cost-orb 15s linear infinite;
+                        }
+                        
+                        @keyframes rotate-cost-orb {
+                            0% { transform: rotate(0deg) scale(1); }
+                            50% { transform: rotate(180deg) scale(1.1); }
+                            100% { transform: rotate(360deg) scale(1); }
+                        }
+                        
+                        .cost-breakdown-title {
+                            text-align: center;
+                            margin-bottom: 2.5rem;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        
+                        .cost-breakdown-title h3 {
+                            font-size: 2.2rem;
+                            font-weight: bold;
+                            background: linear-gradient(135deg, #f59e0b, #d97706, #92400e);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            margin-bottom: 1rem;
+                            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                            position: relative;
+                        }
+                        
+                        .cost-breakdown-title h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -8px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 80px;
+                            height: 4px;
+                            background: linear-gradient(90deg, #f59e0b, #d97706);
+                            border-radius: 2px;
+                            animation: pulse-cost-line 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-cost-line {
+                            0%, 100% { width: 80px; opacity: 1; }
+                            50% { width: 120px; opacity: 0.8; }
+                        }
+                        
+                        .cost-table-enhanced {
+                            background: white;
+                            border-radius: 20px;
+                            padding: 2rem;
+                            box-shadow: 0 15px 40px rgba(245,158,11,0.1);
+                            position: relative;
+                            z-index: 1;
+                            overflow: hidden;
+                        }
+                        
+                        .cost-table-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 6px;
+                            background: linear-gradient(90deg, #f59e0b, #d97706, #f59e0b);
+                            background-size: 200% 100%;
+                            animation: shimmer-cost 3s ease-in-out infinite;
+                        }
+                        
+                        @keyframes shimmer-cost {
+                            0% { background-position: -200% 0; }
+                            100% { background-position: 200% 0; }
+                        }
+                        
+                        .enhanced-cost-table {
+                            width: 100%;
+                            border-collapse: separate;
+                            border-spacing: 0;
+                            margin: 0;
+                        }
+                        
+                        .enhanced-cost-table thead th {
+                            background: linear-gradient(135deg, #f59e0b, #d97706);
+                            color: white;
+                            padding: 1.2rem 1rem;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            text-align: center;
+                            position: relative;
+                            border: none;
+                        }
+                        
+                        .enhanced-cost-table thead th:first-child {
+                            border-top-left-radius: 15px;
+                        }
+                        
+                        .enhanced-cost-table thead th:last-child {
+                            border-top-right-radius: 15px;
+                        }
+                        
+                        .enhanced-cost-table thead th::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                            opacity: 0;
+                            transition: opacity 0.3s ease;
+                        }
+                        
+                        .enhanced-cost-table thead th:hover::before {
+                            opacity: 1;
+                        }
+                        
+                        .enhanced-cost-table tbody tr {
+                            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            position: relative;
+                        }
+                        
+                        .enhanced-cost-table tbody tr:hover {
+                            transform: scale(1.02);
+                            box-shadow: 0 8px 25px rgba(245,158,11,0.2);
+                            z-index: 10;
+                        }
+                        
+                        .enhanced-cost-table tbody tr.cost-best-enhanced {
+                            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+                            border: 2px solid #22c55e;
+                            position: relative;
+                        }
+                        
+                        .enhanced-cost-table tbody tr.cost-best-enhanced::before {
+                            content: '🏆 最安値';
+                            position: absolute;
+                            top: -12px;
+                            left: 20px;
+                            background: #22c55e;
+                            color: white;
+                            padding: 4px 12px;
+                            border-radius: 20px;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            box-shadow: 0 4px 12px rgba(34,197,94,0.3);
+                            animation: bounce-badge 2s ease-in-out infinite;
+                        }
+                        
+                        @keyframes bounce-badge {
+                            0%, 100% { transform: translateY(0); }
+                            50% { transform: translateY(-3px); }
+                        }
+                        
+                        .enhanced-cost-table tbody tr:nth-child(even) {
+                            background: linear-gradient(135deg, #fefbf3, #fef3cd);
+                        }
+                        
+                        .enhanced-cost-table tbody tr:nth-child(odd) {
+                            background: white;
+                        }
+                        
+                        .enhanced-cost-table td {
+                            padding: 1.2rem 1rem;
+                            text-align: center;
+                            font-size: 1rem;
+                            border-bottom: 1px solid rgba(245,158,11,0.1);
+                            position: relative;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .enhanced-cost-table td:first-child {
+                            font-weight: bold;
+                            color: #92400e;
+                            text-align: left;
+                            font-size: 1.05rem;
+                        }
+                        
+                        .enhanced-cost-table td:not(:first-child) {
+                            font-weight: 600;
+                            color: #451a03;
+                        }
+                        
+                        .enhanced-cost-table td:last-child {
+                            background: linear-gradient(135deg, #fef3c7, #fde68a);
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            color: #92400e;
+                            position: relative;
+                            border-left: 3px solid #f59e0b;
+                        }
+                        
+                        .enhanced-cost-table tbody tr:last-child td {
+                            border-bottom: none;
+                        }
+                        
+                        .enhanced-cost-table tbody tr:last-child td:first-child {
+                            border-bottom-left-radius: 15px;
+                        }
+                        
+                        .enhanced-cost-table tbody tr:last-child td:last-child {
+                            border-bottom-right-radius: 15px;
+                        }
+                        
+                        .cost-legend {
+                            display: flex;
+                            justify-content: center;
+                            gap: 2rem;
+                            margin-top: 2rem;
+                            flex-wrap: wrap;
+                        }
+                        
+                        .legend-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            background: white;
+                            padding: 0.8rem 1.2rem;
+                            border-radius: 25px;
+                            box-shadow: 0 4px 15px rgba(245,158,11,0.1);
+                            border: 2px solid rgba(245,158,11,0.2);
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .legend-item:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 6px 20px rgba(245,158,11,0.2);
+                        }
+                        
+                        .legend-color {
+                            width: 16px;
+                            height: 16px;
+                            border-radius: 50%;
+                            flex-shrink: 0;
+                        }
+                        
+                        .legend-initial { background: linear-gradient(135deg, #22c55e, #16a34a); }
+                        .legend-electric { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+                        .legend-maintenance { background: linear-gradient(135deg, #f59e0b, #d97706); }
+                        .legend-total { background: linear-gradient(135deg, #dc2626, #991b1b); }
+                        
+                        .legend-text {
+                            font-size: 0.9rem;
+                            font-weight: 500;
+                            color: #92400e;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .cost-breakdown-enhanced {
+                                padding: 2rem 1.5rem;
+                                margin: 2rem 0;
+                            }
+                            
+                            .cost-breakdown-title h3 {
+                                font-size: 1.8rem;
+                            }
+                            
+                            .cost-table-enhanced {
+                                padding: 1rem;
+                                overflow-x: auto;
+                            }
+                            
+                            .enhanced-cost-table {
+                                min-width: 600px;
+                            }
+                            
+                            .enhanced-cost-table thead th,
+                            .enhanced-cost-table td {
+                                padding: 0.8rem 0.5rem;
+                                font-size: 0.9rem;
+                            }
+                            
+                            .cost-legend {
+                                flex-direction: column;
+                                gap: 1rem;
+                            }
+                            
+                            .legend-item {
+                                justify-content: center;
+                            }
+                        }
+                    </style>
+                    
+                    <div class="cost-breakdown cost-breakdown-enhanced">
+                        <div class="cost-breakdown-title">
+                            <h3><i class="fas fa-calculator"></i> 年間コスト比較（6畳・1日8時間使用）【‥2025年最新】</h3>
+                        </div>
+                        <div class="cost-table cost-table-enhanced">
+                            <table class="enhanced-cost-table">
                                 <thead>
                                     <tr>
-                                        <th>機種</th>
-                                        <th>初期費用</th>
-                                        <th>年間電気代</th>
-                                        <th>メンテナンス費</th>
-                                        <th>年間総コスト</th>
+                                        <th><i class="fas fa-desktop"></i> 機種</th>
+                                        <th><i class="fas fa-shopping-cart"></i> 初期費用</th>
+                                        <th><i class="fas fa-bolt"></i> 年間電気代</th>
+                                        <th><i class="fas fa-tools"></i> メンテナンス費</th>
+                                        <th><i class="fas fa-yen-sign"></i> 年間総コスト</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="cost-best">
+                                    <tr class="cost-best cost-best-enhanced">
                                         <td>パナソニック FE-KXY07-W</td>
                                         <td>¥16,800</td>
                                         <td>¥972</td>
@@ -1809,6 +2112,26 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            
+                            <div class="cost-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color legend-initial"></div>
+                                    <span class="legend-text">初期費用</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-electric"></div>
+                                    <span class="legend-text">年間電気代</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-maintenance"></div>
+                                    <span class="legend-text">メンテナンス費</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color legend-total"></div>
+                                    <span class="legend-text">年間総コスト</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="savings-tips">
