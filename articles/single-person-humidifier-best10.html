@@ -2331,69 +2331,237 @@
                         
                         .layout-diagram-enhanced {
                             background: #f8fafc;
-                            border: 2px dashed #cbd5e1;
+                            border: 3px solid #3b82f6;
                             border-radius: 15px;
-                            padding: 2rem;
+                            padding: 1.5rem;
                             position: relative;
-                            min-height: 250px;
+                            min-height: 350px;
+                        }
+                        
+                        .layout-diagram-enhanced::before {
+                            content: '6畳ワンルーム（約10㎡）';
+                            position: absolute;
+                            top: -12px;
+                            left: 20px;
+                            background: #3b82f6;
+                            color: white;
+                            padding: 4px 12px;
+                            border-radius: 12px;
+                            font-size: 0.8rem;
+                            font-weight: 600;
                         }
                         
                         .room-grid-enhanced {
-                            display: grid;
-                            grid-template-columns: repeat(4, 1fr);
-                            grid-template-rows: repeat(3, 1fr);
-                            gap: 1rem;
-                            height: 200px;
+                            width: 100%;
+                            height: 300px;
                             position: relative;
+                            background: linear-gradient(135deg, #ffffff, #f1f5f9);
+                            border-radius: 10px;
+                            overflow: hidden;
                         }
                         
+                        /* 部屋の基本構造 */
+                        .room-structure {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        
+                        .door {
+                            position: absolute;
+                            bottom: 0;
+                            left: 20px;
+                            width: 60px;
+                            height: 8px;
+                            background: #8b5cf6;
+                            border-radius: 4px 4px 0 0;
+                        }
+                        
+                        .door::after {
+                            content: 'ドア';
+                            position: absolute;
+                            bottom: 10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 0.7rem;
+                            color: #8b5cf6;
+                            font-weight: 600;
+                        }
+                        
+                        .window {
+                            position: absolute;
+                            top: 0;
+                            right: 20px;
+                            width: 80px;
+                            height: 8px;
+                            background: #06b6d4;
+                            border-radius: 0 0 4px 4px;
+                        }
+                        
+                        .window::after {
+                            content: '窓';
+                            position: absolute;
+                            top: 10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            font-size: 0.7rem;
+                            color: #06b6d4;
+                            font-weight: 600;
+                        }
+                        
+                        .ac-unit {
+                            position: absolute;
+                            top: 15px;
+                            left: 20px;
+                            width: 50px;
+                            height: 20px;
+                            background: #64748b;
+                            border-radius: 6px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 0.6rem;
+                            color: white;
+                            font-weight: 600;
+                        }
+                        
+                        .ac-wind {
+                            position: absolute;
+                            top: 35px;
+                            left: 35px;
+                            width: 0;
+                            height: 0;
+                            border-left: 20px solid #64748b;
+                            border-top: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                            opacity: 0.3;
+                        }
+                        
+                        /* 家具配置 */
                         .furniture-enhanced {
-                            border-radius: 10px;
+                            position: absolute;
+                            border-radius: 8px;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             font-weight: 600;
-                            font-size: 0.9rem;
+                            font-size: 0.75rem;
                             color: white;
                             text-shadow: 0 1px 2px rgba(0,0,0,0.1);
                             transition: all 0.3s ease;
-                            position: relative;
-                            overflow: hidden;
-                        }
-                        
-                        .furniture-enhanced::before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: -100%;
-                            width: 100%;
-                            height: 100%;
-                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-                            transition: left 0.8s ease;
-                        }
-                        
-                        .furniture-enhanced:hover::before {
-                            left: 100%;
+                            cursor: pointer;
+                            border: 2px solid rgba(255,255,255,0.3);
                         }
                         
                         .furniture-enhanced:hover {
                             transform: scale(1.05);
-                            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                            z-index: 10;
                         }
                         
-                        .bed { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-                        .desk { background: linear-gradient(135deg, #f59e0b, #d97706); }
-                        .humidifier.optimal { 
-                            background: linear-gradient(135deg, #22c55e, #16a34a);
-                            animation: pulse-optimal 2s ease-in-out infinite;
+                        /* 具体的な家具配置 */
+                        .bed {
+                            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+                            width: 80px;
+                            height: 60px;
+                            bottom: 30px;
+                            right: 30px;
                         }
-                        .humidifier.alternative { background: linear-gradient(135deg, #06b6d4, #0891b2); }
-                        .tv { background: linear-gradient(135deg, #64748b, #475569); }
-                        .closet { background: linear-gradient(135deg, #dc2626, #991b1b); }
+                        
+                        .desk {
+                            background: linear-gradient(135deg, #f59e0b, #d97706);
+                            width: 60px;
+                            height: 40px;
+                            top: 60px;
+                            right: 30px;
+                        }
+                        
+                        .tv {
+                            background: linear-gradient(135deg, #64748b, #475569);
+                            width: 50px;
+                            height: 30px;
+                            top: 40px;
+                            left: 30px;
+                        }
+                        
+                        .closet {
+                            background: linear-gradient(135deg, #dc2626, #991b1b);
+                            width: 40px;
+                            height: 80px;
+                            bottom: 30px;
+                            left: 30px;
+                        }
+                        
+                        /* 加湿器配置 */
+                        .humidifier.optimal {
+                            background: linear-gradient(135deg, #22c55e, #16a34a);
+                            width: 30px;
+                            height: 30px;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            animation: pulse-optimal 2s ease-in-out infinite;
+                            border: 3px solid #16a34a;
+                            z-index: 5;
+                        }
+                        
+                        .humidifier.optimal::after {
+                            content: '✓ 推奨';
+                            position: absolute;
+                            top: -25px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: #16a34a;
+                            color: white;
+                            padding: 2px 8px;
+                            border-radius: 12px;
+                            font-size: 0.6rem;
+                            white-space: nowrap;
+                        }
+                        
+                        .bad-zone {
+                            position: absolute;
+                            background: rgba(239, 68, 68, 0.2);
+                            border: 2px dashed #ef4444;
+                            border-radius: 6px;
+                            pointer-events: none;
+                        }
+                        
+                        .bad-zone.near-window {
+                            top: 0;
+                            right: 0;
+                            width: 120px;
+                            height: 80px;
+                        }
+                        
+                        .bad-zone.near-bed {
+                            bottom: 20px;
+                            right: 120px;
+                            width: 60px;
+                            height: 80px;
+                        }
+                        
+                        .bad-zone::after {
+                            content: '❌NG';
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                            color: #ef4444;
+                            font-size: 0.6rem;
+                            font-weight: 600;
+                        }
                         
                         @keyframes pulse-optimal {
-                            0%, 100% { transform: scale(1); }
-                            50% { transform: scale(1.05); }
+                            0%, 100% { 
+                                transform: translate(-50%, -50%) scale(1);
+                                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+                            }
+                            50% { 
+                                transform: translate(-50%, -50%) scale(1.05);
+                                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+                            }
                         }
                         
                         .placement-rules-enhanced {
@@ -2646,12 +2814,29 @@
                                 <h3>理想的な設置レイアウト</h3>
                                 <div class="layout-diagram layout-diagram-enhanced">
                                     <div class="room-grid room-grid-enhanced">
+                                        <!-- 部屋の基本構造 -->
+                                        <div class="room-structure">
+                                            <div class="door">ドア</div>
+                                            <div class="window">窓</div>
+                                            <div class="ac-unit">エアコン</div>
+                                        </div>
+                                        
+                                        <!-- 家具配置 -->
                                         <div class="furniture furniture-enhanced bed">ベッド</div>
                                         <div class="furniture furniture-enhanced desk">デスク</div>
-                                        <div class="furniture furniture-enhanced humidifier optimal">加湿器（推奨）</div>
-                                        <div class="furniture furniture-enhanced humidifier alternative">加湿器（代替）</div>
                                         <div class="furniture furniture-enhanced tv">TV</div>
                                         <div class="furniture furniture-enhanced closet">クローゼット</div>
+                                        
+                                        <!-- 加湿器の最適な設置場所 -->
+                                        <div class="humidifier optimal">加湿器<br>推奨</div>
+                                        
+                                        <!-- NGゾーン -->
+                                        <div class="bad-zone window-zone">❌ 窓際NG</div>
+                                        <div class="bad-zone ac-zone">❌ エアコン下NG</div>
+                                        <div class="bad-zone corner-zone">❌ 角NG</div>
+                                        
+                                        <!-- 部屋のサイズ表示 -->
+                                        <div class="room-size-label">6畳ワンルーム（約10㎡）</div>
                                     </div>
                                 </div>
                             </div>
