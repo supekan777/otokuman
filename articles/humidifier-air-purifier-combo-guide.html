@@ -634,92 +634,404 @@
                     </div>
                 </div>
 
-                <h2 id="optimal-placement">📍 最適な設置位置と配置方法</h2>
-                
-                <h3>🏠 一体型の設置ガイド</h3>
-                
-                <div class="placement-guide integrated-placement">
-                    <h4>一体型加湿空気清浄機の理想的配置</h4>
+                <style>
+                    .placement-section-enhanced {
+                        background: linear-gradient(135deg, #fdf4ff, #f3e8ff);
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        border: 2px solid rgba(168, 85, 247, 0.2);
+                        box-shadow: 0 8px 25px rgba(168, 85, 247, 0.1);
+                    }
                     
-                    <div class="placement-rules">
-                        <div class="rule-item">
-                            <div class="rule-icon">📏</div>
-                            <div class="rule-content">
-                                <h5>壁からの距離</h5>
-                                <p><strong>後方：30cm以上</strong><br>
-                                吸気口の確保のため</p>
-                            </div>
-                        </div>
+                    .placement-section-title {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .placement-section-title h2 {
+                        font-size: 2rem;
+                        color: #7c3aed;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+                    
+                    .placement-section-subtitle {
+                        color: #6b7280;
+                        font-size: 1rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .placement-guide-enhanced {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        margin: 2rem 0;
+                        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.1);
+                        border: 2px solid rgba(16, 185, 129, 0.2);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .placement-guide-enhanced::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #10b981, #059669);
+                    }
+                    
+                    .placement-guide-title {
+                        color: #065f46;
+                        font-size: 1.3rem;
+                        margin-bottom: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                    }
+                    
+                    .placement-rules-enhanced {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 1.5rem;
+                        margin: 2rem 0;
+                    }
+                    
+                    .rule-item-enhanced {
+                        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        border: 2px solid rgba(34, 197, 94, 0.2);
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .rule-item-enhanced:hover {
+                        transform: translateY(-3px);
+                        border-color: #22c55e;
+                        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
+                    }
+                    
+                    .rule-icon-enhanced {
+                        font-size: 2rem;
+                        margin-bottom: 1rem;
+                        text-align: center;
+                        animation: float 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-5px); }
+                    }
+                    
+                    .rule-content-enhanced h5 {
+                        color: #166534;
+                        font-size: 1.1rem;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                    }
+                    
+                    .rule-content-enhanced p {
+                        color: #374151;
+                        line-height: 1.6;
+                        margin: 0;
+                    }
+                    
+                    .rule-content-enhanced strong {
+                        color: #059669;
+                        background: rgba(34, 197, 94, 0.1);
+                        padding: 0.2rem 0.5rem;
+                        border-radius: 4px;
+                    }
+                    
+                    .dual-placement-enhanced {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                        gap: 2rem;
+                        margin: 2rem 0;
+                    }
+                    
+                    .device-placement-enhanced {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                        border: 2px solid transparent;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .device-placement-enhanced.air-purifier {
+                        border-color: rgba(59, 130, 246, 0.3);
+                    }
+                    
+                    .device-placement-enhanced.air-purifier::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+                    }
+                    
+                    .device-placement-enhanced.humidifier {
+                        border-color: rgba(236, 72, 153, 0.3);
+                    }
+                    
+                    .device-placement-enhanced.humidifier::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        background: linear-gradient(90deg, #ec4899, #be185d);
+                    }
+                    
+                    .device-placement-enhanced:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+                    }
+                    
+                    .device-title {
+                        font-size: 1.2rem;
+                        margin-bottom: 1.5rem;
+                        text-align: center;
+                        font-weight: 600;
+                    }
+                    
+                    .device-placement-enhanced.air-purifier .device-title {
+                        color: #1e40af;
+                    }
+                    
+                    .device-placement-enhanced.humidifier .device-title {
+                        color: #be185d;
+                    }
+                    
+                    .placement-priority-enhanced {
+                        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                        border-radius: 10px;
+                        padding: 1.2rem;
+                        margin: 1rem 0;
+                        border-left: 4px solid #3b82f6;
+                    }
+                    
+                    .placement-priority-enhanced.humidifier-priority {
+                        background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+                        border-left-color: #ec4899;
+                    }
+                    
+                    .placement-priority-enhanced h5 {
+                        color: #1e40af;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .placement-priority-enhanced.humidifier-priority h5 {
+                        color: #be185d;
+                    }
+                    
+                    .placement-priority-enhanced ol {
+                        margin: 0;
+                        padding-left: 1.2rem;
+                    }
+                    
+                    .placement-priority-enhanced li {
+                        padding: 0.3rem 0;
+                        color: #374151;
+                        line-height: 1.5;
+                    }
+                    
+                    .distance-requirements-enhanced {
+                        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                        border-radius: 10px;
+                        padding: 1.2rem;
+                        margin: 1rem 0;
+                        border-left: 4px solid #ef4444;
+                    }
+                    
+                    .distance-requirements-enhanced h5 {
+                        color: #dc2626;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .distance-requirements-enhanced ul {
+                        margin: 0;
+                        padding-left: 1.2rem;
+                        list-style-type: none;
+                    }
+                    
+                    .distance-requirements-enhanced li {
+                        padding: 0.3rem 0;
+                        color: #374151;
+                        line-height: 1.5;
+                        position: relative;
+                        padding-left: 1.5rem;
+                    }
+                    
+                    .distance-requirements-enhanced li::before {
+                        content: '📐';
+                        position: absolute;
+                        left: 0;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .placement-section-enhanced {
+                            padding: 2rem 1.5rem;
+                        }
                         
-                        <div class="rule-item">
-                            <div class="rule-icon">🌪️</div>
-                            <div class="rule-content">
-                                <h5>空気循環の考慮</h5>
-                                <p><strong>部屋の中央寄り</strong><br>
-                                効率的な空気循環のため</p>
-                            </div>
-                        </div>
+                        .placement-rules-enhanced {
+                            grid-template-columns: 1fr;
+                            gap: 1rem;
+                        }
                         
-                        <div class="rule-item">
-                            <div class="rule-icon">☀️</div>
-                            <div class="rule-content">
-                                <h5>直射日光を避ける</h5>
-                                <p><strong>窓際から1m以上離す</strong><br>
-                                センサーの誤作動防止</p>
-                            </div>
-                        </div>
+                        .dual-placement-enhanced {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
                         
-                        <div class="rule-item">
-                            <div class="rule-icon">🔌</div>
-                            <div class="rule-content">
-                                <h5>コンセントとの距離</h5>
-                                <p><strong>1.5m以内</strong><br>
-                                延長コード使用を避ける</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>🔄 別々購入時の最適配置</h3>
+                        .placement-section-title h2 {
+                            font-size: 1.5rem;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                        }
+                        
+                        .device-placement-enhanced {
+                            padding: 1.5rem;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .placement-section-enhanced {
+                            padding: 1.5rem 1rem;
+                            margin: 1rem 0;
+                        }
+                        
+                        .rule-item-enhanced {
+                            padding: 1.2rem;
+                        }
+                        
+                        .device-placement-enhanced {
+                            padding: 1.2rem;
+                        }
+                        
+                        .placement-priority-enhanced,
+                        .distance-requirements-enhanced {
+                            padding: 1rem;
+                        }
+                    }
+                </style>
                 
-                <div class="dual-placement-guide">
-                    <div class="device-placement air-purifier">
-                        <h4>🌪️ 空気清浄機の配置</h4>
-                        <div class="placement-priority">
-                            <h5>優先順位</h5>
-                            <ol>
-                                <li><strong>汚染源の近く</strong>（玄関、キッチン付近）</li>
-                                <li><strong>人の動線</strong>（よく通る場所）</li>
-                                <li><strong>部屋の角</strong>（空気の滞留を防ぐ）</li>
-                            </ol>
-                        </div>
-                        <div class="distance-requirements">
-                            <h5>距離要件</h5>
-                            <ul>
-                                <li>壁から30cm以上</li>
-                                <li>他の機器から50cm以上</li>
-                                <li>加湿器から1.5m以上</li>
-                            </ul>
+                <div class="placement-section-enhanced">
+                    <div class="placement-section-title">
+                        <h2>📍 最適な設置位置と配置方法</h2>
+                        <p class="placement-section-subtitle">効果を最大化する設置テクニック</p>
+                    </div>
+                    
+                    <div class="placement-guide-enhanced">
+                        <h3 class="placement-guide-title">🏠 一体型の設置ガイド</h3>
+                        <h4 style="text-align: center; color: #6b7280; margin-bottom: 2rem;">一体型加湿空気清浄機の理想的配置</h4>
+                        
+                        <div class="placement-rules-enhanced">
+                            <div class="rule-item-enhanced">
+                                <div class="rule-icon-enhanced">📏</div>
+                                <div class="rule-content-enhanced">
+                                    <h5>壁からの距離</h5>
+                                    <p><strong>後方：30cm以上</strong><br>
+                                    吸気口の確保のため</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item-enhanced">
+                                <div class="rule-icon-enhanced">🌪️</div>
+                                <div class="rule-content-enhanced">
+                                    <h5>空気循環の考慮</h5>
+                                    <p><strong>部屋の中央寄り</strong><br>
+                                    効率的な空気循環のため</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item-enhanced">
+                                <div class="rule-icon-enhanced">☀️</div>
+                                <div class="rule-content-enhanced">
+                                    <h5>直射日光を避ける</h5>
+                                    <p><strong>窓際から1m以上離す</strong><br>
+                                    センサーの誤作動防止</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item-enhanced">
+                                <div class="rule-icon-enhanced">🔌</div>
+                                <div class="rule-content-enhanced">
+                                    <h5>コンセントとの距離</h5>
+                                    <p><strong>1.5m以内</strong><br>
+                                    延長コード使用を避ける</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="device-placement humidifier">
-                        <h4>💧 加湿器の配置</h4>
-                        <div class="placement-priority">
-                            <h5>優先順位</h5>
-                            <ol>
-                                <li><strong>乾燥しやすい場所</strong>（暖房器具付近）</li>
-                                <li><strong>人の居場所近く</strong>（ソファ、ベッド付近）</li>
-                                <li><strong>安定した床面</strong>（振動を避ける）</li>
-                            </ol>
-                        </div>
-                        <div class="distance-requirements">
-                            <h5>距離要件</h5>
-                            <ul>
-                                <li>壁から30cm以上</li>
-                                <li>暖房器具から1m以上</li>
-                                <li>空気清浄機から1.5m以上</li>
-                            </ul>
+                    <div class="placement-guide-enhanced" style="border-color: rgba(245, 158, 11, 0.2); box-shadow: 0 6px 20px rgba(245, 158, 11, 0.1);">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #f59e0b, #d97706);"></div>
+                        <h3 class="placement-guide-title" style="color: #92400e;">🔄 別々購入時の最適配置</h3>
+                        
+                        <div class="dual-placement-enhanced">
+                            <div class="device-placement-enhanced air-purifier">
+                                <h4 class="device-title">🌪️ 空気清浄機の配置</h4>
+                                <div class="placement-priority-enhanced">
+                                    <h5>🎯 優先順位</h5>
+                                    <ol>
+                                        <li><strong>汚染源の近く</strong>（玄関、キッチン付近）</li>
+                                        <li><strong>人の動線</strong>（よく通る場所）</li>
+                                        <li><strong>部屋の角</strong>（空気の滞留を防ぐ）</li>
+                                    </ol>
+                                </div>
+                                <div class="distance-requirements-enhanced">
+                                    <h5>📐 距離要件</h5>
+                                    <ul>
+                                        <li>壁から30cm以上</li>
+                                        <li>他の機器から50cm以上</li>
+                                        <li>加湿器から1.5m以上</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="device-placement-enhanced humidifier">
+                                <h4 class="device-title">💧 加湿器の配置</h4>
+                                <div class="placement-priority-enhanced humidifier-priority">
+                                    <h5>🎯 優先順位</h5>
+                                    <ol>
+                                        <li><strong>乾燥しやすい場所</strong>（暖房器具付近）</li>
+                                        <li><strong>人の居場所近く</strong>（ソファ、ベッド付近）</li>
+                                        <li><strong>安定した床面</strong>（振動を避ける）</li>
+                                    </ol>
+                                </div>
+                                <div class="distance-requirements-enhanced">
+                                    <h5>📐 距離要件</h5>
+                                    <ul>
+                                        <li>壁から30cm以上</li>
+                                        <li>暖房器具から1m以上</li>
+                                        <li>空気清浄機から1.5m以上</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
