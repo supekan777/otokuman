@@ -2082,6 +2082,332 @@
                             padding: 0.4rem 0;
                         }
                     }
+                    
+                    /* トラブルシューティングセクション Enhanced スタイル */
+                    .troubleshooting-section-enhanced {
+                        background: linear-gradient(135deg, #fee2e2, #fecaca);
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        border: 2px solid rgba(239, 68, 68, 0.2);
+                        box-shadow: 0 8px 25px rgba(239, 68, 68, 0.1);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .troubleshooting-section-enhanced::before {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        right: -10%;
+                        width: 300px;
+                        height: 300px;
+                        background: radial-gradient(circle, rgba(239, 68, 68, 0.1), transparent);
+                        animation: problemPulse 4s ease-in-out infinite;
+                    }
+                    
+                    @keyframes problemPulse {
+                        0%, 100% { transform: scale(1); opacity: 0.5; }
+                        50% { transform: scale(1.2); opacity: 0.8; }
+                    }
+                    
+                    .troubleshooting-section-enhanced h2 {
+                        color: #991b1b;
+                        margin-bottom: 1.5rem;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .troubleshooting-intro {
+                        background: rgba(255, 255, 255, 0.9);
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        margin-bottom: 2rem;
+                        border-left: 4px solid #ef4444;
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    /* トラブルカードのスタイル */
+                    .troubleshooting-cards {
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .trouble-card {
+                        background: rgba(255, 255, 255, 0.95);
+                        border-radius: 16px;
+                        margin: 1.5rem 0;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                        border: 2px solid transparent;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .trouble-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(135deg, 
+                            rgba(239, 68, 68, 0.05) 0%,
+                            rgba(34, 197, 94, 0.05) 100%);
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                    
+                    .trouble-card:hover::before {
+                        opacity: 1;
+                    }
+                    
+                    .trouble-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+                        border-color: rgba(239, 68, 68, 0.3);
+                    }
+                    
+                    .trouble-card h4 {
+                        background: linear-gradient(135deg, #ef4444, #dc2626);
+                        color: white;
+                        padding: 1.2rem;
+                        margin: 0;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        border-radius: 14px 14px 0 0;
+                    }
+                    
+                    .trouble-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 2rem;
+                        padding: 2rem;
+                    }
+                    
+                    /* 原因セクション */
+                    .causes {
+                        position: relative;
+                        padding: 1.5rem;
+                        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                        border-radius: 12px;
+                        border: 1px solid rgba(239, 68, 68, 0.2);
+                    }
+                    
+                    .causes h5 {
+                        color: #991b1b;
+                        font-size: 1.1rem;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: bold;
+                    }
+                    
+                    .causes ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    .causes li {
+                        padding: 0.5rem 0;
+                        padding-left: 1.8rem;
+                        position: relative;
+                        color: #7f1d1d;
+                        line-height: 1.6;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .causes li::before {
+                        content: '⚠️';
+                        position: absolute;
+                        left: 0;
+                        font-size: 1rem;
+                        animation: warningBlink 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes warningBlink {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.5; }
+                    }
+                    
+                    .causes li:hover {
+                        padding-left: 2.2rem;
+                        color: #991b1b;
+                        font-weight: 500;
+                    }
+                    
+                    /* 解決方法セクション */
+                    .solutions {
+                        position: relative;
+                        padding: 1.5rem;
+                        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                        border-radius: 12px;
+                        border: 1px solid rgba(34, 197, 94, 0.2);
+                    }
+                    
+                    .solutions h5 {
+                        color: #14532d;
+                        font-size: 1.1rem;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-weight: bold;
+                    }
+                    
+                    .solutions ol {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        counter-reset: solution-counter;
+                    }
+                    
+                    .solutions li {
+                        padding: 0.7rem 0;
+                        padding-left: 2.5rem;
+                        position: relative;
+                        color: #166534;
+                        line-height: 1.6;
+                        transition: all 0.3s ease;
+                        counter-increment: solution-counter;
+                    }
+                    
+                    .solutions li::before {
+                        content: counter(solution-counter);
+                        position: absolute;
+                        left: 0;
+                        top: 0.7rem;
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        background: linear-gradient(135deg, #22c55e, #16a34a);
+                        color: white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 0.9rem;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    .solutions li:hover::before {
+                        transform: scale(1.2) rotate(360deg);
+                    }
+                    
+                    .solutions li:hover {
+                        padding-left: 2.8rem;
+                        color: #14532d;
+                        background: rgba(34, 197, 94, 0.05);
+                        margin: 0 -0.5rem;
+                        padding-right: 0.5rem;
+                        border-radius: 8px;
+                    }
+                    
+                    .solutions strong {
+                        color: #14532d;
+                        font-weight: 600;
+                    }
+                    
+                    /* 成功アニメーション */
+                    @keyframes successCheck {
+                        0% { transform: scale(0) rotate(0deg); }
+                        50% { transform: scale(1.2) rotate(180deg); }
+                        100% { transform: scale(1) rotate(360deg); }
+                    }
+                    
+                    .solutions li::after {
+                        content: '✓';
+                        position: absolute;
+                        right: 1rem;
+                        top: 0.7rem;
+                        color: #22c55e;
+                        font-size: 1.2rem;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+                    
+                    .solutions li:hover::after {
+                        opacity: 1;
+                        animation: successCheck 0.5s ease;
+                    }
+                    
+                    /* レスポンシブ対応 */
+                    @media (max-width: 768px) {
+                        .troubleshooting-section-enhanced {
+                            padding: 2rem;
+                            margin: 1.5rem 0;
+                        }
+                        
+                        .troubleshooting-section-enhanced h2 {
+                            font-size: 1.7rem;
+                        }
+                        
+                        .trouble-content {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
+                        
+                        .trouble-card h4 {
+                            font-size: 1.1rem;
+                            padding: 1rem;
+                        }
+                        
+                        .causes,
+                        .solutions {
+                            padding: 1rem;
+                        }
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .troubleshooting-section-enhanced {
+                            padding: 1.5rem;
+                            margin: 1rem 0;
+                        }
+                        
+                        .troubleshooting-section-enhanced h2 {
+                            font-size: 1.5rem;
+                        }
+                        
+                        .trouble-card h4 {
+                            font-size: 1rem;
+                            padding: 0.8rem;
+                        }
+                        
+                        .trouble-content {
+                            padding: 1rem;
+                            gap: 1rem;
+                        }
+                        
+                        .causes h5,
+                        .solutions h5 {
+                            font-size: 1rem;
+                        }
+                        
+                        .causes li,
+                        .solutions li {
+                            font-size: 0.9rem;
+                            padding: 0.4rem 0;
+                        }
+                        
+                        .solutions li::before {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            font-size: 0.8rem;
+                        }
+                    }
                 </style>
                 
                 <div class="placement-section-enhanced">
@@ -2505,9 +2831,14 @@
                 </div>
                 </div>
 
-                <h2 id="troubleshooting">🔧 よくあるトラブルと解決法</h2>
-                
-                <div class="troubleshooting-section">
+                <div class="troubleshooting-section-enhanced">
+                    <h2 id="troubleshooting">🔧 よくあるトラブルと解決法</h2>
+                    
+                    <div class="troubleshooting-intro">
+                        <p>よくあるトラブルと具体的な解決方法を、原因から詳しく解説します。</p>
+                    </div>
+                    
+                    <div class="troubleshooting-cards">
                     <div class="trouble-card">
                         <h4>❌ トラブル：加湿しているのに湿度が上がらない</h4>
                         <div class="trouble-content">
@@ -2579,6 +2910,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
 
                 <h2 id="cost-analysis">💰 コスト分析：初期費用と維持費</h2>
