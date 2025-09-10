@@ -2241,46 +2241,423 @@
                 </section>
 
                 <section id="space-optimization" class="content-section">
-                    <h2><i class="fas fa-home"></i> 6畳ワンルーム最適配置術</h2>
+                    <style>
+                        .space-optimization-enhanced {
+                            background: linear-gradient(145deg, #f0f9ff, #dbeafe);
+                            border-radius: 25px;
+                            padding: 2.5rem;
+                            margin: 3rem 0;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 15px 45px rgba(59,130,246,0.12);
+                            border: 3px solid rgba(59,130,246,0.2);
+                        }
+                        
+                        .space-optimization-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: -60px;
+                            right: -60px;
+                            width: 120px;
+                            height: 120px;
+                            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+                            animation: float-space-orb 10s ease-in-out infinite;
+                        }
+                        
+                        @keyframes float-space-orb {
+                            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+                            50% { transform: translate(-30px, 40px) rotate(180deg); }
+                        }
+                        
+                        .space-title-enhanced {
+                            text-align: center;
+                            margin-bottom: 2rem;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        
+                        .space-title-enhanced h2 {
+                            font-size: 2rem;
+                            font-weight: bold;
+                            background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            margin-bottom: 0.8rem;
+                            position: relative;
+                        }
+                        
+                        .space-title-enhanced h2::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -8px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 120px;
+                            height: 4px;
+                            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+                            border-radius: 2px;
+                            animation: pulse-space-line 2.8s ease-in-out infinite;
+                        }
+                        
+                        @keyframes pulse-space-line {
+                            0%, 100% { width: 120px; }
+                            50% { width: 160px; }
+                        }
+                        
+                        .placement-guide-enhanced {
+                            position: relative;
+                            z-index: 1;
+                            margin: 2rem 0;
+                        }
+                        
+                        .room-layout-enhanced {
+                            background: white;
+                            border-radius: 20px;
+                            padding: 2rem;
+                            margin-bottom: 2rem;
+                            box-shadow: 0 8px 25px rgba(59,130,246,0.1);
+                            border: 2px solid rgba(59,130,246,0.1);
+                        }
+                        
+                        .room-layout-enhanced h3 {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            color: #1e40af;
+                            text-align: center;
+                            margin-bottom: 1.5rem;
+                            position: relative;
+                        }
+                        
+                        .layout-diagram-enhanced {
+                            background: #f8fafc;
+                            border: 2px dashed #cbd5e1;
+                            border-radius: 15px;
+                            padding: 2rem;
+                            position: relative;
+                            min-height: 250px;
+                        }
+                        
+                        .room-grid-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-template-rows: repeat(3, 1fr);
+                            gap: 1rem;
+                            height: 200px;
+                            position: relative;
+                        }
+                        
+                        .furniture-enhanced {
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            color: white;
+                            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        
+                        .furniture-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                            transition: left 0.8s ease;
+                        }
+                        
+                        .furniture-enhanced:hover::before {
+                            left: 100%;
+                        }
+                        
+                        .furniture-enhanced:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                        }
+                        
+                        .bed { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+                        .desk { background: linear-gradient(135deg, #f59e0b, #d97706); }
+                        .humidifier.optimal { 
+                            background: linear-gradient(135deg, #22c55e, #16a34a);
+                            animation: pulse-optimal 2s ease-in-out infinite;
+                        }
+                        .humidifier.alternative { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+                        .tv { background: linear-gradient(135deg, #64748b, #475569); }
+                        .closet { background: linear-gradient(135deg, #dc2626, #991b1b); }
+                        
+                        @keyframes pulse-optimal {
+                            0%, 100% { transform: scale(1); }
+                            50% { transform: scale(1.05); }
+                        }
+                        
+                        .placement-rules-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 2rem;
+                            margin: 2rem 0;
+                        }
+                        
+                        .rule-item-enhanced {
+                            background: white;
+                            border-radius: 20px;
+                            padding: 2rem;
+                            position: relative;
+                            transition: all 0.4s ease;
+                            box-shadow: 0 8px 25px rgba(59,130,246,0.08);
+                            border: 2px solid transparent;
+                            overflow: hidden;
+                        }
+                        
+                        .rule-item-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 6px;
+                            background: var(--rule-gradient);
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.5s ease;
+                        }
+                        
+                        .rule-item-enhanced:hover::before {
+                            transform: scaleX(1);
+                        }
+                        
+                        .rule-item-enhanced:hover {
+                            transform: translateY(-8px);
+                            box-shadow: 0 20px 50px rgba(59,130,246,0.15);
+                            border-color: var(--rule-border);
+                        }
+                        
+                        .rule-good {
+                            --rule-gradient: linear-gradient(90deg, #22c55e, #16a34a);
+                            --rule-border: #22c55e;
+                        }
+                        
+                        .rule-bad {
+                            --rule-gradient: linear-gradient(90deg, #ef4444, #dc2626);
+                            --rule-border: #ef4444;
+                        }
+                        
+                        .rule-item-enhanced h4 {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            margin-bottom: 1rem;
+                            color: #1e40af;
+                        }
+                        
+                        .rule-item-enhanced ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        .rule-item-enhanced li {
+                            padding: 0.8rem 0;
+                            margin-bottom: 0.8rem;
+                            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                            border-radius: 10px;
+                            padding-left: 2.5rem;
+                            position: relative;
+                            transition: all 0.3s ease;
+                            border-left: 3px solid var(--rule-border);
+                        }
+                        
+                        .rule-good li::before {
+                            content: '✅';
+                            position: absolute;
+                            left: 0.8rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1.1rem;
+                        }
+                        
+                        .rule-bad li::before {
+                            content: '❌';
+                            position: absolute;
+                            left: 0.8rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 1.1rem;
+                        }
+                        
+                        .rule-item-enhanced li:hover {
+                            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+                            transform: translateX(8px);
+                            box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+                        }
+                        
+                        .space-saving-tips-enhanced {
+                            margin-top: 3rem;
+                        }
+                        
+                        .space-saving-title {
+                            font-size: 1.6rem;
+                            font-weight: bold;
+                            color: #1e40af;
+                            text-align: center;
+                            margin-bottom: 2rem;
+                        }
+                        
+                        .tips-container-enhanced {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                            gap: 2rem;
+                        }
+                        
+                        .tip-item-enhanced {
+                            background: white;
+                            border-radius: 20px;
+                            padding: 2rem;
+                            position: relative;
+                            transition: all 0.4s ease;
+                            box-shadow: 0 8px 25px rgba(59,130,246,0.08);
+                            border: 2px solid transparent;
+                            overflow: hidden;
+                        }
+                        
+                        .tip-item-enhanced::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 6px;
+                            background: var(--tip-space-gradient);
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.5s ease;
+                        }
+                        
+                        .tip-item-enhanced:hover::before {
+                            transform: scaleX(1);
+                        }
+                        
+                        .tip-item-enhanced:hover {
+                            transform: translateY(-8px) scale(1.02);
+                            box-shadow: 0 20px 50px rgba(59,130,246,0.15);
+                            border-color: var(--tip-space-border);
+                        }
+                        
+                        .tip-desktop {
+                            --tip-space-gradient: linear-gradient(90deg, #f59e0b, #d97706);
+                            --tip-space-border: #f59e0b;
+                        }
+                        
+                        .tip-storage {
+                            --tip-space-gradient: linear-gradient(90deg, #8b5cf6, #7c3aed);
+                            --tip-space-border: #8b5cf6;
+                        }
+                        
+                        .tip-multi {
+                            --tip-space-gradient: linear-gradient(90deg, #06b6d4, #0891b2);
+                            --tip-space-border: #06b6d4;
+                        }
+                        
+                        .tip-item-enhanced h4 {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            color: #1e40af;
+                            margin-bottom: 1rem;
+                        }
+                        
+                        .tip-item-enhanced p {
+                            color: #4b5563;
+                            margin-bottom: 1rem;
+                            line-height: 1.6;
+                        }
+                        
+                        .suitable-models-enhanced {
+                            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                            color: #1e40af;
+                            padding: 0.8rem 1rem;
+                            border-radius: 10px;
+                            font-weight: 600;
+                            font-size: 0.9rem;
+                            border-left: 3px solid #3b82f6;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .space-optimization-enhanced {
+                                padding: 2rem 1.5rem;
+                                margin: 2rem 0;
+                            }
+                            
+                            .space-title-enhanced h2 {
+                                font-size: 1.6rem;
+                            }
+                            
+                            .room-layout-enhanced {
+                                padding: 1.5rem;
+                            }
+                            
+                            .room-grid-enhanced {
+                                grid-template-columns: repeat(2, 1fr);
+                                height: 300px;
+                            }
+                            
+                            .placement-rules-enhanced,
+                            .tips-container-enhanced {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+                            
+                            .rule-item-enhanced,
+                            .tip-item-enhanced {
+                                padding: 1.5rem;
+                            }
+                        }
+                    </style>
                     
-                    <!-- キャラクター会話：設置場所について -->
-                    <div class="character-dialogue">
-                        <div class="dialogue-container">
-                            <div class="pixel-character single-person"></div>
-                            <div class="speech-bubble left">
-                                <div class="character-name single-person">佐藤さん</div>
-                                <p>ワンルームだと置く場所が限られるんですが、どこに置けばいいでしょう？</p>
-                            </div>
+                    <div class="space-optimization-enhanced">
+                        <div class="space-title-enhanced">
+                            <h2><i class="fas fa-home"></i> 6畳ワンルーム最適配置術</h2>
                         </div>
+                        
+                        <!-- キャラクター会話：設置場所について -->
+                        <div class="character-dialogue">
+                            <div class="dialogue-container">
+                                <div class="pixel-character single-person"></div>
+                                <div class="speech-bubble left">
+                                    <div class="character-name single-person">佐藤さん</div>
+                                    <p>ワンルームだと置く場所が限られるんですが、どこに置けばいいでしょう？</p>
+                                </div>
+                            </div>
 
-                        <div class="dialogue-container right">
-                            <div class="pixel-character otokuman"></div>
-                            <div class="speech-bubble right">
-                                <div class="character-name">失敗しないお得マン</div>
-                                <p>部屋の中央付近、床から50cm以上の高さがベストです。ベッドの真横や窓際は避けて、壁から1m離した場所に設置しましょう。</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="placement-guide">
-                        <div class="room-layout">
-                            <h3>理想的な設置レイアウト</h3>
-                            <div class="layout-diagram">
-                                <div class="room-grid">
-                                    <div class="furniture bed">ベッド</div>
-                                    <div class="furniture desk">デスク</div>
-                                    <div class="furniture humidifier optimal">加湿器（推奨）</div>
-                                    <div class="furniture humidifier alternative">加湿器（代替）</div>
-                                    <div class="furniture tv">TV</div>
-                                    <div class="furniture closet">クローゼット</div>
+                            <div class="dialogue-container right">
+                                <div class="pixel-character otokuman"></div>
+                                <div class="speech-bubble right">
+                                    <div class="character-name">失敗しないお得マン</div>
+                                    <p>部屋の中央付近、床から50cm以上の高さがベストです。ベッドの真横や窓際は避けて、壁から1m離した場所に設置しましょう。</p>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="placement-guide placement-guide-enhanced">
+                            <div class="room-layout room-layout-enhanced">
+                                <h3>理想的な設置レイアウト</h3>
+                                <div class="layout-diagram layout-diagram-enhanced">
+                                    <div class="room-grid room-grid-enhanced">
+                                        <div class="furniture furniture-enhanced bed">ベッド</div>
+                                        <div class="furniture furniture-enhanced desk">デスク</div>
+                                        <div class="furniture furniture-enhanced humidifier optimal">加湿器（推奨）</div>
+                                        <div class="furniture furniture-enhanced humidifier alternative">加湿器（代替）</div>
+                                        <div class="furniture furniture-enhanced tv">TV</div>
+                                        <div class="furniture furniture-enhanced closet">クローゼット</div>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="placement-rules">
-                            <h3>設置の鉄則</h3>
-                            <div class="rules-list">
-                                <div class="rule-item good">
+                            <div class="placement-rules placement-rules-enhanced">
+                                <div class="rule-item rule-item-enhanced rule-good">
                                     <h4>✅ 良い設置場所</h4>
                                     <ul>
                                         <li>部屋の中央付近（1m以上壁から離す）</li>
@@ -2290,7 +2667,7 @@
                                     </ul>
                                 </div>
 
-                                <div class="rule-item bad">
+                                <div class="rule-item rule-item-enhanced rule-bad">
                                     <h4>❌ 避けるべき場所</h4>
                                     <ul>
                                         <li>窓際（結露の原因）</li>
@@ -2301,27 +2678,27 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="space-saving-tips">
-                        <h3>省スペース活用術</h3>
-                        <div class="tips-container">
-                            <div class="tip-item">
-                                <h4>📚 卓上設置</h4>
-                                <p>デスクやサイドテーブルを活用。コンパクトモデル限定。</p>
-                                <div class="suitable-models">適応機種：無印良品、小型超音波式</div>
-                            </div>
+                        <div class="space-saving-tips space-saving-tips-enhanced">
+                            <h3 class="space-saving-title">省スペース活用術</h3>
+                            <div class="tips-container tips-container-enhanced">
+                                <div class="tip-item tip-item-enhanced tip-desktop">
+                                    <h4>📚 卓上設置</h4>
+                                    <p>デスクやサイドテーブルを活用。コンパクトモデル限定。</p>
+                                    <div class="suitable-models suitable-models-enhanced">適応機種：無印良品、小型超音波式</div>
+                                </div>
 
-                            <div class="tip-item">
-                                <h4>📦 収納式</h4>
-                                <p>使わない時は収納。軽量・小型モデルがおすすめ。</p>
-                                <div class="suitable-models">適応機種：アイリスオーヤマ、山善</div>
-                            </div>
+                                <div class="tip-item tip-item-enhanced tip-storage">
+                                    <h4>📦 収納式</h4>
+                                    <p>使わない時は収納。軽量・小型モデルがおすすめ。</p>
+                                    <div class="suitable-models suitable-models-enhanced">適応機種：アイリスオーヤマ、山善</div>
+                                </div>
 
-                            <div class="tip-item">
-                                <h4>🔄 多機能型</h4>
-                                <p>加湿器+アロマ+照明で一台三役。</p>
-                                <div class="suitable-models">適応機種：無印良品、デザイン重視モデル</div>
+                                <div class="tip-item tip-item-enhanced tip-multi">
+                                    <h4>🔄 多機能型</h4>
+                                    <p>加湿器+アロマ+照明で一台三役。</p>
+                                    <div class="suitable-models suitable-models-enhanced">適応機種：無印良品、デザイン重視モデル</div>
+                                </div>
                             </div>
                         </div>
                     </div>
