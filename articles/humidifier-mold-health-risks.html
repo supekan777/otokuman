@@ -2773,44 +2773,593 @@
                     </div>
                 </div>
 
-                <h2 id="high-risk-groups"><i class="fas fa-users"></i> 高リスク群と注意点</h2>
-                
-                <div class="risk-group-card">
-                    <h3>🚨 最高リスク群</h3>
-                    <h4>対象者</h4>
-                    <ul>
-                        <li>免疫不全患者（HIV、癌治療中等）</li>
-                        <li>臓器移植後患者</li>
-                        <li>ステロイド長期使用者</li>
-                        <li>重症喘息患者</li>
-                    </ul>
-                    <h4>推奨対応</h4>
-                    <ul>
-                        <li><strong>使用検討：</strong>医師との相談必須</li>
-                        <li><strong>機種選択：</strong>スチーム式限定</li>
-                        <li><strong>メンテナンス：</strong>毎日完全清掃</li>
-                        <li><strong>監視：</strong>症状の即座報告</li>
-                    </ul>
-                </div>
+                <!-- 高リスク群と注意点セクション -->
+                <style>
+                    .high-risk-section {
+                        margin: 4rem 0;
+                        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+                        border-radius: 20px;
+                        padding: 3rem;
+                        border: 1px solid #e2e8f0;
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+                    }
 
-                <div class="risk-group-card">
-                    <h3>⚠️ 高リスク群</h3>
-                    <h4>対象者</h4>
-                    <ul>
-                        <li>65歳以上の高齢者</li>
-                        <li>2歳以下の乳幼児</li>
-                        <li>妊婦・授乳婦</li>
-                        <li>慢性肺疾患患者</li>
-                        <li>糖尿病患者</li>
-                        <li>心疾患患者</li>
-                    </ul>
-                    <h4>推奨対応</h4>
-                    <ul>
-                        <li><strong>機種選択：</strong>安全性重視</li>
-                        <li><strong>清掃頻度：</strong>週2-3回</li>
-                        <li><strong>水質：</strong>精製水使用</li>
-                        <li><strong>監視：</strong>定期的な症状確認</li>
-                    </ul>
+                    .risk-header {
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        position: relative;
+                    }
+
+                    .risk-title {
+                        font-size: 2.2rem;
+                        color: #1e293b;
+                        margin-bottom: 1rem;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+
+                    .risk-subtitle {
+                        font-size: 1.1rem;
+                        color: #64748b;
+                        font-weight: 400;
+                        margin-bottom: 2rem;
+                        max-width: 600px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        line-height: 1.6;
+                    }
+
+                    .medical-warning {
+                        background: linear-gradient(135deg, #fefbeb 0%, #fef3c7 100%);
+                        border: 1px solid #fde68a;
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    .warning-icon-medical {
+                        font-size: 2rem;
+                        color: #f59e0b;
+                        animation: medicalPulse 2.5s infinite;
+                    }
+
+                    @keyframes medicalPulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                    }
+
+                    .warning-text-medical {
+                        flex: 1;
+                        color: #92400e;
+                        font-weight: 600;
+                        line-height: 1.5;
+                    }
+
+                    .risk-groups-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                        gap: 2rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    .risk-group-card-v2 {
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                        border: 1px solid #f1f5f9;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+
+                    .risk-group-card-v2:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+                    }
+
+                    .risk-group-card-v2.critical {
+                        border-left: 5px solid #dc2626;
+                    }
+
+                    .risk-group-card-v2.critical::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+                    }
+
+                    .risk-group-card-v2.high {
+                        border-left: 5px solid #f59e0b;
+                    }
+
+                    .risk-group-card-v2.high::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+                    }
+
+                    .risk-card-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                        padding-bottom: 1rem;
+                        border-bottom: 2px solid #f1f5f9;
+                    }
+
+                    .risk-level-icon {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2rem;
+                        flex-shrink: 0;
+                        position: relative;
+                    }
+
+                    .risk-level-icon.critical {
+                        background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+                        color: white;
+                    }
+
+                    .risk-level-icon.high {
+                        background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+                        color: white;
+                    }
+
+                    .risk-level-icon::after {
+                        content: '';
+                        position: absolute;
+                        inset: -8px;
+                        border-radius: 50%;
+                        opacity: 0.2;
+                        animation: riskPulse 3s infinite;
+                    }
+
+                    .risk-level-icon.critical::after {
+                        background: linear-gradient(135deg, #dc2626, #ef4444);
+                    }
+
+                    .risk-level-icon.high::after {
+                        background: linear-gradient(135deg, #f59e0b, #fbbf24);
+                    }
+
+                    @keyframes riskPulse {
+                        0%, 100% { transform: scale(1); opacity: 0.2; }
+                        50% { transform: scale(1.15); opacity: 0.1; }
+                    }
+
+                    .risk-card-title {
+                        flex: 1;
+                    }
+
+                    .risk-level-label {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        margin-bottom: 0.5rem;
+                        color: #1e293b;
+                    }
+
+                    .risk-description {
+                        font-size: 0.95rem;
+                        color: #64748b;
+                        line-height: 1.4;
+                    }
+
+                    .risk-content {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 2rem;
+                    }
+
+                    .risk-section {
+                        background: #f8fafc;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                    }
+
+                    .risk-section-title {
+                        font-size: 1.1rem;
+                        color: #374151;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .target-groups-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.8rem;
+                    }
+
+                    .target-group-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        padding: 0.8rem;
+                        background: white;
+                        border-radius: 8px;
+                        border: 1px solid #e2e8f0;
+                        transition: all 0.2s ease;
+                    }
+
+                    .target-group-item:hover {
+                        background: #fafafa;
+                        transform: translateX(5px);
+                    }
+
+                    .group-icon {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: #e2e8f0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1rem;
+                        flex-shrink: 0;
+                    }
+
+                    .group-icon.critical {
+                        background: #fecaca;
+                        color: #991b1b;
+                    }
+
+                    .group-icon.high {
+                        background: #fde68a;
+                        color: #92400e;
+                    }
+
+                    .group-text {
+                        font-size: 0.9rem;
+                        color: #374151;
+                        font-weight: 500;
+                    }
+
+                    .recommendations-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.8rem;
+                    }
+
+                    .recommendation-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 0.8rem;
+                        padding: 0.8rem;
+                        background: white;
+                        border-radius: 8px;
+                        border: 1px solid #e2e8f0;
+                        transition: all 0.2s ease;
+                    }
+
+                    .recommendation-item:hover {
+                        background: #fafafa;
+                        border-color: #cbd5e0;
+                    }
+
+                    .recommendation-icon {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.8rem;
+                        flex-shrink: 0;
+                        margin-top: 2px;
+                    }
+
+                    .recommendation-icon.critical {
+                        background: #fecaca;
+                        color: #991b1b;
+                    }
+
+                    .recommendation-icon.high {
+                        background: #fde68a;
+                        color: #92400e;
+                    }
+
+                    .recommendation-content {
+                        flex: 1;
+                    }
+
+                    .recommendation-label {
+                        font-weight: 600;
+                        color: #374151;
+                        font-size: 0.85rem;
+                        margin-bottom: 0.2rem;
+                    }
+
+                    .recommendation-text {
+                        font-size: 0.85rem;
+                        color: #64748b;
+                        line-height: 1.4;
+                    }
+
+                    .additional-info {
+                        margin-top: 3rem;
+                        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        border: 1px solid #bae6fd;
+                    }
+
+                    .info-title {
+                        font-size: 1.2rem;
+                        color: #0c4a6e;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .info-content {
+                        color: #075985;
+                        line-height: 1.6;
+                        font-size: 0.95rem;
+                    }
+
+                    .consultation-cta {
+                        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+                        color: white;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        text-align: center;
+                        margin-top: 1.5rem;
+                        transition: all 0.3s ease;
+                    }
+
+                    .consultation-cta:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+                    }
+
+                    .cta-text {
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+
+                    @media (max-width: 768px) {
+                        .high-risk-section {
+                            padding: 2rem;
+                        }
+                        
+                        .risk-title {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .risk-groups-container {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .risk-content {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
+                        
+                        .risk-level-icon {
+                            width: 60px;
+                            height: 60px;
+                            font-size: 1.5rem;
+                        }
+                    }
+                </style>
+
+                <div class="high-risk-section">
+                    <div class="risk-header">
+                        <h2 class="risk-title" id="high-risk-groups">
+                            <i class="fas fa-users"></i>
+                            高リスク群と注意点
+                        </h2>
+                        <p class="risk-subtitle">
+                            特に注意が必要な方の特徴と、安全に加湿器を使用するための具体的な対策・推奨事項
+                        </p>
+                        
+                        <div class="medical-warning">
+                            <div class="warning-icon-medical">👨‍⚕️</div>
+                            <div class="warning-text-medical">
+                                <strong>医療従事者からの重要なお知らせ：</strong><br>
+                                以下に該当する方は、加湿器の使用前に必ず医師にご相談ください。適切な予防策を講じることで安全な使用が可能です。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="risk-groups-container">
+                        <!-- 最高リスク群 -->
+                        <div class="risk-group-card-v2 critical">
+                            <div class="risk-card-header">
+                                <div class="risk-level-icon critical">🚨</div>
+                                <div class="risk-card-title">
+                                    <div class="risk-level-label">最高リスク群</div>
+                                    <div class="risk-description">医師の指導が必須。慎重な使用と厳格な管理が必要</div>
+                                </div>
+                            </div>
+
+                            <div class="risk-content">
+                                <div class="risk-section">
+                                    <h4 class="risk-section-title">
+                                        <i class="fas fa-user-md"></i>
+                                        対象となる方
+                                    </h4>
+                                    <ul class="target-groups-list">
+                                        <li class="target-group-item">
+                                            <div class="group-icon critical">🦠</div>
+                                            <span class="group-text">免疫不全患者（HIV、癌治療中等）</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon critical">🫀</div>
+                                            <span class="group-text">臓器移植後患者</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon critical">💊</div>
+                                            <span class="group-text">ステロイド長期使用者</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon critical">🫁</div>
+                                            <span class="group-text">重症喘息患者</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="risk-section">
+                                    <h4 class="risk-section-title">
+                                        <i class="fas fa-shield-alt"></i>
+                                        必須対策
+                                    </h4>
+                                    <ul class="recommendations-list">
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon critical">👨‍⚕️</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">使用前医師相談</div>
+                                                <div class="recommendation-text">使用可否と注意事項を確認</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon critical">💧</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">スチーム式限定</div>
+                                                <div class="recommendation-text">最も安全性の高い機種を選択</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon critical">🧽</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">毎日完全清掃</div>
+                                                <div class="recommendation-text">全パーツの徹底消毒</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon critical">📊</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">症状監視</div>
+                                                <div class="recommendation-text">体調変化の即座報告</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 高リスク群 -->
+                        <div class="risk-group-card-v2 high">
+                            <div class="risk-card-header">
+                                <div class="risk-level-icon high">⚠️</div>
+                                <div class="risk-card-title">
+                                    <div class="risk-level-label">高リスク群</div>
+                                    <div class="risk-description">注意深い使用と定期的なメンテナンスが重要</div>
+                                </div>
+                            </div>
+
+                            <div class="risk-content">
+                                <div class="risk-section">
+                                    <h4 class="risk-section-title">
+                                        <i class="fas fa-users"></i>
+                                        対象となる方
+                                    </h4>
+                                    <ul class="target-groups-list">
+                                        <li class="target-group-item">
+                                            <div class="group-icon high">👴</div>
+                                            <span class="group-text">65歳以上の高齢者</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon high">👶</div>
+                                            <span class="group-text">2歳以下の乳幼児</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon high">🤰</div>
+                                            <span class="group-text">妊婦・授乳婦</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon high">🫁</div>
+                                            <span class="group-text">慢性肺疾患患者</span>
+                                        </li>
+                                        <li class="target-group-item">
+                                            <div class="group-icon high">🩺</div>
+                                            <span class="group-text">糖尿病・心疾患患者</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="risk-section">
+                                    <h4 class="risk-section-title">
+                                        <i class="fas fa-check-circle"></i>
+                                        推奨対策
+                                    </h4>
+                                    <ul class="recommendations-list">
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon high">🏷️</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">安全性重視選択</div>
+                                                <div class="recommendation-text">信頼性の高いメーカー品</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon high">🗓️</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">週2-3回清掃</div>
+                                                <div class="recommendation-text">定期メンテナンス実施</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon high">💧</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">精製水使用</div>
+                                                <div class="recommendation-text">雑菌繁殖を最小化</div>
+                                            </div>
+                                        </li>
+                                        <li class="recommendation-item">
+                                            <div class="recommendation-icon high">🔍</div>
+                                            <div class="recommendation-content">
+                                                <div class="recommendation-label">定期症状確認</div>
+                                                <div class="recommendation-text">体調変化の早期発見</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="additional-info">
+                        <h3 class="info-title">
+                            <i class="fas fa-info-circle"></i>
+                            専門医からのアドバイス
+                        </h3>
+                        <div class="info-content">
+                            <p>これらのリスク分類は、多くの医学研究と臨床経験に基づいて作成されています。<strong>リスク群に該当する方でも、適切な予防策を講じることで安全に加湿器をご使用いただけます。</strong></p>
+                            <p>重要なのは、ご自身の体調と相談しながら、無理のない範囲でメンテナンスを継続することです。不安がある場合は、遠慮なく医療機関にご相談ください。</p>
+                        </div>
+                        
+                        <div class="consultation-cta">
+                            <div class="cta-text">💡 医療相談が必要な場合は、呼吸器内科またはかかりつけ医にご相談ください</div>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 id="prevention-methods"><i class="fas fa-shield-alt"></i> 効果的な予防策</h2>
