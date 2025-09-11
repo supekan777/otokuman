@@ -325,52 +325,555 @@
                     <p>加湿器病とは、加湿器内で繁殖したカビ・細菌・ウイルスなどの微生物が空気中に拡散され、それを吸入することで起こる呼吸器疾患の総称です。1970年代にアメリカで最初に報告され、現在では世界中で確認されている現代病の一つです。</p>
                 </div>
 
-                <h3>重篤な呼吸器疾患</h3>
-                
-                <div class="disease-card">
-                    <h4>🫁 過敏性肺炎（Hypersensitivity Pneumonitis）</h4>
-                    <div class="disease-details">
-                        <p><strong>原因：</strong>カビ胞子の継続的吸入によるアレルギー反応</p>
-                        <p><strong>症状：</strong></p>
-                        <ul>
-                            <li>激しい咳（乾性咳嗽）</li>
-                            <li>呼吸困難・息切れ</li>
-                            <li>発熱（38-39℃）</li>
-                            <li>胸痛・胸部圧迫感</li>
-                            <li>倦怠感・体重減少</li>
-                        </ul>
-                        <p><strong>進行：</strong>放置すると肺線維症に発展し、呼吸不全に至る可能性</p>
-                    </div>
-                </div>
+                <div class="severe-diseases-section">
+                    <style>
+                        .severe-diseases-section {
+                            margin: 3rem 0;
+                            padding: 2.5rem;
+                            background: linear-gradient(135deg, #fff1f2 0%, #fef2f2 100%);
+                            border-radius: 20px;
+                            border: 2px solid #fca5a5;
+                            position: relative;
+                            overflow: hidden;
+                        }
 
-                <div class="disease-card">
-                    <h4>🦠 レジオネラ肺炎（Legionnaire's Disease）</h4>
-                    <div class="disease-details">
-                        <p><strong>原因：</strong>レジオネラ菌の感染</p>
-                        <p><strong>症状：</strong></p>
-                        <ul>
-                            <li>高熱（39℃以上）</li>
-                            <li>激しい頭痛</li>
-                            <li>筋肉痛・関節痛</li>
-                            <li>血痰・胸痛</li>
-                            <li>意識障害（重症例）</li>
-                        </ul>
-                        <p><strong>危険性：</strong>致死率5-15%の重篤な感染症</p>
-                    </div>
-                </div>
+                        .severe-diseases-section::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 6px;
+                            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+                        }
 
-                <div class="disease-card">
-                    <h4>🍄 肺アスペルギルス症</h4>
-                    <div class="disease-details">
-                        <p><strong>原因：</strong>アスペルギルス属カビの感染</p>
-                        <p><strong>症状：</strong></p>
-                        <ul>
-                            <li>持続する咳・痰</li>
-                            <li>血痰</li>
-                            <li>呼吸困難</li>
-                            <li>胸部異常陰影</li>
-                        </ul>
-                        <p><strong>特徴：</strong>免疫力低下者で重篤化しやすい</p>
+                        .severe-diseases-header {
+                            text-align: center;
+                            margin-bottom: 2.5rem;
+                            padding-bottom: 2rem;
+                            border-bottom: 3px solid #fecaca;
+                        }
+
+                        .severe-diseases-header h3 {
+                            color: #991b1b;
+                            font-size: 2rem;
+                            margin: 0 0 1rem 0;
+                            font-weight: 800;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+                        }
+
+                        .severe-diseases-header .warning-icon {
+                            font-size: 2.5rem;
+                            color: #dc2626;
+                            filter: drop-shadow(0 2px 4px rgba(220, 38, 38, 0.3));
+                        }
+
+                        .severe-diseases-subtitle {
+                            color: #b91c1c;
+                            font-size: 1.1rem;
+                            margin: 0;
+                            font-weight: 600;
+                        }
+
+                        .diseases-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                            gap: 2rem;
+                            margin-top: 2rem;
+                        }
+
+                        .disease-card {
+                            background: white;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                            border: 2px solid #fecaca;
+                            transition: all 0.3s ease;
+                            position: relative;
+                        }
+
+                        .disease-card:hover {
+                            transform: translateY(-8px);
+                            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+                            border-color: #f87171;
+                        }
+
+                        .disease-card::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 5px;
+                            border-radius: 20px 20px 0 0;
+                        }
+
+                        .disease-card.hypersensitivity::before {
+                            background: linear-gradient(90deg, #7c3aed, #a855f7);
+                        }
+
+                        .disease-card.legionella::before {
+                            background: linear-gradient(90deg, #dc2626, #ef4444);
+                        }
+
+                        .disease-card.aspergillosis::before {
+                            background: linear-gradient(90deg, #ea580c, #fb923c);
+                        }
+
+                        .disease-header {
+                            padding: 2rem 2rem 1.5rem 2rem;
+                            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+                            border-bottom: 1px solid #e5e7eb;
+                        }
+
+                        .disease-title {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin: 0 0 1rem 0;
+                        }
+
+                        .disease-title h4 {
+                            color: #374151;
+                            font-size: 1.4rem;
+                            font-weight: 700;
+                            margin: 0;
+                            line-height: 1.3;
+                        }
+
+                        .disease-icon {
+                            font-size: 2.5rem;
+                            flex-shrink: 0;
+                        }
+
+                        .disease-name-en {
+                            font-size: 0.9rem;
+                            color: #6b7280;
+                            font-style: italic;
+                            margin-top: 0.2rem;
+                        }
+
+                        .severity-badge {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            padding: 0.4rem 1rem;
+                            border-radius: 25px;
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                            margin-top: 0.5rem;
+                        }
+
+                        .severity-badge.critical {
+                            background: linear-gradient(135deg, #dc2626, #b91c1c);
+                            color: white;
+                            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+                        }
+
+                        .severity-badge.high {
+                            background: linear-gradient(135deg, #ea580c, #c2410c);
+                            color: white;
+                            box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+                        }
+
+                        .disease-content {
+                            padding: 2rem;
+                        }
+
+                        .disease-section {
+                            margin-bottom: 2rem;
+                        }
+
+                        .disease-section:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        .section-title {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            margin-bottom: 1rem;
+                            color: #374151;
+                            font-size: 1.1rem;
+                            font-weight: 700;
+                        }
+
+                        .section-icon {
+                            font-size: 1.3rem;
+                            color: #6b7280;
+                        }
+
+                        .cause-section .section-icon {
+                            color: #7c3aed;
+                        }
+
+                        .symptoms-section .section-icon {
+                            color: #dc2626;
+                        }
+
+                        .progression-section .section-icon {
+                            color: #ea580c;
+                        }
+
+                        .disease-description {
+                            background: #f9fafb;
+                            padding: 1.2rem;
+                            border-radius: 12px;
+                            border-left: 4px solid #e5e7eb;
+                            margin-bottom: 1.5rem;
+                            color: #374151;
+                            line-height: 1.7;
+                        }
+
+                        .symptoms-list {
+                            display: grid;
+                            gap: 0.75rem;
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        .symptom-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            padding: 0.8rem 1.2rem;
+                            background: linear-gradient(135deg, #fefefe, #f8fafc);
+                            border: 1px solid #e5e7eb;
+                            border-radius: 10px;
+                            transition: all 0.2s ease;
+                        }
+
+                        .symptom-item:hover {
+                            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+                            border-color: #cbd5e1;
+                            transform: translateX(5px);
+                        }
+
+                        .symptom-indicator {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            flex-shrink: 0;
+                        }
+
+                        .symptom-indicator.fever {
+                            background: #ef4444;
+                        }
+
+                        .symptom-indicator.respiratory {
+                            background: #3b82f6;
+                        }
+
+                        .symptom-indicator.pain {
+                            background: #f59e0b;
+                        }
+
+                        .symptom-indicator.severe {
+                            background: #dc2626;
+                        }
+
+                        .symptom-text {
+                            color: #374151;
+                            font-weight: 500;
+                            line-height: 1.5;
+                        }
+
+                        .danger-warning {
+                            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                            border: 2px solid #fca5a5;
+                            border-radius: 15px;
+                            padding: 1.5rem;
+                            margin-top: 1.5rem;
+                        }
+
+                        .danger-warning .warning-header {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                            margin-bottom: 0.75rem;
+                        }
+
+                        .danger-warning .warning-icon {
+                            color: #dc2626;
+                            font-size: 1.5rem;
+                        }
+
+                        .danger-warning .warning-title {
+                            color: #991b1b;
+                            font-weight: 700;
+                            margin: 0;
+                        }
+
+                        .danger-warning .warning-text {
+                            color: #7f1d1d;
+                            margin: 0;
+                            line-height: 1.6;
+                        }
+
+                        .mortality-rate {
+                            background: linear-gradient(135deg, #7f1d1d, #991b1b);
+                            color: white;
+                            padding: 0.6rem 1.2rem;
+                            border-radius: 20px;
+                            font-weight: 700;
+                            display: inline-block;
+                            margin-top: 1rem;
+                            box-shadow: 0 4px 12px rgba(127, 29, 29, 0.4);
+                        }
+
+                        @media (max-width: 768px) {
+                            .severe-diseases-section {
+                                padding: 1.5rem;
+                                margin: 2rem 0;
+                            }
+
+                            .diseases-grid {
+                                grid-template-columns: 1fr;
+                                gap: 1.5rem;
+                            }
+
+                            .severe-diseases-header h3 {
+                                font-size: 1.6rem;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                            }
+
+                            .disease-header, .disease-content {
+                                padding: 1.5rem;
+                            }
+
+                            .disease-title {
+                                flex-direction: column;
+                                text-align: center;
+                                gap: 0.5rem;
+                            }
+
+                            .disease-icon {
+                                font-size: 2rem;
+                            }
+                        }
+                    </style>
+
+                    <div class="severe-diseases-header">
+                        <h3>
+                            <span class="warning-icon">🫁</span>
+                            重篤な呼吸器疾患
+                        </h3>
+                        <p class="severe-diseases-subtitle">
+                            加湿器カビによる生命に関わる深刻な疾患
+                        </p>
+                    </div>
+
+                    <div class="diseases-grid">
+                        <!-- 過敏性肺炎 -->
+                        <div class="disease-card hypersensitivity">
+                            <div class="disease-header">
+                                <div class="disease-title">
+                                    <span class="disease-icon">🫁</span>
+                                    <div>
+                                        <h4>過敏性肺炎</h4>
+                                        <div class="disease-name-en">Hypersensitivity Pneumonitis</div>
+                                    </div>
+                                </div>
+                                <div class="severity-badge high">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    重篤度：高
+                                </div>
+                            </div>
+                            <div class="disease-content">
+                                <div class="disease-section cause-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-microscope section-icon"></i>
+                                        発症原因
+                                    </h5>
+                                    <div class="disease-description">
+                                        カビ胞子の継続的吸入によるアレルギー反応。免疫系が過剰に反応し、肺胞に炎症を引き起こします。
+                                    </div>
+                                </div>
+
+                                <div class="disease-section symptoms-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-thermometer-half section-icon"></i>
+                                        主な症状
+                                    </h5>
+                                    <ul class="symptoms-list">
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator respiratory"></div>
+                                            <span class="symptom-text">激しい咳（乾性咳嗽）</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator respiratory"></div>
+                                            <span class="symptom-text">呼吸困難・息切れ</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator fever"></div>
+                                            <span class="symptom-text">発熱（38-39℃）</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator pain"></div>
+                                            <span class="symptom-text">胸痛・胸部圧迫感</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">倦怠感・体重減少</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="disease-section progression-section">
+                                    <div class="danger-warning">
+                                        <div class="warning-header">
+                                            <i class="fas fa-exclamation-triangle warning-icon"></i>
+                                            <h6 class="warning-title">進行の危険性</h6>
+                                        </div>
+                                        <p class="warning-text">
+                                            放置すると肺線維症に発展し、呼吸不全に至る可能性があります。早期発見・早期治療が生命予後を左右します。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- レジオネラ肺炎 -->
+                        <div class="disease-card legionella">
+                            <div class="disease-header">
+                                <div class="disease-title">
+                                    <span class="disease-icon">🦠</span>
+                                    <div>
+                                        <h4>レジオネラ肺炎</h4>
+                                        <div class="disease-name-en">Legionnaire's Disease</div>
+                                    </div>
+                                </div>
+                                <div class="severity-badge critical">
+                                    <i class="fas fa-skull-crossbones"></i>
+                                    重篤度：極高
+                                </div>
+                            </div>
+                            <div class="disease-content">
+                                <div class="disease-section cause-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-bacterium section-icon"></i>
+                                        病原体
+                                    </h5>
+                                    <div class="disease-description">
+                                        レジオネラ菌（Legionella pneumophila）の感染による重篤な細菌性肺炎。特に超音波式加湿器で繁殖しやすい。
+                                    </div>
+                                </div>
+
+                                <div class="disease-section symptoms-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-heartbeat section-icon"></i>
+                                        重篤症状
+                                    </h5>
+                                    <ul class="symptoms-list">
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator fever"></div>
+                                            <span class="symptom-text">高熱（39℃以上）</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">激しい頭痛</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator pain"></div>
+                                            <span class="symptom-text">筋肉痛・関節痛</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">血痰・胸痛</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">意識障害（重症例）</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="disease-section progression-section">
+                                    <div class="danger-warning">
+                                        <div class="warning-header">
+                                            <i class="fas fa-ambulance warning-icon"></i>
+                                            <h6 class="warning-title">致命的リスク</h6>
+                                        </div>
+                                        <p class="warning-text">
+                                            48-72時間で急速に悪化し、人工呼吸器が必要となる場合があります。
+                                        </p>
+                                        <div class="mortality-rate">
+                                            致死率：5-15%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 肺アスペルギルス症 -->
+                        <div class="disease-card aspergillosis">
+                            <div class="disease-header">
+                                <div class="disease-title">
+                                    <span class="disease-icon">🍄</span>
+                                    <div>
+                                        <h4>肺アスペルギルス症</h4>
+                                        <div class="disease-name-en">Pulmonary Aspergillosis</div>
+                                    </div>
+                                </div>
+                                <div class="severity-badge high">
+                                    <i class="fas fa-biohazard"></i>
+                                    重篤度：高
+                                </div>
+                            </div>
+                            <div class="disease-content">
+                                <div class="disease-section cause-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-seedling section-icon"></i>
+                                        真菌感染
+                                    </h5>
+                                    <div class="disease-description">
+                                        アスペルギルス属カビの感染。免疫力低下者で重篤化しやすく、肺内にカビが増殖し組織を破壊します。
+                                    </div>
+                                </div>
+
+                                <div class="disease-section symptoms-section">
+                                    <h5 class="section-title">
+                                        <i class="fas fa-lungs section-icon"></i>
+                                        特徴的症状
+                                    </h5>
+                                    <ul class="symptoms-list">
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator respiratory"></div>
+                                            <span class="symptom-text">持続する咳・痰</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">血痰（特徴的症状）</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator respiratory"></div>
+                                            <span class="symptom-text">呼吸困難</span>
+                                        </li>
+                                        <li class="symptom-item">
+                                            <div class="symptom-indicator severe"></div>
+                                            <span class="symptom-text">胸部異常陰影</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="disease-section progression-section">
+                                    <div class="danger-warning">
+                                        <div class="warning-header">
+                                            <i class="fas fa-user-injured warning-icon"></i>
+                                            <h6 class="warning-title">高リスク群</h6>
+                                        </div>
+                                        <p class="warning-text">
+                                            免疫不全患者、高齢者、慢性疾患患者で特に重篤化しやすく、肺機能の永続的低下を招く恐れがあります。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
