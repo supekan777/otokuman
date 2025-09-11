@@ -4291,66 +4291,494 @@
                     </div>
                     
                     <!-- 24時間運用スケジュール -->
-                    <div class="operation-schedule">
-                        <h3><i class="fas fa-clock"></i> 24時間運用スケジュール例</h3>
-                        <div class="schedule-timeline">
-                            <div class="time-block morning">
-                                <div class="time-header">
-                                    <div class="time-range">6:00-12:00</div>
-                                    <div class="time-label">朝・午前中</div>
+                    <style>
+                        .operation-schedule-v2 {
+                            margin: 3rem 0;
+                            padding: 2.5rem;
+                            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                            border-radius: 20px;
+                            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .operation-schedule-v2::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            right: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+                            animation: rotate 20s linear infinite;
+                        }
+
+                        @keyframes rotate {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+
+                        .schedule-header {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .schedule-title {
+                            font-size: 2rem;
+                            color: white;
+                            font-weight: 700;
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 0.5rem;
+                        }
+
+                        .schedule-subtitle {
+                            color: #a7c7e7;
+                            font-size: 1.1rem;
+                        }
+
+                        .timeline-container {
+                            position: relative;
+                            padding: 0 1rem;
+                        }
+
+                        .timeline-line {
+                            position: absolute;
+                            left: 50%;
+                            top: 0;
+                            bottom: 0;
+                            width: 3px;
+                            background: linear-gradient(180deg, #4fc3f7 0%, #29b6f6 100%);
+                            transform: translateX(-50%);
+                            z-index: 0;
+                        }
+
+                        .time-blocks {
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .time-block-v2 {
+                            display: flex;
+                            margin-bottom: 3rem;
+                            align-items: center;
+                            position: relative;
+                        }
+
+                        .time-block-v2:nth-child(even) {
+                            flex-direction: row-reverse;
+                        }
+
+                        .time-block-content {
+                            flex: 1;
+                            background: white;
+                            border-radius: 16px;
+                            padding: 1.5rem;
+                            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                            transition: all 0.3s ease;
+                            position: relative;
+                        }
+
+                        .time-block-v2:nth-child(odd) .time-block-content {
+                            margin-right: 2rem;
+                        }
+
+                        .time-block-v2:nth-child(even) .time-block-content {
+                            margin-left: 2rem;
+                        }
+
+                        .time-block-content:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+                        }
+
+                        .time-indicator {
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 60px;
+                            height: 60px;
+                            background: white;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                            z-index: 2;
+                        }
+
+                        .time-icon {
+                            font-size: 1.8rem;
+                        }
+
+                        .morning-icon { color: #ffa726; }
+                        .afternoon-icon { color: #66bb6a; }
+                        .evening-icon { color: #ab47bc; }
+                        .night-icon { color: #5c6bc0; }
+
+                        .block-header {
+                            margin-bottom: 1rem;
+                            padding-bottom: 1rem;
+                            border-bottom: 2px solid #f0f4f8;
+                        }
+
+                        .time-range {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #1e3c72;
+                            margin-bottom: 0.3rem;
+                        }
+
+                        .time-label {
+                            font-size: 1rem;
+                            color: #64748b;
+                            font-weight: 500;
+                        }
+
+                        .humidity-meter {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin-bottom: 1.5rem;
+                            padding: 1rem;
+                            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+                            border-radius: 12px;
+                        }
+
+                        .humidity-icon {
+                            width: 40px;
+                            height: 40px;
+                            background: white;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 1.3rem;
+                        }
+
+                        .humidity-info {
+                            flex: 1;
+                        }
+
+                        .humidity-label {
+                            font-size: 0.85rem;
+                            color: #546e7a;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                        }
+
+                        .humidity-value {
+                            font-size: 1.3rem;
+                            font-weight: 700;
+                            color: #1565c0;
+                        }
+
+                        .operation-points {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.8rem;
+                        }
+
+                        .point-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 0.8rem;
+                            padding: 0.8rem;
+                            background: #f8fafc;
+                            border-radius: 10px;
+                            transition: all 0.2s ease;
+                        }
+
+                        .point-item:hover {
+                            background: #e8f5e9;
+                            transform: translateX(5px);
+                        }
+
+                        .point-icon {
+                            flex-shrink: 0;
+                            width: 24px;
+                            height: 24px;
+                            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-size: 0.8rem;
+                        }
+
+                        .point-text {
+                            flex: 1;
+                            color: #37474f;
+                            font-size: 0.95rem;
+                            line-height: 1.4;
+                        }
+
+                        .schedule-summary {
+                            margin-top: 3rem;
+                            padding: 2rem;
+                            background: rgba(255,255,255,0.95);
+                            border-radius: 16px;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .summary-title {
+                            font-size: 1.3rem;
+                            color: #1e3c72;
+                            margin-bottom: 1.5rem;
+                            text-align: center;
+                            font-weight: 600;
+                        }
+
+                        .summary-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1.5rem;
+                        }
+
+                        .summary-item {
+                            text-align: center;
+                            padding: 1.2rem;
+                            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                            border-radius: 12px;
+                            transition: all 0.2s ease;
+                        }
+
+                        .summary-item:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                        }
+
+                        .summary-icon {
+                            font-size: 2rem;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .summary-label {
+                            font-size: 0.85rem;
+                            color: #64748b;
+                            margin-bottom: 0.3rem;
+                        }
+
+                        .summary-value {
+                            font-size: 1.2rem;
+                            font-weight: 700;
+                            color: #1e3c72;
+                        }
+
+                        @media (max-width: 768px) {
+                            .timeline-line {
+                                left: 30px;
+                            }
+
+                            .time-block-v2 {
+                                flex-direction: column !important;
+                                align-items: flex-start;
+                            }
+
+                            .time-block-v2:nth-child(even) {
+                                flex-direction: column !important;
+                            }
+
+                            .time-indicator {
+                                left: 30px;
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .time-block-content {
+                                margin-left: 70px !important;
+                                margin-right: 0 !important;
+                            }
+
+                            .schedule-title {
+                                font-size: 1.5rem;
+                            }
+
+                            .operation-schedule-v2 {
+                                padding: 1.5rem;
+                            }
+                        }
+                    </style>
+
+                    <div class="operation-schedule-v2">
+                        <div class="schedule-header">
+                            <h3 class="schedule-title">
+                                <i class="fas fa-clock"></i>
+                                24時間運用スケジュール例
+                            </h3>
+                            <p class="schedule-subtitle">赤ちゃんの生活リズムに合わせた最適な加湿管理</p>
+                        </div>
+
+                        <div class="timeline-container">
+                            <div class="timeline-line"></div>
+                            <div class="time-blocks">
+                                <!-- 朝・午前中 -->
+                                <div class="time-block-v2">
+                                    <div class="time-block-content">
+                                        <div class="block-header">
+                                            <div class="time-range">6:00 - 12:00</div>
+                                            <div class="time-label">朝・午前中</div>
+                                        </div>
+                                        <div class="humidity-meter">
+                                            <div class="humidity-icon">💧</div>
+                                            <div class="humidity-info">
+                                                <div class="humidity-label">目標湿度</div>
+                                                <div class="humidity-value">50-55%</div>
+                                            </div>
+                                        </div>
+                                        <div class="operation-points">
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">起床と同時に換気とともに湿度チェック</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">日中活動開始に合わせて中～高出力運転</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">朝の授乳・オムツ替え時は一時停止OK</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="time-indicator">
+                                        <span class="time-icon morning-icon">🌅</span>
+                                    </div>
                                 </div>
-                                <div class="time-content">
-                                    <div class="humidity-target">目標湿度: 50-55%</div>
-                                    <div class="operation-tips">
-                                        <div class="tip">• 起床と同時に換気とともに湿度チェック</div>
-                                        <div class="tip">• 日中活動開始に合わせて中～高出力運転</div>
-                                        <div class="tip">• 朝の授乳・オムツ替え時は一時停止OK</div>
+
+                                <!-- 昼・夕方 -->
+                                <div class="time-block-v2">
+                                    <div class="time-block-content">
+                                        <div class="block-header">
+                                            <div class="time-range">12:00 - 18:00</div>
+                                            <div class="time-label">昼・夕方</div>
+                                        </div>
+                                        <div class="humidity-meter">
+                                            <div class="humidity-icon">💧</div>
+                                            <div class="humidity-info">
+                                                <div class="humidity-label">目標湿度</div>
+                                                <div class="humidity-value">45-55%</div>
+                                            </div>
+                                        </div>
+                                        <div class="operation-points">
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">日中最も乾燥する時間帯、出力アップ</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">お昼寝時間は静音モードに切り替え</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">来客時は一時的に別室移動も検討</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="time-indicator">
+                                        <span class="time-icon afternoon-icon">☀️</span>
+                                    </div>
+                                </div>
+
+                                <!-- 夜・就寝前 -->
+                                <div class="time-block-v2">
+                                    <div class="time-block-content">
+                                        <div class="block-header">
+                                            <div class="time-range">18:00 - 22:00</div>
+                                            <div class="time-label">夜・就寝前</div>
+                                        </div>
+                                        <div class="humidity-meter">
+                                            <div class="humidity-icon">💧</div>
+                                            <div class="humidity-info">
+                                                <div class="humidity-label">目標湿度</div>
+                                                <div class="humidity-value">50-60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="operation-points">
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">就寝準備として湿度を少し高めに設定</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">お風呂上がりの湿度上昇を考慮して調整</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">夜間用の静音モードに切り替え準備</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="time-indicator">
+                                        <span class="time-icon evening-icon">🌆</span>
+                                    </div>
+                                </div>
+
+                                <!-- 深夜・早朝 -->
+                                <div class="time-block-v2">
+                                    <div class="time-block-content">
+                                        <div class="block-header">
+                                            <div class="time-range">22:00 - 6:00</div>
+                                            <div class="time-label">深夜・早朝</div>
+                                        </div>
+                                        <div class="humidity-meter">
+                                            <div class="humidity-icon">💧</div>
+                                            <div class="humidity-info">
+                                                <div class="humidity-label">目標湿度</div>
+                                                <div class="humidity-value">55-60%</div>
+                                            </div>
+                                        </div>
+                                        <div class="operation-points">
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">最優先は静音性、25dB以下必須</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">夜間授乳時の乾燥対策として継続運転</div>
+                                            </div>
+                                            <div class="point-item">
+                                                <div class="point-icon">✓</div>
+                                                <div class="point-text">朝方の湿度低下に備えてタイマー調整</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="time-indicator">
+                                        <span class="time-icon night-icon">🌙</span>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="time-block afternoon">
-                                <div class="time-header">
-                                    <div class="time-range">12:00-18:00</div>
-                                    <div class="time-label">昼・夕方</div>
+                        </div>
+
+                        <!-- サマリー -->
+                        <div class="schedule-summary">
+                            <h4 class="summary-title">📊 運用ポイントまとめ</h4>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <div class="summary-icon">💧</div>
+                                    <div class="summary-label">平均湿度</div>
+                                    <div class="summary-value">50-55%</div>
                                 </div>
-                                <div class="time-content">
-                                    <div class="humidity-target">目標湿度: 45-55%</div>
-                                    <div class="operation-tips">
-                                        <div class="tip">• 日中最も乾燥する時間帯、出力アップ</div>
-                                        <div class="tip">• お昼寝時間は静音モードに切り替え</div>
-                                        <div class="tip">• 来客時は一時的に別室移動も検討</div>
-                                    </div>
+                                <div class="summary-item">
+                                    <div class="summary-icon">🔇</div>
+                                    <div class="summary-label">夜間騒音</div>
+                                    <div class="summary-value">25dB以下</div>
                                 </div>
-                            </div>
-                            
-                            <div class="time-block evening">
-                                <div class="time-header">
-                                    <div class="time-range">18:00-22:00</div>
-                                    <div class="time-label">夜・就寝前</div>
+                                <div class="summary-item">
+                                    <div class="summary-icon">⏰</div>
+                                    <div class="summary-label">水交換頻度</div>
+                                    <div class="summary-value">毎日1回</div>
                                 </div>
-                                <div class="time-content">
-                                    <div class="humidity-target">目標湿度: 50-60%</div>
-                                    <div class="operation-tips">
-                                        <div class="tip">• 就寝準備として湿度を少し高めに設定</div>
-                                        <div class="tip">• お風呂上がりの湿度上昇を考慮して調整</div>
-                                        <div class="tip">• 夜間用の静音モードに切り替え準備</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="time-block night">
-                                <div class="time-header">
-                                    <div class="time-range">22:00-6:00</div>
-                                    <div class="time-label">深夜・早朝</div>
-                                </div>
-                                <div class="time-content">
-                                    <div class="humidity-target">目標湿度: 55-60%</div>
-                                    <div class="operation-tips">
-                                        <div class="tip">• 最優先は静音性、25dB以下必須</div>
-                                        <div class="tip">• 夜間授乳時の乾燥対策として継続運転</div>
-                                        <div class="tip">• 朝方の湿度低下に備えてタイマー調整</div>
-                                    </div>
+                                <div class="summary-item">
+                                    <div class="summary-icon">🌡️</div>
+                                    <div class="summary-label">室温目安</div>
+                                    <div class="summary-value">20-22℃</div>
                                 </div>
                             </div>
                         </div>
