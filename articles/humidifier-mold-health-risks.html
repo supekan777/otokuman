@@ -4027,78 +4027,497 @@
                     </div>
                 </div>
 
-                <h2 id="emergency-response"><i class="fas fa-first-aid"></i> 緊急時の対処法</h2>
-                
-                <h3>🚨 即座に行うべき対応</h3>
-                
-                <div class="emergency-steps">
-                    <div class="emergency-step">
-                        <div class="step-number">1</div>
-                        <h4>加湿器の即座停止</h4>
-                        <ul>
-                            <li>電源を切り、コンセントから抜く</li>
-                            <li>水を完全に排出</li>
-                            <li>分解・乾燥させる</li>
-                            <li>使用を一時停止</li>
-                        </ul>
-                    </div>
+                <!-- 緊急時の対処法セクション -->
+                <style>
+                    .emergency-section {
+                        margin: 2rem 0;
+                        background: linear-gradient(135deg, #fff5f5, #ffeaea);
+                        border-radius: 20px;
+                        padding: 2rem;
+                        border: 2px solid #fee2e2;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .emergency-section::before {
+                        content: "";
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at center, rgba(239, 68, 68, 0.1) 0%, transparent 70%);
+                        animation: emergencyPulse 3s ease-in-out infinite;
+                        z-index: 0;
+                    }
+                    
+                    @keyframes emergencyPulse {
+                        0%, 100% { 
+                            transform: scale(1);
+                            opacity: 0.3;
+                        }
+                        50% { 
+                            transform: scale(1.1);
+                            opacity: 0.6;
+                        }
+                    }
+                    
+                    .emergency-header {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .emergency-title {
+                        font-size: 2.2rem;
+                        color: #dc2626;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        animation: emergencyFlash 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes emergencyFlash {
+                        0%, 100% { 
+                            color: #dc2626;
+                            text-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+                        }
+                        50% { 
+                            color: #ef4444;
+                            text-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+                        }
+                    }
+                    
+                    .emergency-subtitle {
+                        font-size: 1.1rem;
+                        color: #7f1d1d;
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 0.8rem 1.5rem;
+                        border-radius: 25px;
+                        border: 1px solid #fca5a5;
+                        display: inline-block;
+                    }
+                    
+                    .emergency-alert {
+                        background: linear-gradient(135deg, #dc2626, #b91c1c);
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 15px;
+                        margin: 1.5rem 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+                        position: relative;
+                        z-index: 1;
+                        animation: emergencyBlink 1.5s ease-in-out infinite;
+                    }
+                    
+                    @keyframes emergencyBlink {
+                        0%, 100% { 
+                            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+                        }
+                        50% { 
+                            box-shadow: 0 4px 25px rgba(220, 38, 38, 0.6), 0 0 30px rgba(220, 38, 38, 0.4);
+                        }
+                    }
+                    
+                    .alert-icon {
+                        font-size: 2rem;
+                        animation: rotate 2s linear infinite;
+                    }
+                    
+                    @keyframes rotate {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                    
+                    .immediate-actions {
+                        position: relative;
+                        z-index: 1;
+                        margin: 2rem 0;
+                    }
+                    
+                    .actions-title {
+                        font-size: 1.5rem;
+                        color: #dc2626;
+                        margin-bottom: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .emergency-steps-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                        gap: 1.5rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .emergency-action-card {
+                        background: linear-gradient(135deg, #ffffff, #fef7f7);
+                        border: 2px solid #fca5a5;
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                    }
+                    
+                    .emergency-action-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+                        border-color: #f87171;
+                    }
+                    
+                    .action-number {
+                        position: absolute;
+                        top: -15px;
+                        left: 20px;
+                        background: linear-gradient(135deg, #dc2626, #b91c1c);
+                        color: white;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+                        animation: actionPulse 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes actionPulse {
+                        0%, 100% { 
+                            transform: scale(1);
+                        }
+                        50% { 
+                            transform: scale(1.1);
+                        }
+                    }
+                    
+                    .action-title {
+                        font-size: 1.3rem;
+                        color: #7f1d1d;
+                        margin: 0.5rem 0 1rem 0;
+                        font-weight: 600;
+                    }
+                    
+                    .action-steps {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    
+                    .action-steps li {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        padding: 0.6rem 0;
+                        border-bottom: 1px solid #fecaca;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .action-steps li:last-child {
+                        border-bottom: none;
+                    }
+                    
+                    .action-steps li:hover {
+                        background: rgba(239, 68, 68, 0.05);
+                        transform: translateX(5px);
+                    }
+                    
+                    .action-steps li::before {
+                        content: "▶";
+                        color: #dc2626;
+                        font-weight: bold;
+                        font-size: 0.8rem;
+                    }
+                    
+                    .urgency-assessment {
+                        margin: 3rem 0;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .urgency-title {
+                        font-size: 1.5rem;
+                        color: #dc2626;
+                        margin-bottom: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .urgency-cards {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 1.5rem;
+                    }
+                    
+                    .urgency-level-card {
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                    }
+                    
+                    .urgency-level-card:hover {
+                        transform: translateY(-5px);
+                    }
+                    
+                    .urgency-critical {
+                        background: linear-gradient(135deg, #dc2626, #b91c1c);
+                        color: white;
+                        border: 3px solid #991b1b;
+                        animation: criticalAlert 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes criticalAlert {
+                        0%, 100% { 
+                            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+                        }
+                        50% { 
+                            box-shadow: 0 5px 30px rgba(220, 38, 38, 0.8), 0 0 40px rgba(220, 38, 38, 0.6);
+                        }
+                    }
+                    
+                    .urgency-high {
+                        background: linear-gradient(135deg, #f97316, #ea580c);
+                        color: white;
+                        border: 3px solid #c2410c;
+                    }
+                    
+                    .urgency-high:hover {
+                        box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+                    }
+                    
+                    .urgency-moderate {
+                        background: linear-gradient(135deg, #eab308, #ca8a04);
+                        color: white;
+                        border: 3px solid #a16207;
+                    }
+                    
+                    .urgency-moderate:hover {
+                        box-shadow: 0 10px 25px rgba(234, 179, 8, 0.3);
+                    }
+                    
+                    .urgency-card-title {
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .urgency-symptoms {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    
+                    .urgency-symptoms li {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        padding: 0.6rem 0;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .urgency-symptoms li:last-child {
+                        border-bottom: none;
+                    }
+                    
+                    .urgency-symptoms li:hover {
+                        background: rgba(255, 255, 255, 0.1);
+                        transform: translateX(5px);
+                    }
+                    
+                    .urgency-symptoms li::before {
+                        content: "●";
+                        font-weight: bold;
+                        font-size: 1rem;
+                    }
+                    
+                    .emergency-contact {
+                        background: linear-gradient(135deg, #111827, #1f2937);
+                        color: white;
+                        padding: 2rem;
+                        border-radius: 15px;
+                        margin: 2rem 0;
+                        text-align: center;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .emergency-contact h4 {
+                        color: #ef4444;
+                        font-size: 1.4rem;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .contact-number {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: #fbbf24;
+                        margin: 1rem 0;
+                        display: block;
+                        animation: numberGlow 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes numberGlow {
+                        0%, 100% { 
+                            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+                        }
+                        50% { 
+                            text-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+                        }
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .emergency-steps-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .urgency-cards {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .emergency-title {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .emergency-section {
+                            padding: 1.5rem;
+                        }
+                    }
+                </style>
 
-                    <div class="emergency-step">
-                        <div class="step-number">2</div>
-                        <h4>換気の実施</h4>
-                        <ul>
-                            <li>全ての窓を開ける</li>
-                            <li>換気扇を強運転</li>
-                            <li>空気清浄機があれば強運転</li>
-                            <li>最低2時間継続</li>
-                        </ul>
+                <div class="emergency-section">
+                    <div class="emergency-header">
+                        <h2 class="emergency-title" id="emergency-response">
+                            <i class="fas fa-first-aid"></i>
+                            緊急時の対処法
+                        </h2>
+                        <p class="emergency-subtitle">
+                            加湿器由来の健康被害発生時における医学的根拠に基づいた緊急対応プロトコル
+                        </p>
+                        
+                        <div class="emergency-alert">
+                            <div class="alert-icon">🚨</div>
+                            <div>
+                                <strong>重要：</strong>症状が深刻な場合は迷わず救急車を呼んでください。
+                                加湿器使用歴を必ず医療従事者に伝えることが診断の鍵となります。
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="emergency-step">
-                        <div class="step-number">3</div>
-                        <h4>症状の記録</h4>
-                        <ul>
-                            <li>症状の詳細記録</li>
-                            <li>発症時期の特定</li>
-                            <li>家族全員の状態確認</li>
-                            <li>写真・動画での記録</li>
-                        </ul>
+                    
+                    <div class="immediate-actions">
+                        <h3 class="actions-title">
+                            <i class="fas fa-bolt"></i>
+                            即座に行うべき対応
+                        </h3>
+                        
+                        <div class="emergency-steps-grid">
+                            <div class="emergency-action-card">
+                                <div class="action-number">1</div>
+                                <h4 class="action-title">加湿器の緊急停止</h4>
+                                <ul class="action-steps">
+                                    <li>電源ボタンを押して即座に停止</li>
+                                    <li>コンセントから電源プラグを抜く</li>
+                                    <li>タンク内の水を完全に排出</li>
+                                    <li>本体を分解して自然乾燥</li>
+                                    <li>二次汚染防止のため密閉保管</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="emergency-action-card">
+                                <div class="action-number">2</div>
+                                <h4 class="action-title">室内環境の改善</h4>
+                                <ul class="action-steps">
+                                    <li>全ての窓を開けて十分な換気</li>
+                                    <li>換気扇を最大出力で稼働</li>
+                                    <li>空気清浄機を強モードで運転</li>
+                                    <li>最低2-3時間の継続換気実施</li>
+                                    <li>湿度を50%以下まで低下させる</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="emergency-action-card">
+                                <div class="action-number">3</div>
+                                <h4 class="action-title">症状の詳細記録</h4>
+                                <ul class="action-steps">
+                                    <li>発症時刻と症状の詳細記録</li>
+                                    <li>家族全員の健康状態チェック</li>
+                                    <li>症状の写真・動画での記録</li>
+                                    <li>加湿器使用期間と頻度の記録</li>
+                                    <li>医療機関への情報提供準備</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <h3>🏥 医療機関受診の判断</h3>
-                
-                <div class="urgency-levels">
-                    <div class="urgency-card emergency">
-                        <h4>🚑 救急受診（即座に119番）</h4>
-                        <ul>
-                            <li>呼吸困難・激しい息切れ</li>
-                            <li>意識がもうろう・失神</li>
-                            <li>高熱（39℃以上）と呼吸器症状</li>
-                            <li>血痰・胸痛</li>
-                            <li>乳幼児の哺乳不良・ぐったり</li>
-                        </ul>
+                    
+                    <div class="urgency-assessment">
+                        <h3 class="urgency-title">
+                            <i class="fas fa-hospital"></i>
+                            緊急度別：医療機関受診判断
+                        </h3>
+                        
+                        <div class="urgency-cards">
+                            <div class="urgency-level-card urgency-critical">
+                                <h4 class="urgency-card-title">
+                                    🚑 最高緊急（即座に119番通報）
+                                </h4>
+                                <ul class="urgency-symptoms">
+                                    <li>重篤な呼吸困難・喘鳴</li>
+                                    <li>意識レベルの低下・失神</li>
+                                    <li>高熱（39℃以上）と呼吸器症状</li>
+                                    <li>血痰・胸部激痛</li>
+                                    <li>乳幼児の哺乳困難・ぐったり</li>
+                                    <li>アナフィラキシー様症状</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="urgency-level-card urgency-high">
+                                <h4 class="urgency-card-title">
+                                    🏥 高緊急（当日中の受診必須）
+                                </h4>
+                                <ul class="urgency-symptoms">
+                                    <li>持続する激しい咳・痰</li>
+                                    <li>38℃以上の発熱継続</li>
+                                    <li>喘息様症状の急激な悪化</li>
+                                    <li>顔面・唇・舌の腫れ</li>
+                                    <li>嘔吐・下痢を伴う全身症状</li>
+                                    <li>皮膚の広範囲な発疹・痒み</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="urgency-level-card urgency-moderate">
+                                <h4 class="urgency-card-title">
+                                    📅 中等度（1-2日以内に受診）
+                                </h4>
+                                <ul class="urgency-symptoms">
+                                    <li>軽度の咳・鼻水が数日継続</li>
+                                    <li>微熱・全身倦怠感</li>
+                                    <li>皮膚症状の緩徐な悪化</li>
+                                    <li>食欲不振・睡眠障害</li>
+                                    <li>症状の改善傾向が見られない</li>
+                                    <li>慢性疾患の既往がある場合</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="urgency-card urgent">
-                        <h4>🏨 当日受診（数時間以内）</h4>
-                        <ul>
-                            <li>持続する激しい咳</li>
-                            <li>38℃以上の発熱</li>
-                            <li>喘鳴・喘息様症状</li>
-                            <li>顔面・唇の腫れ</li>
-                            <li>嘔吐・下痢を伴う症状</li>
-                        </ul>
-                    </div>
-
-                    <div class="urgency-card scheduled">
-                        <h4>📅 計画受診（1-2日以内）</h4>
-                        <ul>
-                            <li>軽度の咳・鼻水が続く</li>
-                            <li>微熱・だるさ</li>
-                            <li>皮膚症状の悪化</li>
-                            <li>症状の改善がない</li>
-                        </ul>
+                    
+                    <div class="emergency-contact">
+                        <h4><i class="fas fa-phone-alt"></i> 緊急連絡先</h4>
+                        <p>生命に関わる症状の場合</p>
+                        <span class="contact-number">119</span>
+                        <p>加湿器による健康被害であることを必ず伝える</p>
                     </div>
                 </div>
 
