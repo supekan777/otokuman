@@ -4524,10 +4524,10 @@
                 <style>
                     .safe-usage-section {
                         margin: 2rem 0;
-                        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                        background: linear-gradient(135deg, #fefefe, #f8fafc);
                         border-radius: 20px;
                         padding: 2rem;
-                        border: 2px solid #bae6fd;
+                        border: 2px solid #e2e8f0;
                         position: relative;
                         overflow: hidden;
                     }
@@ -4539,7 +4539,7 @@
                         left: -50%;
                         width: 200%;
                         height: 200%;
-                        background: radial-gradient(circle at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+                        background: radial-gradient(circle at center, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
                         animation: safetyPulse 4s ease-in-out infinite;
                         z-index: 0;
                     }
@@ -4547,11 +4547,11 @@
                     @keyframes safetyPulse {
                         0%, 100% { 
                             transform: scale(1);
-                            opacity: 0.4;
+                            opacity: 0.3;
                         }
                         50% { 
                             transform: scale(1.05);
-                            opacity: 0.7;
+                            opacity: 0.5;
                         }
                     }
                     
@@ -4564,38 +4564,26 @@
                     
                     .safe-usage-title {
                         font-size: 2.2rem;
-                        color: #0369a1;
+                        color: #1e40af;
                         margin-bottom: 1rem;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         gap: 0.5rem;
-                        animation: safetyGlow 3s ease-in-out infinite;
-                    }
-                    
-                    @keyframes safetyGlow {
-                        0%, 100% { 
-                            color: #0369a1;
-                            text-shadow: 0 0 10px rgba(3, 105, 161, 0.3);
-                        }
-                        50% { 
-                            color: #0284c7;
-                            text-shadow: 0 0 20px rgba(2, 132, 199, 0.5);
-                        }
                     }
                     
                     .safe-usage-subtitle {
                         font-size: 1.1rem;
-                        color: #164e63;
-                        background: rgba(255, 255, 255, 0.8);
+                        color: #475569;
+                        background: rgba(255, 255, 255, 0.9);
                         padding: 0.8rem 1.5rem;
                         border-radius: 25px;
-                        border: 1px solid #7dd3fc;
+                        border: 1px solid #cbd5e1;
                         display: inline-block;
                     }
                     
                     .safety-intro {
-                        background: linear-gradient(135deg, #0369a1, #0284c7);
+                        background: linear-gradient(135deg, #3b82f6, #2563eb);
                         color: white;
                         padding: 1.5rem;
                         border-radius: 15px;
@@ -4603,7 +4591,7 @@
                         display: flex;
                         align-items: center;
                         gap: 1rem;
-                        box-shadow: 0 4px 15px rgba(3, 105, 161, 0.3);
+                        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
                         position: relative;
                         z-index: 1;
                     }
@@ -4615,9 +4603,9 @@
                     
                     @keyframes shieldRotate {
                         0% { transform: rotate(0deg) scale(1); }
-                        25% { transform: rotate(90deg) scale(1.1); }
+                        25% { transform: rotate(90deg) scale(1.05); }
                         50% { transform: rotate(180deg) scale(1); }
-                        75% { transform: rotate(270deg) scale(1.1); }
+                        75% { transform: rotate(270deg) scale(1.05); }
                         100% { transform: rotate(360deg) scale(1); }
                     }
                     
@@ -4629,7 +4617,7 @@
                     
                     .selection-title {
                         font-size: 1.5rem;
-                        color: #0369a1;
+                        color: #1e40af;
                         margin-bottom: 1.5rem;
                         display: flex;
                         align-items: center;
@@ -4659,7 +4647,7 @@
                         left: -100%;
                         width: 100%;
                         height: 100%;
-                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
                         transition: left 0.5s;
                     }
                     
@@ -4668,49 +4656,40 @@
                     }
                     
                     .safety-type-card:hover {
-                        transform: translateY(-8px);
+                        transform: translateY(-5px);
                     }
                     
                     .safety-excellent {
-                        background: linear-gradient(135deg, #059669, #047857);
+                        background: linear-gradient(135deg, #10b981, #059669);
                         color: white;
-                        border: 3px solid #065f46;
-                        animation: excellentGlow 3s ease-in-out infinite;
+                        border: 2px solid #047857;
+                        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
                     }
                     
-                    @keyframes excellentGlow {
-                        0%, 100% { 
-                            box-shadow: 0 5px 20px rgba(5, 150, 105, 0.4);
-                        }
-                        50% { 
-                            box-shadow: 0 5px 30px rgba(5, 150, 105, 0.7), 0 0 40px rgba(5, 150, 105, 0.3);
-                        }
+                    .safety-excellent:hover {
+                        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
                     }
                     
                     .safety-good {
-                        background: linear-gradient(135deg, #0369a1, #0284c7);
+                        background: linear-gradient(135deg, #3b82f6, #2563eb);
                         color: white;
-                        border: 3px solid #0c4a6e;
+                        border: 2px solid #1d4ed8;
+                        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
                     }
                     
                     .safety-good:hover {
-                        box-shadow: 0 10px 25px rgba(3, 105, 161, 0.3);
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
                     }
                     
                     .safety-caution {
-                        background: linear-gradient(135deg, #dc2626, #b91c1c);
+                        background: linear-gradient(135deg, #f59e0b, #d97706);
                         color: white;
-                        border: 3px solid #991b1b;
-                        animation: cautionAlert 2s ease-in-out infinite;
+                        border: 2px solid #b45309;
+                        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
                     }
                     
-                    @keyframes cautionAlert {
-                        0%, 100% { 
-                            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
-                        }
-                        50% { 
-                            box-shadow: 0 5px 30px rgba(220, 38, 38, 0.6), 0 0 30px rgba(220, 38, 38, 0.4);
-                        }
+                    .safety-caution:hover {
+                        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
                     }
                     
                     .safety-card-header {
