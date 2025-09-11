@@ -3391,35 +3391,412 @@
                     </div>
                     
                     <!-- 住宅タイプ別設置ガイド -->
-                    <div class="housing-type-guide">
-                        <h3><i class="fas fa-building"></i> 住宅タイプ別設置ガイド</h3>
-                        <div class="housing-cards">
-                            <div class="housing-card">
-                                <h4><i class="fas fa-home"></i> 一戸建て</h4>
-                                <ul>
-                                    <li><strong>設置場所:</strong> 1階リビング→2階寝室の順で配置</li>
-                                    <li><strong>注意点:</strong> 階段での湿度差に注意、各階に湿度計必須</li>
-                                    <li><strong>運用:</strong> 複数台使用で全体湿度を均一化</li>
-                                    <li><strong>コツ:</strong> 暖房と連動した湿度制御が効果的</li>
-                                </ul>
+                    <style>
+                        .housing-type-guide-v2 {
+                            margin: 3rem 0;
+                            padding: 2.5rem;
+                            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+                            border-radius: 20px;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                        }
+
+                        .housing-guide-header {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                        }
+
+                        .housing-guide-title {
+                            font-size: 2rem;
+                            color: #1e3a5f;
+                            font-weight: 700;
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 0.5rem;
+                        }
+
+                        .housing-guide-subtitle {
+                            color: #5a7795;
+                            font-size: 1.1rem;
+                        }
+
+                        .housing-types-container {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                            gap: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .housing-type-card {
+                            background: white;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                            transition: all 0.3s ease;
+                            position: relative;
+                        }
+
+                        .housing-type-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+                        }
+
+                        .housing-card-header {
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            padding: 1.5rem;
+                            color: white;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .housing-card-header.mansion {
+                            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                        }
+
+                        .housing-card-header.oneroom {
+                            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                        }
+
+                        .housing-card-header::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            right: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                            animation: shimmer 3s infinite;
+                        }
+
+                        @keyframes shimmer {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+
+                        .housing-type-icon {
+                            font-size: 3rem;
+                            margin-bottom: 0.5rem;
+                            opacity: 0.9;
+                        }
+
+                        .housing-type-name {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            margin: 0;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .housing-card-body {
+                            padding: 1.5rem;
+                        }
+
+                        .housing-detail-grid {
+                            display: grid;
+                            gap: 1.2rem;
+                        }
+
+                        .housing-detail-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 1rem;
+                            padding: 0.8rem;
+                            background: #f8fafc;
+                            border-radius: 10px;
+                            transition: all 0.2s ease;
+                        }
+
+                        .housing-detail-item:hover {
+                            background: #e8f4fd;
+                            transform: translateX(5px);
+                        }
+
+                        .detail-icon {
+                            flex-shrink: 0;
+                            width: 35px;
+                            height: 35px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: white;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        }
+
+                        .detail-icon i {
+                            font-size: 1rem;
+                            color: #667eea;
+                        }
+
+                        .mansion .detail-icon i {
+                            color: #f5576c;
+                        }
+
+                        .oneroom .detail-icon i {
+                            color: #00f2fe;
+                        }
+
+                        .detail-content {
+                            flex: 1;
+                        }
+
+                        .detail-label {
+                            font-size: 0.85rem;
+                            color: #94a3b8;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            margin-bottom: 0.2rem;
+                        }
+
+                        .detail-text {
+                            color: #334155;
+                            font-size: 0.95rem;
+                            line-height: 1.4;
+                        }
+
+                        .housing-best-practice {
+                            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+                            border-radius: 12px;
+                            padding: 1rem;
+                            margin-top: 1rem;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .housing-best-practice::before {
+                            content: '💡';
+                            position: absolute;
+                            top: -10px;
+                            right: 10px;
+                            font-size: 2rem;
+                            opacity: 0.5;
+                        }
+
+                        .best-practice-title {
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                            color: #6c5ce7;
+                            margin-bottom: 0.3rem;
+                        }
+
+                        .best-practice-text {
+                            color: #2d3436;
+                            font-size: 0.9rem;
+                            line-height: 1.4;
+                        }
+
+                        .housing-comparison-table {
+                            background: white;
+                            border-radius: 12px;
+                            padding: 1.5rem;
+                            margin-top: 2rem;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                        }
+
+                        .comparison-table-title {
+                            font-size: 1.2rem;
+                            color: #1e3a5f;
+                            margin-bottom: 1rem;
+                            text-align: center;
+                        }
+
+                        .comparison-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1rem;
+                        }
+
+                        .comparison-item {
+                            text-align: center;
+                            padding: 1rem;
+                            background: #f8fafc;
+                            border-radius: 8px;
+                        }
+
+                        .comparison-label {
+                            font-size: 0.85rem;
+                            color: #64748b;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .comparison-value {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #334155;
+                        }
+
+                        @media (max-width: 768px) {
+                            .housing-types-container {
+                                grid-template-columns: 1fr;
+                            }
+
+                            .housing-guide-title {
+                                font-size: 1.5rem;
+                            }
+
+                            .housing-type-guide-v2 {
+                                padding: 1.5rem;
+                            }
+                        }
+                    </style>
+
+                    <div class="housing-type-guide-v2">
+                        <div class="housing-guide-header">
+                            <h3 class="housing-guide-title">
+                                <i class="fas fa-building"></i>
+                                住宅タイプ別設置ガイド
+                            </h3>
+                            <p class="housing-guide-subtitle">お住まいの環境に最適な加湿器の配置と運用方法</p>
+                        </div>
+
+                        <div class="housing-types-container">
+                            <!-- 一戸建て -->
+                            <div class="housing-type-card">
+                                <div class="housing-card-header">
+                                    <div class="housing-type-icon">🏠</div>
+                                    <h4 class="housing-type-name">一戸建て</h4>
+                                </div>
+                                <div class="housing-card-body">
+                                    <div class="housing-detail-grid">
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">設置場所</div>
+                                                <div class="detail-text">1階リビング→2階寝室の順で配置。階段付近は避ける</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">注意点</div>
+                                                <div class="detail-text">階段での湿度差に注意、各階に湿度計必須</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">運用方法</div>
+                                                <div class="detail-text">複数台使用で全体湿度を均一化</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="housing-best-practice">
+                                        <div class="best-practice-title">ベストプラクティス</div>
+                                        <div class="best-practice-text">暖房と連動した湿度制御が効果的。1階と2階で異なる設定値を使用</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="housing-card">
-                                <h4><i class="fas fa-building"></i> マンション・アパート</h4>
-                                <ul>
-                                    <li><strong>設置場所:</strong> エアコンから対角線の位置</li>
-                                    <li><strong>注意点:</strong> 隣室への音響配慮、結露防止対策</li>
-                                    <li><strong>運用:</strong> 気密性を活かした効率運転</li>
-                                    <li><strong>コツ:</strong> 換気扇と連動したタイマー設定</li>
-                                </ul>
+
+                            <!-- マンション・アパート -->
+                            <div class="housing-type-card">
+                                <div class="housing-card-header mansion">
+                                    <div class="housing-type-icon">🏢</div>
+                                    <h4 class="housing-type-name">マンション・アパート</h4>
+                                </div>
+                                <div class="housing-card-body mansion">
+                                    <div class="housing-detail-grid">
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">設置場所</div>
+                                                <div class="detail-text">エアコンから対角線の位置が理想的</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">注意点</div>
+                                                <div class="detail-text">隣室への音響配慮、結露防止対策が重要</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">運用方法</div>
+                                                <div class="detail-text">気密性を活かした効率運転を心がける</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="housing-best-practice">
+                                        <div class="best-practice-title">ベストプラクティス</div>
+                                        <div class="best-practice-text">換気扇と連動したタイマー設定で、過加湿を防ぎながら快適な環境を維持</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="housing-card">
-                                <h4><i class="fas fa-door-open"></i> ワンルーム</h4>
-                                <ul>
-                                    <li><strong>設置場所:</strong> ベッド対角、キッチンから離す</li>
-                                    <li><strong>注意点:</strong> 過加湿になりやすく要注意</li>
-                                    <li><strong>運用:</strong> 低出力での長時間運転</li>
-                                    <li><strong>コツ:</strong> 除湿機能付きエアコンとの併用必須</li>
-                                </ul>
+
+                            <!-- ワンルーム -->
+                            <div class="housing-type-card">
+                                <div class="housing-card-header oneroom">
+                                    <div class="housing-type-icon">🚪</div>
+                                    <h4 class="housing-type-name">ワンルーム</h4>
+                                </div>
+                                <div class="housing-card-body oneroom">
+                                    <div class="housing-detail-grid">
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">設置場所</div>
+                                                <div class="detail-text">ベッド対角、キッチンから離して配置</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">注意点</div>
+                                                <div class="detail-text">過加湿になりやすいため要注意</div>
+                                            </div>
+                                        </div>
+                                        <div class="housing-detail-item">
+                                            <div class="detail-icon">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <div class="detail-content">
+                                                <div class="detail-label">運用方法</div>
+                                                <div class="detail-text">低出力での長時間運転が基本</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="housing-best-practice">
+                                        <div class="best-practice-title">ベストプラクティス</div>
+                                        <div class="best-practice-text">除湿機能付きエアコンとの併用で、湿度を40-60%に維持</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 比較表 -->
+                        <div class="housing-comparison-table">
+                            <h4 class="comparison-table-title">住宅タイプ別推奨スペック</h4>
+                            <div class="comparison-grid">
+                                <div class="comparison-item">
+                                    <div class="comparison-label">一戸建て</div>
+                                    <div class="comparison-value">500ml/h〜</div>
+                                </div>
+                                <div class="comparison-item">
+                                    <div class="comparison-label">マンション</div>
+                                    <div class="comparison-value">300-400ml/h</div>
+                                </div>
+                                <div class="comparison-item">
+                                    <div class="comparison-label">ワンルーム</div>
+                                    <div class="comparison-value">200-300ml/h</div>
+                                </div>
                             </div>
                         </div>
                     </div>
