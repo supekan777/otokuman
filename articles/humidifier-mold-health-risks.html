@@ -922,107 +922,663 @@
                     </tbody>
                 </table>
 
-                <h2 id="symptoms-checklist"><i class="fas fa-clipboard-check"></i> 症状チェックリスト</h2>
-                
-                <div class="feature-card">
-                    <h3>加湿器病の可能性をセルフチェック</h3>
-                    <p>以下の症状で当てはまるものにチェックを入れてください。該当数が多いほど加湿器病の可能性が高くなります。</p>
+                <div class="symptoms-checklist-section">
+                    <style>
+                        .symptoms-checklist-section {
+                            margin: 3rem 0;
+                            padding: 2.5rem;
+                            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+                            border-radius: 20px;
+                            border: 2px solid #7dd3fc;
+                            position: relative;
+                            overflow: hidden;
+                        }
 
-                    <div class="form-group">
-                        <h4>🚨 重要症状（1つでも該当は要注意）</h4>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox severe">
-                                <span>持続する乾いた咳（2週間以上）</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox severe">
-                                <span>労作時の息切れ・呼吸困難</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox severe">
-                                <span>発熱（37.5℃以上）が続く</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox severe">
-                                <span>血痰または色つきの痰</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox severe">
-                                <span>胸痛・胸部圧迫感</span>
-                            </label>
+                        .symptoms-checklist-section::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 6px;
+                            background: linear-gradient(90deg, #0ea5e9, #38bdf8, #7dd3fc);
+                        }
+
+                        .checklist-header {
+                            text-align: center;
+                            margin-bottom: 2.5rem;
+                            padding-bottom: 2rem;
+                            border-bottom: 3px solid #bae6fd;
+                        }
+
+                        .checklist-header h2 {
+                            color: #0c4a6e;
+                            font-size: 2rem;
+                            margin: 0 0 1rem 0;
+                            font-weight: 800;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 1rem;
+                        }
+
+                        .checklist-icon {
+                            font-size: 2.5rem;
+                            color: #0ea5e9;
+                            filter: drop-shadow(0 2px 4px rgba(14, 165, 233, 0.3));
+                        }
+
+                        .checklist-subtitle {
+                            color: #075985;
+                            font-size: 1.1rem;
+                            margin: 0 0 1rem 0;
+                            font-weight: 600;
+                        }
+
+                        .checklist-description {
+                            color: #0369a1;
+                            font-size: 1rem;
+                            margin: 0;
+                            line-height: 1.6;
+                        }
+
+                        .symptoms-categories {
+                            display: grid;
+                            gap: 2rem;
+                            margin-top: 2rem;
+                        }
+
+                        .symptom-category {
+                            background: white;
+                            border-radius: 20px;
+                            overflow: hidden;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                            border: 2px solid;
+                            transition: all 0.3s ease;
+                            position: relative;
+                        }
+
+                        .symptom-category::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            height: 5px;
+                            border-radius: 20px 20px 0 0;
+                        }
+
+                        .symptom-category.severe {
+                            border-color: #fca5a5;
+                        }
+
+                        .symptom-category.severe::before {
+                            background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+                        }
+
+                        .symptom-category.moderate {
+                            border-color: #fbbf24;
+                        }
+
+                        .symptom-category.moderate::before {
+                            background: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24);
+                        }
+
+                        .symptom-category.mild {
+                            border-color: #86efac;
+                        }
+
+                        .symptom-category.mild::before {
+                            background: linear-gradient(90deg, #059669, #10b981, #34d399);
+                        }
+
+                        .symptom-category:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+                        }
+
+                        .category-header {
+                            padding: 2rem 2rem 1.5rem 2rem;
+                            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+                            border-bottom: 1px solid #e5e7eb;
+                        }
+
+                        .category-title {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin: 0 0 0.75rem 0;
+                        }
+
+                        .category-title h4 {
+                            color: #374151;
+                            font-size: 1.4rem;
+                            font-weight: 700;
+                            margin: 0;
+                            line-height: 1.3;
+                        }
+
+                        .category-emoji {
+                            font-size: 2rem;
+                            flex-shrink: 0;
+                        }
+
+                        .severity-description {
+                            color: #6b7280;
+                            font-size: 0.95rem;
+                            margin: 0;
+                            font-style: italic;
+                        }
+
+                        .urgency-badge {
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            padding: 0.4rem 1rem;
+                            border-radius: 25px;
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                            margin-top: 0.75rem;
+                            color: white;
+                        }
+
+                        .urgency-badge.critical {
+                            background: linear-gradient(135deg, #dc2626, #b91c1c);
+                            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+                        }
+
+                        .urgency-badge.warning {
+                            background: linear-gradient(135deg, #d97706, #b45309);
+                            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+                        }
+
+                        .urgency-badge.info {
+                            background: linear-gradient(135deg, #059669, #047857);
+                            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+                        }
+
+                        .symptoms-grid {
+                            padding: 2rem;
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                            gap: 1rem;
+                        }
+
+                        .symptom-checkbox-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            padding: 1rem 1.5rem;
+                            background: linear-gradient(135deg, #fefefe, #f8fafc);
+                            border: 2px solid #e5e7eb;
+                            border-radius: 15px;
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .symptom-checkbox-item::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            bottom: 0;
+                            width: 4px;
+                            border-radius: 15px 0 0 15px;
+                            transition: all 0.3s ease;
+                        }
+
+                        .symptom-category.severe .symptom-checkbox-item::before {
+                            background: #dc2626;
+                        }
+
+                        .symptom-category.moderate .symptom-checkbox-item::before {
+                            background: #d97706;
+                        }
+
+                        .symptom-category.mild .symptom-checkbox-item::before {
+                            background: #059669;
+                        }
+
+                        .symptom-checkbox-item:hover {
+                            transform: translateX(5px);
+                            border-color: #cbd5e1;
+                            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .symptom-checkbox-item.checked {
+                            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                            border-color: #38bdf8;
+                        }
+
+                        .symptom-category.severe .symptom-checkbox-item.checked {
+                            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                            border-color: #f87171;
+                        }
+
+                        .symptom-category.moderate .symptom-checkbox-item.checked {
+                            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+                            border-color: #fbbf24;
+                        }
+
+                        .symptom-category.mild .symptom-checkbox-item.checked {
+                            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                            border-color: #86efac;
+                        }
+
+                        .custom-checkbox {
+                            width: 24px;
+                            height: 24px;
+                            border: 2px solid #d1d5db;
+                            border-radius: 6px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: all 0.3s ease;
+                            flex-shrink: 0;
+                            background: white;
+                        }
+
+                        .custom-checkbox.checked {
+                            background: #0ea5e9;
+                            border-color: #0ea5e9;
+                            color: white;
+                        }
+
+                        .symptom-category.severe .custom-checkbox.checked {
+                            background: #dc2626;
+                            border-color: #dc2626;
+                        }
+
+                        .symptom-category.moderate .custom-checkbox.checked {
+                            background: #d97706;
+                            border-color: #d97706;
+                        }
+
+                        .symptom-category.mild .custom-checkbox.checked {
+                            background: #059669;
+                            border-color: #059669;
+                        }
+
+                        .symptom-checkbox-item input[type="checkbox"] {
+                            display: none;
+                        }
+
+                        .symptom-text {
+                            color: #374151;
+                            font-weight: 500;
+                            line-height: 1.5;
+                            flex: 1;
+                        }
+
+                        .progress-indicator {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 1.5rem;
+                            margin: 2rem 0;
+                            border: 2px solid #e5e7eb;
+                            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+                        }
+
+                        .progress-header {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 1rem;
+                            flex-wrap: wrap;
+                            gap: 1rem;
+                        }
+
+                        .progress-title {
+                            color: #374151;
+                            font-weight: 700;
+                            margin: 0;
+                        }
+
+                        .progress-count {
+                            display: flex;
+                            gap: 1rem;
+                        }
+
+                        .count-badge {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            padding: 0.3rem 0.8rem;
+                            border-radius: 20px;
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                        }
+
+                        .count-badge.severe {
+                            background: #fef2f2;
+                            color: #991b1b;
+                            border: 1px solid #fca5a5;
+                        }
+
+                        .count-badge.moderate {
+                            background: #fffbeb;
+                            color: #92400e;
+                            border: 1px solid #fbbf24;
+                        }
+
+                        .count-badge.mild {
+                            background: #f0fdf4;
+                            color: #166534;
+                            border: 1px solid #86efac;
+                        }
+
+                        .result-display {
+                            margin-top: 2rem;
+                            padding: 2rem;
+                            background: white;
+                            border-radius: 20px;
+                            border: 2px solid #e5e7eb;
+                            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                            display: none;
+                        }
+
+                        .result-display.show {
+                            display: block;
+                            animation: slideDown 0.3s ease-out;
+                        }
+
+                        @keyframes slideDown {
+                            from {
+                                opacity: 0;
+                                transform: translateY(-20px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+
+                        .result-display.error {
+                            border-color: #f87171;
+                            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                        }
+
+                        .result-display.warning {
+                            border-color: #fbbf24;
+                            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+                        }
+
+                        .result-display.info {
+                            border-color: #7dd3fc;
+                            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                        }
+
+                        .result-display.success {
+                            border-color: #86efac;
+                            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                        }
+
+                        @media (max-width: 768px) {
+                            .symptoms-checklist-section {
+                                padding: 1.5rem;
+                                margin: 2rem 0;
+                            }
+
+                            .checklist-header h2 {
+                                font-size: 1.6rem;
+                                flex-direction: column;
+                                gap: 0.5rem;
+                            }
+
+                            .symptoms-grid {
+                                grid-template-columns: 1fr;
+                                padding: 1.5rem;
+                            }
+
+                            .category-header {
+                                padding: 1.5rem;
+                            }
+
+                            .category-title {
+                                flex-direction: column;
+                                text-align: center;
+                                gap: 0.5rem;
+                            }
+
+                            .progress-header {
+                                flex-direction: column;
+                                align-items: flex-start;
+                            }
+
+                            .progress-count {
+                                flex-wrap: wrap;
+                            }
+                        }
+                    </style>
+
+                    <div class="checklist-header">
+                        <h2 id="symptoms-checklist">
+                            <span class="checklist-icon">📋</span>
+                            症状チェックリスト
+                        </h2>
+                        <h3 class="checklist-subtitle">
+                            加湿器病の可能性をセルフチェック
+                        </h3>
+                        <p class="checklist-description">
+                            以下の症状で当てはまるものをチェックしてください。該当数が多いほど加湿器病の可能性が高くなります。
+                        </p>
+                    </div>
+
+                    <div class="progress-indicator">
+                        <div class="progress-header">
+                            <h4 class="progress-title">チェック進捗状況</h4>
+                            <div class="progress-count">
+                                <div class="count-badge severe">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    重要症状: <span id="severeCount">0</span>/5
+                                </div>
+                                <div class="count-badge moderate">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    注意症状: <span id="moderateCount">0</span>/6
+                                </div>
+                                <div class="count-badge mild">
+                                    <i class="fas fa-info-circle"></i>
+                                    初期症状: <span id="mildCount">0</span>/8
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <h4>⚠️ 注意症状（複数該当は要警戒）</h4>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>夜間・早朝の咳がひどい</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>喘鳴（ヒューヒュー音）</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>鼻詰まり・鼻水が治らない</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>頻繁なくしゃみ発作</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>目のかゆみ・充血</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox moderate">
-                                <span>皮膚の赤み・かゆみ増強</span>
-                            </label>
+                    <div class="symptoms-categories">
+                        <!-- 重要症状 -->
+                        <div class="symptom-category severe">
+                            <div class="category-header">
+                                <div class="category-title">
+                                    <span class="category-emoji">🚨</span>
+                                    <div>
+                                        <h4>重要症状</h4>
+                                        <p class="severity-description">1つでも該当する場合は即座に医療機関受診を推奨</p>
+                                    </div>
+                                </div>
+                                <div class="urgency-badge critical">
+                                    <i class="fas fa-ambulance"></i>
+                                    緊急度：最高
+                                </div>
+                            </div>
+                            <div class="symptoms-grid">
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox severe">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">持続する乾いた咳（2週間以上）</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox severe">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">労作時の息切れ・呼吸困難</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox severe">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">発熱（37.5℃以上）が続く</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox severe">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">血痰または色つきの痰</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox severe">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">胸痛・胸部圧迫感</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 注意症状 -->
+                        <div class="symptom-category moderate">
+                            <div class="category-header">
+                                <div class="category-title">
+                                    <span class="category-emoji">⚠️</span>
+                                    <div>
+                                        <h4>注意症状</h4>
+                                        <p class="severity-description">複数該当する場合は早期受診を検討</p>
+                                    </div>
+                                </div>
+                                <div class="urgency-badge warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    緊急度：中
+                                </div>
+                            </div>
+                            <div class="symptoms-grid">
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">夜間・早朝の咳がひどい</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">喘鳴（ヒューヒュー音）</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">鼻詰まり・鼻水が治らない</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">頻繁なくしゃみ発作</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">目のかゆみ・充血</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox moderate">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">皮膚の赤み・かゆみ増強</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 初期症状 -->
+                        <div class="symptom-category mild">
+                            <div class="category-header">
+                                <div class="category-title">
+                                    <span class="category-emoji">💡</span>
+                                    <div>
+                                        <h4>初期症状</h4>
+                                        <p class="severity-description">多数該当する場合は注意深い経過観察が必要</p>
+                                    </div>
+                                </div>
+                                <div class="urgency-badge info">
+                                    <i class="fas fa-info-circle"></i>
+                                    緊急度：低
+                                </div>
+                            </div>
+                            <div class="symptoms-grid">
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">原因不明の頭痛</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">のどの違和感・いがらっぽさ</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">だるさ・疲労感</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">集中力低下</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">微熱（37℃台）</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">食欲不振</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">睡眠の質低下</span>
+                                </label>
+                                <label class="symptom-checkbox-item">
+                                    <input type="checkbox" class="symptom-checkbox mild">
+                                    <div class="custom-checkbox">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="symptom-text">風邪をひきやすくなった</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <h4>💡 初期症状（該当多数は注意）</h4>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>原因不明の頭痛</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>のどの違和感・いがらっぽさ</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>だるさ・疲労感</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>集中力低下</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>微熱（37℃台）</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>食欲不振</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>睡眠の質低下</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" class="symptom-checkbox mild">
-                                <span>風邪をひきやすくなった</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div id="checkerResult" class="result-box" style="display: none;">
+                    <div id="checkerResult" class="result-display">
                         <h4>チェック結果</h4>
                         <div class="result-content">
                             <p>症状にチェックを入れると、ここに結果が表示されます。</p>
@@ -1529,9 +2085,59 @@
             resultDiv.style.display = 'block';
         }
 
-        // チェックボックスイベント
+        // カスタムチェックボックス機能
+        function initializeCustomCheckboxes() {
+            document.querySelectorAll('.symptom-checkbox-item').forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const customCheckbox = item.querySelector('.custom-checkbox');
+                
+                item.addEventListener('click', function(e) {
+                    if (e.target !== checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                        updateCheckboxUI(item, checkbox, customCheckbox);
+                        updateSymptomChecker();
+                    }
+                });
+                
+                checkbox.addEventListener('change', function() {
+                    updateCheckboxUI(item, checkbox, customCheckbox);
+                    updateSymptomChecker();
+                });
+            });
+        }
+
+        function updateCheckboxUI(item, checkbox, customCheckbox) {
+            if (checkbox.checked) {
+                item.classList.add('checked');
+                customCheckbox.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+                customCheckbox.classList.remove('checked');
+            }
+        }
+
+        // 進捗カウンター更新機能
+        function updateProgressCounters() {
+            const severe = document.querySelectorAll('.symptom-checkbox.severe:checked').length;
+            const moderate = document.querySelectorAll('.symptom-checkbox.moderate:checked').length;
+            const mild = document.querySelectorAll('.symptom-checkbox.mild:checked').length;
+            
+            // 進捗カウンターを更新
+            const severeCounter = document.getElementById('severeCount');
+            const moderateCounter = document.getElementById('moderateCount');
+            const mildCounter = document.getElementById('mildCount');
+            
+            if (severeCounter) severeCounter.textContent = severe;
+            if (moderateCounter) moderateCounter.textContent = moderate;
+            if (mildCounter) mildCounter.textContent = mild;
+        }
+
+        // チェックボックスイベント（既存のチェックボックスに対応）
         document.querySelectorAll('.symptom-checkbox').forEach(checkbox => {
-            checkbox.addEventListener('change', updateSymptomChecker);
+            checkbox.addEventListener('change', function() {
+                updateProgressCounters();
+                updateSymptomChecker();
+            });
         });
 
         // FAQ アコーディオン機能
@@ -1548,7 +2154,11 @@
         });
 
         // 初期表示
-        updateSymptomChecker();
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCustomCheckboxes();
+            updateProgressCounters();
+            updateSymptomChecker();
+        });
     </script>
 </body>
 </html>
