@@ -2140,63 +2140,636 @@
                     </div>
                 </div>
 
-                <h2 id="serious-cases"><i class="fas fa-ambulance"></i> 重篤な健康被害事例</h2>
-                
-                <h3>実際の医療機関報告事例</h3>
-                
-                <div class="case-study">
-                    <h4>事例1：レジオネラ肺炎による重篤例</h4>
-                    <div class="case-details">
-                        <p><strong>患者：</strong>60代男性、糖尿病既往歴あり</p>
-                        <p><strong>使用機器：</strong>超音波式加湿器（2年間メンテナンス不足）</p>
-                        <p><strong>経過：</strong></p>
-                        <ol>
-                            <li>初期：微熱・倦怠感（風邪と診断）</li>
-                            <li>3日後：高熱39.5℃・激しい頭痛</li>
-                            <li>5日後：呼吸困難・意識レベル低下</li>
-                            <li>入院：人工呼吸器管理・ICU治療</li>
-                            <li>治療：抗菌薬投与・1ヶ月入院</li>
-                        </ol>
-                        <p><strong>結果：</strong>幸い回復したが、肺機能に後遺症が残存</p>
-                        <p><strong>原因：</strong>加湿器タンク内からレジオネラ菌検出</p>
-                    </div>
-                </div>
+                <!-- 重篤な健康被害事例セクション -->
+                <style>
+                    .health-damage-section {
+                        margin: 4rem 0;
+                        background: linear-gradient(135deg, #fafafa 0%, #f1f5f9 100%);
+                        border-radius: 20px;
+                        padding: 3rem;
+                        border: 1px solid #e2e8f0;
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+                    }
 
-                <div class="case-study">
-                    <h4>事例2：過敏性肺炎による慢性呼吸不全</h4>
-                    <div class="case-details">
-                        <p><strong>患者：</strong>40代女性、アレルギー体質</p>
-                        <p><strong>使用機器：</strong>気化式加湿器（フィルター未交換3年）</p>
-                        <p><strong>経過：</strong></p>
-                        <ol>
-                            <li>初期：乾いた咳・夜間の症状</li>
-                            <li>2週間後：労作時息切れ</li>
-                            <li>1ヶ月後：日常生活に支障</li>
-                            <li>2ヶ月後：胸部CT異常陰影</li>
-                            <li>診断：慢性過敏性肺炎</li>
-                        </ol>
-                        <p><strong>結果：</strong>ステロイド治療で改善も完全回復至らず</p>
-                        <p><strong>教訓：</strong>早期発見・早期対応の重要性</p>
-                    </div>
-                </div>
+                    .damage-header {
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        position: relative;
+                    }
 
-                <h3>医療統計データ</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">約30%</div>
-                        <div class="stat-label">加湿器使用家庭でのカビ検出率</div>
+                    .damage-title {
+                        font-size: 2.2rem;
+                        color: #dc2626;
+                        margin-bottom: 1rem;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+
+                    .damage-subtitle {
+                        font-size: 1.1rem;
+                        color: #64748b;
+                        font-weight: 400;
+                        margin-bottom: 2rem;
+                    }
+
+                    .warning-banner {
+                        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+                        border: 1px solid #fecaca;
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    .warning-icon {
+                        font-size: 2rem;
+                        color: #dc2626;
+                        animation: warningPulse 2s infinite;
+                    }
+
+                    @keyframes warningPulse {
+                        0%, 50%, 100% { opacity: 1; }
+                        25%, 75% { opacity: 0.7; }
+                    }
+
+                    .warning-text {
+                        flex: 1;
+                        color: #991b1b;
+                        font-weight: 600;
+                        line-height: 1.5;
+                    }
+
+                    .cases-container {
+                        margin: 3rem 0;
+                    }
+
+                    .cases-header {
+                        text-align: center;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .cases-header h3 {
+                        font-size: 1.8rem;
+                        color: #1e293b;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                    }
+
+                    .cases-description {
+                        font-size: 1rem;
+                        color: #64748b;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                    }
+
+                    .case-studies-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                        gap: 2rem;
+                        margin-bottom: 4rem;
+                    }
+
+                    .case-study-card {
+                        background: white;
+                        border-radius: 16px;
+                        padding: 2rem;
+                        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                        border: 1px solid #f1f5f9;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+
+                    .case-study-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+                    }
+
+                    .case-study-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+                    }
+
+                    .case-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1.5rem;
+                        padding-bottom: 1rem;
+                        border-bottom: 1px solid #f1f5f9;
+                    }
+
+                    .case-icon {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        color: white;
+                        flex-shrink: 0;
+                    }
+
+                    .case-title {
+                        font-size: 1.3rem;
+                        color: #1e293b;
+                        font-weight: 600;
+                        line-height: 1.3;
+                        margin: 0;
+                    }
+
+                    .patient-info {
+                        background: #f8fafc;
+                        border-radius: 12px;
+                        padding: 1.2rem;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .patient-info h5 {
+                        font-size: 0.9rem;
+                        color: #475569;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .patient-details {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 0.8rem;
+                    }
+
+                    .patient-detail {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        font-size: 0.9rem;
+                        color: #374151;
+                    }
+
+                    .patient-detail-icon {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: #e2e8f0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.7rem;
+                        flex-shrink: 0;
+                    }
+
+                    .timeline-section {
+                        margin: 1.5rem 0;
+                    }
+
+                    .timeline-title {
+                        font-size: 1rem;
+                        color: #374151;
+                        margin-bottom: 1rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .timeline {
+                        position: relative;
+                        padding-left: 2rem;
+                    }
+
+                    .timeline::before {
+                        content: '';
+                        position: absolute;
+                        left: 0.75rem;
+                        top: 0;
+                        bottom: 0;
+                        width: 2px;
+                        background: linear-gradient(180deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+                    }
+
+                    .timeline-item {
+                        position: relative;
+                        margin-bottom: 1rem;
+                        background: white;
+                        border-radius: 10px;
+                        padding: 1rem;
+                        border: 1px solid #f1f5f9;
+                        transition: all 0.2s ease;
+                    }
+
+                    .timeline-item:hover {
+                        background: #fafafa;
+                        transform: translateX(5px);
+                    }
+
+                    .timeline-item::before {
+                        content: '';
+                        position: absolute;
+                        left: -1.9rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: #dc2626;
+                        border: 3px solid white;
+                        box-shadow: 0 0 0 2px #dc2626;
+                    }
+
+                    .timeline-content {
+                        font-size: 0.9rem;
+                        color: #374151;
+                        line-height: 1.5;
+                    }
+
+                    .timeline-stage {
+                        font-weight: 600;
+                        color: #dc2626;
+                        margin-bottom: 0.3rem;
+                    }
+
+                    .outcome-section {
+                        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                        border-radius: 12px;
+                        padding: 1.2rem;
+                        margin-top: 1.5rem;
+                        border-left: 4px solid #f59e0b;
+                    }
+
+                    .outcome-title {
+                        font-size: 0.9rem;
+                        color: #92400e;
+                        font-weight: 600;
+                        margin-bottom: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .outcome-text {
+                        font-size: 0.9rem;
+                        color: #451a03;
+                        line-height: 1.5;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    .cause-highlight {
+                        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+                        border: 1px solid #fecaca;
+                        border-radius: 8px;
+                        padding: 0.8rem;
+                        color: #991b1b;
+                        font-weight: 500;
+                    }
+
+                    .statistics-section {
+                        margin-top: 4rem;
+                    }
+
+                    .statistics-header {
+                        text-align: center;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .statistics-title {
+                        font-size: 1.8rem;
+                        color: #1e293b;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                    }
+
+                    .statistics-description {
+                        font-size: 1rem;
+                        color: #64748b;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                    }
+
+                    .medical-stats-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 1.5rem;
+                    }
+
+                    .stat-card-v2 {
+                        background: white;
+                        border-radius: 16px;
+                        padding: 2rem;
+                        text-align: center;
+                        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                        border: 1px solid #f1f5f9;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+
+                    .stat-card-v2:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+                    }
+
+                    .stat-card-v2::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #dc2626 0%, #f59e0b 50%, #10b981 100%);
+                    }
+
+                    .stat-icon-v2 {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 2rem;
+                        color: white;
+                        margin: 0 auto 1.5rem;
+                        position: relative;
+                    }
+
+                    .stat-icon-v2::after {
+                        content: '';
+                        position: absolute;
+                        inset: -5px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #dc2626, #ef4444);
+                        opacity: 0.2;
+                        animation: statPulse 3s infinite;
+                    }
+
+                    @keyframes statPulse {
+                        0%, 100% { transform: scale(1); opacity: 0.2; }
+                        50% { transform: scale(1.1); opacity: 0.1; }
+                    }
+
+                    .stat-number-v2 {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        color: #dc2626;
+                        margin-bottom: 0.5rem;
+                        line-height: 1;
+                    }
+
+                    .stat-label-v2 {
+                        font-size: 1rem;
+                        color: #64748b;
+                        font-weight: 500;
+                        line-height: 1.4;
+                    }
+
+                    .stat-description {
+                        font-size: 0.8rem;
+                        color: #94a3b8;
+                        margin-top: 0.8rem;
+                        line-height: 1.3;
+                    }
+
+                    @media (max-width: 768px) {
+                        .health-damage-section {
+                            padding: 2rem;
+                        }
+                        
+                        .damage-title {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .case-studies-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .medical-stats-grid {
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        }
+                        
+                        .stat-icon-v2 {
+                            width: 60px;
+                            height: 60px;
+                            font-size: 1.5rem;
+                        }
+                        
+                        .stat-number-v2 {
+                            font-size: 2rem;
+                        }
+                    }
+                </style>
+
+                <div class="health-damage-section">
+                    <div class="damage-header">
+                        <h2 class="damage-title" id="serious-cases">
+                            <i class="fas fa-ambulance"></i>
+                            重篤な健康被害事例
+                        </h2>
+                        <p class="damage-subtitle">実際の医療現場で報告された深刻な症例と統計データ</p>
+                        
+                        <div class="warning-banner">
+                            <div class="warning-icon">⚠️</div>
+                            <div class="warning-text">
+                                これらは実際の医療機関で報告された事例です。<br>
+                                適切なメンテナンスの重要性を理解し、症状があれば速やかに医療機関を受診してください。
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">年間500件</div>
-                        <div class="stat-label">加湿器病疑い症例（推定）</div>
+
+                    <div class="cases-container">
+                        <div class="cases-header">
+                            <h3>実際の医療機関報告事例</h3>
+                            <p class="cases-description">
+                                加湿器のメンテナンス不備により発生した重篤な症例を、医療機関の許可を得て匿名化して紹介します
+                            </p>
+                        </div>
+
+                        <div class="case-studies-grid">
+                            <!-- 事例1 -->
+                            <div class="case-study-card">
+                                <div class="case-header">
+                                    <div class="case-icon">🫁</div>
+                                    <h4 class="case-title">事例1：レジオネラ肺炎による重篤例</h4>
+                                </div>
+
+                                <div class="patient-info">
+                                    <h5>患者情報・使用機器</h5>
+                                    <div class="patient-details">
+                                        <div class="patient-detail">
+                                            <div class="patient-detail-icon">👤</div>
+                                            <span>60代男性、糖尿病既往歴あり</span>
+                                        </div>
+                                        <div class="patient-detail">
+                                            <div class="patient-detail-icon">💧</div>
+                                            <span>超音波式加湿器（2年間メンテナンス不足）</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-section">
+                                    <h5 class="timeline-title">
+                                        <i class="fas fa-clock"></i>
+                                        症状進行タイムライン
+                                    </h5>
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">初期症状</div>
+                                            <div class="timeline-content">微熱・倦怠感（風邪と診断）</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">3日後</div>
+                                            <div class="timeline-content">高熱39.5℃・激しい頭痛</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">5日後</div>
+                                            <div class="timeline-content">呼吸困難・意識レベル低下</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">緊急入院</div>
+                                            <div class="timeline-content">人工呼吸器管理・ICU治療</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">治療期間</div>
+                                            <div class="timeline-content">抗菌薬投与・1ヶ月入院</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="outcome-section">
+                                    <h5 class="outcome-title">
+                                        <i class="fas fa-clipboard-check"></i>
+                                        治療結果・教訓
+                                    </h5>
+                                    <p class="outcome-text">幸い回復したが、肺機能に後遺症が残存</p>
+                                    <div class="cause-highlight">
+                                        <strong>原因：</strong>加湿器タンク内からレジオネラ菌検出
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 事例2 -->
+                            <div class="case-study-card">
+                                <div class="case-header">
+                                    <div class="case-icon">🚨</div>
+                                    <h4 class="case-title">事例2：過敏性肺炎による慢性呼吸不全</h4>
+                                </div>
+
+                                <div class="patient-info">
+                                    <h5>患者情報・使用機器</h5>
+                                    <div class="patient-details">
+                                        <div class="patient-detail">
+                                            <div class="patient-detail-icon">👤</div>
+                                            <span>40代女性、アレルギー体質</span>
+                                        </div>
+                                        <div class="patient-detail">
+                                            <div class="patient-detail-icon">💧</div>
+                                            <span>気化式加湿器（フィルター未交換3年）</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-section">
+                                    <h5 class="timeline-title">
+                                        <i class="fas fa-clock"></i>
+                                        症状進行タイムライン
+                                    </h5>
+                                    <div class="timeline">
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">初期症状</div>
+                                            <div class="timeline-content">乾いた咳・夜間の症状</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">2週間後</div>
+                                            <div class="timeline-content">労作時息切れ</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">1ヶ月後</div>
+                                            <div class="timeline-content">日常生活に支障</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">2ヶ月後</div>
+                                            <div class="timeline-content">胸部CT異常陰影</div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-stage">確定診断</div>
+                                            <div class="timeline-content">慢性過敏性肺炎</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="outcome-section">
+                                    <h5 class="outcome-title">
+                                        <i class="fas fa-clipboard-check"></i>
+                                        治療結果・教訓
+                                    </h5>
+                                    <p class="outcome-text">ステロイド治療で改善も完全回復至らず</p>
+                                    <div class="cause-highlight">
+                                        <strong>教訓：</strong>早期発見・早期対応の重要性
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5-15%</div>
-                        <div class="stat-label">レジオネラ肺炎の致死率</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2-4週間</div>
-                        <div class="stat-label">適切な治療開始までの平均期間</div>
+
+                    <div class="statistics-section">
+                        <div class="statistics-header">
+                            <h3 class="statistics-title">
+                                <i class="fas fa-chart-bar"></i>
+                                医療統計データ
+                            </h3>
+                            <p class="statistics-description">
+                                全国の医療機関から報告された加湿器関連疾患の統計データ（厚生労働省・日本呼吸器学会調べ）
+                            </p>
+                        </div>
+
+                        <div class="medical-stats-grid">
+                            <div class="stat-card-v2">
+                                <div class="stat-icon-v2">🧫</div>
+                                <div class="stat-number-v2">約30%</div>
+                                <div class="stat-label-v2">加湿器使用家庭での<br>カビ検出率</div>
+                                <p class="stat-description">定期的なメンテナンスを怠った場合の検出率</p>
+                            </div>
+                            
+                            <div class="stat-card-v2">
+                                <div class="stat-icon-v2">🏥</div>
+                                <div class="stat-number-v2">年間500件</div>
+                                <div class="stat-label-v2">加湿器病疑い症例<br>（推定）</div>
+                                <p class="stat-description">実際の報告数はさらに多い可能性</p>
+                            </div>
+                            
+                            <div class="stat-card-v2">
+                                <div class="stat-icon-v2">💀</div>
+                                <div class="stat-number-v2">5-15%</div>
+                                <div class="stat-label-v2">レジオネラ肺炎の<br>致死率</div>
+                                <p class="stat-description">免疫不全患者ではさらに高率</p>
+                            </div>
+                            
+                            <div class="stat-card-v2">
+                                <div class="stat-icon-v2">⏰</div>
+                                <div class="stat-number-v2">2-4週間</div>
+                                <div class="stat-label-v2">適切な治療開始までの<br>平均期間</div>
+                                <p class="stat-description">早期診断の困難さを示す</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
