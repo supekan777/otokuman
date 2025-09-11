@@ -3802,59 +3802,489 @@
                     </div>
                     
                     <!-- 他家電との併用ガイド -->
-                    <div class="appliance-combination-guide">
-                        <h3><i class="fas fa-plug"></i> 他家電との併用方法</h3>
-                        
-                        <div class="combination-section">
-                            <h4><i class="fas fa-snowflake"></i> エアコンとの併用</h4>
-                            <div class="combination-tips">
-                                <div class="tip-item">
-                                    <div class="tip-title">設置位置</div>
-                                    <div class="tip-content">エアコンの風向きと垂直になるよう配置。温風・冷風の直撃を避ける</div>
+                    <style>
+                        .appliance-combination-v2 {
+                            margin: 3rem 0;
+                            padding: 2.5rem;
+                            background: linear-gradient(135deg, #fff5f5 0%, #fff0f6 100%);
+                            border-radius: 20px;
+                            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                        }
+
+                        .appliance-header {
+                            text-align: center;
+                            margin-bottom: 3rem;
+                        }
+
+                        .appliance-title {
+                            font-size: 2rem;
+                            color: #2d3748;
+                            font-weight: 700;
+                            margin-bottom: 0.5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 0.5rem;
+                        }
+
+                        .appliance-subtitle {
+                            color: #718096;
+                            font-size: 1.1rem;
+                        }
+
+                        .appliances-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                            gap: 2rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .appliance-card {
+                            background: white;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                            position: relative;
+                        }
+
+                        .appliance-card:hover {
+                            transform: translateY(-8px) scale(1.02);
+                            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                        }
+
+                        .appliance-card-header {
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            color: white;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .appliance-card.aircon .appliance-card-header {
+                            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+                        }
+
+                        .appliance-card.purifier .appliance-card-header {
+                            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+                        }
+
+                        .appliance-card.heater .appliance-card-header {
+                            background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+                        }
+
+                        .appliance-card-header::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+                            transform: translateX(-100%);
+                            transition: transform 0.6s;
+                        }
+
+                        .appliance-card:hover .appliance-card-header::after {
+                            transform: translateX(100%);
+                        }
+
+                        .appliance-icon {
+                            font-size: 2.5rem;
+                            margin-bottom: 0.5rem;
+                            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+                        }
+
+                        .appliance-name {
+                            font-size: 1.4rem;
+                            font-weight: 700;
+                            margin: 0;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .appliance-card-body {
+                            padding: 1.5rem;
+                        }
+
+                        .combination-rules {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                        }
+
+                        .rule-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 1rem;
+                            padding: 1rem;
+                            background: #f7fafc;
+                            border-radius: 12px;
+                            border-left: 3px solid #667eea;
+                            transition: all 0.2s ease;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .appliance-card.aircon .rule-item {
+                            border-left-color: #3a7bd5;
+                        }
+
+                        .appliance-card.purifier .rule-item {
+                            border-left-color: #38ef7d;
+                        }
+
+                        .appliance-card.heater .rule-item {
+                            border-left-color: #f7b733;
+                        }
+
+                        .rule-item:hover {
+                            background: #edf2f7;
+                            transform: translateX(5px);
+                        }
+
+                        .rule-icon {
+                            flex-shrink: 0;
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: white;
+                            border-radius: 50%;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        }
+
+                        .rule-icon i {
+                            font-size: 1.2rem;
+                            color: #667eea;
+                        }
+
+                        .appliance-card.aircon .rule-icon i {
+                            color: #3a7bd5;
+                        }
+
+                        .appliance-card.purifier .rule-icon i {
+                            color: #38ef7d;
+                        }
+
+                        .appliance-card.heater .rule-icon i {
+                            color: #f7b733;
+                        }
+
+                        .rule-content {
+                            flex: 1;
+                        }
+
+                        .rule-title {
+                            font-weight: 600;
+                            color: #2d3748;
+                            margin-bottom: 0.3rem;
+                            font-size: 1rem;
+                        }
+
+                        .rule-description {
+                            color: #4a5568;
+                            font-size: 0.9rem;
+                            line-height: 1.5;
+                        }
+
+                        .optimal-setting {
+                            margin-top: 1.5rem;
+                            padding: 1rem;
+                            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                            border-radius: 12px;
+                            position: relative;
+                        }
+
+                        .optimal-setting::before {
+                            content: '⭐';
+                            position: absolute;
+                            top: -10px;
+                            right: 10px;
+                            font-size: 1.5rem;
+                        }
+
+                        .optimal-label {
+                            font-size: 0.85rem;
+                            font-weight: 600;
+                            color: #92400e;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .optimal-value {
+                            font-size: 1.1rem;
+                            color: #451a03;
+                            font-weight: 600;
+                        }
+
+                        .combination-matrix {
+                            background: white;
+                            border-radius: 16px;
+                            padding: 2rem;
+                            margin-top: 2rem;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                        }
+
+                        .matrix-title {
+                            font-size: 1.3rem;
+                            color: #2d3748;
+                            margin-bottom: 1.5rem;
+                            text-align: center;
+                            font-weight: 600;
+                        }
+
+                        .matrix-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 1rem;
+                        }
+
+                        .matrix-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.8rem;
+                            padding: 1rem;
+                            background: #f8fafc;
+                            border-radius: 10px;
+                            transition: all 0.2s ease;
+                        }
+
+                        .matrix-item:hover {
+                            background: #e2e8f0;
+                            transform: scale(1.05);
+                        }
+
+                        .matrix-appliances {
+                            display: flex;
+                            gap: 0.3rem;
+                            font-size: 1.5rem;
+                        }
+
+                        .matrix-arrow {
+                            color: #cbd5e0;
+                            font-size: 1.2rem;
+                        }
+
+                        .matrix-result {
+                            flex: 1;
+                            font-size: 0.9rem;
+                            color: #4a5568;
+                            font-weight: 500;
+                        }
+
+                        .matrix-status {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: #48bb78;
+                            flex-shrink: 0;
+                        }
+
+                        .matrix-status.warning {
+                            background: #f6ad55;
+                        }
+
+                        @media (max-width: 768px) {
+                            .appliances-grid {
+                                grid-template-columns: 1fr;
+                            }
+
+                            .appliance-title {
+                                font-size: 1.5rem;
+                            }
+
+                            .appliance-combination-v2 {
+                                padding: 1.5rem;
+                            }
+
+                            .matrix-grid {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+
+                    <div class="appliance-combination-v2">
+                        <div class="appliance-header">
+                            <h3 class="appliance-title">
+                                <i class="fas fa-plug"></i>
+                                他家電との併用方法
+                            </h3>
+                            <p class="appliance-subtitle">加湿器と他の家電を効率的に組み合わせる最適な方法</p>
+                        </div>
+
+                        <div class="appliances-grid">
+                            <!-- エアコンとの併用 -->
+                            <div class="appliance-card aircon">
+                                <div class="appliance-card-header">
+                                    <div class="appliance-icon">❄️</div>
+                                    <h4 class="appliance-name">エアコンとの併用</h4>
                                 </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">運転タイミング</div>
-                                    <div class="tip-content">エアコン稼働30分後に加湿開始。室温安定後の湿度調整が効果的</div>
+                                <div class="appliance-card-body">
+                                    <div class="combination-rules">
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-location-arrow"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">設置位置</div>
+                                                <div class="rule-description">エアコンの風向きと垂直に配置。温風・冷風の直撃を避ける</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">運転タイミング</div>
+                                                <div class="rule-description">エアコン稼働30分後に加湿開始。室温安定後の湿度調整が効果的</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-tint"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">湿度設定</div>
+                                                <div class="rule-description">暖房時：50-55%、冷房時：45-50%を目安に季節調整</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="optimal-setting">
+                                        <div class="optimal-label">最適設定</div>
+                                        <div class="optimal-value">エアコン22℃ + 加湿器50%</div>
+                                    </div>
                                 </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">湿度設定</div>
-                                    <div class="tip-content">暖房時：50-55%、冷房時：45-50%を目安に季節調整</div>
+                            </div>
+
+                            <!-- 空気清浄機との併用 -->
+                            <div class="appliance-card purifier">
+                                <div class="appliance-card-header">
+                                    <div class="appliance-icon">🍃</div>
+                                    <h4 class="appliance-name">空気清浄機との併用</h4>
+                                </div>
+                                <div class="appliance-card-body">
+                                    <div class="combination-rules">
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-ruler"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">配置間隔</div>
+                                                <div class="rule-description">最低2m以上離して設置。互いの気流が干渉しないよう配慮</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-sort-amount-down"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">運転順序</div>
+                                                <div class="rule-description">空気清浄機→加湿器の順で稼働。清浄後の加湿が効率的</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-filter"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">フィルター管理</div>
+                                                <div class="rule-description">加湿により空気清浄機の負荷増加。フィルター交換頻度を1.5倍に</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="optimal-setting">
+                                        <div class="optimal-label">最適設定</div>
+                                        <div class="optimal-value">清浄機「自動」+ 加湿器「弱」</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 暖房器具との併用 -->
+                            <div class="appliance-card heater">
+                                <div class="appliance-card-header">
+                                    <div class="appliance-icon">🔥</div>
+                                    <h4 class="appliance-name">暖房器具との併用</h4>
+                                </div>
+                                <div class="appliance-card-body">
+                                    <div class="combination-rules">
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-fire-alt"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">石油・ガスファンヒーター</div>
+                                                <div class="rule-description">燃焼により湿度上昇のため、加湿器出力を30-50%に調整</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">電気ストーブ・こたつ</div>
+                                                <div class="rule-description">局所的乾燥に注意。赤ちゃんの居場所中心に湿度管理</div>
+                                            </div>
+                                        </div>
+                                        <div class="rule-item">
+                                            <div class="rule-icon">
+                                                <i class="fas fa-th"></i>
+                                            </div>
+                                            <div class="rule-content">
+                                                <div class="rule-title">床暖房</div>
+                                                <div class="rule-description">足元からの乾燥対策として、低い位置での加湿が効果的</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="optimal-setting">
+                                        <div class="optimal-label">最適設定</div>
+                                        <div class="optimal-value">暖房20℃ + 加湿器55%</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="combination-section">
-                            <h4><i class="fas fa-leaf"></i> 空気清浄機との併用</h4>
-                            <div class="combination-tips">
-                                <div class="tip-item">
-                                    <div class="tip-title">配置間隔</div>
-                                    <div class="tip-content">最低2m以上離して設置。互いの気流が干渉しないよう配慮</div>
+
+                        <!-- 組み合わせマトリックス -->
+                        <div class="combination-matrix">
+                            <h4 class="matrix-title">🎯 併用時の相性と注意点</h4>
+                            <div class="matrix-grid">
+                                <div class="matrix-item">
+                                    <div class="matrix-appliances">
+                                        <span>❄️</span>
+                                        <span class="matrix-arrow">+</span>
+                                        <span>💧</span>
+                                    </div>
+                                    <div class="matrix-result">エアコン暖房時は加湿必須</div>
+                                    <div class="matrix-status"></div>
                                 </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">運転順序</div>
-                                    <div class="tip-content">空気清浄機→加湿器の順で稼働。清浄後の加湿が効率的</div>
+                                <div class="matrix-item">
+                                    <div class="matrix-appliances">
+                                        <span>🍃</span>
+                                        <span class="matrix-arrow">+</span>
+                                        <span>💧</span>
+                                    </div>
+                                    <div class="matrix-result">相乗効果で空気質改善</div>
+                                    <div class="matrix-status"></div>
                                 </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">フィルター管理</div>
-                                    <div class="tip-content">加湿により空気清浄機の負荷増加。フィルター交換頻度を1.5倍に</div>
+                                <div class="matrix-item">
+                                    <div class="matrix-appliances">
+                                        <span>🔥</span>
+                                        <span class="matrix-arrow">+</span>
+                                        <span>💧</span>
+                                    </div>
+                                    <div class="matrix-result">過加湿に注意が必要</div>
+                                    <div class="matrix-status warning"></div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="combination-section">
-                            <h4><i class="fas fa-fire"></i> 暖房器具との併用</h4>
-                            <div class="combination-tips">
-                                <div class="tip-item">
-                                    <div class="tip-title">石油・ガスファンヒーター</div>
-                                    <div class="tip-content">燃焼により湿度上昇のため、加湿器出力を30-50%に調整</div>
-                                </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">電気ストーブ・こたつ</div>
-                                    <div class="tip-content">局所的乾燥に注意。赤ちゃんの居場所中心に湿度管理</div>
-                                </div>
-                                <div class="tip-item">
-                                    <div class="tip-title">床暖房</div>
-                                    <div class="tip-content">足元からの乾燥対策として、低い位置での加湿が効果的</div>
+                                <div class="matrix-item">
+                                    <div class="matrix-appliances">
+                                        <span>🌀</span>
+                                        <span class="matrix-arrow">+</span>
+                                        <span>💧</span>
+                                    </div>
+                                    <div class="matrix-result">扇風機で湿度均一化</div>
+                                    <div class="matrix-status"></div>
                                 </div>
                             </div>
                         </div>
