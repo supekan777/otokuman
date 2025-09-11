@@ -261,8 +261,608 @@
                     }
                 </style>
 
-                <h2 id="causes">加湿器がうるさい主な原因</h2>
-                
+                <!-- 加湿器がうるさい主な原因セクション -->
+                <style>
+                    .noise-causes-section {
+                        margin: 2rem 0;
+                        background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+                        border-radius: 20px;
+                        padding: 2rem;
+                        border: 2px solid #e2e8f0;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .noise-causes-section::before {
+                        content: "";
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at center, rgba(234, 88, 12, 0.03) 0%, transparent 70%);
+                        animation: soundWave 6s ease-in-out infinite;
+                        z-index: 0;
+                    }
+                    
+                    @keyframes soundWave {
+                        0%, 100% { 
+                            transform: scale(1);
+                            opacity: 0.3;
+                        }
+                        50% { 
+                            transform: scale(1.2);
+                            opacity: 0.6;
+                        }
+                    }
+                    
+                    .noise-header {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .noise-title {
+                        font-size: 2.2rem;
+                        color: #ea580c;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        animation: noiseTitle 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes noiseTitle {
+                        0%, 100% { 
+                            color: #ea580c;
+                        }
+                        50% { 
+                            color: #f97316;
+                            text-shadow: 0 0 15px rgba(234, 88, 12, 0.3);
+                        }
+                    }
+                    
+                    .noise-subtitle {
+                        font-size: 1.1rem;
+                        color: #57534e;
+                        background: rgba(255, 255, 255, 0.9);
+                        padding: 0.8rem 1.5rem;
+                        border-radius: 25px;
+                        border: 1px solid #d6d3d1;
+                        display: inline-block;
+                    }
+                    
+                    .sound-intro {
+                        background: linear-gradient(135deg, #ea580c, #dc2626);
+                        color: white;
+                        padding: 1.5rem;
+                        border-radius: 15px;
+                        margin: 1.5rem 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        box-shadow: 0 4px 15px rgba(234, 88, 12, 0.2);
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .intro-sound-icon {
+                        font-size: 2rem;
+                        animation: soundPulse 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes soundPulse {
+                        0%, 100% { 
+                            transform: scale(1);
+                        }
+                        50% { 
+                            transform: scale(1.2);
+                        }
+                    }
+                    
+                    .humidifier-types {
+                        position: relative;
+                        z-index: 1;
+                        margin: 2rem 0;
+                    }
+                    
+                    .types-title {
+                        font-size: 1.5rem;
+                        color: #ea580c;
+                        margin-bottom: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .decibel-comparison {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 1.5rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .decibel-card {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                        overflow: hidden;
+                        border-left: 5px solid;
+                    }
+                    
+                    .decibel-card::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                        transition: left 0.6s;
+                    }
+                    
+                    .decibel-card:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .decibel-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    .decibel-quiet {
+                        border-left-color: #059669;
+                        box-shadow: 0 4px 15px rgba(5, 150, 105, 0.1);
+                    }
+                    
+                    .decibel-moderate {
+                        border-left-color: #0ea5e9;
+                        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+                    }
+                    
+                    .decibel-loud {
+                        border-left-color: #dc2626;
+                        box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+                    }
+                    
+                    .decibel-mixed {
+                        border-left-color: #f59e0b;
+                        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+                    }
+                    
+                    .decibel-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .humidifier-type {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #1f2937;
+                    }
+                    
+                    .decibel-meter {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        font-weight: bold;
+                        color: white;
+                        position: relative;
+                    }
+                    
+                    .decibel-quiet .decibel-meter {
+                        background: linear-gradient(135deg, #059669, #047857);
+                    }
+                    
+                    .decibel-moderate .decibel-meter {
+                        background: linear-gradient(135deg, #0ea5e9, #0284c7);
+                    }
+                    
+                    .decibel-loud .decibel-meter {
+                        background: linear-gradient(135deg, #dc2626, #b91c1c);
+                    }
+                    
+                    .decibel-mixed .decibel-meter {
+                        background: linear-gradient(135deg, #f59e0b, #d97706);
+                    }
+                    
+                    .sound-wave-icon {
+                        font-size: 1rem;
+                        animation: waveAnimation 1.5s ease-in-out infinite;
+                    }
+                    
+                    @keyframes waveAnimation {
+                        0%, 100% { transform: scaleY(1); }
+                        50% { transform: scaleY(1.3); }
+                    }
+                    
+                    .noise-details {
+                        margin-top: 1rem;
+                    }
+                    
+                    .noise-source {
+                        color: #6b7280;
+                        font-size: 0.9rem;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .quietness-rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.3rem;
+                        font-size: 1.2rem;
+                    }
+                    
+                    .star {
+                        color: #fbbf24;
+                        animation: starTwinkle 2s ease-in-out infinite;
+                    }
+                    
+                    .star.empty {
+                        color: #e5e7eb;
+                    }
+                    
+                    @keyframes starTwinkle {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.7; }
+                    }
+                    
+                    .environment-factors {
+                        background: linear-gradient(135deg, #fef3c7, #fde68a);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        margin: 2rem 0;
+                        border: 2px solid #fcd34d;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .environment-title {
+                        font-size: 1.4rem;
+                        color: #92400e;
+                        margin-bottom: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .factor-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 1rem;
+                    }
+                    
+                    .factor-item {
+                        background: rgba(255, 255, 255, 0.8);
+                        border-radius: 10px;
+                        padding: 1rem;
+                        transition: all 0.3s ease;
+                        border-left: 3px solid #f59e0b;
+                    }
+                    
+                    .factor-item:hover {
+                        transform: translateX(5px);
+                        background: rgba(255, 255, 255, 0.95);
+                    }
+                    
+                    .factor-name {
+                        font-weight: 600;
+                        color: #92400e;
+                        margin-bottom: 0.5rem;
+                    }
+                    
+                    .factor-effect {
+                        font-size: 0.9rem;
+                        color: #78716c;
+                    }
+                    
+                    .maintenance-alerts {
+                        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        margin: 2rem 0;
+                        border: 2px solid #fca5a5;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .maintenance-title {
+                        font-size: 1.4rem;
+                        color: #dc2626;
+                        margin-bottom: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        animation: alertBlink 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes alertBlink {
+                        0%, 100% { opacity: 1; }
+                        50% { opacity: 0.8; }
+                    }
+                    
+                    .alert-sounds {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 1rem;
+                    }
+                    
+                    .alert-sound {
+                        background: rgba(255, 255, 255, 0.9);
+                        border-radius: 10px;
+                        padding: 1.2rem;
+                        transition: all 0.3s ease;
+                        border: 2px solid transparent;
+                    }
+                    
+                    .alert-sound:hover {
+                        border-color: #f87171;
+                        transform: scale(1.02);
+                    }
+                    
+                    .sound-type {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        color: #dc2626;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .sound-icon {
+                        font-size: 1.2rem;
+                        animation: soundBounce 1s ease-in-out infinite;
+                    }
+                    
+                    @keyframes soundBounce {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                    }
+                    
+                    .sound-cause {
+                        color: #7f1d1d;
+                        font-size: 0.9rem;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .decibel-comparison {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .factor-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .alert-sounds {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .noise-title {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .noise-causes-section {
+                            padding: 1.5rem;
+                        }
+                    }
+                </style>
+
+                <div class="noise-causes-section">
+                    <div class="noise-header">
+                        <h2 class="noise-title" id="causes">
+                            🔊 加湿器がうるさい主な原因
+                        </h2>
+                        <p class="noise-subtitle">
+                            騒音レベル分析と音響工学に基づいた静音化ソリューション
+                        </p>
+                        
+                        <div class="sound-intro">
+                            <div class="intro-sound-icon">🎵</div>
+                            <div>
+                                <strong>音の専門知識：</strong><br>
+                                加湿器の騒音は機種・設置・メンテナンスで決まります。
+                                適切な対策により快適な静音環境を実現できます。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="humidifier-types">
+                        <h3 class="types-title">
+                            <i class="fas fa-volume-down"></i>
+                            加湿方式による騒音レベル比較
+                        </h3>
+                        
+                        <div class="decibel-comparison">
+                            <div class="decibel-card decibel-quiet">
+                                <div class="decibel-header">
+                                    <div class="humidifier-type">超音波式</div>
+                                    <div class="decibel-meter">
+                                        <span class="sound-wave-icon">🔉</span>
+                                        <span>20-30dB</span>
+                                    </div>
+                                </div>
+                                <div class="noise-details">
+                                    <div class="noise-source">
+                                        <i class="fas fa-info-circle"></i>
+                                        超音波振動子の微細振動音
+                                    </div>
+                                    <div class="quietness-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span style="margin-left: 0.5rem; color: #059669; font-weight: 600;">最高静音</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="decibel-card decibel-moderate">
+                                <div class="decibel-header">
+                                    <div class="humidifier-type">気化式</div>
+                                    <div class="decibel-meter">
+                                        <span class="sound-wave-icon">🔊</span>
+                                        <span>25-40dB</span>
+                                    </div>
+                                </div>
+                                <div class="noise-details">
+                                    <div class="noise-source">
+                                        <i class="fas fa-info-circle"></i>
+                                        ファンモーターの回転音
+                                    </div>
+                                    <div class="quietness-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span style="margin-left: 0.5rem; color: #0ea5e9; font-weight: 600;">良好</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="decibel-card decibel-loud">
+                                <div class="decibel-header">
+                                    <div class="humidifier-type">スチーム式</div>
+                                    <div class="decibel-meter">
+                                        <span class="sound-wave-icon">📢</span>
+                                        <span>30-50dB</span>
+                                    </div>
+                                </div>
+                                <div class="noise-details">
+                                    <div class="noise-source">
+                                        <i class="fas fa-info-circle"></i>
+                                        水沸騰音・ヒーター稼働音
+                                    </div>
+                                    <div class="quietness-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                        <span style="margin-left: 0.5rem; color: #dc2626; font-weight: 600;">要注意</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="decibel-card decibel-mixed">
+                                <div class="decibel-header">
+                                    <div class="humidifier-type">ハイブリッド式</div>
+                                    <div class="decibel-meter">
+                                        <span class="sound-wave-icon">🔊</span>
+                                        <span>25-45dB</span>
+                                    </div>
+                                </div>
+                                <div class="noise-details">
+                                    <div class="noise-source">
+                                        <i class="fas fa-info-circle"></i>
+                                        ファン音・ヒーター音の複合
+                                    </div>
+                                    <div class="quietness-rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">☆</span>
+                                        <span class="star empty">☆</span>
+                                        <span style="margin-left: 0.5rem; color: #f59e0b; font-weight: 600;">普通</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="environment-factors">
+                        <h3 class="environment-title">
+                            <i class="fas fa-home"></i>
+                            設置環境による音響増幅要因
+                        </h3>
+                        
+                        <div class="factor-grid">
+                            <div class="factor-item">
+                                <div class="factor-name">硬質床面設置</div>
+                                <div class="factor-effect">振動共鳴により音量2-3倍増幅</div>
+                            </div>
+                            
+                            <div class="factor-item">
+                                <div class="factor-name">壁際近接配置</div>
+                                <div class="factor-effect">音波反射で音圧レベル上昇</div>
+                            </div>
+                            
+                            <div class="factor-item">
+                                <div class="factor-name">家具との共振</div>
+                                <div class="factor-effect">固有振動数一致で音響増大</div>
+                            </div>
+                            
+                            <div class="factor-item">
+                                <div class="factor-name">水量不足状態</div>
+                                <div class="factor-effect">空焚き異常音・キャビテーション音</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="maintenance-alerts">
+                        <h3 class="maintenance-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            メンテナンス不足による異常音アラート
+                        </h3>
+                        
+                        <div class="alert-sounds">
+                            <div class="alert-sound">
+                                <div class="sound-type">
+                                    <span class="sound-icon">🔔</span>
+                                    カラカラ音
+                                </div>
+                                <div class="sound-cause">
+                                    水垢・ミネラル結晶の堆積による振動音
+                                </div>
+                            </div>
+                            
+                            <div class="alert-sound">
+                                <div class="sound-type">
+                                    <span class="sound-icon">⚙️</span>
+                                    ガラガラ音
+                                </div>
+                                <div class="sound-cause">
+                                    ファンベアリング劣化・汚れ付着
+                                </div>
+                            </div>
+                            
+                            <div class="alert-sound">
+                                <div class="sound-type">
+                                    <span class="sound-icon">🎵</span>
+                                    キーン音
+                                </div>
+                                <div class="sound-cause">
+                                    超音波振動子の経年劣化・損傷
+                                </div>
+                            </div>
+                            
+                            <div class="alert-sound">
+                                <div class="sound-type">
+                                    <span class="sound-icon">💧</span>
+                                    ゴボゴボ音
+                                </div>
+                                <div class="sound-cause">
+                                    フィルター目詰まり・水流障害
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- キャラクター会話：加湿器の騒音について -->
                 <div class="character-dialogue">
                     <div class="dialogue-container">
@@ -277,7 +877,7 @@
                         <div class="pixel-character otokuman"></div>
                         <div class="speech-bubble right">
                             <div class="character-name">失敗しないお得マン</div>
-                            <p>睡眠は健康の基本ですから、我慢は禁物です！「ゴボゴボ」は給水タンクの気泡音、「ブーン」はファンやモーターの音ですね。機種によっては25dB以下の超静音タイプもありますよ。</p>
+                            <p>睡眠は健康の基本ですから、我慢は禁物です！「ゴボゴボ」は給水タンクの気泡音、「ブーン」はファンやモーターの音ですね。上の分析表を見ると、超音波式なら20-25dB程度で図書館より静かになりますよ。</p>
                         </div>
                     </div>
 
@@ -296,69 +896,6 @@
                             <p>25dBは図書館より静かなレベルです。寝室なら30dB以下が理想的。超音波式なら20-25dB、気化式なら25-30dB程度の静音機種があります。現在お使いの機種はおそらく40-50dBくらいでしょうね。</p>
                         </div>
                     </div>
-                </div>
-
-                <h3>1. 加湿方式による音の違い</h3>
-                <p>加湿器の騒音レベルは、採用している加湿方式によって大きく異なります：</p>
-
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>加湿方式</th>
-                            <th>騒音レベル</th>
-                            <th>主な音の原因</th>
-                            <th>静音性評価</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>超音波式</td>
-                            <td>20-30dB</td>
-                            <td>超音波振動子の振動音</td>
-                            <td>★★★★★</td>
-                        </tr>
-                        <tr>
-                            <td>気化式</td>
-                            <td>25-40dB</td>
-                            <td>ファンの回転音</td>
-                            <td>★★★★☆</td>
-                        </tr>
-                        <tr>
-                            <td>加熱式（スチーム式）</td>
-                            <td>30-50dB</td>
-                            <td>水の沸騰音、ヒーター音</td>
-                            <td>★★☆☆☆</td>
-                        </tr>
-                        <tr>
-                            <td>ハイブリッド式</td>
-                            <td>25-45dB</td>
-                            <td>ファン音とヒーター音</td>
-                            <td>★★★☆☆</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>2. 設置環境による音の増幅</h3>
-                <p>同じ加湿器でも、設置場所や環境によって騒音レベルが変わります：</p>
-
-                <ul>
-                    <li><strong>硬い床面</strong>: 振動が床に伝わり音が増幅</li>
-                    <li><strong>壁際設置</strong>: 壁に音が反響して大きく聞こえる</li>
-                    <li><strong>共鳴</strong>: 家具や部屋の構造と共鳴して音が大きくなる</li>
-                    <li><strong>水量不足</strong>: 空焚き状態で異常音が発生</li>
-                </ul>
-
-                <h3>3. メンテナンス不足による異常音</h3>
-                <p>定期的なお手入れを怠ると、以下のような異常音が発生します：</p>
-
-                <div class="warning-box">
-                    <h4>要注意！異常音のサイン</h4>
-                    <ul>
-                        <li><strong>カラカラ音</strong>: 水垢やミネラル堆積</li>
-                        <li><strong>ガラガラ音</strong>: ファンの汚れや故障</li>
-                        <li><strong>キーン音</strong>: 超音波振動子の不具合</li>
-                        <li><strong>ゴボゴボ音</strong>: フィルターの目詰まり</li>
-                    </ul>
                 </div>
 
                 <h2 id="diagnosis">騒音レベル診断チェッカー</h2>
