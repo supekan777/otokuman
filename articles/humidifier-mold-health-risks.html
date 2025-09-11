@@ -3362,88 +3362,670 @@
                     </div>
                 </div>
 
-                <h2 id="prevention-methods"><i class="fas fa-shield-alt"></i> 効果的な予防策</h2>
-                
-                <h3>🥇 最重要予防策</h3>
-                
-                <div class="prevention-card">
-                    <h4>毎日の水交換</h4>
-                    <p><strong>実施方法：</strong></p>
-                    <ol>
-                        <li>使用前に前日の水を完全排出</li>
-                        <li>タンクを軽くすすぐ</li>
-                        <li>新鮮な水（精製水推奨）を補充</li>
-                        <li>タンク外側も清拭</li>
-                    </ol>
-                    <p><strong>効果：</strong>雑菌繁殖を90%以上抑制</p>
-                </div>
+                <!-- 効果的な予防策セクション -->
+                <style>
+                    .prevention-section {
+                        margin: 4rem 0;
+                        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+                        border-radius: 20px;
+                        padding: 3rem;
+                        border: 1px solid #bbf7d0;
+                        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+                        position: relative;
+                        overflow: hidden;
+                    }
 
-                <div class="prevention-card">
-                    <h4>週2回の徹底清掃</h4>
-                    <p><strong>清掃手順：</strong></p>
-                    <ol>
-                        <li>全部品の分解</li>
-                        <li>中性洗剤での洗浄</li>
-                        <li>70%アルコールでの除菌</li>
-                        <li>完全乾燥後の組み立て</li>
-                    </ol>
-                    <p><strong>重点箇所：</strong>タンク底部、振動子、フィルター</p>
-                </div>
+                    .prevention-section::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
+                    }
 
-                <div class="prevention-card">
-                    <h4>精製水の使用</h4>
-                    <p><strong>推奨理由：</strong></p>
-                    <ul>
-                        <li>ミネラル分ゼロで雑菌繁殖抑制</li>
-                        <li>白い粉の発生防止</li>
-                        <li>機器への負担軽減</li>
-                    </ul>
-                    <p><strong>コスト：</strong>月500-1,000円程度</p>
-                </div>
+                    .prevention-header {
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        position: relative;
+                    }
 
-                <h3>予防メンテナンスカレンダー</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>頻度</th>
-                            <th>作業内容</th>
-                            <th>所要時間</th>
-                            <th>重要度</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>毎日</td>
-                            <td>水交換・軽清掃・湿度チェック</td>
-                            <td>5分</td>
-                            <td><span class="importance-critical">最重要</span></td>
-                        </tr>
-                        <tr>
-                            <td>週2-3回</td>
-                            <td>タンク・部品の詳細清掃</td>
-                            <td>15分</td>
-                            <td><span class="importance-high">重要</span></td>
-                        </tr>
-                        <tr>
-                            <td>週1回</td>
-                            <td>フィルター点検・換気強化</td>
-                            <td>10分</td>
-                            <td><span class="importance-high">重要</span></td>
-                        </tr>
-                        <tr>
-                            <td>月1回</td>
-                            <td>クエン酸除菌・総点検</td>
-                            <td>30分</td>
-                            <td><span class="importance-medium">推奨</span></td>
-                        </tr>
-                        <tr>
-                            <td>3ヶ月毎</td>
-                            <td>フィルター交換・機能確認</td>
-                            <td>20分</td>
-                            <td><span class="importance-medium">推奨</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                    .prevention-title {
+                        font-size: 2.2rem;
+                        color: #15803d;
+                        margin-bottom: 1rem;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+
+                    .prevention-subtitle {
+                        font-size: 1.1rem;
+                        color: #374151;
+                        font-weight: 400;
+                        margin-bottom: 2rem;
+                        max-width: 600px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        line-height: 1.6;
+                    }
+
+                    .prevention-intro {
+                        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+                        border: 1px solid #a7f3d0;
+                        border-radius: 15px;
+                        padding: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    .intro-icon {
+                        font-size: 2rem;
+                        color: #16a34a;
+                        animation: shieldPulse 3s infinite;
+                    }
+
+                    @keyframes shieldPulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                    }
+
+                    .intro-text {
+                        flex: 1;
+                        color: #166534;
+                        font-weight: 600;
+                        line-height: 1.5;
+                    }
+
+                    .top-methods-container {
+                        margin-bottom: 4rem;
+                    }
+
+                    .methods-header {
+                        text-align: center;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .methods-title {
+                        font-size: 1.8rem;
+                        color: #15803d;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                    }
+
+                    .methods-description {
+                        font-size: 1rem;
+                        color: #4b5563;
+                        max-width: 500px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                    }
+
+                    .prevention-methods-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                        gap: 2rem;
+                        margin-bottom: 4rem;
+                    }
+
+                    .prevention-card-v2 {
+                        background: white;
+                        border-radius: 16px;
+                        padding: 2rem;
+                        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                        border: 1px solid #e5e7eb;
+                        position: relative;
+                        overflow: hidden;
+                        transition: all 0.3s ease;
+                    }
+
+                    .prevention-card-v2:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+                    }
+
+                    .prevention-card-v2::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+                    }
+
+                    .card-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1.5rem;
+                        padding-bottom: 1rem;
+                        border-bottom: 2px solid #f3f4f6;
+                    }
+
+                    .method-icon {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        color: white;
+                        flex-shrink: 0;
+                        position: relative;
+                    }
+
+                    .method-icon::after {
+                        content: '';
+                        position: absolute;
+                        inset: -5px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #22c55e, #16a34a);
+                        opacity: 0.2;
+                        animation: methodPulse 4s infinite;
+                    }
+
+                    @keyframes methodPulse {
+                        0%, 100% { transform: scale(1); opacity: 0.2; }
+                        50% { transform: scale(1.2); opacity: 0.1; }
+                    }
+
+                    .card-title {
+                        flex: 1;
+                    }
+
+                    .method-name {
+                        font-size: 1.3rem;
+                        color: #1f2937;
+                        font-weight: 600;
+                        margin-bottom: 0.3rem;
+                    }
+
+                    .method-frequency {
+                        font-size: 0.9rem;
+                        color: #16a34a;
+                        font-weight: 500;
+                    }
+
+                    .card-content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                    }
+
+                    .method-section {
+                        background: #f9fafb;
+                        border-radius: 10px;
+                        padding: 1.2rem;
+                    }
+
+                    .section-title {
+                        font-size: 1rem;
+                        color: #374151;
+                        font-weight: 600;
+                        margin-bottom: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .method-steps {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+                    }
+
+                    .method-step {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 0.8rem;
+                        padding: 0.6rem;
+                        background: white;
+                        border-radius: 8px;
+                        border: 1px solid #e5e7eb;
+                        transition: all 0.2s ease;
+                    }
+
+                    .method-step:hover {
+                        background: #f3f4f6;
+                        transform: translateX(5px);
+                    }
+
+                    .step-number {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        flex-shrink: 0;
+                        margin-top: 1px;
+                    }
+
+                    .step-text {
+                        flex: 1;
+                        font-size: 0.9rem;
+                        color: #374151;
+                        line-height: 1.4;
+                    }
+
+                    .effectiveness-badge {
+                        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                        border: 1px solid #fbbf24;
+                        border-radius: 10px;
+                        padding: 1rem;
+                        margin-top: 1rem;
+                    }
+
+                    .effectiveness-title {
+                        font-size: 0.9rem;
+                        color: #92400e;
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .effectiveness-text {
+                        font-size: 0.9rem;
+                        color: #451a03;
+                        font-weight: 500;
+                    }
+
+                    .calendar-section {
+                        margin-top: 4rem;
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                        border: 1px solid #e5e7eb;
+                    }
+
+                    .calendar-header {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                    }
+
+                    .calendar-title {
+                        font-size: 1.8rem;
+                        color: #15803d;
+                        margin-bottom: 0.8rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                    }
+
+                    .calendar-description {
+                        font-size: 1rem;
+                        color: #4b5563;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.6;
+                    }
+
+                    .maintenance-calendar {
+                        background: #f8fafc;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        overflow-x: auto;
+                    }
+
+                    .calendar-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 0.9rem;
+                    }
+
+                    .calendar-table th {
+                        background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+                        color: white;
+                        padding: 1rem;
+                        text-align: center;
+                        font-weight: 600;
+                        border-radius: 8px 8px 0 0;
+                    }
+
+                    .calendar-table th:first-child {
+                        border-radius: 8px 0 0 0;
+                    }
+
+                    .calendar-table th:last-child {
+                        border-radius: 0 8px 0 0;
+                    }
+
+                    .calendar-table td {
+                        padding: 1rem;
+                        text-align: center;
+                        border-bottom: 1px solid #e5e7eb;
+                        background: white;
+                        transition: all 0.2s ease;
+                    }
+
+                    .calendar-table tr:hover td {
+                        background: #f0fdf4;
+                    }
+
+                    .frequency-cell {
+                        font-weight: 600;
+                        color: #15803d;
+                        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+                    }
+
+                    .task-cell {
+                        text-align: left;
+                        color: #374151;
+                        max-width: 200px;
+                    }
+
+                    .time-cell {
+                        color: #6b7280;
+                        font-weight: 500;
+                    }
+
+                    .priority-badge {
+                        display: inline-block;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .priority-critical {
+                        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+                        color: #991b1b;
+                        border: 1px solid #fca5a5;
+                    }
+
+                    .priority-high {
+                        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+                        color: #92400e;
+                        border: 1px solid #fbbf24;
+                    }
+
+                    .priority-medium {
+                        background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 100%);
+                        color: #1e40af;
+                        border: 1px solid #93c5fd;
+                    }
+
+                    @media (max-width: 768px) {
+                        .prevention-section {
+                            padding: 2rem;
+                        }
+                        
+                        .prevention-title {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .prevention-methods-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .method-icon {
+                            width: 50px;
+                            height: 50px;
+                            font-size: 1.2rem;
+                        }
+                        
+                        .calendar-section {
+                            padding: 1.5rem;
+                        }
+                        
+                        .maintenance-calendar {
+                            padding: 1rem;
+                        }
+                    }
+                </style>
+
+                <div class="prevention-section">
+                    <div class="prevention-header">
+                        <h2 class="prevention-title" id="prevention-methods">
+                            <i class="fas fa-shield-alt"></i>
+                            効果的な予防策
+                        </h2>
+                        <p class="prevention-subtitle">
+                            医学的根拠に基づいた、加湿器を安全に使用するための実践的な予防方法と定期メンテナンス計画
+                        </p>
+                        
+                        <div class="prevention-intro">
+                            <div class="intro-icon">🛡️</div>
+                            <div class="intro-text">
+                                <strong>予防が最も重要：</strong><br>
+                                適切な予防策により、カビや細菌による健康被害を90%以上防ぐことができます。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="top-methods-container">
+                        <div class="methods-header">
+                            <h3 class="methods-title">
+                                🥇 最重要予防策
+                            </h3>
+                            <p class="methods-description">
+                                これらの3つの基本対策を確実に実行することで、健康リスクを大幅に削減できます
+                            </p>
+                        </div>
+
+                        <div class="prevention-methods-grid">
+                            <!-- 毎日の水交換 -->
+                            <div class="prevention-card-v2">
+                                <div class="card-header">
+                                    <div class="method-icon">💧</div>
+                                    <div class="card-title">
+                                        <div class="method-name">毎日の水交換</div>
+                                        <div class="method-frequency">毎日実施・所要時間：5分</div>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <div class="method-section">
+                                        <h4 class="section-title">
+                                            <i class="fas fa-list-ol"></i>
+                                            実施手順
+                                        </h4>
+                                        <ol class="method-steps">
+                                            <li class="method-step">
+                                                <div class="step-number">1</div>
+                                                <span class="step-text">使用前に前日の水を完全排出</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">2</div>
+                                                <span class="step-text">タンクを軽くすすぎ洗い</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">3</div>
+                                                <span class="step-text">新鮮な水（精製水推奨）を補充</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">4</div>
+                                                <span class="step-text">タンク外側も清拭</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="effectiveness-badge">
+                                        <div class="effectiveness-title">
+                                            <i class="fas fa-chart-line"></i>
+                                            効果
+                                        </div>
+                                        <div class="effectiveness-text">雑菌繁殖を90%以上抑制</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 週2回の徹底清掃 -->
+                            <div class="prevention-card-v2">
+                                <div class="card-header">
+                                    <div class="method-icon">🧽</div>
+                                    <div class="card-title">
+                                        <div class="method-name">週2回の徹底清掃</div>
+                                        <div class="method-frequency">週2回実施・所要時間：15分</div>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <div class="method-section">
+                                        <h4 class="section-title">
+                                            <i class="fas fa-tools"></i>
+                                            清掃手順
+                                        </h4>
+                                        <ol class="method-steps">
+                                            <li class="method-step">
+                                                <div class="step-number">1</div>
+                                                <span class="step-text">全部品を完全分解</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">2</div>
+                                                <span class="step-text">中性洗剤で丁寧に洗浄</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">3</div>
+                                                <span class="step-text">70%アルコールで除菌</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">4</div>
+                                                <span class="step-text">完全乾燥後に組み立て</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="effectiveness-badge">
+                                        <div class="effectiveness-title">
+                                            <i class="fas fa-crosshairs"></i>
+                                            重点箇所
+                                        </div>
+                                        <div class="effectiveness-text">タンク底部・振動子・フィルター</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 精製水の使用 -->
+                            <div class="prevention-card-v2">
+                                <div class="card-header">
+                                    <div class="method-icon">🔬</div>
+                                    <div class="card-title">
+                                        <div class="method-name">精製水の使用</div>
+                                        <div class="method-frequency">推奨・コスト：月500-1,000円</div>
+                                    </div>
+                                </div>
+
+                                <div class="card-content">
+                                    <div class="method-section">
+                                        <h4 class="section-title">
+                                            <i class="fas fa-check-circle"></i>
+                                            推奨理由
+                                        </h4>
+                                        <ol class="method-steps">
+                                            <li class="method-step">
+                                                <div class="step-number">✓</div>
+                                                <span class="step-text">ミネラル分ゼロで雑菌繁殖抑制</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">✓</div>
+                                                <span class="step-text">白い粉の発生を完全防止</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">✓</div>
+                                                <span class="step-text">機器への負担を大幅軽減</span>
+                                            </li>
+                                            <li class="method-step">
+                                                <div class="step-number">✓</div>
+                                                <span class="step-text">長期的なメンテナンス軽減</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="effectiveness-badge">
+                                        <div class="effectiveness-title">
+                                            <i class="fas fa-yen-sign"></i>
+                                            経済効果
+                                        </div>
+                                        <div class="effectiveness-text">修理費用削減で実質的には経済的</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <h3 class="calendar-title">
+                                📅 予防メンテナンスカレンダー
+                            </h3>
+                            <p class="calendar-description">
+                                効果的な予防を継続するための詳細スケジュール。頻度と重要度に基づいた体系的なメンテナンス計画
+                            </p>
+                        </div>
+
+                        <div class="maintenance-calendar">
+                            <table class="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>頻度</th>
+                                        <th>作業内容</th>
+                                        <th>所要時間</th>
+                                        <th>重要度</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="frequency-cell">毎日</td>
+                                        <td class="task-cell">水交換・軽清掃・湿度チェック</td>
+                                        <td class="time-cell">5分</td>
+                                        <td><span class="priority-badge priority-critical">最重要</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="frequency-cell">週2-3回</td>
+                                        <td class="task-cell">タンク・部品の詳細清掃</td>
+                                        <td class="time-cell">15分</td>
+                                        <td><span class="priority-badge priority-high">重要</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="frequency-cell">週1回</td>
+                                        <td class="task-cell">フィルター点検・換気強化</td>
+                                        <td class="time-cell">10分</td>
+                                        <td><span class="priority-badge priority-high">重要</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="frequency-cell">月1回</td>
+                                        <td class="task-cell">クエン酸除菌・総点検</td>
+                                        <td class="time-cell">30分</td>
+                                        <td><span class="priority-badge priority-medium">推奨</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="frequency-cell">3ヶ月毎</td>
+                                        <td class="task-cell">フィルター交換・機能確認</td>
+                                        <td class="time-cell">20分</td>
+                                        <td><span class="priority-badge priority-medium">推奨</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
                 <h2 id="emergency-response"><i class="fas fa-first-aid"></i> 緊急時の対処法</h2>
                 
