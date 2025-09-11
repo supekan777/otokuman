@@ -898,96 +898,1125 @@
                     </div>
                 </div>
 
-                <h2 id="diagnosis">騒音レベル診断チェッカー</h2>
-
-                <div class="feature-card">
-                    <h3>🔍 あなたの加湿器の騒音レベルをチェック</h3>
+                <!-- AI騒音診断システムのスタイル -->
+                <style>
+                    .diagnostic-system {
+                        margin: 3rem 0;
+                        padding: 2.5rem;
+                        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+                        border-radius: 20px;
+                        border: 2px solid #cbd5e1;
+                        position: relative;
+                        overflow: hidden;
+                    }
                     
-                    <div class="form-group">
-                        <label>1. 現在使用している加湿器の種類は？</label>
-                        <div class="radio-group">
-                            <input type="radio" name="humidifier-type" value="ultrasonic" id="ultrasonic">
-                            <label for="ultrasonic">超音波式</label>
-                            <input type="radio" name="humidifier-type" value="evaporative" id="evaporative">
-                            <label for="evaporative">気化式</label>
-                            <input type="radio" name="humidifier-type" value="steam" id="steam">
-                            <label for="steam">加熱式（スチーム式）</label>
-                            <input type="radio" name="humidifier-type" value="hybrid" id="hybrid">
-                            <label for="hybrid">ハイブリッド式</label>
+                    .diagnostic-system::before {
+                        content: "";
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+                        animation: diagnosticPulse 8s ease-in-out infinite;
+                        z-index: 0;
+                    }
+                    
+                    @keyframes diagnosticPulse {
+                        0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+                        50% { transform: scale(1.1) rotate(180deg); opacity: 0.6; }
+                    }
+                    
+                    .diagnostic-header {
+                        text-align: center;
+                        margin-bottom: 2rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .diagnostic-header h2 {
+                        font-size: 2.2rem;
+                        color: #1e40af;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.5rem;
+                        animation: aiTitle 4s ease-in-out infinite;
+                    }
+                    
+                    @keyframes aiTitle {
+                        0%, 100% { color: #1e40af; text-shadow: none; }
+                        50% { color: #2563eb; text-shadow: 0 0 20px rgba(37, 99, 235, 0.3); }
+                    }
+                    
+                    .diagnostic-subtitle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .tech-badge {
+                        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                        color: white;
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                        animation: badgePulse 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes badgePulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.05); }
+                    }
+                    
+                    .diagnostic-desc {
+                        color: #64748b;
+                        font-size: 1rem;
+                    }
+                    
+                    .diagnostic-container {
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .diagnostic-step {
+                        margin: 2rem 0;
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+                        border: 1px solid #e2e8f0;
+                    }
+                    
+                    .step-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .step-number {
+                        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                        color: white;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                    }
+                    
+                    .step-header h3 {
+                        color: #1e40af;
+                        margin: 0;
+                        flex: 1;
+                    }
+                    
+                    .step-header p {
+                        color: #64748b;
+                        margin: 0;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .symptom-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 1rem;
+                    }
+                    
+                    .symptom-card {
+                        background: linear-gradient(135deg, #fefefe, #f8fafc);
+                        border: 2px solid #e2e8f0;
+                        border-radius: 12px;
+                        padding: 1.2rem;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .symptom-card::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+                        transition: left 0.6s;
+                    }
+                    
+                    .symptom-card:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .symptom-card:hover {
+                        transform: translateY(-3px);
+                        border-color: #3b82f6;
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+                    }
+                    
+                    .symptom-card.selected {
+                        border-color: #3b82f6;
+                        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                        transform: translateY(-3px);
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+                    }
+                    
+                    .symptom-icon {
+                        font-size: 2rem;
+                        text-align: center;
+                        margin-bottom: 0.5rem;
+                        animation: symptomFloat 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes symptomFloat {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-5px); }
+                    }
+                    
+                    .symptom-card h4 {
+                        color: #1e40af;
+                        font-size: 1.1rem;
+                        margin: 0.5rem 0;
+                        text-align: center;
+                    }
+                    
+                    .symptom-card p {
+                        color: #64748b;
+                        font-size: 0.9rem;
+                        text-align: center;
+                        margin: 0.5rem 0;
+                    }
+                    
+                    .frequency {
+                        text-align: center;
+                        font-size: 0.8rem;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 15px;
+                        font-weight: 600;
+                        background: #f1f5f9;
+                        color: #475569;
+                    }
+                    
+                    .environment-form {
+                        margin-top: 1rem;
+                    }
+                    
+                    .form-row {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .form-group label {
+                        display: block;
+                        font-weight: 600;
+                        color: #374151;
+                        margin-bottom: 0.5rem;
+                    }
+                    
+                    .form-group select {
+                        width: 100%;
+                        padding: 0.8rem;
+                        border: 2px solid #e5e7eb;
+                        border-radius: 8px;
+                        font-size: 1rem;
+                        transition: all 0.3s ease;
+                        background: white;
+                    }
+                    
+                    .form-group select:focus {
+                        outline: none;
+                        border-color: #3b82f6;
+                        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+                    }
+                    
+                    .diagnostic-action {
+                        text-align: center;
+                        margin: 2rem 0;
+                    }
+                    
+                    .diagnostic-btn {
+                        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+                        color: white;
+                        border: none;
+                        padding: 1.2rem 2.5rem;
+                        border-radius: 12px;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 0.3rem;
+                        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .diagnostic-btn::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                        transition: left 0.6s;
+                    }
+                    
+                    .diagnostic-btn:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .diagnostic-btn:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+                    }
+                    
+                    .btn-icon {
+                        font-size: 1.3rem;
+                        animation: iconSpin 4s linear infinite;
+                    }
+                    
+                    @keyframes iconSpin {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                    
+                    .btn-subtitle {
+                        font-size: 0.8rem;
+                        opacity: 0.9;
+                    }
+                    
+                    .diagnostic-result {
+                        margin: 2rem 0;
+                        background: white;
+                        border-radius: 15px;
+                        padding: 2rem;
+                        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+                        border: 2px solid #e5e7eb;
+                        animation: resultSlide 0.5s ease-out;
+                    }
+                    
+                    @keyframes resultSlide {
+                        from { opacity: 0; transform: translateY(20px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    
+                    .result-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 1.5rem;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+                    }
+                    
+                    .result-header h3 {
+                        color: #1e40af;
+                        margin: 0;
+                        font-size: 1.5rem;
+                    }
+                    
+                    .severity-indicator {
+                        padding: 0.5rem 1rem;
+                        border-radius: 20px;
+                        font-weight: 600;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .severity-low {
+                        background: #dcfce7;
+                        color: #166534;
+                        border: 1px solid #bbf7d0;
+                    }
+                    
+                    .severity-medium {
+                        background: #fef3c7;
+                        color: #92400e;
+                        border: 1px solid #fde68a;
+                    }
+                    
+                    .severity-high {
+                        background: #fee2e2;
+                        color: #dc2626;
+                        border: 1px solid #fecaca;
+                    }
+                    
+                    .diagnosis-summary {
+                        background: #f8fafc;
+                        border-radius: 10px;
+                        padding: 1.5rem;
+                        margin-bottom: 2rem;
+                        border-left: 4px solid #3b82f6;
+                    }
+                    
+                    .solution-tabs {
+                        display: flex;
+                        gap: 0.5rem;
+                        margin-bottom: 1.5rem;
+                        overflow-x: auto;
+                    }
+                    
+                    .tab-btn {
+                        background: #f8fafc;
+                        border: 2px solid #e2e8f0;
+                        color: #64748b;
+                        padding: 0.8rem 1.5rem;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                        white-space: nowrap;
+                    }
+                    
+                    .tab-btn.active,
+                    .tab-btn:hover {
+                        background: #3b82f6;
+                        color: white;
+                        border-color: #3b82f6;
+                    }
+                    
+                    .tab-panel {
+                        display: none;
+                        background: white;
+                        border-radius: 10px;
+                        padding: 1.5rem;
+                        border: 1px solid #e2e8f0;
+                    }
+                    
+                    .tab-panel.active {
+                        display: block;
+                        animation: tabFade 0.3s ease-in;
+                    }
+                    
+                    @keyframes tabFade {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+                    
+                    .solution-item {
+                        margin-bottom: 1.5rem;
+                        padding: 1rem;
+                        background: #f8fafc;
+                        border-radius: 8px;
+                        border-left: 3px solid #3b82f6;
+                    }
+                    
+                    .solution-title {
+                        font-weight: 600;
+                        color: #1e40af;
+                        margin-bottom: 0.5rem;
+                    }
+                    
+                    .solution-desc {
+                        color: #64748b;
+                        line-height: 1.6;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .diagnostic-system {
+                            padding: 1.5rem;
+                        }
+                        
+                        .diagnostic-header h2 {
+                            font-size: 1.8rem;
+                        }
+                        
+                        .symptom-grid {
+                            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        }
+                        
+                        .form-row {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .diagnostic-btn {
+                            padding: 1rem 2rem;
+                        }
+                        
+                        .solution-tabs {
+                            flex-direction: column;
+                        }
+                    }
+                </style>
+
+                <!-- AI騒音診断システム -->
+                <div class="diagnostic-system">
+                    <div class="diagnostic-header">
+                        <h2 id="diagnosis">🎯 AI騒音診断システム</h2>
+                        <div class="diagnostic-subtitle">
+                            <span class="tech-badge">音響工学AI搭載</span>
+                            <span class="diagnostic-desc">症状から原因を特定し、最適解を提案します</span>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>2. 主にどの時間帯に騒音が気になりますか？</label>
-                        <div class="radio-group">
-                            <input type="radio" name="time-concern" value="night" id="night">
-                            <label for="night">夜間・就寝時</label>
-                            <input type="radio" name="time-concern" value="work" id="work">
-                            <label for="work">在宅ワーク・集中時</label>
-                            <input type="radio" name="time-concern" value="always" id="always">
-                            <label for="always">常時気になる</label>
+                    <div class="diagnostic-container">
+                        <!-- ステップ1：症状チェック -->
+                        <div class="diagnostic-step" id="step1">
+                            <div class="step-header">
+                                <div class="step-number">1</div>
+                                <h3>🔊 現在の騒音症状</h3>
+                                <p>複数選択可能です</p>
+                            </div>
+                            
+                            <div class="symptom-grid">
+                                <div class="symptom-card" data-symptom="fan-noise">
+                                    <div class="symptom-icon">🌪️</div>
+                                    <h4>ファン回転音</h4>
+                                    <p>ヴーンという連続音</p>
+                                    <div class="frequency">頻度: 高</div>
+                                </div>
+                                
+                                <div class="symptom-card" data-symptom="vibration">
+                                    <div class="symptom-icon">📳</div>
+                                    <h4>本体振動</h4>
+                                    <p>ブルブルと震える音</p>
+                                    <div class="frequency">頻度: 中</div>
+                                </div>
+                                
+                                <div class="symptom-card" data-symptom="water-noise">
+                                    <div class="symptom-icon">💧</div>
+                                    <h4>水音・泡音</h4>
+                                    <p>ポコポコ、グルグル音</p>
+                                    <div class="frequency">頻度: 中</div>
+                                </div>
+                                
+                                <div class="symptom-card" data-symptom="high-pitch">
+                                    <div class="symptom-icon">⚡</div>
+                                    <h4>高音キーン音</h4>
+                                    <p>キーン、ピーという音</p>
+                                    <div class="frequency">緊急度: 高</div>
+                                </div>
+                                
+                                <div class="symptom-card" data-symptom="irregular">
+                                    <div class="symptom-icon">❗</div>
+                                    <h4>不規則異音</h4>
+                                    <p>ガタガタ、カラカラ音</p>
+                                    <div class="frequency">緊急度: 高</div>
+                                </div>
+                                
+                                <div class="symptom-card" data-symptom="startup">
+                                    <div class="symptom-icon">🚀</div>
+                                    <h4>起動時のみ</h4>
+                                    <p>電源ON直後の音</p>
+                                    <div class="frequency">頻度: 低</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label>3. どのような音が特に気になりますか？</label>
-                        <div class="radio-group">
-                            <input type="radio" name="noise-type" value="fan" id="fan-noise">
-                            <label for="fan-noise">ファンの回転音</label>
-                            <input type="radio" name="noise-type" value="bubble" id="bubble-noise">
-                            <label for="bubble-noise">水の泡立ち音</label>
-                            <input type="radio" name="noise-type" value="vibration" id="vibration-noise">
-                            <label for="vibration-noise">本体の振動音</label>
-                            <input type="radio" name="noise-type" value="abnormal" id="abnormal-noise">
-                            <label for="abnormal-noise">異常音（キーン、ガラガラ等）</label>
+                        <!-- ステップ2：環境情報 -->
+                        <div class="diagnostic-step" id="step2">
+                            <div class="step-header">
+                                <div class="step-number">2</div>
+                                <h3>🏠 使用環境情報</h3>
+                            </div>
+                            
+                            <div class="environment-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>加湿器タイプ</label>
+                                        <select id="humidifier-type">
+                                            <option value="">選択してください</option>
+                                            <option value="ultrasonic">超音波式 (15-25dB)</option>
+                                            <option value="evaporative">気化式 (20-30dB)</option>
+                                            <option value="steam">加熱式 (30-40dB)</option>
+                                            <option value="hybrid">ハイブリッド式 (20-35dB)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>使用年数</label>
+                                        <select id="usage-years">
+                                            <option value="">選択してください</option>
+                                            <option value="new">1年未満</option>
+                                            <option value="moderate">1-3年</option>
+                                            <option value="old">3年以上</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>設置場所</label>
+                                        <select id="location">
+                                            <option value="">選択してください</option>
+                                            <option value="bedroom">寝室</option>
+                                            <option value="living">リビング</option>
+                                            <option value="office">書斎・オフィス</option>
+                                            <option value="child">子供部屋</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>床材質</label>
+                                        <select id="floor-type">
+                                            <option value="">選択してください</option>
+                                            <option value="wood">フローリング</option>
+                                            <option value="carpet">カーペット</option>
+                                            <option value="tatami">畳</option>
+                                            <option value="tile">タイル・石材</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <button class="btn-primary" onclick="checkNoiseLevel()">騒音レベルを診断する</button>
+                        <!-- ステップ3：診断実行 -->
+                        <div class="diagnostic-action">
+                            <button class="diagnostic-btn" onclick="runDiagnosis()">
+                                <span class="btn-icon">🔬</span>
+                                AI診断を実行する
+                                <span class="btn-subtitle">音響工学データベースで解析</span>
+                            </button>
+                        </div>
 
-                    <div id="noise-result" class="result-box" style="display: none;">
-                        <h4 id="result-title"></h4>
-                        <p id="result-description"></p>
-                        <div id="result-recommendations"></div>
+                        <!-- 診断結果 -->
+                        <div class="diagnostic-result" id="diagnostic-result" style="display: none;">
+                            <div class="result-header">
+                                <h3 id="result-title"></h3>
+                                <div class="severity-indicator" id="severity-indicator"></div>
+                            </div>
+                            
+                            <div class="result-content">
+                                <div class="diagnosis-summary" id="diagnosis-summary"></div>
+                                
+                                <div class="solution-tabs">
+                                    <button class="tab-btn active" onclick="showTab('immediate')">即効対策</button>
+                                    <button class="tab-btn" onclick="showTab('maintenance')">メンテナンス</button>
+                                    <button class="tab-btn" onclick="showTab('replacement')">買い替え提案</button>
+                                </div>
+                                
+                                <div class="solution-content">
+                                    <div class="tab-panel active" id="immediate-panel"></div>
+                                    <div class="tab-panel" id="maintenance-panel"></div>
+                                    <div class="tab-panel" id="replacement-panel"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <h2 id="immediate-solutions">今すぐできる騒音対策</h2>
+                <!-- 今すぐできる騒音対策セクション -->
+                <style>
+                    .immediate-solutions {
+                        margin: 3rem 0;
+                        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                        border-radius: 25px;
+                        padding: 3rem 2.5rem;
+                        border: 2px solid #0ea5e9;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .immediate-solutions::before {
+                        content: "";
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at center, rgba(14, 165, 233, 0.03) 0%, transparent 70%);
+                        animation: immediatePulse 6s ease-in-out infinite;
+                        z-index: 0;
+                    }
+                    
+                    @keyframes immediatePulse {
+                        0%, 100% { 
+                            transform: scale(1) rotate(0deg);
+                            opacity: 0.3;
+                        }
+                        50% { 
+                            transform: scale(1.2) rotate(90deg);
+                            opacity: 0.6;
+                        }
+                    }
+                    
+                    .immediate-header {
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .immediate-title {
+                        font-size: 2.5rem;
+                        color: #0c4a6e;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                        animation: immediateTitle 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes immediateTitle {
+                        0%, 100% { 
+                            color: #0c4a6e;
+                            text-shadow: none;
+                        }
+                        50% { 
+                            color: #0ea5e9;
+                            text-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+                        }
+                    }
+                    
+                    .immediate-subtitle {
+                        font-size: 1.2rem;
+                        color: #475569;
+                        background: rgba(255, 255, 255, 0.9);
+                        padding: 1rem 2rem;
+                        border-radius: 30px;
+                        border: 1px solid #cbd5e1;
+                        display: inline-block;
+                        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
+                    }
+                    
+                    .solutions-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+                        gap: 2rem;
+                        margin: 3rem 0;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .solution-card {
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2rem;
+                        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.1);
+                        border: 2px solid transparent;
+                        transition: all 0.4s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .solution-card::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+                        transition: left 0.8s;
+                    }
+                    
+                    .solution-card:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .solution-card:hover {
+                        transform: translateY(-8px);
+                        border-color: #0ea5e9;
+                        box-shadow: 0 15px 35px rgba(14, 165, 233, 0.2);
+                    }
+                    
+                    .solution-header {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 1.5rem;
+                        gap: 1rem;
+                    }
+                    
+                    .solution-number {
+                        background: linear-gradient(135deg, #0ea5e9, #0369a1);
+                        color: white;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 1.5rem;
+                        box-shadow: 0 6px 15px rgba(14, 165, 233, 0.3);
+                        flex-shrink: 0;
+                    }
+                    
+                    .solution-title {
+                        color: #0c4a6e;
+                        font-size: 1.4rem;
+                        font-weight: 600;
+                        margin: 0;
+                        flex: 1;
+                    }
+                    
+                    .solution-description {
+                        color: #64748b;
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .solution-methods {
+                        display: grid;
+                        gap: 1rem;
+                    }
+                    
+                    .method-item {
+                        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+                        border-radius: 12px;
+                        padding: 1.2rem;
+                        border-left: 4px solid #0ea5e9;
+                        transition: all 0.3s ease;
+                        position: relative;
+                    }
+                    
+                    .method-item:hover {
+                        transform: translateX(5px);
+                        background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                        border-left-color: #0369a1;
+                    }
+                    
+                    .method-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.8rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    
+                    .method-icon {
+                        color: #0ea5e9;
+                        font-size: 1.2rem;
+                        width: 24px;
+                        text-align: center;
+                    }
+                    
+                    .method-name {
+                        font-weight: 600;
+                        color: #0c4a6e;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .method-description {
+                        color: #475569;
+                        font-size: 0.95rem;
+                        margin-left: 2rem;
+                        line-height: 1.5;
+                    }
+                    
+                    .effectiveness-badge {
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        background: linear-gradient(135deg, #22c55e, #16a34a);
+                        color: white;
+                        padding: 0.3rem 0.8rem;
+                        border-radius: 15px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+                    }
+                    
+                    .quick-tips {
+                        background: linear-gradient(135deg, #fef3c7, #fbbf24);
+                        border-radius: 20px;
+                        padding: 2rem;
+                        margin: 3rem 0;
+                        border: 2px solid #f59e0b;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .quick-tips-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .quick-tips-icon {
+                        background: linear-gradient(135deg, #f59e0b, #d97706);
+                        color: white;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+                        animation: tipsPulse 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes tipsPulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                    }
+                    
+                    .quick-tips-title {
+                        color: #92400e;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    
+                    .tips-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 1rem;
+                    }
+                    
+                    .tip-item {
+                        background: rgba(255, 255, 255, 0.9);
+                        border-radius: 12px;
+                        padding: 1.2rem;
+                        border: 1px solid #fbbf24;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .tip-item:hover {
+                        background: white;
+                        transform: scale(1.02);
+                        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+                    }
+                    
+                    .tip-title {
+                        font-weight: 600;
+                        color: #92400e;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .tip-description {
+                        color: #78716c;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .immediate-solutions {
+                            padding: 2rem 1.5rem;
+                        }
+                        
+                        .immediate-title {
+                            font-size: 2rem;
+                        }
+                        
+                        .solutions-grid {
+                            grid-template-columns: 1fr;
+                            gap: 1.5rem;
+                        }
+                        
+                        .solution-card {
+                            padding: 1.5rem;
+                        }
+                        
+                        .tips-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
 
-                <h3>1. 設置場所の最適化</h3>
-                <p>適切な設置場所を選ぶだけで、騒音を大幅に軽減できます：</p>
+                <div class="immediate-solutions">
+                    <div class="immediate-header">
+                        <h2 class="immediate-title" id="immediate-solutions">
+                            🚀 今すぐできる騒音対策
+                        </h2>
+                        <p class="immediate-subtitle">
+                            特別な機器不要！5分で実践できる効果的な静音化テクニック
+                        </p>
+                    </div>
 
-                <div class="info-box">
-                    <h4>理想的な設置場所の条件</h4>
-                    <ul>
-                        <li><strong>平らで安定した場所</strong>: 振動を最小限に抑制</li>
-                        <li><strong>壁から30cm以上離す</strong>: 反響音を防止</li>
-                        <li><strong>カーペットやマットの上</strong>: 振動吸収効果</li>
-                        <li><strong>直射日光を避ける</strong>: 本体の歪みによる異音防止</li>
-                    </ul>
-                </div>
+                    <div class="solutions-grid">
+                        <!-- 設置場所最適化 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <div class="solution-number">1</div>
+                                <h3 class="solution-title">📍 設置場所の最適化</h3>
+                            </div>
+                            <div class="effectiveness-badge">効果度: 高</div>
+                            <p class="solution-description">
+                                適切な設置場所を選ぶだけで、騒音を50-70%軽減可能。最も手軽で効果的な対策です。
+                            </p>
+                            
+                            <div class="solution-methods">
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">🏠</span>
+                                        <span class="method-name">安定した平面に設置</span>
+                                    </div>
+                                    <div class="method-description">
+                                        ガタつきによる振動音を完全除去。水平器アプリで確認推奨
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">📏</span>
+                                        <span class="method-name">壁から30cm以上離す</span>
+                                    </div>
+                                    <div class="method-description">
+                                        音波の反響を防止し、エコー効果による音量増幅を回避
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">🧸</span>
+                                        <span class="method-name">柔らかい素材の上に配置</span>
+                                    </div>
+                                    <div class="method-description">
+                                        カーペット・ラグ・厚手のタオルで振動吸収効果を最大化
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <h3>2. 振動対策グッズの活用</h3>
-                <p>市販の振動対策グッズを使用することで、さらなる騒音軽減が可能です：</p>
+                        <!-- 振動対策 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <div class="solution-number">2</div>
+                                <h3 class="solution-title">🛡️ 振動対策グッズ活用</h3>
+                            </div>
+                            <div class="effectiveness-badge">効果度: 極高</div>
+                            <p class="solution-description">
+                                市販グッズを使用することで、振動音を80%以上軽減。コストパフォーマンス抜群の対策です。
+                            </p>
+                            
+                            <div class="solution-methods">
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">🟫</span>
+                                        <span class="method-name">防振マット（厚さ5mm以上）</span>
+                                    </div>
+                                    <div class="method-description">
+                                        ゴム製マットで振動を吸収。100円ショップでも入手可能
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">⚫</span>
+                                        <span class="method-name">防振ゴム（四隅設置）</span>
+                                    </div>
+                                    <div class="method-description">
+                                        本体を浮上させ、直接接触による振動伝達を遮断
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">🧽</span>
+                                        <span class="method-name">吸音材（壁面配置）</span>
+                                    </div>
+                                    <div class="method-description">
+                                        周囲の反響音を吸収し、音圧レベルを大幅削減
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <ul>
-                    <li><strong>防振マット</strong>: 厚さ5mm以上のゴム製マットが効果的</li>
-                    <li><strong>防振ゴム</strong>: 本体の四隅に設置して振動を吸収</li>
-                    <li><strong>吸音材</strong>: 周囲の壁面に設置して反響を防止</li>
-                    <li><strong>防音ボックス</strong>: 大きな騒音の場合の最終手段</li>
-                </ul>
+                        <!-- 運転設定調整 -->
+                        <div class="solution-card">
+                            <div class="solution-header">
+                                <div class="solution-number">3</div>
+                                <h3 class="solution-title">⚙️ 運転設定の調整</h3>
+                            </div>
+                            <div class="effectiveness-badge">効果度: 中</div>
+                            <p class="solution-description">
+                                加湿器の設定を最適化することで、騒音を抑えながら効果的な加湿を維持できます。
+                            </p>
+                            
+                            <div class="solution-methods">
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">📊</span>
+                                        <span class="method-name">加湿量を必要最小限に設定</span>
+                                    </div>
+                                    <div class="method-description">
+                                        湿度50-60%を目標に、過度な加湿による騒音増大を防止
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">⏰</span>
+                                        <span class="method-name">タイマー機能を活用</span>
+                                    </div>
+                                    <div class="method-description">
+                                        就寝2時間前に停止設定し、睡眠中の騒音を完全回避
+                                    </div>
+                                </div>
+                                
+                                <div class="method-item">
+                                    <div class="method-header">
+                                        <span class="method-icon">🌙</span>
+                                        <span class="method-name">おやすみモード使用</span>
+                                    </div>
+                                    <div class="method-description">
+                                        夜間専用の超静音モードで、睡眠の質を向上
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <h3>3. 運転設定の調整</h3>
-                <p>加湿器の設定を調整することで、騒音を抑えながら快適に使用できます：</p>
-
-                <div class="highlight-box">
-                    <h4>静音運転のコツ</h4>
-                    <ul>
-                        <li><strong>加湿量を下げる</strong>: 必要最小限の加湿で運転</li>
-                        <li><strong>タイマー機能を活用</strong>: 就寝時は停止設定</li>
-                        <li><strong>エコモード使用</strong>: 静音重視の運転モード</li>
-                        <li><strong>間欠運転</strong>: 連続運転ではなく断続的に運転</li>
-                    </ul>
+                    <!-- 追加のクイックヒント -->
+                    <div class="quick-tips">
+                        <div class="quick-tips-header">
+                            <div class="quick-tips-icon">💡</div>
+                            <h3 class="quick-tips-title">プロが教える裏技テクニック</h3>
+                        </div>
+                        
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <div class="tip-title">
+                                    <span>🔇</span>
+                                    音の心理学活用
+                                </div>
+                                <div class="tip-description">
+                                    ホワイトノイズアプリで加湿器音をマスキング。脳が騒音として認識しなくなります。
+                                </div>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <div class="tip-title">
+                                    <span>📐</span>
+                                    角度調整テクニック
+                                </div>
+                                <div class="tip-description">
+                                    本体を2-3度傾け、内部の水流を最適化。気泡音を大幅に軽減できます。
+                                </div>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <div class="tip-title">
+                                    <span>🌡️</span>
+                                    温度差利用法
+                                </div>
+                                <div class="tip-description">
+                                    室温より5度低い水を使用し、沸騰音・蒸発音を抑制する温度差テクニック。
+                                </div>
+                            </div>
+                            
+                            <div class="tip-item">
+                                <div class="tip-title">
+                                    <span>⚡</span>
+                                    電源管理最適化
+                                </div>
+                                <div class="tip-description">
+                                    電圧安定器使用で、モーター回転の不安定による騒音変動を防止します。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 id="quiet-humidifiers">静音性の高いおすすめ加湿器ランキング</h2>
@@ -1094,101 +2123,1564 @@
                     </div>
                 </div>
 
-                <h2 id="maintenance">メンテナンスによる騒音対策</h2>
+                <!-- メンテナンスによる騒音対策セクション -->
+                <style>
+                    .maintenance-section {
+                        margin: 3rem 0;
+                        background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+                        border-radius: 25px;
+                        padding: 3rem 2.5rem;
+                        border: 2px solid #22c55e;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .maintenance-section::before {
+                        content: "";
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: radial-gradient(circle at center, rgba(34, 197, 94, 0.03) 0%, transparent 70%);
+                        animation: maintenancePulse 8s ease-in-out infinite;
+                        z-index: 0;
+                    }
+                    
+                    @keyframes maintenancePulse {
+                        0%, 100% { 
+                            transform: scale(1) rotate(0deg);
+                            opacity: 0.3;
+                        }
+                        50% { 
+                            transform: scale(1.1) rotate(-90deg);
+                            opacity: 0.6;
+                        }
+                    }
+                    
+                    .maintenance-header {
+                        text-align: center;
+                        margin-bottom: 3rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .maintenance-title {
+                        font-size: 2.5rem;
+                        color: #166534;
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                        animation: maintenanceTitle 4s ease-in-out infinite;
+                    }
+                    
+                    @keyframes maintenanceTitle {
+                        0%, 100% { 
+                            color: #166534;
+                            text-shadow: none;
+                        }
+                        50% { 
+                            color: #22c55e;
+                            text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+                        }
+                    }
+                    
+                    .maintenance-subtitle {
+                        font-size: 1.2rem;
+                        color: #475569;
+                        background: rgba(255, 255, 255, 0.9);
+                        padding: 1rem 2rem;
+                        border-radius: 30px;
+                        border: 1px solid #bbf7d0;
+                        display: inline-block;
+                        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.1);
+                    }
+                    
+                    .maintenance-schedule {
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 2rem 0;
+                        box-shadow: 0 8px 25px rgba(34, 197, 94, 0.1);
+                        border: 2px solid #bbf7d0;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .schedule-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .schedule-icon {
+                        background: linear-gradient(135deg, #22c55e, #16a34a);
+                        color: white;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.8rem;
+                        box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+                        animation: scheduleFloat 3s ease-in-out infinite;
+                    }
+                    
+                    @keyframes scheduleFloat {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-5px); }
+                    }
+                    
+                    .schedule-title {
+                        color: #166534;
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    
+                    .maintenance-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 1.5rem;
+                    }
+                    
+                    .maintenance-card {
+                        background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+                        border-radius: 15px;
+                        padding: 1.8rem;
+                        border: 2px solid transparent;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .maintenance-card::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+                        transition: left 0.8s;
+                    }
+                    
+                    .maintenance-card:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .maintenance-card:hover {
+                        transform: translateY(-5px);
+                        border-color: #22c55e;
+                        box-shadow: 0 12px 30px rgba(34, 197, 94, 0.15);
+                    }
+                    
+                    .frequency-badge {
+                        position: absolute;
+                        top: 1rem;
+                        right: 1rem;
+                        padding: 0.4rem 0.8rem;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        color: white;
+                    }
+                    
+                    .weekly {
+                        background: linear-gradient(135deg, #ef4444, #dc2626);
+                        box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+                    }
+                    
+                    .monthly {
+                        background: linear-gradient(135deg, #f59e0b, #d97706);
+                        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+                    }
+                    
+                    .maintenance-item-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .maintenance-item-icon {
+                        background: linear-gradient(135deg, #22c55e, #16a34a);
+                        color: white;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.2rem;
+                        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+                    }
+                    
+                    .maintenance-item-title {
+                        color: #166534;
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    
+                    .maintenance-method {
+                        color: #64748b;
+                        font-size: 1rem;
+                        line-height: 1.6;
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .maintenance-effect {
+                        background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+                        border-radius: 10px;
+                        padding: 1rem;
+                        border-left: 4px solid #22c55e;
+                    }
+                    
+                    .effect-title {
+                        font-weight: 600;
+                        color: #166534;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .effect-description {
+                        color: #15803d;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+                    }
+                    
+                    .deep-cleaning-section {
+                        background: white;
+                        border-radius: 20px;
+                        padding: 2.5rem;
+                        margin: 3rem 0;
+                        box-shadow: 0 8px 25px rgba(34, 197, 94, 0.1);
+                        border: 2px solid #bbf7d0;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .deep-cleaning-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .deep-cleaning-icon {
+                        background: linear-gradient(135deg, #3b82f6, #2563eb);
+                        color: white;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.8rem;
+                        box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+                        animation: deepCleanPulse 2s ease-in-out infinite;
+                    }
+                    
+                    @keyframes deepCleanPulse {
+                        0%, 100% { transform: scale(1); }
+                        50% { transform: scale(1.05); }
+                    }
+                    
+                    .deep-cleaning-title {
+                        color: #1e40af;
+                        font-size: 1.8rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    
+                    .citric-acid-guide {
+                        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        border: 2px solid #38bdf8;
+                    }
+                    
+                    .guide-steps {
+                        display: grid;
+                        gap: 1.5rem;
+                        margin-top: 1.5rem;
+                    }
+                    
+                    .step-item {
+                        background: white;
+                        border-radius: 12px;
+                        padding: 1.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1.5rem;
+                        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+                        transition: all 0.3s ease;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .step-item::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+                        transition: left 0.6s;
+                    }
+                    
+                    .step-item:hover::before {
+                        left: 100%;
+                    }
+                    
+                    .step-item:hover {
+                        transform: translateX(5px);
+                        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+                    }
+                    
+                    .step-number-circle {
+                        background: linear-gradient(135deg, #3b82f6, #2563eb);
+                        color: white;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                        flex-shrink: 0;
+                    }
+                    
+                    .step-content {
+                        flex: 1;
+                    }
+                    
+                    .step-action {
+                        font-weight: 600;
+                        color: #1e40af;
+                        font-size: 1.1rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    
+                    .step-details {
+                        color: #64748b;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+                    }
+                    
+                    .pro-tips {
+                        background: linear-gradient(135deg, #fefce8, #fef3c7);
+                        border-radius: 15px;
+                        padding: 2rem;
+                        margin: 2rem 0;
+                        border: 2px solid #facc15;
+                    }
+                    
+                    .pro-tips-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    .pro-tips-icon {
+                        background: linear-gradient(135deg, #facc15, #eab308);
+                        color: white;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+                        animation: proTipSpin 4s linear infinite;
+                    }
+                    
+                    @keyframes proTipSpin {
+                        from { transform: rotate(0deg); }
+                        to { transform: rotate(360deg); }
+                    }
+                    
+                    .pro-tips-title {
+                        color: #ca8a04;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    
+                    .tips-list {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 1rem;
+                    }
+                    
+                    .tip-card {
+                        background: rgba(255, 255, 255, 0.9);
+                        border-radius: 10px;
+                        padding: 1.2rem;
+                        border: 1px solid #fbbf24;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .tip-card:hover {
+                        background: white;
+                        transform: scale(1.02);
+                        box-shadow: 0 4px 15px rgba(250, 204, 21, 0.2);
+                    }
+                    
+                    .tip-header {
+                        font-weight: 600;
+                        color: #ca8a04;
+                        margin-bottom: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    .tip-content {
+                        color: #78716c;
+                        font-size: 0.95rem;
+                        line-height: 1.5;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .maintenance-section {
+                            padding: 2rem 1.5rem;
+                        }
+                        
+                        .maintenance-title {
+                            font-size: 2rem;
+                        }
+                        
+                        .maintenance-grid {
+                            grid-template-columns: 1fr;
+                        }
+                        
+                        .step-item {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+                        
+                        .tips-list {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
 
-                <h3>1. 定期清掃のスケジュール</h3>
-                <p>適切なメンテナンスで騒音を予防し、加湿器の寿命を延ばします：</p>
+                <div class="maintenance-section">
+                    <div class="maintenance-header">
+                        <h2 class="maintenance-title" id="maintenance">
+                            🔧 メンテナンスによる騒音対策
+                        </h2>
+                        <p class="maintenance-subtitle">
+                            定期清掃で騒音を根本から予防！長期間の静音環境を維持
+                        </p>
+                    </div>
 
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>清掃箇所</th>
-                            <th>頻度</th>
-                            <th>清掃方法</th>
-                            <th>騒音予防効果</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>水タンク</td>
-                            <td>週1回</td>
-                            <td>中性洗剤で洗浄、完全乾燥</td>
-                            <td>水の流れを改善</td>
-                        </tr>
-                        <tr>
-                            <td>フィルター</td>
-                            <td>月1回</td>
-                            <td>水洗い、交換（6ヶ月毎）</td>
-                            <td>ファン負荷軽減</td>
-                        </tr>
-                        <tr>
-                            <td>超音波振動子</td>
-                            <td>月1回</td>
-                            <td>クエン酸洗浄</td>
-                            <td>振動音の正常化</td>
-                        </tr>
-                        <tr>
-                            <td>本体内部</td>
-                            <td>月1回</td>
-                            <td>アルコール除菌</td>
-                            <td>異常音の防止</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <!-- 定期清掃スケジュール -->
+                    <div class="maintenance-schedule">
+                        <div class="schedule-header">
+                            <div class="schedule-icon">📅</div>
+                            <h3 class="schedule-title">定期清掃スケジュール</h3>
+                        </div>
+                        
+                        <div class="maintenance-grid">
+                            <!-- 水タンク -->
+                            <div class="maintenance-card">
+                                <div class="frequency-badge weekly">週1回</div>
+                                <div class="maintenance-item-header">
+                                    <div class="maintenance-item-icon">💧</div>
+                                    <h4 class="maintenance-item-title">水タンク清掃</h4>
+                                </div>
+                                <div class="maintenance-method">
+                                    中性洗剤による丁寧な洗浄と完全乾燥。細菌繁殖とぬめりを防止し、水流を最適化します。
+                                </div>
+                                <div class="maintenance-effect">
+                                    <div class="effect-title">
+                                        <span>🎯</span>
+                                        効果: 水流音改善
+                                    </div>
+                                    <div class="effect-description">
+                                        ぬめりや汚れによる水流障害を解消し、ゴボゴボ音を50%軽減
+                                    </div>
+                                </div>
+                            </div>
 
-                <h3>2. 水垢・ミネラル除去</h3>
-                <p>水垢やミネラル堆積は騒音の大きな原因です。以下の方法で効果的に除去できます：</p>
+                            <!-- フィルター -->
+                            <div class="maintenance-card">
+                                <div class="frequency-badge monthly">月1回</div>
+                                <div class="maintenance-item-header">
+                                    <div class="maintenance-item-icon">🌀</div>
+                                    <h4 class="maintenance-item-title">フィルター清掃</h4>
+                                </div>
+                                <div class="maintenance-method">
+                                    水洗いによる目詰まり除去と、6ヶ月毎の完全交換。ファンの負荷を最小限に抑制します。
+                                </div>
+                                <div class="maintenance-effect">
+                                    <div class="effect-title">
+                                        <span>⚡</span>
+                                        効果: ファン負荷軽減
+                                    </div>
+                                    <div class="effect-description">
+                                        目詰まり解消でファン回転が安定化、モーター音を30%削減
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="step-guide">
-                    <h4>クエン酸洗浄の手順</h4>
-                    <div class="steps">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">クエン酸水溶液（濃度10%）を作成</div>
+                            <!-- 超音波振動子 -->
+                            <div class="maintenance-card">
+                                <div class="frequency-badge monthly">月1回</div>
+                                <div class="maintenance-item-header">
+                                    <div class="maintenance-item-icon">🔊</div>
+                                    <h4 class="maintenance-item-title">振動子洗浄</h4>
+                                </div>
+                                <div class="maintenance-method">
+                                    クエン酸による水垢除去とミネラル堆積の完全清掃。振動子の正常動作を維持します。
+                                </div>
+                                <div class="maintenance-effect">
+                                    <div class="effect-title">
+                                        <span>📳</span>
+                                        効果: 振動音正常化
+                                    </div>
+                                    <div class="effect-description">
+                                        水垢除去により振動が均一化、異常な高音キーン音を排除
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 本体内部 -->
+                            <div class="maintenance-card">
+                                <div class="frequency-badge monthly">月1回</div>
+                                <div class="maintenance-item-header">
+                                    <div class="maintenance-item-icon">🏠</div>
+                                    <h4 class="maintenance-item-title">本体内部清掃</h4>
+                                </div>
+                                <div class="maintenance-method">
+                                    アルコール除菌による内部清掃と乾燥。カビや細菌の繁殖を防止し、健康と静音を両立。
+                                </div>
+                                <div class="maintenance-effect">
+                                    <div class="effect-title">
+                                        <span>🛡️</span>
+                                        効果: 異常音防止
+                                    </div>
+                                    <div class="effect-description">
+                                        内部汚れによる機械的異音を予防、長期間の静音性を保持
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">30分間浸け置き洗浄</div>
+                    </div>
+
+                    <!-- ディープクリーニングガイド -->
+                    <div class="deep-cleaning-section">
+                        <div class="deep-cleaning-header">
+                            <div class="deep-cleaning-icon">🧪</div>
+                            <h3 class="deep-cleaning-title">プロ級ディープクリーニング</h3>
                         </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">柔らかいブラシでこすり洗い</div>
+                        
+                        <div class="citric-acid-guide">
+                            <h4 style="color: #1e40af; margin-bottom: 1rem;">🍋 クエン酸洗浄の完全手順</h4>
+                            <p style="color: #64748b; margin-bottom: 1.5rem;">
+                                水垢・ミネラル堆積を完全除去し、騒音の根本原因を解決する専門的洗浄法
+                            </p>
+                            
+                            <div class="guide-steps">
+                                <div class="step-item">
+                                    <div class="step-number-circle">1</div>
+                                    <div class="step-content">
+                                        <div class="step-action">クエン酸溶液の調製</div>
+                                        <div class="step-details">
+                                            水1Lにクエン酸100g（濃度10%）を完全溶解。市販のクエン酸洗浄剤も使用可能
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number-circle">2</div>
+                                    <div class="step-content">
+                                        <div class="step-action">浸け置き洗浄実行</div>
+                                        <div class="step-details">
+                                            振動子・内部タンクを30分間浸け置き。頑固な汚れは1時間まで延長可能
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number-circle">3</div>
+                                    <div class="step-content">
+                                        <div class="step-action">物理的清掃作業</div>
+                                        <div class="step-details">
+                                            柔らかいブラシ（歯ブラシ推奨）で優しくこすり洗い。強い力は部品損傷の原因
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number-circle">4</div>
+                                    <div class="step-content">
+                                        <div class="step-action">完全すすぎ洗い</div>
+                                        <div class="step-details">
+                                            清水で5回以上すすぎ、クエン酸残留を完全除去。残留は腐食の原因となります
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="step-item">
+                                    <div class="step-number-circle">5</div>
+                                    <div class="step-content">
+                                        <div class="step-action">完全乾燥処理</div>
+                                        <div class="step-details">
+                                            自然乾燥で24時間以上放置。ドライヤー使用は部品変形リスクあり
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">十分な水洗いで完全除去</div>
+                    </div>
+
+                    <!-- プロテクニック -->
+                    <div class="pro-tips">
+                        <div class="pro-tips-header">
+                            <div class="pro-tips-icon">⚙️</div>
+                            <h3 class="pro-tips-title">メンテナンス職人の裏技</h3>
                         </div>
-                        <div class="step">
-                            <div class="step-number">5</div>
-                            <div class="step-content">完全乾燥させてから使用</div>
+                        
+                        <div class="tips-list">
+                            <div class="tip-card">
+                                <div class="tip-header">
+                                    <span>🌡️</span>
+                                    温水洗浄効果
+                                </div>
+                                <div class="tip-content">
+                                    40-50℃の温水使用で洗浄効果が3倍向上。油脂汚れと水垢を同時除去
+                                </div>
+                            </div>
+                            
+                            <div class="tip-card">
+                                <div class="tip-header">
+                                    <span>⏰</span>
+                                    ナイトクリーニング
+                                </div>
+                                <div class="tip-content">
+                                    就寝前に洗浄開始し、朝まで浸け置き。時間をかけることで洗浄剤が深部まで浸透
+                                </div>
+                            </div>
+                            
+                            <div class="tip-card">
+                                <div class="tip-header">
+                                    <span>🧊</span>
+                                    氷水仕上げ
+                                </div>
+                                <div class="tip-content">
+                                    最終すすぎに氷水使用で部品収縮。微細な汚れも物理的に除去可能
+                                </div>
+                            </div>
+                            
+                            <div class="tip-card">
+                                <div class="tip-header">
+                                    <span>📱</span>
+                                    アプリ管理活用
+                                </div>
+                                <div class="tip-content">
+                                    スマホのメンテナンス記録アプリで清掃履歴管理。最適なタイミングを逃しません
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <h2 id="selection-guide">騒音を防ぐ加湿器の選び方</h2>
+                <!-- 騒音を防ぐ加湿器の選び方セクション -->
+                <div class="selection-guide-section">
+                    <div class="selection-header">
+                        <h2 class="selection-title" id="selection-guide">
+                            🎯 騒音を防ぐ加湿器の選び方
+                        </h2>
+                        <p class="selection-subtitle">
+                            購入前に知っておくべき静音加湿器選択の重要ポイント
+                        </p>
+                    </div>
 
-                <h3>1. 騒音レベルの目安</h3>
-                <p>用途別に適した騒音レベルを把握して選択しましょう：</p>
+                    <!-- 騒音レベルガイド -->
+                    <div class="noise-level-guide">
+                        <h3 class="guide-section-title">
+                            <i class="fas fa-volume-down"></i> 1. 用途別騒音レベルの目安
+                        </h3>
+                        <p class="guide-intro">あなたの使用環境に最適な静音レベルを選択しましょう</p>
+                        
+                        <div class="noise-level-grid">
+                            <div class="noise-level-card bedroom">
+                                <div class="level-header">
+                                    <i class="fas fa-bed level-icon"></i>
+                                    <h4 class="level-title">寝室用</h4>
+                                </div>
+                                <div class="level-value">～25dB</div>
+                                <div class="level-description">睡眠を妨げない超静音レベル</div>
+                                <div class="level-example">
+                                    <span class="example-label">音の例</span>
+                                    <span class="example-text">図書館程度の静寂</span>
+                                </div>
+                            </div>
 
-                <ul>
-                    <li><strong>寝室用（～25dB）</strong>: 睡眠を妨げない静音レベル</li>
-                    <li><strong>リビング用（～35dB）</strong>: 日常生活に支障のないレベル</li>
-                    <li><strong>オフィス用（～30dB）</strong>: 集中作業に適したレベル</li>
-                    <li><strong>子供部屋用（～20dB）</strong>: 特に静音性を重視</li>
-                </ul>
+                            <div class="noise-level-card living">
+                                <div class="level-header">
+                                    <i class="fas fa-couch level-icon"></i>
+                                    <h4 class="level-title">リビング用</h4>
+                                </div>
+                                <div class="level-value">～35dB</div>
+                                <div class="level-description">日常生活に支障のないレベル</div>
+                                <div class="level-example">
+                                    <span class="example-label">音の例</span>
+                                    <span class="example-text">深夜の郊外程度</span>
+                                </div>
+                            </div>
 
-                <h3>2. 静音機能をチェック</h3>
-                <p>購入前に確認すべき静音機能：</p>
+                            <div class="noise-level-card office">
+                                <div class="level-header">
+                                    <i class="fas fa-briefcase level-icon"></i>
+                                    <h4 class="level-title">オフィス用</h4>
+                                </div>
+                                <div class="level-value">～30dB</div>
+                                <div class="level-description">集中作業に適したレベル</div>
+                                <div class="level-example">
+                                    <span class="example-label">音の例</span>
+                                    <span class="example-text">ささやき声程度</span>
+                                </div>
+                            </div>
 
-                <div class="info-box">
-                    <h4>必須の静音機能</h4>
-                    <ul>
-                        <li><strong>おやすみモード</strong>: 夜間の超静音運転</li>
-                        <li><strong>運転音表示</strong>: dB表記での騒音レベル明示</li>
-                        <li><strong>ファン速度調整</strong>: 多段階の風量調整</li>
-                        <li><strong>タイマー機能</strong>: 自動停止による騒音回避</li>
-                    </ul>
+                            <div class="noise-level-card kids">
+                                <div class="level-header">
+                                    <i class="fas fa-child level-icon"></i>
+                                    <h4 class="level-title">子供部屋用</h4>
+                                </div>
+                                <div class="level-value">～20dB</div>
+                                <div class="level-description">特に静音性を重視</div>
+                                <div class="level-example">
+                                    <span class="example-label">音の例</span>
+                                    <span class="example-text">木の葉のそよぎ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 静音機能チェックリスト -->
+                    <div class="silent-features-checklist">
+                        <h3 class="guide-section-title">
+                            <i class="fas fa-check-double"></i> 2. 必須の静音機能チェックリスト
+                        </h3>
+                        <p class="guide-intro">購入前に確認すべき静音性能をチェック</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card essential">
+                                <div class="feature-priority">必須</div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-moon"></i>
+                                </div>
+                                <h4 class="feature-title">おやすみモード</h4>
+                                <p class="feature-description">夜間の超静音運転で睡眠を妨げません</p>
+                                <div class="feature-benefit">騒音レベル：15-20dB</div>
+                            </div>
+
+                            <div class="feature-card important">
+                                <div class="feature-priority">重要</div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <h4 class="feature-title">運転音表示</h4>
+                                <p class="feature-description">dB表記での騒音レベル明示で選択が簡単</p>
+                                <div class="feature-benefit">透明性の高い選択基準</div>
+                            </div>
+
+                            <div class="feature-card recommended">
+                                <div class="feature-priority">推奨</div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-sliders-h"></i>
+                                </div>
+                                <h4 class="feature-title">ファン速度調整</h4>
+                                <p class="feature-description">多段階の風量調整で状況に応じた静音化</p>
+                                <div class="feature-benefit">3段階以上の調整機能</div>
+                            </div>
+
+                            <div class="feature-card useful">
+                                <div class="feature-priority">便利</div>
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4 class="feature-title">タイマー機能</h4>
+                                <p class="feature-description">自動停止による騒音回避と省エネ</p>
+                                <div class="feature-benefit">1-12時間タイマー</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 加湿方式別静音性比較 -->
+                    <div class="humidifier-types-comparison">
+                        <h3 class="guide-section-title">
+                            <i class="fas fa-balance-scale"></i> 3. 加湿方式別静音性比較
+                        </h3>
+                        <p class="guide-intro">各加湿方式の静音性とメリット・デメリットを比較</p>
+                        
+                        <div class="types-comparison-grid">
+                            <div class="type-card ultrasonic best">
+                                <div class="type-rank">最静音</div>
+                                <div class="type-icon">
+                                    <i class="fas fa-wave-square"></i>
+                                </div>
+                                <h4 class="type-title">超音波式</h4>
+                                <div class="type-noise-level">20-30dB</div>
+                                <div class="type-pros">
+                                    <div class="pros-title">✅ メリット</div>
+                                    <ul>
+                                        <li>最も静か</li>
+                                        <li>消費電力が少ない</li>
+                                        <li>起動が早い</li>
+                                    </ul>
+                                </div>
+                                <div class="type-cons">
+                                    <div class="cons-title">⚠️ 注意点</div>
+                                    <ul>
+                                        <li>こまめな清掃必要</li>
+                                        <li>水質に注意</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="type-card evaporative good">
+                                <div class="type-rank">推奨</div>
+                                <div class="type-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h4 class="type-title">気化式</h4>
+                                <div class="type-noise-level">25-40dB</div>
+                                <div class="type-pros">
+                                    <div class="pros-title">✅ メリット</div>
+                                    <ul>
+                                        <li>衛生的</li>
+                                        <li>過加湿しない</li>
+                                        <li>ランニングコスト安</li>
+                                    </ul>
+                                </div>
+                                <div class="type-cons">
+                                    <div class="cons-title">⚠️ 注意点</div>
+                                    <ul>
+                                        <li>ファン音あり</li>
+                                        <li>加湿速度が遅い</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="type-card hybrid moderate">
+                                <div class="type-rank">バランス</div>
+                                <div class="type-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <h4 class="type-title">ハイブリッド式</h4>
+                                <div class="type-noise-level">25-45dB</div>
+                                <div class="type-pros">
+                                    <div class="pros-title">✅ メリット</div>
+                                    <ul>
+                                        <li>高い加湿能力</li>
+                                        <li>衛生的</li>
+                                        <li>温度調整可能</li>
+                                    </ul>
+                                </div>
+                                <div class="type-cons">
+                                    <div class="cons-title">⚠️ 注意点</div>
+                                    <ul>
+                                        <li>消費電力大</li>
+                                        <li>ファン+ヒーター音</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="type-card heating loud">
+                                <div class="type-rank">音大きめ</div>
+                                <div class="type-icon">
+                                    <i class="fas fa-thermometer-three-quarters"></i>
+                                </div>
+                                <h4 class="type-title">加熱式</h4>
+                                <div class="type-noise-level">30-50dB</div>
+                                <div class="type-pros">
+                                    <div class="pros-title">✅ メリット</div>
+                                    <ul>
+                                        <li>とても衛生的</li>
+                                        <li>加湿能力高</li>
+                                        <li>室温上昇効果</li>
+                                    </ul>
+                                </div>
+                                <div class="type-cons">
+                                    <div class="cons-title">⚠️ 注意点</div>
+                                    <ul>
+                                        <li>沸騰音が大きい</li>
+                                        <li>消費電力大</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 購入前チェックポイント -->
+                    <div class="purchase-checklist">
+                        <h3 class="guide-section-title">
+                            <i class="fas fa-shopping-cart"></i> 4. 購入前の最終チェックポイント
+                        </h3>
+                        
+                        <div class="checklist-container">
+                            <div class="checklist-category specs">
+                                <h4 class="category-title">
+                                    <i class="fas fa-list-check"></i> 仕様チェック
+                                </h4>
+                                <div class="checklist-items">
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check1">
+                                        <label for="check1">運転音レベル（dB）の明記</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check2">
+                                        <label for="check2">おやすみモードの搭載</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check3">
+                                        <label for="check3">風量調整機能（3段階以上）</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check4">
+                                        <label for="check4">タイマー機能の有無</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checklist-category reviews">
+                                <h4 class="category-title">
+                                    <i class="fas fa-star"></i> 口コミチェック
+                                </h4>
+                                <div class="checklist-items">
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check5">
+                                        <label for="check5">実際の騒音レベル評価</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check6">
+                                        <label for="check6">夜間使用時の感想</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check7">
+                                        <label for="check7">長期使用後の音の変化</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="check8">
+                                        <label for="check8">メンテナンス性の評価</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <style>
+                /* 騒音を防ぐ加湿器の選び方セクション */
+                .selection-guide-section {
+                    position: relative;
+                    margin: 3rem 0;
+                    padding: 2rem;
+                    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                }
+
+                .selection-guide-section::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+                    animation: selectionPulse 10s ease-in-out infinite;
+                    z-index: 1;
+                }
+
+                @keyframes selectionPulse {
+                    0%, 100% { opacity: 0.5; }
+                    50% { opacity: 1; }
+                }
+
+                .selection-header {
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .selection-title {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                    background: linear-gradient(135deg, #1e40af, #3b82f6, #06b6d4);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    margin-bottom: 0.5rem;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .selection-subtitle {
+                    font-size: 1.2rem;
+                    color: #64748b;
+                    font-weight: 500;
+                }
+
+                .guide-section-title {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .guide-section-title i {
+                    color: #3b82f6;
+                    font-size: 1.4rem;
+                }
+
+                .guide-intro {
+                    color: #64748b;
+                    font-size: 1.1rem;
+                    margin-bottom: 2rem;
+                    font-weight: 500;
+                }
+
+                /* 騒音レベルガイド */
+                .noise-level-guide {
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .noise-level-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1.5rem;
+                }
+
+                .noise-level-card {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .noise-level-card::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    transition: all 0.3s ease;
+                }
+
+                .noise-level-card.bedroom::before {
+                    background: linear-gradient(90deg, #8b5cf6, #a855f7);
+                }
+
+                .noise-level-card.living::before {
+                    background: linear-gradient(90deg, #10b981, #059669);
+                }
+
+                .noise-level-card.office::before {
+                    background: linear-gradient(90deg, #f59e0b, #d97706);
+                }
+
+                .noise-level-card.kids::before {
+                    background: linear-gradient(90deg, #ef4444, #dc2626);
+                }
+
+                .noise-level-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+                }
+
+                .level-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    margin-bottom: 1rem;
+                }
+
+                .level-icon {
+                    font-size: 1.5rem;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+
+                .bedroom .level-icon {
+                    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+                    color: white;
+                }
+
+                .living .level-icon {
+                    background: linear-gradient(135deg, #10b981, #059669);
+                    color: white;
+                }
+
+                .office .level-icon {
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                    color: white;
+                }
+
+                .kids .level-icon {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                    color: white;
+                }
+
+                .level-title {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin: 0;
+                }
+
+                .level-value {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    color: #3b82f6;
+                    margin-bottom: 0.5rem;
+                }
+
+                .level-description {
+                    color: #64748b;
+                    font-size: 0.95rem;
+                    margin-bottom: 1rem;
+                    line-height: 1.5;
+                }
+
+                .level-example {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+                    padding: 0.75rem;
+                    background: #f1f5f9;
+                    border-radius: 8px;
+                }
+
+                .example-label {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    color: #64748b;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .example-text {
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: #1e293b;
+                }
+
+                /* 静音機能チェックリスト */
+                .silent-features-checklist {
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .features-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                }
+
+                .feature-card {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    border: 2px solid transparent;
+                }
+
+                .feature-card:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                }
+
+                .feature-priority {
+                    position: absolute;
+                    top: -8px;
+                    right: 15px;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 12px;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .feature-card.essential {
+                    border-color: #ef4444;
+                }
+
+                .feature-card.essential .feature-priority {
+                    background: #ef4444;
+                    color: white;
+                }
+
+                .feature-card.important {
+                    border-color: #f59e0b;
+                }
+
+                .feature-card.important .feature-priority {
+                    background: #f59e0b;
+                    color: white;
+                }
+
+                .feature-card.recommended {
+                    border-color: #10b981;
+                }
+
+                .feature-card.recommended .feature-priority {
+                    background: #10b981;
+                    color: white;
+                }
+
+                .feature-card.useful {
+                    border-color: #3b82f6;
+                }
+
+                .feature-card.useful .feature-priority {
+                    background: #3b82f6;
+                    color: white;
+                }
+
+                .feature-icon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 1rem;
+                    color: white;
+                    font-size: 1.5rem;
+                }
+
+                .feature-card.essential .feature-icon {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                }
+
+                .feature-card.important .feature-icon {
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                }
+
+                .feature-card.recommended .feature-icon {
+                    background: linear-gradient(135deg, #10b981, #059669);
+                }
+
+                .feature-card.useful .feature-icon {
+                    background: linear-gradient(135deg, #3b82f6, #2563eb);
+                }
+
+                .feature-title {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.75rem;
+                }
+
+                .feature-description {
+                    color: #64748b;
+                    line-height: 1.6;
+                    margin-bottom: 1rem;
+                }
+
+                .feature-benefit {
+                    padding: 0.5rem 0.75rem;
+                    background: #f1f5f9;
+                    border-radius: 8px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: #475569;
+                }
+
+                /* 加湿方式別比較 */
+                .humidifier-types-comparison {
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .types-comparison-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 1.5rem;
+                }
+
+                .type-card {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    position: relative;
+                    border: 2px solid transparent;
+                }
+
+                .type-card:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                }
+
+                .type-rank {
+                    position: absolute;
+                    top: -8px;
+                    left: 15px;
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 12px;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .type-card.ultrasonic.best {
+                    border-color: #10b981;
+                }
+
+                .type-card.ultrasonic.best .type-rank {
+                    background: #10b981;
+                    color: white;
+                }
+
+                .type-card.evaporative.good {
+                    border-color: #3b82f6;
+                }
+
+                .type-card.evaporative.good .type-rank {
+                    background: #3b82f6;
+                    color: white;
+                }
+
+                .type-card.hybrid.moderate {
+                    border-color: #f59e0b;
+                }
+
+                .type-card.hybrid.moderate .type-rank {
+                    background: #f59e0b;
+                    color: white;
+                }
+
+                .type-card.heating.loud {
+                    border-color: #ef4444;
+                }
+
+                .type-card.heating.loud .type-rank {
+                    background: #ef4444;
+                    color: white;
+                }
+
+                .type-icon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 1rem 0;
+                    color: white;
+                    font-size: 1.5rem;
+                }
+
+                .type-card.ultrasonic .type-icon {
+                    background: linear-gradient(135deg, #10b981, #059669);
+                }
+
+                .type-card.evaporative .type-icon {
+                    background: linear-gradient(135deg, #3b82f6, #2563eb);
+                }
+
+                .type-card.hybrid .type-icon {
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                }
+
+                .type-card.heating .type-icon {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                }
+
+                .type-title {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.5rem;
+                }
+
+                .type-noise-level {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #3b82f6;
+                    margin-bottom: 1rem;
+                }
+
+                .type-pros,
+                .type-cons {
+                    margin-bottom: 1rem;
+                }
+
+                .pros-title,
+                .cons-title {
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                    color: #1e293b;
+                }
+
+                .type-pros ul,
+                .type-cons ul {
+                    margin: 0;
+                    padding-left: 1rem;
+                }
+
+                .type-pros li,
+                .type-cons li {
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+                    margin-bottom: 0.25rem;
+                }
+
+                .type-pros li {
+                    color: #059669;
+                }
+
+                .type-cons li {
+                    color: #d97706;
+                }
+
+                /* 購入前チェックリスト */
+                .purchase-checklist {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .checklist-container {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                }
+
+                .checklist-category {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    border: 2px solid #e2e8f0;
+                    transition: all 0.3s ease;
+                }
+
+                .checklist-category:hover {
+                    border-color: #3b82f6;
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                }
+
+                .category-title {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .category-title i {
+                    color: #3b82f6;
+                }
+
+                .checklist-items {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
+
+                .checklist-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    padding: 0.5rem 0;
+                    border-bottom: 1px solid #f1f5f9;
+                }
+
+                .checklist-item:last-child {
+                    border-bottom: none;
+                }
+
+                .checklist-item input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    accent-color: #3b82f6;
+                    cursor: pointer;
+                }
+
+                .checklist-item label {
+                    font-size: 0.95rem;
+                    color: #475569;
+                    cursor: pointer;
+                    line-height: 1.4;
+                    transition: color 0.2s ease;
+                }
+
+                .checklist-item input[type="checkbox"]:checked + label {
+                    color: #1e293b;
+                    font-weight: 500;
+                }
+
+                /* レスポンシブ対応 */
+                @media (max-width: 768px) {
+                    .selection-guide-section {
+                        padding: 1.5rem;
+                        margin: 2rem 0;
+                    }
+
+                    .selection-title {
+                        font-size: 2rem;
+                    }
+
+                    .guide-section-title {
+                        font-size: 1.4rem;
+                    }
+
+                    .noise-level-grid,
+                    .features-grid,
+                    .types-comparison-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .checklist-container {
+                        grid-template-columns: 1fr;
+                        gap: 1.5rem;
+                    }
+                }
+                </style>
 
                 <h2 id="faq">よくある質問（FAQ）</h2>
 
@@ -1290,21 +3782,688 @@
                     </ul>
                 </div>
 
-                <h2 id="summary">まとめ</h2>
-                <p>加湿器の騒音問題は、正しい知識と対策で必ず解決できます。まずは現在の騒音原因を特定し、設置場所の変更や清掃などの簡単な対策から始めてみましょう。</p>
+                <!-- まとめセクション -->
+                <div class="summary-section">
+                    <div class="summary-header">
+                        <h2 class="summary-title" id="summary">
+                            📋 まとめ｜静音加湿器で快適な毎日を
+                        </h2>
+                        <p class="summary-subtitle">
+                            この記事で学んだ知識を活用して、騒音のない理想的な加湿環境を実現しましょう
+                        </p>
+                    </div>
 
-                <p>それでも改善しない場合は、静音性に優れた新しい機種への買い替えを検討してください。健康で快適な生活のためにも、騒音のない静かな加湿環境を手に入れましょう。</p>
+                    <!-- 重要ポイント総まとめ -->
+                    <div class="key-takeaways">
+                        <h3 class="takeaway-title">
+                            <i class="fas fa-lightbulb"></i> 重要ポイント総まとめ
+                        </h3>
+                        
+                        <div class="takeaway-grid">
+                            <div class="takeaway-card immediate">
+                                <div class="takeaway-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h4 class="takeaway-heading">今すぐできること</h4>
+                                <ul class="takeaway-list">
+                                    <li>設置場所を硬い床から柔らかい場所に変更</li>
+                                    <li>防振マットを設置して振動を軽減</li>
+                                    <li>壁から15cm以上離して共鳴を防止</li>
+                                    <li>水タンクとフィルターの徹底清掃</li>
+                                </ul>
+                                <div class="takeaway-result">
+                                    <span class="result-label">効果</span>
+                                    <span class="result-value">騒音50-70%軽減</span>
+                                </div>
+                            </div>
 
-                <div class="summary-box">
-                    <h4>記事のポイントまとめ</h4>
-                    <ul>
-                        <li>加湿方式によって騒音レベルが大きく異なる</li>
-                        <li>設置場所と振動対策で大幅な騒音軽減が可能</li>
-                        <li>定期清掃は騒音予防の最重要項目</li>
-                        <li>静音性重視なら超音波式または気化式を選択</li>
-                        <li>異常音は故障のサイン、早期対応が必要</li>
-                    </ul>
+                            <div class="takeaway-card prevention">
+                                <div class="takeaway-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4 class="takeaway-heading">予防策</h4>
+                                <ul class="takeaway-list">
+                                    <li>購入時に騒音レベル（dB）を必ず確認</li>
+                                    <li>おやすみモード搭載機種を選択</li>
+                                    <li>月1回のメンテナンススケジュール</li>
+                                    <li>用途に応じた加湿方式の選択</li>
+                                </ul>
+                                <div class="takeaway-result">
+                                    <span class="result-label">効果</span>
+                                    <span class="result-value">問題の根本解決</span>
+                                </div>
+                            </div>
+
+                            <div class="takeaway-card replacement">
+                                <div class="takeaway-icon">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <h4 class="takeaway-heading">買い替え時期</h4>
+                                <ul class="takeaway-list">
+                                    <li>清掃後も35dB以上の騒音が続く</li>
+                                    <li>異常音（ガラガラ、カラカラ）が発生</li>
+                                    <li>使用開始から3年以上経過</li>
+                                    <li>おやすみモード非搭載の古い機種</li>
+                                </ul>
+                                <div class="takeaway-result">
+                                    <span class="result-label">効果</span>
+                                    <span class="result-value">長期的な快適性</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 加湿方式別推奨度 -->
+                    <div class="method-recommendations">
+                        <h3 class="recommendation-title">
+                            <i class="fas fa-star"></i> 用途別推奨加湿方式
+                        </h3>
+                        
+                        <div class="recommendation-grid">
+                            <div class="recommendation-item bedroom-rec">
+                                <div class="rec-icon">
+                                    <i class="fas fa-bed"></i>
+                                </div>
+                                <h4 class="rec-title">寝室用</h4>
+                                <div class="rec-method">超音波式</div>
+                                <div class="rec-noise">15-25dB</div>
+                                <div class="rec-features">
+                                    <span class="feature-tag">おやすみモード</span>
+                                    <span class="feature-tag">タイマー機能</span>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item living-rec">
+                                <div class="rec-icon">
+                                    <i class="fas fa-couch"></i>
+                                </div>
+                                <h4 class="rec-title">リビング用</h4>
+                                <div class="rec-method">気化式</div>
+                                <div class="rec-noise">25-35dB</div>
+                                <div class="rec-features">
+                                    <span class="feature-tag">衛生的</span>
+                                    <span class="feature-tag">省エネ</span>
+                                </div>
+                            </div>
+
+                            <div class="recommendation-item office-rec">
+                                <div class="rec-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <h4 class="rec-title">オフィス用</h4>
+                                <div class="rec-method">ハイブリッド式</div>
+                                <div class="rec-noise">25-40dB</div>
+                                <div class="rec-features">
+                                    <span class="feature-tag">高加湿能力</span>
+                                    <span class="feature-tag">温度調整</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 最終メッセージ -->
+                    <div class="final-message">
+                        <div class="message-content">
+                            <div class="message-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="message-text">
+                                <h3 class="message-title">快適な加湿環境で健康な毎日を</h3>
+                                <p class="message-description">
+                                    加湿器の騒音問題は必ず解決できます。この記事の対策を実践して、静かで快適な加湿環境を手に入れ、健康で質の高い生活を送りましょう。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <a href="#diagnosis" class="action-btn primary">
+                                <i class="fas fa-stethoscope"></i>
+                                騒音診断を受ける
+                            </a>
+                            <a href="#quiet-humidifiers" class="action-btn secondary">
+                                <i class="fas fa-ranking-star"></i>
+                                おすすめ機種を見る
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 関連情報リンク -->
+                    <div class="related-info">
+                        <h3 class="related-title">
+                            <i class="fas fa-link"></i> 関連情報
+                        </h3>
+                        <div class="related-links">
+                            <a href="#maintenance" class="related-link">
+                                <i class="fas fa-tools"></i>
+                                <span>メンテナンス方法</span>
+                            </a>
+                            <a href="#selection-guide" class="related-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>加湿器の選び方</span>
+                            </a>
+                            <a href="#faq" class="related-link">
+                                <i class="fas fa-question-circle"></i>
+                                <span>よくある質問</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <style>
+                /* まとめセクション */
+                .summary-section {
+                    position: relative;
+                    margin: 3rem 0;
+                    padding: 2.5rem;
+                    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fafc 100%);
+                    border-radius: 25px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+                }
+
+                .summary-section::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+                    animation: summaryPulse 12s ease-in-out infinite;
+                    z-index: 1;
+                }
+
+                @keyframes summaryPulse {
+                    0%, 100% { opacity: 0.3; }
+                    50% { opacity: 0.8; }
+                }
+
+                .summary-header {
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .summary-title {
+                    font-size: 2.8rem;
+                    font-weight: 900;
+                    background: linear-gradient(135deg, #0f172a, #1e40af, #0ea5e9);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    margin-bottom: 0.75rem;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .summary-subtitle {
+                    font-size: 1.3rem;
+                    color: #64748b;
+                    font-weight: 600;
+                    line-height: 1.6;
+                }
+
+                /* 重要ポイント総まとめ */
+                .key-takeaways {
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .takeaway-title {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    justify-content: center;
+                }
+
+                .takeaway-title i {
+                    color: #f59e0b;
+                    font-size: 1.6rem;
+                }
+
+                .takeaway-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 2rem;
+                }
+
+                .takeaway-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 2rem;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                    transition: all 0.4s ease;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .takeaway-card::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 5px;
+                    transition: all 0.3s ease;
+                }
+
+                .takeaway-card.immediate::before {
+                    background: linear-gradient(90deg, #ef4444, #dc2626);
+                }
+
+                .takeaway-card.prevention::before {
+                    background: linear-gradient(90deg, #10b981, #059669);
+                }
+
+                .takeaway-card.replacement::before {
+                    background: linear-gradient(90deg, #3b82f6, #2563eb);
+                }
+
+                .takeaway-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+                }
+
+                .takeaway-icon {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 1.5rem;
+                    color: white;
+                    font-size: 1.8rem;
+                }
+
+                .takeaway-card.immediate .takeaway-icon {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                }
+
+                .takeaway-card.prevention .takeaway-icon {
+                    background: linear-gradient(135deg, #10b981, #059669);
+                }
+
+                .takeaway-card.replacement .takeaway-icon {
+                    background: linear-gradient(135deg, #3b82f6, #2563eb);
+                }
+
+                .takeaway-heading {
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                }
+
+                .takeaway-list {
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 1.5rem;
+                }
+
+                .takeaway-list li {
+                    padding: 0.5rem 0;
+                    font-size: 0.95rem;
+                    color: #475569;
+                    line-height: 1.6;
+                    border-bottom: 1px solid #f1f5f9;
+                    position: relative;
+                    padding-left: 1.5rem;
+                }
+
+                .takeaway-list li:last-child {
+                    border-bottom: none;
+                }
+
+                .takeaway-list li::before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    top: 0.5rem;
+                    color: #10b981;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                }
+
+                .takeaway-result {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.75rem 1rem;
+                    background: #f8fafc;
+                    border-radius: 10px;
+                    margin-top: 1rem;
+                }
+
+                .result-label {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: #64748b;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                .result-value {
+                    font-size: 0.95rem;
+                    font-weight: 700;
+                    color: #059669;
+                }
+
+                /* 用途別推奨度 */
+                .method-recommendations {
+                    margin-bottom: 3rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .recommendation-title {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 2rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    justify-content: center;
+                }
+
+                .recommendation-title i {
+                    color: #f59e0b;
+                    font-size: 1.6rem;
+                }
+
+                .recommendation-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1.5rem;
+                }
+
+                .recommendation-item {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    text-align: center;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                }
+
+                .recommendation-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+                }
+
+                .recommendation-item.bedroom-rec {
+                    border-color: #8b5cf6;
+                }
+
+                .recommendation-item.living-rec {
+                    border-color: #10b981;
+                }
+
+                .recommendation-item.office-rec {
+                    border-color: #f59e0b;
+                }
+
+                .rec-icon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 1rem;
+                    color: white;
+                    font-size: 1.5rem;
+                }
+
+                .bedroom-rec .rec-icon {
+                    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+                }
+
+                .living-rec .rec-icon {
+                    background: linear-gradient(135deg, #10b981, #059669);
+                }
+
+                .office-rec .rec-icon {
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                }
+
+                .rec-title {
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.5rem;
+                }
+
+                .rec-method {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    color: #3b82f6;
+                    margin-bottom: 0.25rem;
+                }
+
+                .rec-noise {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #059669;
+                    margin-bottom: 1rem;
+                }
+
+                .rec-features {
+                    display: flex;
+                    gap: 0.5rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                .feature-tag {
+                    padding: 0.25rem 0.75rem;
+                    background: #f1f5f9;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    color: #475569;
+                }
+
+                /* 最終メッセージ */
+                .final-message {
+                    background: linear-gradient(135deg, #fff7ed, #fef3c7, #ecfdf5);
+                    border-radius: 20px;
+                    padding: 2.5rem;
+                    margin-bottom: 2.5rem;
+                    text-align: center;
+                    position: relative;
+                    z-index: 2;
+                    border: 2px solid rgba(59, 130, 246, 0.1);
+                }
+
+                .message-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    margin-bottom: 2rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                .message-icon {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 2rem;
+                    flex-shrink: 0;
+                }
+
+                .message-text {
+                    flex: 1;
+                    text-align: left;
+                    min-width: 300px;
+                }
+
+                .message-title {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.75rem;
+                }
+
+                .message-description {
+                    font-size: 1.1rem;
+                    color: #475569;
+                    line-height: 1.7;
+                    margin: 0;
+                }
+
+                .action-buttons {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .action-btn {
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 12px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: 0.95rem;
+                }
+
+                .action-btn.primary {
+                    background: linear-gradient(135deg, #3b82f6, #2563eb);
+                    color: white;
+                    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+                }
+
+                .action-btn.primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+                }
+
+                .action-btn.secondary {
+                    background: white;
+                    color: #3b82f6;
+                    border: 2px solid #3b82f6;
+                }
+
+                .action-btn.secondary:hover {
+                    background: #3b82f6;
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                /* 関連情報リンク */
+                .related-info {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .related-title {
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    justify-content: center;
+                }
+
+                .related-title i {
+                    color: #3b82f6;
+                }
+
+                .related-links {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .related-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.75rem 1.25rem;
+                    background: white;
+                    border-radius: 12px;
+                    text-decoration: none;
+                    color: #475569;
+                    font-weight: 500;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    border: 1px solid #e2e8f0;
+                }
+
+                .related-link:hover {
+                    color: #3b82f6;
+                    border-color: #3b82f6;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+                }
+
+                .related-link i {
+                    font-size: 1rem;
+                    color: #64748b;
+                }
+
+                .related-link:hover i {
+                    color: #3b82f6;
+                }
+
+                /* レスポンシブ対応 */
+                @media (max-width: 768px) {
+                    .summary-section {
+                        padding: 2rem;
+                        margin: 2rem 0;
+                    }
+
+                    .summary-title {
+                        font-size: 2.2rem;
+                    }
+
+                    .takeaway-grid,
+                    .recommendation-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .message-content {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .message-text {
+                        text-align: center;
+                        min-width: unset;
+                    }
+
+                    .action-buttons {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .related-links {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+                </style>
             </div>
         </article>
     </main>
@@ -1345,112 +4504,439 @@
             });
         });
 
-        // 騒音レベル診断機能
-        function checkNoiseLevel() {
-            const humidifierType = document.querySelector('input[name="humidifier-type"]:checked');
-            const timeConcern = document.querySelector('input[name="time-concern"]:checked');
-            const noiseType = document.querySelector('input[name="noise-type"]:checked');
+        // AI騒音診断システムのグローバル変数
+        let selectedSymptoms = [];
+        let diagnosticData = {};
 
-            if (!humidifierType || !timeConcern || !noiseType) {
-                alert('すべての質問にお答えください。');
+        // 症状カード選択機能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 症状カードのクリックイベント
+            document.querySelectorAll('.symptom-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const symptom = this.getAttribute('data-symptom');
+                    
+                    if (this.classList.contains('selected')) {
+                        // 選択解除
+                        this.classList.remove('selected');
+                        selectedSymptoms = selectedSymptoms.filter(s => s !== symptom);
+                    } else {
+                        // 選択追加
+                        this.classList.add('selected');
+                        selectedSymptoms.push(symptom);
+                    }
+                    
+                    // 選択状態に応じてボタンの状態更新
+                    updateDiagnosticButton();
+                });
+            });
+        });
+
+        // 診断ボタンの状態更新
+        function updateDiagnosticButton() {
+            const btn = document.querySelector('.diagnostic-btn');
+            const hasSymptoms = selectedSymptoms.length > 0;
+            
+            if (hasSymptoms) {
+                btn.style.opacity = '1';
+                btn.style.cursor = 'pointer';
+            } else {
+                btn.style.opacity = '0.6';
+                btn.style.cursor = 'not-allowed';
+            }
+        }
+
+        // タブ切り替え機能
+        function showTab(tabName) {
+            // すべてのタブボタンとパネルの状態をリセット
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+            
+            // 選択されたタブをアクティブに
+            event.target.classList.add('active');
+            document.getElementById(tabName + '-panel').classList.add('active');
+        }
+
+        // メイン診断関数
+        function runDiagnosis() {
+            // 最低限の入力チェック
+            if (selectedSymptoms.length === 0) {
+                showAlert('症状を少なくとも1つ選択してください。', 'warning');
                 return;
             }
 
-            const resultDiv = document.getElementById('noise-result');
-            const titleElement = document.getElementById('result-title');
-            const descriptionElement = document.getElementById('result-description');
-            const recommendationsElement = document.getElementById('result-recommendations');
+            const humidifierType = document.getElementById('humidifier-type').value;
+            const usageYears = document.getElementById('usage-years').value;
+            const location = document.getElementById('location').value;
+            const floorType = document.getElementById('floor-type').value;
 
-            let severity = 0;
-            let recommendations = [];
-
-            // 加湿器タイプによる基本騒音レベル
-            switch(humidifierType.value) {
-                case 'steam':
-                    severity += 3;
-                    recommendations.push('加熱式は構造上騒音が大きめです。超音波式や気化式への変更を検討してください。');
-                    break;
-                case 'hybrid':
-                    severity += 2;
-                    recommendations.push('ハイブリッド式は中程度の騒音があります。おやすみモードの活用がおすすめです。');
-                    break;
-                case 'evaporative':
-                    severity += 1;
-                    recommendations.push('気化式は比較的静音です。ファンの清掃で騒音を軽減できます。');
-                    break;
-                case 'ultrasonic':
-                    severity += 0;
-                    recommendations.push('超音波式は最も静音です。振動対策で更なる騒音軽減が可能です。');
-                    break;
+            if (!humidifierType || !usageYears || !location || !floorType) {
+                showAlert('すべての環境情報を入力してください。', 'warning');
+                return;
             }
 
-            // 時間帯による影響
-            switch(timeConcern.value) {
-                case 'always':
-                    severity += 2;
-                    recommendations.push('常時気になる場合は機器の不具合の可能性があります。メンテナンスまたは買い替えを検討してください。');
-                    break;
-                case 'night':
-                    severity += 1;
-                    recommendations.push('夜間は特に静音性が重要です。タイマー機能や防振マットの使用をおすすめします。');
-                    break;
-                case 'work':
-                    severity += 1;
-                    recommendations.push('集中作業時は25dB以下の機種がおすすめです。設置場所の見直しも効果的です。');
-                    break;
-            }
+            // 診断データ構築
+            diagnosticData = {
+                symptoms: selectedSymptoms,
+                humidifierType: humidifierType,
+                usageYears: usageYears,
+                location: location,
+                floorType: floorType
+            };
 
-            // 騒音タイプによる対策
-            switch(noiseType.value) {
-                case 'abnormal':
-                    severity += 3;
-                    recommendations.push('異常音は故障のサインです。直ちに使用を停止し、メーカーサポートに連絡してください。');
-                    break;
-                case 'vibration':
-                    severity += 2;
-                    recommendations.push('振動音は防振マットや設置場所の変更で大幅に改善できます。');
-                    break;
-                case 'fan':
-                    severity += 1;
-                    recommendations.push('ファン音はフィルター清掃や風量調整で軽減できます。');
-                    break;
-                case 'bubble':
-                    severity += 1;
-                    recommendations.push('水の音は水量調整や超音波振動子の清掃で改善できます。');
-                    break;
-            }
-
+            // AI診断実行
+            const diagnosis = performAIDiagnosis(diagnosticData);
+            
             // 結果表示
-            let resultClass, resultTitle, resultDescription;
+            displayDiagnosisResult(diagnosis);
+        }
 
-            if (severity <= 2) {
-                resultClass = 'success';
-                resultTitle = '🟢 軽微な騒音レベル';
-                resultDescription = '簡単な対策で十分に改善可能です。設置場所の変更や基本的なメンテナンスから始めてみましょう。';
-            } else if (severity <= 4) {
-                resultClass = 'warning';
-                resultTitle = '🟡 中程度の騒音レベル';
-                resultDescription = '積極的な対策が必要です。防振マットの使用や定期清掃、運転設定の見直しを行いましょう。';
-            } else {
-                resultClass = 'error';
-                resultTitle = '🔴 深刻な騒音レベル';
-                resultDescription = '早急な対応が必要です。異常音がある場合は使用を停止し、買い替えも視野に入れましょう。';
+        // AI診断ロジック
+        function performAIDiagnosis(data) {
+            let severity = 0;
+            let primaryCauses = [];
+            let diagnosticScore = 0;
+            let urgencyLevel = 'low';
+
+            // 症状分析
+            data.symptoms.forEach(symptom => {
+                switch(symptom) {
+                    case 'high-pitch':
+                        severity += 4;
+                        diagnosticScore += 40;
+                        primaryCauses.push('超音波振動子の劣化・損傷');
+                        urgencyLevel = 'high';
+                        break;
+                    case 'irregular':
+                        severity += 4;
+                        diagnosticScore += 35;
+                        primaryCauses.push('内部部品の機械的故障');
+                        urgencyLevel = 'high';
+                        break;
+                    case 'vibration':
+                        severity += 2;
+                        diagnosticScore += 20;
+                        primaryCauses.push('本体設置面との共鳴現象');
+                        if (urgencyLevel === 'low') urgencyLevel = 'medium';
+                        break;
+                    case 'fan-noise':
+                        severity += 1;
+                        diagnosticScore += 15;
+                        primaryCauses.push('ファンモーター・フィルター汚れ');
+                        break;
+                    case 'water-noise':
+                        severity += 1;
+                        diagnosticScore += 10;
+                        primaryCauses.push('給水システムの気泡・水流異常');
+                        break;
+                    case 'startup':
+                        severity += 0.5;
+                        diagnosticScore += 5;
+                        primaryCauses.push('起動時の一時的負荷');
+                        break;
+                }
+            });
+
+            // 環境要因分析
+            if (data.floorType === 'wood' || data.floorType === 'tile') {
+                severity += 1;
+                diagnosticScore += 15;
+                primaryCauses.push('硬質床面による振動増幅');
             }
 
-            resultDiv.className = `result-box ${resultClass}`;
-            titleElement.textContent = resultTitle;
-            descriptionElement.textContent = resultDescription;
+            if (data.humidifierType === 'steam') {
+                severity += 2;
+                diagnosticScore += 20;
+                primaryCauses.push('加熱式の構造的騒音');
+            }
 
-            let recommendationHTML = '<h5>🔧 推奨対策：</h5><ul>';
-            recommendations.forEach(rec => {
-                recommendationHTML += `<li>${rec}</li>`;
-            });
-            recommendationHTML += '</ul>';
-            recommendationsElement.innerHTML = recommendationHTML;
+            if (data.usageYears === 'old') {
+                severity += 1;
+                diagnosticScore += 10;
+                primaryCauses.push('経年劣化による性能低下');
+            }
 
-            resultDiv.style.display = 'block';
-            resultDiv.scrollIntoView({ behavior: 'smooth' });
+            if (data.location === 'bedroom' && severity > 1) {
+                urgencyLevel = urgencyLevel === 'low' ? 'medium' : 'high';
+            }
+
+            // 診断結果生成
+            return {
+                severity: Math.min(severity, 6),
+                diagnosticScore: Math.min(diagnosticScore, 100),
+                primaryCauses: [...new Set(primaryCauses)], // 重複除去
+                urgencyLevel: urgencyLevel,
+                estimatedDB: calculateEstimatedDB(data),
+                recommendations: generateRecommendations(data, severity, primaryCauses),
+                replacementSuggestions: generateReplacementSuggestions(data, severity)
+            };
         }
+
+        // 推定騒音レベル計算
+        function calculateEstimatedDB(data) {
+            let baseDB = 0;
+            
+            switch(data.humidifierType) {
+                case 'ultrasonic': baseDB = 22; break;
+                case 'evaporative': baseDB = 32; break;
+                case 'hybrid': baseDB = 38; break;
+                case 'steam': baseDB = 42; break;
+            }
+
+            // 症状による加算
+            if (data.symptoms.includes('high-pitch')) baseDB += 15;
+            if (data.symptoms.includes('irregular')) baseDB += 12;
+            if (data.symptoms.includes('vibration')) baseDB += 8;
+            if (data.symptoms.includes('fan-noise')) baseDB += 5;
+
+            // 環境による加算
+            if (data.floorType === 'wood' || data.floorType === 'tile') baseDB += 3;
+            if (data.usageYears === 'old') baseDB += 4;
+
+            return Math.min(baseDB, 60);
+        }
+
+        // 対策推奨生成
+        function generateRecommendations(data, severity, causes) {
+            const immediate = [];
+            const maintenance = [];
+
+            // 即効対策
+            if (data.symptoms.includes('vibration')) {
+                immediate.push({
+                    title: '防振マットの設置',
+                    desc: '厚さ5mm以上のゴム製マットを本体下に設置。振動音を50-70%軽減できます。',
+                    priority: 'high'
+                });
+            }
+
+            if (data.floorType === 'wood' || data.floorType === 'tile') {
+                immediate.push({
+                    title: '設置場所の変更',
+                    desc: 'カーペットやラグの上、または家具から1m以上離れた場所に移動してください。',
+                    priority: 'high'
+                });
+            }
+
+            if (data.location === 'bedroom') {
+                immediate.push({
+                    title: 'タイマー機能の活用',
+                    desc: '就寝2時間前に停止するよう設定し、睡眠中の騒音を完全回避します。',
+                    priority: 'medium'
+                });
+            }
+
+            // メンテナンス対策
+            if (data.symptoms.includes('fan-noise') || data.usageYears !== 'new') {
+                maintenance.push({
+                    title: 'フィルター清掃・交換',
+                    desc: '月1回の水洗いと6ヶ月毎の交換で、ファン負荷を大幅軽減します。',
+                    priority: 'high'
+                });
+            }
+
+            if (data.symptoms.includes('water-noise') || data.symptoms.includes('high-pitch')) {
+                maintenance.push({
+                    title: '超音波振動子の洗浄',
+                    desc: 'クエン酸10%溶液で30分浸け置き後、柔らかいブラシで清掃してください。',
+                    priority: 'high'
+                });
+            }
+
+            if (data.usageYears === 'old') {
+                maintenance.push({
+                    title: '本体内部の総合清掃',
+                    desc: 'アルコール除菌と乾燥を徹底し、内部の水垢・汚れを完全除去します。',
+                    priority: 'medium'
+                });
+            }
+
+            return { immediate, maintenance };
+        }
+
+        // 買い替え提案生成
+        function generateReplacementSuggestions(data, severity) {
+            if (severity < 3) return [];
+
+            const suggestions = [];
+
+            if (data.location === 'bedroom') {
+                suggestions.push({
+                    model: 'シャープ HV-R75',
+                    db: '15dB',
+                    type: '気化式',
+                    price: '￥24,800',
+                    reason: '寝室向け超静音設計、図書館レベルの静寂性'
+                });
+            }
+
+            if (data.symptoms.includes('high-pitch') || data.symptoms.includes('irregular')) {
+                suggestions.push({
+                    model: 'ダイニチ HD-LX1021',
+                    db: '13dB',
+                    type: 'ハイブリッド式',
+                    price: '￥32,800',
+                    reason: '異常音の心配がない高信頼性設計、業界最静音'
+                });
+            }
+
+            if (data.humidifierType === 'steam') {
+                suggestions.push({
+                    model: 'パナソニック FE-KFS07',
+                    db: '18dB',
+                    type: '気化式',
+                    price: '￥18,500',
+                    reason: '加熱式からの乗り換え最適、ナノイー機能付き'
+                });
+            }
+
+            return suggestions;
+        }
+
+        // 診断結果表示
+        function displayDiagnosisResult(diagnosis) {
+            const resultContainer = document.getElementById('diagnostic-result');
+            const resultTitle = document.getElementById('result-title');
+            const severityIndicator = document.getElementById('severity-indicator');
+            const diagnosisSummary = document.getElementById('diagnosis-summary');
+
+            // 重要度に応じた表示設定
+            let severityClass, severityText, titleText;
+            
+            if (diagnosis.severity <= 2) {
+                severityClass = 'severity-low';
+                severityText = '軽微なレベル';
+                titleText = '🟢 軽微な騒音問題';
+            } else if (diagnosis.severity <= 4) {
+                severityClass = 'severity-medium';  
+                severityText = '中程度のレベル';
+                titleText = '🟡 対策が必要な騒音';
+            } else {
+                severityClass = 'severity-high';
+                severityText = '深刻なレベル';
+                titleText = '🔴 緊急対応が必要';
+            }
+
+            resultTitle.textContent = titleText;
+            severityIndicator.className = `severity-indicator ${severityClass}`;
+            severityIndicator.textContent = severityText;
+
+            // 診断サマリー
+            diagnosisSummary.innerHTML = `
+                <h4>🔬 AI診断結果</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>推定騒音レベル:</strong> ${diagnosis.estimatedDB}dB</div>
+                    <div><strong>診断スコア:</strong> ${diagnosis.diagnosticScore}/100</div>
+                    <div><strong>検出された症状:</strong> ${selectedSymptoms.length}個</div>
+                    <div><strong>緊急度:</strong> ${diagnosis.urgencyLevel.toUpperCase()}</div>
+                </div>
+                <p><strong>主な原因:</strong> ${diagnosis.primaryCauses.join('、')}</p>
+            `;
+
+            // 各タブの内容設定
+            setupSolutionTabs(diagnosis);
+
+            // 結果表示とスクロール
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ソリューションタブ設定
+        function setupSolutionTabs(diagnosis) {
+            // 即効対策タブ
+            const immediatePanel = document.getElementById('immediate-panel');
+            let immediateHTML = '<h4>🚀 今すぐできる対策</h4>';
+            
+            if (diagnosis.recommendations.immediate.length === 0) {
+                immediateHTML += '<p>現在の症状に対する即効性のある対策は見つかりませんでした。メンテナンス対策をお試しください。</p>';
+            } else {
+                diagnosis.recommendations.immediate.forEach(rec => {
+                    const priorityColor = rec.priority === 'high' ? '#dc2626' : '#ea580c';
+                    immediateHTML += `
+                        <div class="solution-item">
+                            <div class="solution-title" style="color: ${priorityColor};">
+                                ${rec.priority === 'high' ? '🔴' : '🟡'} ${rec.title}
+                            </div>
+                            <div class="solution-desc">${rec.desc}</div>
+                        </div>
+                    `;
+                });
+            }
+            immediatePanel.innerHTML = immediateHTML;
+
+            // メンテナンスタブ
+            const maintenancePanel = document.getElementById('maintenance-panel');
+            let maintenanceHTML = '<h4>🔧 メンテナンス対策</h4>';
+            
+            if (diagnosis.recommendations.maintenance.length === 0) {
+                maintenanceHTML += '<p>基本的な月次清掃を継続してください。定期的なフィルター交換も重要です。</p>';
+            } else {
+                diagnosis.recommendations.maintenance.forEach(rec => {
+                    const priorityColor = rec.priority === 'high' ? '#dc2626' : '#ea580c';
+                    maintenanceHTML += `
+                        <div class="solution-item">
+                            <div class="solution-title" style="color: ${priorityColor};">
+                                ${rec.priority === 'high' ? '🔴' : '🟡'} ${rec.title}
+                            </div>
+                            <div class="solution-desc">${rec.desc}</div>
+                        </div>
+                    `;
+                });
+            }
+            maintenancePanel.innerHTML = maintenanceHTML;
+
+            // 買い替え提案タブ
+            const replacementPanel = document.getElementById('replacement-panel');
+            let replacementHTML = '<h4>🔄 買い替え提案</h4>';
+            
+            if (diagnosis.replacementSuggestions.length === 0) {
+                replacementHTML += '<p>現状では買い替えの必要性は低いと判断されます。上記の対策をお試しください。</p>';
+            } else {
+                diagnosis.replacementSuggestions.forEach(suggestion => {
+                    replacementHTML += `
+                        <div class="solution-item">
+                            <div class="solution-title">${suggestion.model} (${suggestion.db})</div>
+                            <div class="solution-desc">
+                                <strong>タイプ:</strong> ${suggestion.type} | 
+                                <strong>価格:</strong> ${suggestion.price}<br>
+                                <strong>推奨理由:</strong> ${suggestion.reason}
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            replacementPanel.innerHTML = replacementHTML;
+        }
+
+        // アラート表示関数
+        function showAlert(message, type = 'info') {
+            const alertDiv = document.createElement('div');
+            alertDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'warning' ? '#fbbf24' : '#3b82f6'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: 600;
+                animation: slideIn 0.3s ease-out;
+            `;
+            alertDiv.textContent = message;
+            
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => document.body.removeChild(alertDiv), 300);
+            }, 3000);
+        }
+
+        // 初期化時にボタン状態設定
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDiagnosticButton();
+        });
 
         // ページロード時の初期化
         document.addEventListener('DOMContentLoaded', function() {
