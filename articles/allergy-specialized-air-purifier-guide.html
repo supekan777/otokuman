@@ -21,15 +21,173 @@
     <meta property="twitter:description" content="アレルギーお得マン監修による効果的な空気清浄機選びガイド。花粉症・ハウスダストアレルギー・喘息対策に最適。">
     <meta property="twitter:image" content="https://shippai-shinai-otokuman.com/images/allergy-air-purifier-guide-twitter.jpg">
 
-    <link rel="canonical" href="https://shippai-shinai-otokuman.com/articles/allergy-specialized-air-purifier-guide.html">
+    <link rel="canonical" href="https://www.otokuman.com/articles/allergy-specialized-air-purifier-guide.html">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mobile.css">
     <link rel="stylesheet" href="../css/overflow-fix.css">
     <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/related-articles.css">
     <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link rel="stylesheet" href="../template-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* キャラクター会話セクション */
+        .character-dialogue {
+            margin: 2rem -1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            width: calc(100% + 3rem);
+            box-sizing: border-box;
+        }
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            position: relative;
+        }
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pixel-character.allergy-sufferer {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            position: relative;
+        }
+        .pixel-character.allergy-sufferer::before {
+            content: "🤧";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.allergy-sufferer::after {
+            content: "😷";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #27ae60;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            flex: 1;
+        }
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .character-name {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .character-name.allergy {
+            color: #e74c3c;
+        }
+        @media (max-width: 768px) {
+            .character-dialogue {
+                margin: 2rem 0;
+                width: 100%;
+            }
+            .dialogue-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .speech-bubble.left::before,
+            .speech-bubble.left::after,
+            .speech-bubble.right::before,
+            .speech-bubble.right::after {
+                display: none;
+            }
+        }
+    </style>
 
     <!-- 構造化データ -->
     <script type="application/ld+json">
@@ -89,64 +247,27 @@
         </nav>
     </header>
 
-    <!-- パンくずナビ -->
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="../index.html">ホーム</a>
-            <span class="separator">></span>
-            <a href="../pages/air-purifier.html">空気清浄機</a>
-            <span class="separator">></span>
-            <span class="current">アレルギー対策空気清浄機15選</span>
-        </div>
-    </nav>
-
-    <!-- メイン記事 -->
-    <article class="main-article">
-        <div class="container">
+    <!-- メインコンテンツ -->
+    <main class="main article-main">
+        <article class="article-container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/air-purifier.html">空気清浄機</a> &gt; 
+                <span>アレルギー対策空気清浄機15選</span>
+            </nav>
             <!-- 記事ヘッダー -->
             <header class="article-header">
-                <div class="header-content">
-                    <div class="category-badge allergy">お得マン監修</div>
-                    <h1 class="article-title">【2025年最新】アレルギー対策空気清浄機おすすめ15選｜花粉・ハウスダスト・喘息に効果的なモデルをお得マン監修で厳選</h1>
-                    
+                <h1>【2025年最新】アレルギー対策空気清浄機おすすめ15選｜花粉・ハウスダスト・喘息に効果的なモデルをお得マン監修で厳選</h1>
                 <div class="article-meta">
-                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月24日</span>
-                </div>
-                    </div>
-
-                    <div class="doctor-profile">
-                        <div class="doctor-info">
-                            <div class="doctor-avatar">🤵</div>
-                            <div class="doctor-details">
-                                <h3>お得マン</h3>
-                                <p>家電選びの専門家・アレルギー対策研究家</p>
-                                <ul class="credentials">
-                                    <li>家電製品総合アドバイザー</li>
-                                    <li>家電選びの専門サイト運営</li>
-                                    <li>消費者目線での製品レビュー</li>
-                                    <li>お得な家電選びをサポート</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="article-summary">
-                        <h2>この記事の概要</h2>
-                        <ul>
-                            <li><strong>花粉症対策</strong>：スギ・ヒノキ・ブタクサ対応の最適機種</li>
-                            <li><strong>ハウスダストアレルギー</strong>：ダニ・カビ・細菌除去に特化</li>
-                            <li><strong>喘息・アトピー</strong>：症状軽減効果が研究で実証</li>
-                            <li><strong>アレルゲン除去率</strong>：99.97%以上の高性能フィルター搭載機</li>
-                            <li><strong>症状別推奨機種</strong>：お得マンによる実証データに基づく選択</li>
-                            <li><strong>効果的な使い方</strong>：アレルギー症状軽減のための実践法</li>
-                        </ul>
-                    </div>
+                    <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年1月22日</span>
                 </div>
             </header>
 
+
             <!-- 目次 -->
-            <nav class="table-of-contents">
-                <h3><i class="fas fa-list"></i> 目次</h3>
+            <div class="toc">
+                <h2>目次</h2>
                 <ol>
                     <li><a href="#medical-evidence">空気清浄機のアレルギー効果【実証データ】</a></li>
                     <li><a href="#allergen-types">主要アレルゲンと対策技術</a></li>
@@ -159,11 +280,111 @@
                     <li><a href="#season-management">季節別アレルギー管理法</a></li>
                     <li><a href="#conclusion">まとめ・お得マン推奨機種</a></li>
                 </ol>
-            </nav>
+            </div>
 
             <!-- 記事本文 -->
-            <section class="article-content">
-                <style>.character-dialogue{margin:2rem 0;padding:1.5rem;background:linear-gradient(135deg,#f8f9fa,#e9ecef);border-radius:15px;border-left:4px solid #3b82f6}.dialogue-container{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem}.dialogue-container.right{flex-direction:row-reverse}.pixel-character{width:60px;height:60px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 4px 8px rgba(0,0,0,0.1);border:3px solid #fff}.pixel-character.otokuman{background:linear-gradient(135deg,#3498db,#2980b9);position:relative}.pixel-character.otokuman::before{content:"🤵";filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))}.pixel-character.otokuman::after{content:"💡";position:absolute;top:-5px;right:-5px;font-size:16px;background:#f39c12;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border:2px solid #fff}.pixel-character.allergy-sufferer{background:linear-gradient(135deg,#e74c3c,#c0392b);position:relative}.pixel-character.allergy-sufferer::before{content:"🤧";filter:drop-shadow(0 1px 2px rgba(0,0,0,0.3))}.pixel-character.allergy-sufferer::after{content:"🌸";position:absolute;top:-5px;right:-5px;font-size:16px;background:#ff9ff3;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border:2px solid #fff}.speech-bubble{background:white;border-radius:15px;padding:1rem 1.2rem;position:relative;box-shadow:0 2px 8px rgba(0,0,0,0.1);border:2px solid #ddd;flex:1}.speech-bubble p{margin:0;line-height:1.6;color:#333}.character-name{font-weight:bold;color:#3498db;font-size:0.9rem;margin-bottom:0.5rem}.character-name.allergy-sufferer{color:#e74c3c}</style>
+            <div class="article-content">
+                <style>
+                    .character-dialogue {
+                        margin: 2rem -1.5rem;
+                        padding: 1.5rem;
+                        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                        border-radius: 15px;
+                        border-left: 4px solid #3498db;
+                        width: calc(100% + 3rem);
+                        box-sizing: border-box;
+                    }
+                    .dialogue-container {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1rem;
+                        margin-bottom: 1rem;
+                    }
+                    .dialogue-container.right {
+                        flex-direction: row-reverse;
+                    }
+                    .pixel-character {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 32px;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                        border: 3px solid #fff;
+                    }
+                    .pixel-character.otokuman {
+                        background: linear-gradient(135deg, #3498db, #2980b9);
+                        position: relative;
+                    }
+                    .pixel-character.otokuman::before {
+                        content: "🤵";
+                        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+                    }
+                    .pixel-character.otokuman::after {
+                        content: "💡";
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        font-size: 16px;
+                        background: #f39c12;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid #fff;
+                    }
+                    .pixel-character.allergy-sufferer {
+                        background: linear-gradient(135deg, #e74c3c, #c0392b);
+                        position: relative;
+                    }
+                    .pixel-character.allergy-sufferer::before {
+                        content: "🤧";
+                        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+                    }
+                    .pixel-character.allergy-sufferer::after {
+                        content: "🌸";
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        font-size: 16px;
+                        background: #ff9ff3;
+                        border-radius: 50%;
+                        width: 24px;
+                        height: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid #fff;
+                    }
+                    .speech-bubble {
+                        background: white;
+                        border-radius: 15px;
+                        padding: 1rem 1.2rem;
+                        position: relative;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        border: 2px solid #ddd;
+                        flex: 1;
+                    }
+                    .speech-bubble p {
+                        margin: 0;
+                        line-height: 1.6;
+                        color: #333;
+                    }
+                    .character-name {
+                        font-weight: bold;
+                        color: #3498db;
+                        font-size: 0.9rem;
+                        margin-bottom: 0.5rem;
+                    }
+                    .character-name.allergy-sufferer {
+                        color: #e74c3c;
+                    }
+                </style>
                 <div class="character-dialogue">
                     <div class="dialogue-container">
                         <div class="pixel-character allergy-sufferer"></div>
@@ -269,6 +490,24 @@
                                 <li><strong>UV-C殺菌</strong>：細菌・ウイルスを不活化</li>
                                 <li><strong>活性炭フィルター</strong>：臭い成分も同時除去</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 花粉症対策前の会話 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character allergy-sufferer"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name allergy-sufferer">小林さん（重度の花粉症・ハウスダストアレルギー持ち）</div>
+                            <p>お得マンさん、実証データを見ると本当に効果がありそうですね！特に花粉症が酷くて、毎年2月から5月まで本当につらいんです。具体的にどの機種が花粉対策に一番効果的でしょうか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>花粉症でお悩みでしたら、特に花粉アレルゲンに特化した機種をお選びください！花粉症専門外来での実績データを基に、症状軽減効果の高い5機種を厳選しています。ナノイーXやストリーマ技術など、花粉を根本から除去する技術搭載モデルが効果的ですよ。</p>
                         </div>
                     </div>
                 </div>
@@ -918,6 +1157,24 @@
                     </div>
                 </div>
 
+                <!-- まとめ前の会話 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character allergy-sufferer"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name allergy-sufferer">小林さん（重度の花粉症・ハウスダストアレルギー持ち）</div>
+                            <p>お得マンさん、たくさんの機種を教えていただいてありがとうございました！症状の程度や予算に応じて選び方が違うんですね。最後に、私のような重度のアレルギー持ちには、結局どの機種が一番おすすめでしょうか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>小林さんのような重度のアレルギーでお悩みの方には、やはりプログレード性能のIQAir HealthPro 250をお勧めします。初期投資は高めですが、0.003μmまでの超微粒子除去能力により症状の根本的改善が期待できます。実際に喘息発作が61%減少した実証データもありますからね！</p>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 id="conclusion"><i class="fas fa-flag-checkered"></i> まとめ・お得マン推奨機種</h2>
                 
                 <div class="conclusion-section">
@@ -1020,25 +1277,29 @@
                     </article>
                 </div>
             </section>
-        </div>
-    </article>
+            </div>
+        </article>
+    </main>
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>失敗しないお得マン！</h3>
                     <p>家電選びの専門サイト</p>
                 </div>
                 <div class="footer-section">
-                    <h4>空気清浄機ガイド</h4>
+                    <h4>カテゴリー</h4>
                     <ul>
                         <li><a href="../pages/air-purifier.html">空気清浄機トップ</a></li>
                         <li><a href="air-purifier-guide-2025.html">基本ガイド</a></li>
                         <li><a href="budget-price-air-purifier-guide.html">予算別選び方</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
             </div>
         </div>
     </footer>

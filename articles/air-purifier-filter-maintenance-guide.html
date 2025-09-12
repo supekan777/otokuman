@@ -12,8 +12,166 @@
     <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/related-articles.css">
     <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link rel="stylesheet" href="../template-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* キャラクター会話セクション */
+        .character-dialogue {
+            margin: 2rem -1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            width: calc(100% + 3rem);
+            box-sizing: border-box;
+        }
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            position: relative;
+        }
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pixel-character.user {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            position: relative;
+        }
+        .pixel-character.user::before {
+            content: "👨";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.user::after {
+            content: "🔧";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #e67e22;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            flex: 1;
+        }
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .character-name {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .character-name.user {
+            color: #27ae60;
+        }
+        @media (max-width: 768px) {
+            .character-dialogue {
+                margin: 2rem 0;
+                width: 100%;
+            }
+            .dialogue-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .speech-bubble.left::before,
+            .speech-bubble.left::after,
+            .speech-bubble.right::before,
+            .speech-bubble.right::after {
+                display: none;
+            }
+        }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,37 +216,29 @@
         </nav>
     </header>
 
-    <!-- パンくずナビ -->
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="../index.html">ホーム</a>
-            <span class="separator">></span>
-            <a href="../pages/air-purifier.html">空気清浄機</a>
-            <span class="separator">></span>
-            <span class="current">フィルター交換・メンテナンスガイド</span>
-        </div>
-    </nav>
-
     <!-- メインコンテンツ -->
-    <main class="main">
-        <!-- 記事ヘッダー -->
-        <section class="article-header">
-            <div class="container">
-                <div class="header-content">
+    <main class="main article-main">
+        <article class="article-container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/air-purifier.html">空気清浄機</a> &gt; 
+                <span>フィルター交換・メンテナンスガイド</span>
+            </nav>
+            
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <h1>【2025年版】空気清浄機フィルター交換完全ガイド｜掃除方法と長持ちさせるコツ</h1>
                 <div class="article-meta">
                     <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月25日</span>
                 </div>
-                    <h1 class="article-title">【2025年版】空気清浄機フィルター交換完全ガイド｜掃除方法と長持ちさせるコツ</h1>
-                    <p class="article-description">
-                        フィルター交換時期の見極めから正しい掃除方法まで、メーカー技術者の知見と15,800件のメンテナンスデータ分析を基に、空気清浄機を長持ちさせる完全マニュアルをお届けします。
-                    </p>
-                </div>
-            </div>
-        </section>
+                <p class="article-description">
+                    フィルター交換時期の見極めから正しい掃除方法まで、メーカー技術者の知見と15,800件のメンテナンスデータ分析を基に、空気清浄機を長持ちさせる完全マニュアルをお届けします。
+                </p>
+            </header>
 
-        <!-- 記事コンテンツ -->
-        <article class="article-content">
-            <div class="container">
+            <!-- 記事コンテンツ -->
+            <div class="article-content">
                 <!-- 導入部 -->
                 <section class="content-section">
                     <div class="alert-box info">
@@ -139,6 +289,24 @@
                     <li><a href="#faq">よくある質問</a></li>
                 </ol>
             </div>
+
+                <!-- 導入会話 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name user">佐藤さん（メンテナンス初心者）</div>
+                            <p>お得マンさん、空気清浄機を買って1年になるんですが、フィルターの交換時期がよく分からなくて...「交換サイン」が点灯してから交換すればいいんですよね？あと、毎回新品を買うのは正直お金がかかって...</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>実は交換サインが点灯した時はもう遅いんです！フィルターの性能は交換サインの前から徐々に低下しています。でも心配無用。正しいメンテナンス方法なら、フィルター代を年間5,000円以上節約できますよ。</p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- キャラクター会話：フィルターメンテナンスについて -->
                 <section class="content-section">
@@ -1498,13 +1666,28 @@
                         </article>
                     </div>
                 </section>
-            </div>
-        </article>
-    </main>
+
+                <!-- コスト節約前の会話 -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character user"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name user">佐藤さん（メンテナンス初心者）</div>
+                            <p>お得マンさん、メンテナンスのコツはよく分かりました！でも正直、フィルター代はかなり高いですよね...一回の交換で7,000円とか。もっと安くできる方法ってないですか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>その悩みは多くの方が経験していますね！実は、購入方法を工夫するだけで年間5,000円以上、多い場合は12,000円も節約できるんです。まとめ買い、互換フィルターの活用、DIYプレフィルターなど、7つの方法をご紹介しますね！</p>
+                        </div>
+                    </div>
+                </div>
 
     <!-- フッター -->
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>失敗しないお得マン！</h3>
@@ -1518,6 +1701,9 @@
                         <li><a href="../pages/humidifier.html">加湿器</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 失敗しないお得マン！ All rights reserved.</p>
             </div>
         </div>
     </footer>

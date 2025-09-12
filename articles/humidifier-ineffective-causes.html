@@ -63,18 +63,19 @@
     <style>
         .cause-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 1.5rem;
             margin: 2rem 0;
         }
 
         .cause-card {
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             border-left: 5px solid #ef4444;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: fit-content;
         }
 
         .cause-card:hover {
@@ -234,6 +235,356 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
+        /* キャラクター会話用スタイル */
+        .character-dialogue {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .dialogue-container.right {
+            flex-direction: row-reverse;
+        }
+        .dialogue-container:last-child {
+            margin-bottom: 0;
+        }
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-align: center;
+        }
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            position: relative;
+        }
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+        }
+        .pixel-character.housewife {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            position: relative;
+        }
+        .pixel-character.housewife::before {
+            content: "👩";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.housewife::after {
+            content: "😥";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+        }
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .character-name {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .character-name.housewife {
+            color: var(--primary-light);
+        }
+
+        /* 詳細情報スタイル */
+        .cause-detail {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fafafa, #f5f5f5);
+            border-radius: 10px;
+            border-left: 3px solid #ef4444;
+        }
+
+        .cause-detail ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .cause-detail ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        .cause-detail h4 {
+            color: #ef4444;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .measurement-guide {
+            background: rgba(59, 130, 246, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .measurement-guide p {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        .expert-tip {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 3px solid #f59e0b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .diagnostic-details {
+            background: rgba(99, 102, 241, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 3px solid #6366f1;
+        }
+
+        .diagnostic-details h4 {
+            color: #4338ca;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* 新しいランキング構造のスタイル */
+        .ranking-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ranking-item {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ranking-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+        }
+
+        .ranking-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .rank-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            min-width: 80px;
+            justify-content: center;
+        }
+
+        .rank-badge.rank-1 {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #8b4513;
+        }
+
+        .rank-badge.rank-2 {
+            background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+            color: #2c2c2c;
+        }
+
+        .rank-badge.rank-3 {
+            background: linear-gradient(135deg, #cd7f32, #b8860b);
+            color: white;
+        }
+
+        .rank-medal {
+            font-size: 1.2em;
+        }
+
+        .ranking-info {
+            flex: 1;
+        }
+
+        .ranking-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .ranking-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .frequency {
+            padding: 0.25rem 0.75rem;
+            background: #3b82f6;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .severity {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .severity.high {
+            background: #ef4444;
+            color: white;
+        }
+
+        .severity.medium {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .ranking-content {
+            padding: 2rem;
+        }
+
+        .problem-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        .character-dialogue.integrated {
+            margin: 1.5rem 0;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border: 2px solid #f59e0b;
+        }
+
+        .detailed-info {
+            margin-top: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: #f8fafc;
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .info-card h4 {
+            color: #4338ca;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .info-card ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+
+        .info-card li {
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+
         @media (max-width: 768px) {
             .cause-grid {
                 grid-template-columns: 1fr;
@@ -243,6 +594,58 @@
             }
             .troubleshooting-table {
                 font-size: 0.9rem;
+            }
+            .character-dialogue {
+                padding: 1rem;
+                margin: 1.5rem 0;
+            }
+            .dialogue-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            .dialogue-container.right {
+                flex-direction: column;
+            }
+            .speech-bubble {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+            }
+            .speech-bubble.left::before,
+            .speech-bubble.left::after,
+            .speech-bubble.right::before,
+            .speech-bubble.right::after {
+                display: none;
+            }
+            .cause-detail {
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+            .measurement-guide, .expert-tip, .diagnostic-details {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            /* 新しいランキング構造のレスポンシブ */
+            .ranking-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            .ranking-content {
+                padding: 1.5rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .ranking-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
             }
         }
     </style>
@@ -316,77 +719,793 @@
                     </ul>
                 </div>
 
-                <section id="overview">
-                    <h2>加湿器が効かない理由の概要</h2>
-                    
-                    <p>加湿器の効果が感じられない原因は、大きく3つのカテゴリーに分類できます。</p>
+                <!-- キャラクター会話：加湿器の効果がないことについて -->
+                <div class="character-dialogue">
+                    <div class="dialogue-container">
+                        <div class="pixel-character housewife"></div>
+                        <div class="speech-bubble left">
+                            <div class="character-name housewife">田中さん（主婦）</div>
+                            <p>お得マンさん、加湿器を運転しているのに湿度が30%から全然上がらないんです。新品で買ったばかりなのに故障でしょうか？</p>
+                        </div>
+                    </div>
+                    <div class="dialogue-container right">
+                        <div class="pixel-character otokuman"></div>
+                        <div class="speech-bubble right">
+                            <div class="character-name">失敗しないお得マン</div>
+                            <p>故障の可能性は低いですね。まず確認していただきたいのは、お部屋の広さと加湿器の容量です。例えば15畳のリビングに6畳用の加湿器では力不足なんです。容量不足が最も多い原因の一つですよ。</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="effectiveness-chart">
-                        <h3>加湿効果に影響する要因</h3>
-                        <canvas id="effectivenessChart" width="400" height="200"></canvas>
+                <!-- 加湿器が効かない理由の概要セクション -->
+                <section id="overview" class="overview-section">
+                    <div class="overview-header">
+                        <h2 class="overview-title">
+                            🔍 加湿器が効かない理由の概要
+                        </h2>
+                        <p class="overview-subtitle">
+                            効果が感じられない原因を3つのカテゴリーに分析し、解決への道筋を明確にします
+                        </p>
                     </div>
 
-                    <div class="cause-grid">
-                        <div class="cause-card">
-                            <span class="cause-icon">⚙️</span>
-                            <h3 class="cause-title">機器の問題</h3>
-                            <p><strong>占有率：約40%</strong></p>
-                            <ul>
-                                <li>容量不足・能力不足</li>
-                                <li>メンテナンス不良</li>
-                                <li>故障・劣化</li>
-                            </ul>
+                    <!-- 統計情報サマリー -->
+                    <div class="stats-summary">
+                        <div class="stat-item">
+                            <div class="stat-number">78%</div>
+                            <div class="stat-label">改善可能な原因</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2-7日</div>
+                            <div class="stat-label">平均改善期間</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">適切対策での解決率</div>
+                        </div>
+                    </div>
+
+                    <!-- コンパクトなチャート -->
+                    <div class="effectiveness-chart-compact">
+                        <h3 class="chart-title">
+                            <i class="fas fa-chart-pie"></i> 加湿効果に影響する要因
+                        </h3>
+                        <div class="chart-container">
+                            <canvas id="effectivenessChart" width="300" height="150"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- 改良された原因カード -->
+                    <div class="cause-analysis-grid">
+                        <div class="cause-analysis-card equipment">
+                            <div class="card-header">
+                                <div class="cause-icon-modern">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="cause-info">
+                                    <h3 class="cause-title-modern">機器の問題</h3>
+                                    <div class="cause-percentage">40%</div>
+                                </div>
+                            </div>
+                            <div class="cause-content">
+                                <div class="cause-description">
+                                    加湿器本体の性能や状態に起因する問題
+                                </div>
+                                <ul class="cause-list">
+                                    <li>
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                        <span>容量不足・能力不足</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-tools"></i>
+                                        <span>メンテナンス不良</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span>故障・劣化</span>
+                                    </li>
+                                </ul>
+                                <div class="solution-hint">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>清掃・点検で80%が改善</span>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="cause-card">
-                            <span class="cause-icon">🏠</span>
-                            <h3 class="cause-title">環境の問題</h3>
-                            <p><strong>占有率：約35%</strong></p>
-                            <ul>
-                                <li>設置場所の不適切</li>
-                                <li>換気過多・気密性不足</li>
-                                <li>室温・湿度条件</li>
-                            </ul>
+                        <div class="cause-analysis-card environment">
+                            <div class="card-header">
+                                <div class="cause-icon-modern">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="cause-info">
+                                    <h3 class="cause-title-modern">環境の問題</h3>
+                                    <div class="cause-percentage">35%</div>
+                                </div>
+                            </div>
+                            <div class="cause-content">
+                                <div class="cause-description">
+                                    設置環境や室内条件による影響
+                                </div>
+                                <ul class="cause-list">
+                                    <li>
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>設置場所の不適切</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-wind"></i>
+                                        <span>換気過多・気密性不足</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-thermometer-half"></i>
+                                        <span>室温・湿度条件</span>
+                                    </li>
+                                </ul>
+                                <div class="solution-hint">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>設置場所変更で即座に改善</span>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="cause-card">
-                            <span class="cause-icon">👤</span>
-                            <h3 class="cause-title">使用方法の問題</h3>
-                            <p><strong>占有率：約25%</strong></p>
-                            <ul>
-                                <li>運転時間・設定の不適切</li>
-                                <li>水質・給水タイミング</li>
-                                <li>測定方法の間違い</li>
-                            </ul>
+                        <div class="cause-analysis-card usage">
+                            <div class="card-header">
+                                <div class="cause-icon-modern">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                                <div class="cause-info">
+                                    <h3 class="cause-title-modern">使用方法の問題</h3>
+                                    <div class="cause-percentage">25%</div>
+                                </div>
+                            </div>
+                            <div class="cause-content">
+                                <div class="cause-description">
+                                    操作方法や運用における不適切な使用
+                                </div>
+                                <ul class="cause-list">
+                                    <li>
+                                        <i class="fas fa-clock"></i>
+                                        <span>運転時間・設定の不適切</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-tint"></i>
+                                        <span>水質・給水タイミング</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-search"></i>
+                                        <span>測定方法の間違い</span>
+                                    </li>
+                                </ul>
+                                <div class="solution-hint">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>正しい使い方で劇的改善</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 診断への導線 -->
+                    <div class="diagnosis-cta">
+                        <div class="cta-content">
+                            <h3 class="cta-title">
+                                <i class="fas fa-stethoscope"></i>
+                                あなたの加湿器の問題を特定しましょう
+                            </h3>
+                            <p class="cta-description">
+                                体系的な診断フローで原因を正確に特定し、最適な解決策を見つけることができます
+                            </p>
+                        </div>
+                        <div class="cta-actions">
+                            <a href="#diagnostic" class="cta-button primary">
+                                <i class="fas fa-play"></i>
+                                診断を開始する
+                            </a>
+                            <a href="#common-causes" class="cta-button secondary">
+                                <i class="fas fa-list"></i>
+                                よくある原因を見る
+                            </a>
                         </div>
                     </div>
                 </section>
+
+                <style>
+                /* 概要セクションのスタイル */
+                .overview-section {
+                    position: relative;
+                    margin: 3rem 0;
+                    padding: 2.5rem;
+                    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                }
+
+                .overview-section::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at center, rgba(239, 68, 68, 0.03) 0%, transparent 70%);
+                    animation: overviewPulse 10s ease-in-out infinite;
+                    z-index: 1;
+                }
+
+                @keyframes overviewPulse {
+                    0%, 100% { opacity: 0.5; }
+                    50% { opacity: 1; }
+                }
+
+                .overview-header {
+                    text-align: center;
+                    margin-bottom: 2.5rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .overview-title {
+                    font-size: 2.3rem;
+                    font-weight: 800;
+                    background: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    margin-bottom: 0.5rem;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .overview-subtitle {
+                    font-size: 1.1rem;
+                    color: #64748b;
+                    font-weight: 500;
+                    line-height: 1.6;
+                }
+
+                /* 統計情報サマリー */
+                .stats-summary {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    margin-bottom: 2.5rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .stat-item {
+                    text-align: center;
+                    padding: 1rem;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                    min-width: 120px;
+                    transition: transform 0.3s ease;
+                }
+
+                .stat-item:hover {
+                    transform: translateY(-3px);
+                }
+
+                .stat-number {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    margin-bottom: 0.25rem;
+                }
+
+                .stat-label {
+                    font-size: 0.9rem;
+                    color: #64748b;
+                    font-weight: 600;
+                }
+
+                /* コンパクトチャート */
+                .effectiveness-chart-compact {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    margin-bottom: 2.5rem;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .chart-title {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 1rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    justify-content: center;
+                }
+
+                .chart-title i {
+                    color: #ef4444;
+                    font-size: 1.2rem;
+                }
+
+                .chart-container {
+                    display: flex;
+                    justify-content: center;
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
+
+                /* 改良された原因分析カード */
+                .cause-analysis-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                    gap: 1.5rem;
+                    margin-bottom: 2.5rem;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .cause-analysis-card {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 1.5rem;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .cause-analysis-card::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    transition: all 0.3s ease;
+                }
+
+                .cause-analysis-card.equipment::before {
+                    background: linear-gradient(90deg, #ef4444, #dc2626);
+                }
+
+                .cause-analysis-card.environment::before {
+                    background: linear-gradient(90deg, #f59e0b, #d97706);
+                }
+
+                .cause-analysis-card.usage::before {
+                    background: linear-gradient(90deg, #3b82f6, #2563eb);
+                }
+
+                .cause-analysis-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+                }
+
+                .card-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                .cause-icon-modern {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 1.5rem;
+                }
+
+                .cause-analysis-card.equipment .cause-icon-modern {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                }
+
+                .cause-analysis-card.environment .cause-icon-modern {
+                    background: linear-gradient(135deg, #f59e0b, #d97706);
+                }
+
+                .cause-analysis-card.usage .cause-icon-modern {
+                    background: linear-gradient(135deg, #3b82f6, #2563eb);
+                }
+
+                .cause-info {
+                    flex: 1;
+                }
+
+                .cause-title-modern {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.25rem;
+                }
+
+                .cause-percentage {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+
+                .cause-analysis-card.equipment .cause-percentage {
+                    color: #ef4444;
+                }
+
+                .cause-analysis-card.environment .cause-percentage {
+                    color: #f59e0b;
+                }
+
+                .cause-analysis-card.usage .cause-percentage {
+                    color: #3b82f6;
+                }
+
+                .cause-content {
+                    margin-top: 1rem;
+                }
+
+                .cause-description {
+                    color: #64748b;
+                    font-size: 0.95rem;
+                    margin-bottom: 1rem;
+                    line-height: 1.5;
+                }
+
+                .cause-list {
+                    list-style: none;
+                    padding: 0;
+                    margin-bottom: 1rem;
+                }
+
+                .cause-list li {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.75rem;
+                    padding: 0.5rem 0;
+                    font-size: 0.9rem;
+                    color: #475569;
+                    border-bottom: 1px solid #f1f5f9;
+                }
+
+                .cause-list li:last-child {
+                    border-bottom: none;
+                }
+
+                .cause-list li i {
+                    width: 16px;
+                    color: #64748b;
+                    font-size: 0.85rem;
+                }
+
+                .solution-hint {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.75rem;
+                    background: #f8fafc;
+                    border-radius: 8px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                }
+
+                .cause-analysis-card.equipment .solution-hint {
+                    color: #ef4444;
+                }
+
+                .cause-analysis-card.environment .solution-hint {
+                    color: #f59e0b;
+                }
+
+                .cause-analysis-card.usage .solution-hint {
+                    color: #3b82f6;
+                }
+
+                .solution-hint i {
+                    font-size: 0.8rem;
+                }
+
+                /* 診断CTAセクション */
+                .diagnosis-cta {
+                    background: linear-gradient(135deg, #fef3c7, #fed7aa, #fecaca);
+                    border-radius: 15px;
+                    padding: 2rem;
+                    text-align: center;
+                    position: relative;
+                    z-index: 2;
+                    border: 2px solid rgba(239, 68, 68, 0.1);
+                }
+
+                .cta-content {
+                    margin-bottom: 1.5rem;
+                }
+
+                .cta-title {
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    color: #1e293b;
+                    margin-bottom: 0.75rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    justify-content: center;
+                }
+
+                .cta-title i {
+                    color: #ef4444;
+                }
+
+                .cta-description {
+                    color: #475569;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                .cta-actions {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .cta-button {
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    font-size: 0.95rem;
+                }
+
+                .cta-button.primary {
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                    color: white;
+                    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+                }
+
+                .cta-button.primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+                }
+
+                .cta-button.secondary {
+                    background: white;
+                    color: #ef4444;
+                    border: 2px solid #ef4444;
+                }
+
+                .cta-button.secondary:hover {
+                    background: #ef4444;
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                /* レスポンシブ対応 */
+                @media (max-width: 768px) {
+                    .overview-section {
+                        padding: 2rem;
+                        margin: 2rem 0;
+                    }
+
+                    .overview-title {
+                        font-size: 1.8rem;
+                    }
+
+                    .stats-summary {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+
+                    .stat-item {
+                        min-width: unset;
+                    }
+
+                    .cause-analysis-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .cta-actions {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+                </style>
 
                 <section id="common-causes">
                     <h2>よくある原因TOP7</h2>
                     
                     <p>加湿器の効果が出ない原因を発生頻度順にランキング形式で紹介します。</p>
 
-                    <div class="cause-grid">
-                        <div class="cause-card">
-                            <span class="cause-icon">🏆</span>
-                            <h3 class="cause-title">第1位：容量不足</h3>
-                            <p><strong>発生頻度：28%</strong></p>
-                            <p>部屋の広さに対して加湿器の能力が不足している最も多い原因。特に高気密住宅やオープンスペースで顕著。</p>
+                    <!-- 新しいランキング構造 -->
+                    <div class="ranking-section">
+                        
+                        <!-- 第1位セクション -->
+                        <div class="ranking-item">
+                            <div class="ranking-header">
+                                <div class="rank-badge rank-1">
+                                    <span class="rank-number">1</span>
+                                    <span class="rank-medal">🏆</span>
+                                </div>
+                                <div class="ranking-info">
+                                    <h3 class="ranking-title">容量不足</h3>
+                                    <div class="ranking-stats">
+                                        <span class="frequency">発生頻度: 28%</span>
+                                        <span class="severity high">重要度: 高</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ranking-content">
+                                <div class="problem-description">
+                                    <p>部屋の広さに対して加湿器の能力が不足している最も多い原因。特に高気密住宅やオープンスペースで顕著に現れます。</p>
+                                </div>
+                                
+                                <!-- 会話を統合 -->
+                                <div class="character-dialogue integrated">
+                                    <div class="dialogue-container">
+                                        <div class="pixel-character housewife"></div>
+                                        <div class="speech-bubble left">
+                                            <div class="character-name housewife">田中さん</div>
+                                            <p>うちは12畳のリビングダイニングで、加湿器は「8畳対応」って書いてあるんです。これって小さすぎるってことですか？</p>
+                                        </div>
+                                    </div>
+                                    <div class="dialogue-container right">
+                                        <div class="pixel-character otokuman"></div>
+                                        <div class="speech-bubble right">
+                                            <div class="character-name">失敗しないお得マン</div>
+                                            <p>はい、まさにそれが原因です！12畳には最低でも600ml/h以上の容量が必要です。8畳対応だと400ml/h程度なので、全然足りていません。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="detailed-info">
+                                    <div class="info-grid">
+                                        <div class="info-card symptoms">
+                                            <h4>主な症状</h4>
+                                            <ul>
+                                                <li>運転しても湿度が30-35%から上がらない</li>
+                                                <li>リビングダイニングで効果が薄い</li>
+                                                <li>エアコン使用時の極度の乾燥</li>
+                                            </ul>
+                                        </div>
+                                        <div class="info-card solutions">
+                                            <h4>適正容量の目安</h4>
+                                            <ul>
+                                                <li><strong>6畳（木造）：</strong>300ml/h以上</li>
+                                                <li><strong>8畳（木造）：</strong>400ml/h以上</li>
+                                                <li><strong>10畳（鉄筋）：</strong>500ml/h以上</li>
+                                                <li><strong>リビング（20畳）：</strong>1000ml/h以上</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="cause-card">
-                            <span class="cause-icon">🥈</span>
-                            <h3 class="cause-title">第2位：設置場所不良</h3>
-                            <p><strong>発生頻度：22%</strong></p>
-                            <p>窓際、暖房器具の近く、換気扇の下など、効果が期待できない場所への設置による問題。</p>
+                        <!-- 第2位セクション -->
+                        <div class="ranking-item">
+                            <div class="ranking-header">
+                                <div class="rank-badge rank-2">
+                                    <span class="rank-number">2</span>
+                                    <span class="rank-medal">🥈</span>
+                                </div>
+                                <div class="ranking-info">
+                                    <h3 class="ranking-title">設置場所不良</h3>
+                                    <div class="ranking-stats">
+                                        <span class="frequency">発生頻度: 22%</span>
+                                        <span class="severity medium">重要度: 中</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ranking-content">
+                                <div class="problem-description">
+                                    <p>窓際、暖房器具の近く、換気扇の下など、効果が期待できない場所への設置による問題です。</p>
+                                </div>
+                                
+                                <!-- 会話を統合 -->
+                                <div class="character-dialogue integrated">
+                                    <div class="dialogue-container">
+                                        <div class="pixel-character housewife"></div>
+                                        <div class="speech-bubble left">
+                                            <div class="character-name housewife">田中さん</div>
+                                            <p>加湿器を窓際に置いているんですが、これって良くないんでしょうか？朝起きると結露がすごくて...</p>
+                                        </div>
+                                    </div>
+                                    <div class="dialogue-container right">
+                                        <div class="pixel-character otokuman"></div>
+                                        <div class="speech-bubble right">
+                                            <div class="character-name">失敗しないお得マン</div>
+                                            <p>それはNGな設置場所です！窓際は冷気の影響で湿気が結露してしまい、加湿効果が半減してしまいます。お部屋の中央付近に移動してください。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="detailed-info">
+                                    <div class="info-grid">
+                                        <div class="info-card symptoms">
+                                            <h4>NGな設置場所</h4>
+                                            <ul>
+                                                <li><strong>窓際：</strong>冷気で結露、効果半減</li>
+                                                <li><strong>エアコン直下：</strong>温風で急速蒸発</li>
+                                                <li><strong>換気扇近く：</strong>加湿空気が排出</li>
+                                            </ul>
+                                        </div>
+                                        <div class="info-card solutions">
+                                            <h4>理想的な設置場所</h4>
+                                            <ul>
+                                                <li><strong>部屋中央：</strong>均等に湿気拡散</li>
+                                                <li><strong>床から1m：</strong>呼吸域に効果的</li>
+                                                <li><strong>対角線上：</strong>空気流れ活用</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="cause-card">
-                            <span class="cause-icon">🥉</span>
-                            <h3 class="cause-title">第3位：フィルター詰まり</h3>
-                            <p><strong>発生頻度：18%</strong></p>
-                            <p>定期的な清掃を怠ったことによるフィルターの目詰まりで、加湿能力が大幅に低下。</p>
+                        <!-- 第3位セクション -->
+                        <div class="ranking-item">
+                            <div class="ranking-header">
+                                <div class="rank-badge rank-3">
+                                    <span class="rank-number">3</span>
+                                    <span class="rank-medal">🥉</span>
+                                </div>
+                                <div class="ranking-info">
+                                    <h3 class="ranking-title">フィルター詰まり</h3>
+                                    <div class="ranking-stats">
+                                        <span class="frequency">発生頻度: 18%</span>
+                                        <span class="severity medium">重要度: 中</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="ranking-content">
+                                <div class="problem-description">
+                                    <p>定期的な清掃を怠ったことによるフィルターの目詰まりで、加湿能力が大幅に低下する問題です。</p>
+                                </div>
+                                
+                                <!-- 会話を統合 -->
+                                <div class="character-dialogue integrated">
+                                    <div class="dialogue-container">
+                                        <div class="pixel-character housewife"></div>
+                                        <div class="speech-bubble left">
+                                            <div class="character-name housewife">田中さん</div>
+                                            <p>正直に言うと、フィルターの掃除をサボりがちで...1ヶ月以上やってないかも。これって加湿効果に関係ありますか？</p>
+                                        </div>
+                                    </div>
+                                    <div class="dialogue-container right">
+                                        <div class="pixel-character otokuman"></div>
+                                        <div class="speech-bubble right">
+                                            <div class="character-name">失敗しないお得マン</div>
+                                            <p>それは大問題です！1ヶ月放置だと加湿能力が50%以上も低下しています。今すぐ水洗いして、週1回の清掃を習慣にしてください。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="detailed-info">
+                                    <div class="info-grid">
+                                        <div class="info-card symptoms">
+                                            <h4>汚れの進行段階</h4>
+                                            <ul>
+                                                <li><strong>1-2週間：</strong>10%能力低下</li>
+                                                <li><strong>3-4週間：</strong>30%能力低下</li>
+                                                <li><strong>1ヶ月以上：</strong>50%以上低下</li>
+                                            </ul>
+                                        </div>
+                                        <div class="info-card solutions">
+                                            <h4>メンテナンス頻度</h4>
+                                            <ul>
+                                                <li><strong>毎日：</strong>タンク水交換</li>
+                                                <li><strong>週1回：</strong>フィルター水洗い</li>
+                                                <li><strong>月1回：</strong>クエン酸洗浄</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="cause-card">
@@ -394,6 +1513,32 @@
                             <h3 class="cause-title">第4位：過度な換気</h3>
                             <p><strong>発生頻度：12%</strong></p>
                             <p>24時間換気システムや頻繁な窓開けにより、加湿された空気が外部に逃げてしまう。</p>
+                            
+                            <div class="cause-detail">
+                                <h4>詳細な症状</h4>
+                                <ul>
+                                    <li>換気扇を止めると湿度が上昇する</li>
+                                    <li>窓際で測定した湿度が特に低い</li>
+                                    <li>風の強い日に効果が薄れる</li>
+                                    <li>古い住宅で隙間風が多い</li>
+                                </ul>
+                                
+                                <h4>適切な換気バランス</h4>
+                                <div class="measurement-guide">
+                                    <p><strong>推奨換気スケジュール：</strong></p>
+                                    <ul>
+                                        <li><strong>朝（6-8時）：</strong>5-10分の集中換気</li>
+                                        <li><strong>昼（12-14時）：</strong>5分程度の軽い換気</li>
+                                        <li><strong>夜（18-20時）：</strong>料理時のみ換気扇使用</li>
+                                        <li><strong>就寝時：</strong>24時間換気システムは最小設定</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="expert-tip">
+                                    <strong>💡 専門家のアドバイス：</strong>
+                                    24時間換気システムは法的義務がありますが、湿度が30%以下の場合は一時的に風量を下げることで加湿効果が向上します。ただし、1日1回は規定通りの換気を行ってください。
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="cause-card">
@@ -401,6 +1546,33 @@
                             <h3 class="cause-title">第5位：運転時間不足</h3>
                             <p><strong>発生頻度：10%</strong></p>
                             <p>間欠運転や短時間使用により、室内全体の湿度が安定するまでの時間が不足。</p>
+                            
+                            <div class="cause-detail">
+                                <h4>詳細な症状</h4>
+                                <ul>
+                                    <li>運転開始直後は効果があるが持続しない</li>
+                                    <li>就寝時のみの使用で朝は乾燥している</li>
+                                    <li>電気代を気にして間欠運転している</li>
+                                    <li>外出時に電源を切ってしまう</li>
+                                </ul>
+                                
+                                <h4>効果的な運転スケジュール</h4>
+                                <div class="measurement-guide">
+                                    <p><strong>推奨運転パターン：</strong></p>
+                                    <ul>
+                                        <li><strong>初期加湿：</strong>強運転で3-4時間連続</li>
+                                        <li><strong>維持期：</strong>弱～中運転で24時間継続</li>
+                                        <li><strong>外出時：</strong>最弱設定で継続運転</li>
+                                        <li><strong>就寝時：</strong>静音モードで連続運転</li>
+                                    </ul>
+                                    <p><strong>月間電気代目安：</strong>連続運転でも300-800円程度</p>
+                                </div>
+                                
+                                <div class="expert-tip">
+                                    <strong>💡 専門家のアドバイス：</strong>
+                                    加湿器の電気代は意外と安く、エアコンの1/10程度です。間欠運転より連続運転の方が効率的で、結果的に省エネにもなります。タイマー機能を活用して自動運転がおすすめです。
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="cause-card">
@@ -408,6 +1580,33 @@
                             <h3 class="cause-title">第6位：水質問題</h3>
                             <p><strong>発生頻度：6%</strong></p>
                             <p>硬水や汚れた水の使用により、内部に水垢やカルキが蓄積し、性能が低下。</p>
+                            
+                            <div class="cause-detail">
+                                <h4>詳細な症状</h4>
+                                <ul>
+                                    <li>タンク内に白い粉状の堆積物がある</li>
+                                    <li>超音波式で白い粉が室内に飛散</li>
+                                    <li>フィルターに茶色い汚れが付着</li>
+                                    <li>加湿器から水道水特有の臭いがする</li>
+                                </ul>
+                                
+                                <h4>最適な水質と対策</h4>
+                                <div class="measurement-guide">
+                                    <p><strong>推奨する水の種類：</strong></p>
+                                    <ul>
+                                        <li><strong>1位：蒸留水・純水</strong>（最も理想的だが高コスト）</li>
+                                        <li><strong>2位：浄水器の水</strong>（カルキ・不純物除去済み）</li>
+                                        <li><strong>3位：沸騰後冷ました水道水</strong>（カルキ除去効果）</li>
+                                        <li><strong>4位：一般的な水道水</strong>（定期清掃で対応可能）</li>
+                                    </ul>
+                                    <p><strong>地域別水質の特徴：</strong>関東・関西は硬水傾向、九州・四国は軟水傾向</p>
+                                </div>
+                                
+                                <div class="expert-tip">
+                                    <strong>💡 専門家のアドバイス：</strong>
+                                    水質による影響は加湿方式によって異なります。超音波式は純水推奨、気化式は水道水でも大丈夫です。コストと効果のバランスを考えて、浄水器の水を使うのがベストチョイスです。
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="cause-card">
@@ -415,6 +1614,32 @@
                             <h3 class="cause-title">第7位：湿度計の不正確</h3>
                             <p><strong>発生頻度：4%</strong></p>
                             <p>安価な湿度計の使用や設置場所の問題により、実際の湿度が正確に測定できていない。</p>
+                            
+                            <div class="cause-detail">
+                                <h4>詳細な症状</h4>
+                                <ul>
+                                    <li>加湿器は正常に動作しているが湿度計の数値が低い</li>
+                                    <li>部屋によって湿度計の数値が大きく異なる</li>
+                                    <li>天気の良い日と悪い日で数値の変化が極端</li>
+                                    <li>肌や喉の感覚と湿度計の数値が合わない</li>
+                                </ul>
+                                
+                                <h4>正確な湿度測定方法</h4>
+                                <div class="measurement-guide">
+                                    <p><strong>推奨湿度計の特徴：</strong></p>
+                                    <ul>
+                                        <li>デジタル表示で±3%以内の精度</li>
+                                        <li>温度・湿度同時表示機能</li>
+                                        <li>最高・最低値記録機能付き</li>
+                                        <li>価格帯：2,000円～5,000円程度</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="expert-tip">
+                                    <strong>💡 専門家のアドバイス：</strong>
+                                    複数の湿度計で測定し、平均値を参考にすることで測定精度が向上します。キッチンや洗面所など湿気の多い場所は避けて設置してください。
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -431,6 +1656,15 @@
                             <span class="step-number">1</span>
                             <strong>湿度測定の確認</strong>
                             <p>正確な湿度計で室内中央部の湿度を測定。40%以下なら次へ。</p>
+                            <div class="diagnostic-details">
+                                <h4>詳細チェックポイント：</h4>
+                                <ul>
+                                    <li>デジタル湿度計で室内中央の床から1mの位置で測定</li>
+                                    <li>エアコン、ストーブ、窓から2m以上離れた場所</li>
+                                    <li>30分間連続で測定し、平均値を算出</li>
+                                    <li>目標数値：40-60%（理想は50-55%）</li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <div class="flow-step">
@@ -443,6 +1677,19 @@
                             <span class="step-number">3</span>
                             <strong>容量と設置場所の確認</strong>
                             <p>部屋の広さに対する適正容量と、設置場所の適切性をチェック。</p>
+                            <div class="diagnostic-details">
+                                <h4>容量適性判定：</h4>
+                                <ul>
+                                    <li>部屋の面積×1.5 = 必要加湿量（ml/h）</li>
+                                    <li>木造6畳→300ml/h、鉄筋10畳→500ml/h</li>
+                                    <li>オープンスペースは合計面積で算出</li>
+                                </ul>
+                                <h4>設置場所チェック：</h4>
+                                <ul>
+                                    <li><strong>OK:</strong>部屋中央、床から1m高、障害物から50cm以上</li>
+                                    <li><strong>NG:</strong>窓際、エアコン直下、換気扇近く</li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <div class="flow-step">
@@ -514,6 +1761,24 @@
                                 <li><strong>室温の適正化（18-24℃）</strong></li>
                                 <li><strong>除湿器の停止</strong></li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <!-- キャラクター会話：電気代と運転時間 -->
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character housewife"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name housewife">田中さん</div>
+                                <p>加湿器を24時間つけっぱなしにしても大丈夫ですか？電気代が心配で、夜だけしか使っていないんです。</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>むしろ24時間運転の方がおすすめです！加湿器の電気代は月300-800円程度とエアコンの1/10以下。間欠運転より連続運転の方が効率的で、結果的に省エネにもなります。夜だけだと朝の乾燥が辛いでしょう？</p>
+                            </div>
                         </div>
                     </div>
 
@@ -634,6 +1899,24 @@
                                 <li>朝・昼・夜の3回測定</li>
                                 <li>記録をつけて効果を可視化</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <!-- キャラクター会話：湿度計の見方 -->
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character housewife"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name housewife">田中さん</div>
+                                <p>湿度計を見ても数字の見方がよくわからないんです。どのくらいになれば「加湿できてる」と言えるんでしょうか？</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>目標は50-55%です！40%を下回ると乾燥を感じ、60%を超えるとカビのリスクが出てきます。運転開始から2-4時間で目標値に達するのが正常です。1週間続けると体感でも違いを実感できますよ。</p>
+                            </div>
                         </div>
                     </div>
 

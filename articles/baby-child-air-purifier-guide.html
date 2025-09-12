@@ -12,8 +12,166 @@
     <link rel="stylesheet" href="../css/article.css">
     <link rel="stylesheet" href="../css/related-articles.css">
     <link rel="stylesheet" href="../css/image-enhancements.css">
+    <link rel="stylesheet" href="../template-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* キャラクター会話セクション */
+        .character-dialogue {
+            margin: 2rem -1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            width: calc(100% + 3rem);
+            box-sizing: border-box;
+        }
+        .dialogue-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .pixel-character {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+        .pixel-character.otokuman {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            position: relative;
+        }
+        .pixel-character.otokuman::before {
+            content: "🤵";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.otokuman::after {
+            content: "💡";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #f39c12;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pixel-character.parent {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            position: relative;
+        }
+        .pixel-character.parent::before {
+            content: "👩‍👶";
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+        }
+        .pixel-character.parent::after {
+            content: "❤️";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 16px;
+            background: #ff69b4;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .speech-bubble {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            flex: 1;
+        }
+        .speech-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid #ddd;
+        }
+        .speech-bubble.left::after {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+        }
+        .speech-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid #ddd;
+        }
+        .speech-bubble.right::after {
+            content: "";
+            position: absolute;
+            right: -6px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid white;
+        }
+        .speech-bubble p {
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        .character-name {
+            font-weight: bold;
+            color: #3498db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .character-name.parent {
+            color: #e74c3c;
+        }
+        @media (max-width: 768px) {
+            .character-dialogue {
+                margin: 2rem 0;
+                width: 100%;
+            }
+            .dialogue-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .speech-bubble.left::before,
+            .speech-bubble.left::after,
+            .speech-bubble.right::before,
+            .speech-bubble.right::after {
+                display: none;
+            }
+        }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,37 +216,29 @@
         </nav>
     </header>
 
-    <!-- パンくずナビ -->
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="../index.html">ホーム</a>
-            <span class="separator">></span>
-            <a href="../pages/air-purifier.html">空気清浄機</a>
-            <span class="separator">></span>
-            <span class="current">赤ちゃん・子供部屋向け空気清浄機</span>
-        </div>
-    </nav>
-
     <!-- メインコンテンツ -->
-    <main class="main">
-        <!-- 記事ヘッダー -->
-        <section class="article-header">
-            <div class="container">
-                <div class="header-content">
+    <main class="main article-main">
+        <article class="article-container">
+            <!-- パンくずリスト -->
+            <nav class="breadcrumb">
+                <a href="../index.html">ホーム</a> &gt; 
+                <a href="../pages/air-purifier.html">空気清浄機</a> &gt; 
+                <span>赤ちゃん・子供部屋向け空気清浄機</span>
+            </nav>
+            
+            <!-- 記事ヘッダー -->
+            <header class="article-header">
+                <h1>【保育園導入実績No.1】赤ちゃん・子供部屋の空気清浄機選び完全ガイド2025</h1>
                 <div class="article-meta">
                     <span class="date"><i class="far fa-calendar"></i> 最終更新日：2025年8月25日</span>
                 </div>
-                    <h1 class="article-title">【保育園導入実績No.1】赤ちゃん・子供部屋の空気清浄機選び完全ガイド2025</h1>
-                    <p class="article-description">
-                        実際に全国の保育園・幼稚園で導入されている空気清浄機から厳選した安全性重視の12選。チャイルドロック・オゾン発生量・騒音レベルなど、子供の健康を最優先にした選び方を詳しく解説します。
-                    </p>
-                </div>
-            </div>
-        </section>
+                <p class="article-description">
+                    実際に全国の保育園・幼稚園で導入されている空気清浄機から厳選した安全性重視の12選。チャイルドロック・オゾン発生量・騒音レベルなど、子供の健康を最優先にした選び方を詳しく解説します。
+                </p>
+            </header>
 
-        <!-- 記事コンテンツ -->
-        <article class="article-content">
-            <div class="container">
+            <!-- 記事コンテンツ -->
+            <div class="article-content">
                 <!-- 導入部 -->
                 <section class="content-section">
                     <div class="alert-box warning">
@@ -420,6 +570,43 @@
                     </div>
                 </section>
 
+                <!-- キャラクター会話：安全基準について -->                
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>保育園での導入実績、本当にすごいですね！89%って、ほぼ全ての保育園で使われてるってことですよね。でも、家庭用で選ぶ時に一番注意すべき点って何でしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>素晴らしい質問です！家庭用で最も重要なのは「安全基準」です。保育園では国の厳しい基準をクリアした機種しか使えませんが、家庭用は自己責任。特にオゾン発生量とチャイルドロック機能は絶対にチェックしてください！</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>オゾンって聞いたことありますが、何が危険なんですか？あと、どうやって安全な機種かどうか見分けるんでしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>オゾンは高濃度だと呼吸器に刺激を与える可能性があります。赤ちゃんは特にデリケートなので要注意です。安全な機種の見分け方は、必ず製品仕様書で「オゾン発生量0.05ppm以下」を確認することです！</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- 安全基準 -->
                 <section id="safety-standards" class="content-section">
                     <h2><i class="fas fa-certificate"></i> 子供向け空気清浄機の安全基準</h2>
@@ -530,6 +717,43 @@
                         </table>
                 </section>
 
+                <!-- キャラクター会話：年齢別選び方について -->
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>安全基準、よく分かりました！でも今は3ヶ月の赤ちゃんですが、1歳、2歳と成長していく中で、空気清浄機の使い方や注意点って変わっていくんでしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>まさにその通りです！赤ちゃんの成長段階によって、重視すべきポイントが全く変わってくるんです。新生児期は「静音性」、ハイハイ期は「安全設計」、歩き回る幼児期は「チャイルドロック」が最重要になります。</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>なるほど！今買う機種も、将来のことを考えて選んだ方がいいですね。一台で長く使えるような、成長に合わせて設定を変えられる機種ってあるんですか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>はい！実際に保育園で選ばれている機種の多くは、成長段階に応じた機能を搭載しています。年齢別の詳しい選び方を次にご紹介しますので、お子さんの現在と将来を見据えて選んでくださいね。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- 年齢別選び方ガイド -->
                 <section id="age-selection" class="content-section">
                     <h2><i class="fas fa-baby-carriage"></i> 年齢別選び方ガイド</h2>
@@ -628,6 +852,43 @@
                                         <li>学習モード（時間管理）</li>
                                     </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：ランキングについて -->
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>年齢別の選び方、とても参考になりました！でも正直、種類が多すぎてどれを選んだらいいか迷ってしまいます...。実際に保育園で一番選ばれているのはどの機種なんですか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>その悩み、とてもよく分かります！実は調査で分かったのですが、保育園での採用率No.1はシャープのプラズマクラスターシリーズなんです。78%の施設で選ばれている理由を詳しくお教えしますね。</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>シャープですね！でも価格も気になります...。育児用品でお金もかかるし、コストパフォーマンスも重要なポイントなんです。</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>その通りです！価格と性能のバランスが大切ですね。保育園実績とコストパフォーマンスの両面から厳選したベスト12選を、価格帯別にご紹介します。きっとお気に入りが見つかりますよ！</p>
                             </div>
                         </div>
                     </div>
@@ -908,6 +1169,43 @@
                     </div>
                 </section>
 
+                <!-- キャラクター会話：設置について -->
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>ランキング、すごく参考になりました！1位のシャープの機種、良さそうですね。でも買ったあとの設置場所で悩んでます...。赤ちゃんのベッドから何メートル離せばいいとか、決まりがあるんでしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>とても大切なポイントです！実は設置場所を間違えると、せっかく良い機種を買っても効果が半減してしまいます。新生児の場合、ベッドから2m以上離れた場所で、直接風が当たらない位置が基本です。</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>2メートルですね。でもうちの子供部屋、そんなに広くないかも...。狭い部屋でも効果的な設置方法ってあるんですか？あと、成長して歩き回るようになったら設置場所も変える必要がありますか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>狭いお部屋でも大丈夫です！壁掛けタイプや高い棚を活用する方法があります。そして成長に合わせた設置場所の変更は確かに必要です。年齢別の安全な設置レイアウトをご紹介しますね！</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- 設置ガイド -->
                 <section id="setup-guide" class="content-section">
                     <h2><i class="fas fa-map-marked-alt"></i> 子供部屋での安全な設置方法</h2>
@@ -1002,6 +1300,43 @@
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：メンテナンスについて -->
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>設置方法、とても分かりやすかったです！でも正直に言うと、育児で毎日バタバタしている中で、空気清浄機のメンテナンスまで手が回るか心配で...。どのくらい手間がかかるものなんでしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>その心配、すごくよく分かります！実は子育て世帯向けのメンテナンス方法があるんです。基本は毎日1分の確認だけ、週1回5分の簡単掃除、月1回15分の点検。忙しい育児中でも無理なく続けられますよ。</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>意外と簡単そうですね！でもフィルター交換とか、費用もかかりますよね？年間でどのくらいの維持費を見込んでおけばいいでしょうか？</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>年間6,000-10,000円程度が目安です。でも10年交換不要フィルターの機種を選べば大幅にコストダウンできます。また、お子さんと一緒にできる簡単メンテナンスもあるので、教育の機会としても活用できますよ！</p>
                             </div>
                         </div>
                     </div>
@@ -1223,6 +1558,35 @@
                                     <li>定期的なフィルター交換で性能を維持</li>
                                     <li>保育園・幼稚園でも感染症対策として92%が導入</li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- キャラクター会話：まとめ -->
+                <section class="content-section">
+                    <div class="character-dialogue">
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>お得マンさん、本当にありがとうございました！保育園での実際のデータを基にしているので、とても信頼できました。新生児から幼稚園児までの選び方もよく分かりましたし、一台で長く使えるように選んでみます！</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container right">
+                            <div class="pixel-character otokuman"></div>
+                            <div class="speech-bubble right">
+                                <div class="character-name">失敗しないお得マン</div>
+                                <p>こちらこそ、ありがとうございました！空気清浄機選びはお子さんの健康と直結する大切な投資です。保育園での実績と安全基準を重視した選び方で、きっと良い機種が見つかります。お子さんの健やかな成長を心から応援しています！</p>
+                            </div>
+                        </div>
+
+                        <div class="dialogue-container">
+                            <div class="pixel-character new-mom"></div>
+                            <div class="speech-bubble left">
+                                <div class="character-name new-mom">美咲さん</div>
+                                <p>空気のきれいなお部屋で、子供が健やかに成長してくれることを願っています。本当にありがとうございました！</p>
                             </div>
                         </div>
                     </div>
